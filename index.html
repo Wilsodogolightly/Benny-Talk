@@ -1,0 +1,2519 @@
+
+You said:
+“Fresh start.
+Here is the full current code.
+Goal: single session modal, single init path, no double-clicks.”
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <title>English with Benny</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="data:,">
+
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --bg-page: #275317;
+      --bg-card: #3c7d22;
+      --accent: #facc15;
+      --accent-soft: rgba(250, 204, 21, 0.2);
+      --text-main: #f9fafb;
+      --text-muted: #e5e7ebcc;
+      --error: #f97373;
+      --success: #4ade80;
+      --radius: 1.25rem;
+    }
+body {
+  margin: 0;
+  overflow-x: hidden;      /* stops sideways scrolling */
+  padding: 0 0 90px 0;
+}
+
+.app {
+  max-width: 720px;        /* or whatever you’re using */
+  width: 100%;
+  margin: 16px auto;
+  box-sizing: border-box;
+}
+
+.content-card { 
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 16px 20px;
+  margin-top: 16px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.12);  /* card background */
+
+  /* fixed-height card with its own scroll */
+  height: 520px;          /* tweak this up/down if you like */
+  overflow-y: auto;       /* scrolls inside the green card */
+  overflow-x: hidden;
+  /* NEW: space so content doesn't hide behind the fixed buttons */
+  padding-bottom: 140px;
+}
+
+
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-page);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .app {
+      position: relative; 
+      width: 100%;
+      max-width: 420px;
+      background: linear-gradient(145deg, var(--bg-card), #346e1f);
+      border-radius: calc(var(--radius) + 0.5rem);
+      padding: 18px 18px 20px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* title + pills column */
+.title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+/* row that holds language, mode, streak */
+.stats-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.header-top-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.header-top-row > * {
+  display: flex;
+  align-items: center;
+}
+
+/* Language box in header */
+.language-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.language-header select {
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+/* Mode pill – clickable */
+.mode-chip {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 3px 10px;
+  font-size: 0.7rem;
+}
+
+.mode-chip:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+    @media (min-width: 480px) {
+      .app {
+        padding: 20px 22px 22px;
+      }
+    }
+
+.language-label {
+  font-size: 0.65rem;
+  opacity: 0.7;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+.mode-chip {
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 3px 10px;
+  font-size: 0.7rem;
+}
+
+.mode-chip:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+
+    .avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 2px solid rgba(250, 204, 21, 0.85);
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+      background: #8cc0e2;
+      flex-shrink: 0;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .stats-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+    .title {
+      font-size: 1.25rem;
+      font-weight: 650;
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+.stats-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+    .stat-chip {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--text-muted);
+    }
+
+    .stat-chip strong {
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .treat-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.5);
+    }
+
+    .mood-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    }
+
+    .mood-dot.mood-hopeful {
+    background: #f0c000;
+    }
+
+    .mood-dot.mood-happy {
+    background: #2e9b4f;
+    }
+
+    .benny-intro {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    }
+
+    .mood-label {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 1;
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(0, 0, 0, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--text-muted);
+    }
+
+    .mood-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--error);
+    }
+
+    .mood-happy {
+      background: var(--success);
+    }
+
+    .mood-hopeful {
+      background: var(--accent);
+    }
+
+    .benny-line {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      position: relative;
+      z-index: 1;
+      margin-top: 22px;
+    }
+
+    .benny-eyes {
+      font-size: 0.95rem;
+    }
+    
+/* --- Limit height of phrase and translation blocks --- */
+
+   .bg-phrase {
+  position: relative;
+  z-index: 1;
+
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 550;
+  letter-spacing: 0.01em;
+  margin-top: 4px;
+  margin-bottom: 16px;
+
+  /* allow full height, just wrap text */
+  overflow-wrap: break-word;
+
+  /* dark olive surround */
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+
+  /* ✅ NEW: centering */
+  width: 100%;
+  max-width: 340px;   /* optional but recommended */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+  .en-translation {
+  position: relative;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+
+  /* allow full height, just wrap text */
+  overflow-wrap: break-word;
+
+  display: none;          /* still hidden until JS shows it */
+
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 540;
+}
+.en-translation.visible {
+  display: block;          /* shown when JS adds .visible */
+}
+/* Make Latin more readable */
+.latin-line {
+  color: #f4f4f4;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+/* subtle fade at the bottom of scrollable text areas */
+    .bg-phrase::after,
+    .en-translation::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 18px;  /* how tall the fade is */
+    pointer-events: none;  /* don’t block clicks or scrolling */
+
+    /* fade from transparent to the card background-ish */
+    background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),      /* fully transparent */
+    rgba(0, 0, 0, 0.25)    /* matches your dark overlay feel */
+  );
+}
+
+    .latin-line {
+    overflow-wrap: break-word;
+    }
+    
+
+    .latin-line {
+      position: relative;
+      z-index: 1;
+      margin-top: 3px;
+      font-size: 1.0rem;
+      color: var(--text-muted);
+      display: none;
+    }
+
+    .latin-line.visible {
+      display: block;
+    }
+
+    .latin-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+      margin-right: 4px;
+    }
+
+    .en-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+/* Floating control bar – now anchored to the app, not the whole window */
+.controls {
+  position: absolute;             /* relative to .app */
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;                   /* adjust if you want it higher/lower */
+  z-index: 100;
+
+  width: 90%;
+  max-width: 420px;
+
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* When we hide it (during progress overlay) */
+.controls.hidden {
+  display: none;
+}
+
+
+/* When progress is open, hide the control bar */
+.controls.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+              
+
+/* Rows inside the controls */
+.controls-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Row 1: Translation / Lat – centred with a gap */
+.row-1 .row-group {
+  justify-content: center;
+  gap: 18px;
+}
+
+/* Row 2: Right / Wrong – centred too */
+.row-2 .row-group {
+  justify-content: center;
+  gap: 18px;
+}
+
+/* Row 3: New phrase – centred */
+.row-3 .row-group {
+  justify-content: center;
+}
+
+/* Make main control buttons nicely sized for thumbs */
+.controls button {
+  font-size: 0.9rem;
+  padding: 7px 14px;
+}
+
+/* Wider feel for the top row buttons */
+.btn-wide {
+  min-width: 130px;
+}
+
+/* Smaller style for the mode toggle next to New phrase */
+.btn-small {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+/* Make New phrase the yellow hero button at the bottom */
+.btn-new {
+  background: linear-gradient(to right, #facc15, #f97316);
+  color: #111827;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 8px 18px;
+
+  max-width: 260px;          /* 🔹 hard cap */
+  width: 60%;                /* shrinks a bit on narrow screens */
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.btn-new:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Filters as a hidden Benny panel --- */
+
+.filters-toggle-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 6px;
+}
+
+/* Small Benny button that opens/closes filters */
+.benny-filters-btn {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  color: var(--text-main);
+}
+
+.benny-filters-btn:active {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Little Benny head with a ? bubble */
+.benny-filters-avatar {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(250, 204, 21, 0.9);
+}
+
+.benny-filters-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.benny-question-badge {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #facc15;
+  color: #111827;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.benny-filters-label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.filter-toggle-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.filter-row {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: flex-start;
+  font-size: 0.8rem;
+
+  background: rgba(0, 0, 0, 0.16);
+  padding: 8px 8px 10px;
+  border-radius: 12px;
+}
+
+/* Hidden by default */
+#filtersPanel {
+  display: none;
+}
+
+/* === FILTERS: FINAL LAYOUT (single source of truth) === */
+#filtersPanel.open {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
+  align-items: start;
+}
+
+#filtersPanel .filter-group {
+  min-width: 0;
+}
+
+/* Status stays top-right */
+#filtersPanel .status-group {
+  grid-column: 2;
+  text-align: left;
+}
+
+/* Note under Status, aligned right */
+#filtersPanel .status-group .filter-note {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  text-align: right;
+}
+
+
+/* Each filter fills its grid cell */
+#filtersPanel .filter-group {
+  min-width: 0;
+}
+
+/* Status stays in top-right grid cell */
+#filtersPanel .status-group {
+  grid-column: 2;
+  text-align: left;
+}
+
+/* Note under Status, aligned to the right edge */
+#filtersPanel .status-group .filter-note {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  text-align: right;
+}
+/* --- Filters: Benny toggle avatar --- */
+.filter-toggle-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slightly softer, smaller filters inside the panel */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+}
+
+.filter-group label {
+  margin-bottom: 1px;
+  opacity: 0.55;
+  font-size: 0.75rem;
+}
+
+.filter-group select {
+  padding: 3px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(250, 250, 210, 0.9);   /* pale yellow */
+  color: #7b341e;                         /* warm brown text */
+  font-size: 0.78rem;
+  font-weight: 400;
+  min-width: 120px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+  
+    .left-controls,
+    .right-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    button {
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 9px 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition:
+        transform 0.08s ease,
+        box-shadow 0.1s ease,
+        background 0.15s ease,
+        border-color 0.15s ease;
+    }
+/* Make main control buttons slightly smaller */
+.controls button {
+  font-size: 0.85rem;
+  padding: 7px 12px;
+}
+    .btn-primary {
+      background: linear-gradient(to right, #facc15, #f97316);
+      color: #111827;
+      font-weight: 600;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-soft {
+      background: var(--accent-soft);
+      border: 1px solid rgba(250, 204, 21, 0.7);
+      color: #1f2933;
+      font-size: 0.9rem;
+    }
+
+    .btn-soft:active {
+      transform: translateY(1px);
+      background: rgba(250, 204, 21, 0.25);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      box-shadow: none;
+      font-size: 0.9rem;
+    }
+
+    .btn-ghost:active {
+      transform: translateY(1px);
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-wrong {
+      border-color: rgba(248, 113, 113, 0.8);
+      color: #fecaca;
+    }
+    
+/* Make the Translation + Latin buttons stand out more */
+#showTranslationBtn,
+#toggleLatinBtn {
+  background: rgba(255, 255, 255, 0.95);
+  color: #111827;
+  border-color: rgba(0, 0, 0, 0.6);
+
+  font-size: 0.96rem;   /* slightly larger text */
+  font-weight: 650;     /* bolder */
+}
+
+/* Optional: tiny press effect */
+#showTranslationBtn:active,
+#toggleLatinBtn:active {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+
+    .btn-wrong:active {
+      background: rgba(248, 113, 113, 0.18);
+    }
+
+    .treat-counter {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .treat-counter strong {
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .treat-icon {
+      font-size: 0.9rem;
+    }
+
+    .footer-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: right;
+      margin-top: 2px;
+    }
+
+    .footer-note span {
+      color: #f9fafb;
+    }
+    .benny-footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* Hide Benny mood/footer when we're in "focus mode" (filters open or translation used) */
+.content-card.focus-mode .benny-footer {
+  display: none !important;
+}
+
+.benny-mood-row{
+  width: 100%;
+  justify-content: center;
+}
+/* Mood row */
+.benny-mood-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.mood-text {
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+/* Mood dot */
+#moodDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--error);     /* default = starving */
+}
+
+.mood-happy {
+  background: var(--success);
+}
+
+.mood-hopeful {
+  background: var(--accent);
+}
+
+/* Intro line */
+.benny-intro {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Treat counter */
+.treats-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+.treat-icon {
+  font-size: 1.1rem;
+}
+
+#treatCount {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+  .benny-runner {
+  position: absolute;
+  bottom: -5px;                 /* sit below the Benny tip line */
+  left: -20px;                   /* just off the left edge */
+  width: 35px;                   /* a bit smaller */
+  height: 35px;
+  border-radius: 0;
+  background-image: url("benny-run.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: none;
+  pointer-events: none;
+  opacity: 0.6;                  /* slightly transparent over background */
+  z-index: 3;
+  animation: benny-run 8s linear infinite;
+}
+
+/* keep him within the width of the green card */
+@keyframes benny-run {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: calc(100% - 40px);     /* stops near the right edge of the app */
+  }
+}
+/* Progress panel – overlay centered over the card */
+.progress-panel {
+  position: absolute;           /* relative to .content-card */
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* fill almost the whole card height */
+  top: 24px;
+  bottom: 24px;
+
+  width: 100%;
+  max-width: 420px;
+
+  padding: 12px 14px 16px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.92);
+  font-size: 0.78rem;
+
+  overflow-y: auto;             /* panel itself scrolls if needed */
+  display: none;                /* hidden until .open */
+  z-index: 120;
+}
+
+.progress-panel.open {
+  display: block;
+}
+
+.progress-header {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.progress-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 10px;
+  margin-bottom: 8px;
+}
+
+.progress-summary strong {
+  color: #facc15;
+  font-weight: 600;
+}
+
+.progress-toggle {
+  margin: 4px 0 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111827;
+  border: none;
+  cursor: pointer;
+}
+/* Session modal */
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+.modal-backdrop { z-index: 99999; }
+.modal-backdrop, .modal, .modal * { pointer-events: auto; }
+
+.modal{
+  width: 100%;
+  max-width: 360px;
+  background: rgba(0,0,0,0.92);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+}
+
+.modal-title{
+  font-size: 0.95rem;
+  font-weight: 650;
+  margin-bottom: 6px;
+}
+
+.modal-text{
+  font-size: 0.85rem;
+  opacity: 0.9;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.modal-actions{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.modal-backdrop { z-index: 99999; }
+.modal, .modal * { pointer-events: auto; }
+
+
+/* Lists inside the panel */
+.progress-lists {
+  margin-top: 6px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+}
+
+/* If the lists element has the HTML hidden attribute, force it off */
+.progress-lists[hidden] {
+  display: none !important;
+}
+
+.progress-column h4 {
+  margin: 0 0 4px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.progress-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.progress-list li {
+  padding: 2px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  opacity: 0.9;
+}
+
+.progress-close {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+
+/* On a wider screen we can pretend this is a sidebar by narrowing the content */
+@media (min-width: 600px) {
+  .progress-panel {
+    font-size: 0.76rem;
+  }
+}
+ /* --- Translation + Latin buttons: make smaller on small screens --- */
+#showTranslationBtn,
+#toggleLatinBtn {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.6rem;
+  white-space: nowrap;   /* keep text on one line */
+}
+
+/* Extra shrink for phones */
+@media (max-width: 600px) {
+  #showTranslationBtn,
+  #toggleLatinBtn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+
+  /* Aim for 2 filters per row */
+  .filter-group {
+    flex: 1 1 48%;
+    min-width: 0;
+    margin-bottom: 4px;
+  }
+
+  .filter-group select {
+    font-size: 0.72rem;
+    padding: 3px 5px;
+  }
+
+.filter-note {
+  font-size: 0.7rem;
+  margin-top: -4px;
+  margin-bottom: 4px;
+  opacity: 0.7;
+  padding-left: 4px;
+}
+/* 🔒 Hard-fix Status filter styling */
+#statusFilter {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.35);
+  background: rgba(250, 250, 210, 0.95);
+  color: #7b341e;
+  font-size: 0.85rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+/* Keep dropdown full width */
+.status-group select {
+  width: 100%;
+}
+
+/* Note aligns with Status, not Topic */
+.status-group .filter-note {
+  text-align: right;
+  margin-top: 4px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="app" aria-label="English with Benny - practice phrases">
+
+    <header class="header">
+      <div class="avatar">
+        <img src="benny.png" alt="Benny the dog" />
+      </div>
+
+      <div class="title-block">
+        <h1 class="title">English with Benny</h1>
+
+        <!-- Top row: language, mode pill, streak -->
+        <div class="stats-row header-top-row">
+
+          <!-- Language selector -->
+          <div class="language-header">
+            <select id="languageSelect">
+              <option value="bg">Bulgarian</option>
+              <option value="ge">Georgian</option>
+            </select>
+          </div>
+
+          <!-- Mode pill – ALSO the toggle -->
+          <button
+            type="button"
+            class="stat-chip mode-chip"
+            id="toggleModeBtn"
+            title="Swap BG ↔ EN (M)"
+          >
+            <span class="treat-dot"></span>
+            <span id="modeLabel">BG ➜ EN phrases</span>
+          </button>
+
+          <!-- Streak pill -->
+          <div class="stat-chip">
+            <span>🧠</span>
+            <span><strong>Streak:</strong> <span id="streakValue">0</span></span>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- keep your <section class="content-card"> ... </section>
+         and the controls/footer exactly as they are, but INSIDE this .app -->
+
+  <!-- EVERYTHING below is inside the content card -->
+   <!-- EVERYTHING below is inside the content card -->
+  <section class="content-card" aria-live="polite">
+
+    <!-- Benny filters toggle -->
+    <div class="filters-toggle-row">
+      <button
+        type="button"
+        class="benny-filters-btn"
+        id="toggleFiltersBtn"
+        aria-expanded="false"
+        aria-controls="filtersPanel"
+        title="Show filters (Type / Level / Topic / Status)"
+      >
+        <span class="benny-filters-avatar">
+          <img src="benny.png" alt="Benny" />
+          <span class="benny-question-badge">?</span>
+        </span>
+        <span class="benny-filters-label">Filters</span>
+      </button>
+    </div>
+
+   <!-- Filters panel (can be hidden/shown) -->
+<div id="filtersPanel" class="filter-row">
+
+  <div class="filter-group">
+    <label for="typeFilter">Type</label>
+    <select id="typeFilter"></select>
+  </div>
+
+  <div class="filter-group">
+    <label for="difficultyFilter">Level</label>
+    <select id="difficultyFilter"></select>
+  </div>
+
+  <div class="filter-group">
+    <label for="topicFilter">Topic</label>
+    <select id="topicFilter"></select>
+  </div>
+
+  <div class="filter-group status-group">
+    <label for="statusFilter">Status</label>
+    <select id="statusFilter">
+      <option value="all">All</option>
+      <option value="untestedSession">Untested*</option>
+      <option value="neverTested">Never tested</option>
+      <option value="lastWrong">Last wrong</option>
+      <option value="tricky">Tricky</option>
+      <option value="difficult">Difficult</option>
+      <option value="notLearned">Not-learned</option>
+    </select>
+
+    <p class="filter-note">*Untested = this session only</p>
+  </div>
+
+</div> <!-- ✅ end filtersPanel -->
+
+    <!-- MAIN PRACTICE AREA (phrase + translation) -->
+
+    <!-- Bulgarian phrase -->
+    <div class="bg-phrase" id="bgPhrase">
+      Зареждане…
+      <small id="bgHint">Натисни „Нова фраза“, за да започнеш.</small>
+    </div>
+
+    <!-- Latin line -->
+    <div class="latin-line" id="latinLine">
+      <span class="latin-label" id="latinLabel">Latin (BG)</span>
+      <span id="latinText"></span>
+    </div>
+
+    <!-- English / Other translation -->
+    <div class="en-translation" id="enTranslation">
+      <div class="en-label" id="translationLabel">English</div>
+      <div id="enText"></div>
+    </div>
+
+    <!-- CONTROLS: go near the bottom (thumb-friendly) -->
+    <section class="controls" aria-label="Controls">
+  <!-- Row 1: Translation + Latin toggle -->
+  <div class="controls-row row-1">
+    <div class="row-group">
+      <button type="button" class="btn-ghost btn-wide" id="showTranslationBtn">
+        👀 Translation
+      </button>
+      <button type="button" class="btn-ghost btn-wide" id="toggleLatinBtn">
+        Lat (BG)
+      </button>
+    </div>
+  </div>
+
+  <!-- Row 2: Right / Wrong -->
+  <div class="controls-row row-2">
+    <div class="row-group">
+      <button type="button" class="btn-soft" id="markCorrectBtn">
+        ✅ I got it right
+      </button>
+      <button type="button" class="btn-ghost btn-wrong" id="markWrongBtn">
+        ❌ I got it wrong
+      </button>
+    </div>
+  </div>
+
+  <!-- Row 3: New phrase -->
+  <div class="controls-row row-3">
+    <div class="row-group">
+      <button type="button" class="btn-new" id="newPhraseBtn">
+        🔁 New phrase
+      </button>
+    </div>
+  </div>
+
+  <!-- Row 4: Progress toggle -->
+  <div class="controls-row row-4">
+    <div class="row-group" style="justify-content: flex-start;">
+      <button type="button" class="btn-ghost" id="progressToggleBtn">
+        📊 Progress
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- BENNY FOOTER -->
+    <div class="benny-footer">
+
+      <div class="benny-mood-row">
+        <span class="mood-dot" id="moodDot"></span>
+        <span id="moodText" class="mood-text">Starving (obviously)</span>
+      </div>
+
+      <div id="bennyIntro" class="benny-intro">
+        Аз никога не съм ял, обещавам…
+      </div>
+
+      <div class="treats-row">
+        <span class="treat-icon">🍗</span>
+        <span class="treat-label">Treats earned:</span>
+        <span id="treatCount">0</span>
+      </div>
+
+    </div>
+
+
+    <!-- PROGRESS PANEL -->
+<div class="progress-panel" id="progressPanel">
+  <div class="progress-header">PROGRESS (CURRENT FILTERS)</div>
+
+  <div class="progress-summary">
+    <div>
+      <div>Untested this run:</div>
+      <strong id="neverTestedValue">0</strong>
+    </div>
+    <div>
+      <div>Last wrong:</div>
+      <strong id="unlearnedValue">0</strong>
+    </div>
+    <div>
+      <div>Difficult (5+ wrong):</div>
+      <strong id="difficultValue">0</strong>
+    </div>
+    <div>
+      <div>Learned (3+ correct):</div>
+      <strong id="learnedValue">0</strong>
+    </div>
+  </div>
+
+  <!-- Toggle lists inside the panel -->
+  <button type="button" class="progress-toggle" id="progressListsToggle">
+    ▶ Show lists
+  </button>
+
+  <!-- Lists container, hidden at first -->
+  <div class="progress-lists" id="progressListsContainer" hidden>
+    <div class="progress-column">
+      <h4>Untested this run</h4>
+      <ul class="progress-list" id="neverTestedList"></ul>
+    </div>
+    <div class="progress-column">
+      <h4>Last wrong</h4>
+      <ul class="progress-list" id="unlearnedList"></ul>
+
+
+    </div>
+    <div class="progress-column">
+      <h4>Difficult</h4>
+      <ul class="progress-list" id="difficultList"></ul>
+    </div>
+    <div class="progress-column">
+      <h4>Learned</h4>
+      <ul class="progress-list" id="learnedList"></ul>
+    </div>
+  </div>
+
+  <!-- Close button at the bottom of the panel -->
+  <button type="button" class="progress-close" id="progressCloseBtn">
+    ✖ Close progress
+  </button>
+</div>
+   
+
+    <!-- Benny runner inside the card -->
+  <div class="benny-runner" aria-hidden="true"></div>
+
+</section>   <!-- ✅ end .content-card -->
+
+<div class="footer-note">
+  <span>Benny tip:</span> N=new · M=swap · C=right · W=wrong · T=translation · L=Latin
+</div>
+
+
+  <script>
+    const fallbackPhrases = [
+      {
+        bg: "Наистина ли няма повече пилешко за мен?",
+        en: "Is there really no more chicken for me?",
+        lat: "Naistina li nyama poveche pileshko za men?",
+        type: "question",
+        difficulty: "A2",
+        topic: "food"
+      },
+      {
+        bg: "Погледни тези тъжни очи и помисли пак за лакомство.",
+        en: "Look at these sad eyes and reconsider the treat.",
+        lat: "Pogledni tezi tazhni ochi i pomisli pak za lakomstvo.",
+        type: "persuasion",
+        difficulty: "B1",
+        topic: "dogs"
+      },
+      {
+        bg: "Обещавам да бъда много послушен… поне пет минути.",
+        en: "I promise to be very well behaved… for at least five minutes.",
+        lat: "Obeshtavam da bada mnogo poslushen... pone pet minuti.",
+        type: "promise",
+        difficulty: "A2",
+        topic: "behaviour"
+      },
+      {
+        bg: "Сигурен ли си, че купата ми е наистина празна?",
+        en: "Are you sure my bowl is really empty?",
+        lat: "Siguren li si, che kupata mi e naistina prazna?",
+        type: "question",
+        difficulty: "A2",
+        topic: "food"
+      },
+      {
+        bg: "Време е за разходка, нали? Аз решавам правилата.",
+        en: "It’s walk time, right? I make the rules.",
+        lat: "Vreme e za razhodka, nali? Az reshavam pravilata.",
+        type: "statement",
+        difficulty: "B1",
+        topic: "walks"
+      },
+      { 
+        bg: "Не е ли чудесна идея да хапнем още малко сега?",
+        en: "Isn’t it a wonderful idea to eat just a little more now?",
+        lat: "Ne e li chudesna ideya da hapnem oshte malko sega?",
+        type: "suggestion",
+        difficulty: "B1",
+        topic: "food"
+      },
+      {
+        bg: "Ако ми дадеш лакомство, ще ти позволя да учиш български на спокойствие.",
+        en: "If you give me a treat, I’ll allow you to study Bulgarian in peace.",
+        lat: "Ako mi dadesh lakomstvo, shte ti pozvolya da uchish balgarski na spokoystvie.",
+        type: "condition",
+        difficulty: "B1",
+        topic: "study"
+      },
+      {
+        bg: "Гладен съм, въпреки че току-що ядох. Това е наука.",
+        en: "I’m hungry even though I just ate. It’s science.",
+        lat: "Gladen sam, vupreki che toku-shto yadoh. Tova e nauka.",
+        type: "statement",
+        difficulty: "A2",
+        topic: "food"
+      },
+      {
+        bg: "Ще гледам така тъжно, докато не се предадеш.",
+        en: "I’ll keep looking this sad until you give in.",
+        lat: "Shte gledam taka tazhno, dokato ne se predadesh.",
+        type: "threat (cute)",
+        difficulty: "B1",
+        topic: "behaviour"
+      },
+      {
+        bg: "Най-добрите ученици по български винаги носят пилешко за учителя.",
+        en: "The best Bulgarian students always bring chicken for the teacher.",
+        lat: "Nai-dobrite uchenitsi po balgarski vinagi nosyat pileshko za uchitelya.",
+        type: "statement",
+        difficulty: "B1",
+        topic: "study"
+      }
+    ];
+    let phrases = fallbackPhrases.slice();  // start with built-in phrases
+
+// ---------- Session constants (MUST be above loadOrCreateSession) ----------
+const SESSION_KEY = "benny_session_v1";
+const ONE_HOUR = 60 * 60 * 1000;
+
+let sessionInfo = null;
+
+
+async function initApp() {
+  sessionInfo = await loadOrCreateSession();
+
+  updateModeUI();
+  loadPhrasesFromFile();  // this will call handleNewPhrase() when ready
+  updateMood();
+}
+window.addEventListener("DOMContentLoaded", initApp);
+
+
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function resetLatinControls() {
+  const langLabel = getLanguageLabel();
+  latinLineEl.classList.remove("visible");
+  if (latinLabelEl) {
+    latinLabelEl.textContent = `Latin (${langLabel})`;
+  }
+  if (toggleLatinBtn) {
+    latinLabelEl.textContent = `Latin (${langLabel})`;
+  }
+}
+
+function showSessionChoiceModal({ title, text }) {
+  return new Promise((resolve) => {
+    const backdrop = document.createElement("div");
+    backdrop.className = "modal-backdrop";
+
+    backdrop.innerHTML = `
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-title">${title}</div>
+    <div class="modal-text">${text}</div>
+    <div class="modal-actions">
+      <button type="button" class="btn-ghost" data-choice="new">New session</button>
+      <button type="button" class="btn-primary" data-choice="continue">Continue</button>
+    </div>
+  </div>
+`;
+
+    document.body.appendChild(backdrop);
+
+    backdrop.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-choice]");
+      if (!btn) return;
+
+      const choice = btn.getAttribute("data-choice");
+      backdrop.remove();
+      resolve(choice);
+    });
+  });
+}
+
+
+function loadPhrasesFromFile() {
+  const fileName = languageFiles[currentLanguage] || languageFiles.bg;
+
+  console.log("🔄 Loading CSV for language:", currentLanguage, "from", fileName);
+
+  fetch(fileName, { cache: "no-store" })
+    .then(response => {
+      console.log("📦 CSV HTTP status:", response.status);
+      if (!response.ok) {
+        throw new Error("HTTP " + response.status);
+      }
+      return response.text();
+    })
+    .then(text => {
+      console.log("📄 CSV raw text length:", text.length);
+
+      const lines = text
+        .split(/\r?\n/)
+        .filter(line => line.trim().length > 0);
+
+      console.log("📄 CSV non-empty lines:", lines.length);
+
+      // If the file is effectively empty, fall back
+      if (lines.length < 2) {
+        console.warn("CSV is empty or only headers – using fallback phrases for", currentLanguage);
+        phrases = fallbackPhrases.slice();
+        populateFilterOptions();
+        loadSRSForCurrentLanguage();
+        recomputeProgressReport();
+        handleNewPhrase();
+        return;
+      }
+
+      // --- Simple CSV parser that handles commas + quotes ---
+      function parseCSVLine(line) {
+        const result = [];
+        let current = "";
+        let inQuotes = false;
+
+        for (let i = 0; i < line.length; i++) {
+          const ch = line[i];
+
+          if (ch === '"') {
+            if (inQuotes && line[i + 1] === '"') {
+              // escaped double quote ("")
+              current += '"';
+              i++;
+            } else {
+              inQuotes = !inQuotes;
+            }
+          } else if (ch === "," && !inQuotes) {
+            // column separator (only when not inside quotes)
+            result.push(current);
+            current = "";
+          } else {
+            current += ch;
+          }
+        }
+
+        // push the last column
+        result.push(current);
+        return result;
+      }
+
+      // First line = header
+      const header = parseCSVLine(lines[0]);
+      console.log("📑 CSV header columns:", header);
+
+      // Data lines
+      phrases = lines.slice(1).map(line => {
+        const cols = parseCSVLine(line);
+
+        const bg        = (cols[0] || "").trim();
+        const en        = (cols[1] || "").trim();
+        const lat       = (cols[2] || "").trim();
+        const type      = ((cols[3] || "").trim()) || "NONE";
+        const difficulty= ((cols[4] || "").trim()) || "NONE";
+        const topic     = ((cols[5] || "").trim()) || "NONE";
+
+        return { bg, en, lat, type, difficulty, topic };
+      });
+
+      console.log("✅ Parsed phrases count:", phrases.length, "for language", currentLanguage);
+
+      // Normal post-load setup
+      populateFilterOptions();
+      loadSRSForCurrentLanguage();
+      recomputeProgressReport();
+      handleNewPhrase();
+    })
+    .catch(err => {
+      console.error("❌ Could not load CSV for language", currentLanguage, "– using fallback.", err);
+      phrases = fallbackPhrases.slice();
+      populateFilterOptions();
+      loadSRSForCurrentLanguage();
+      recomputeProgressReport();
+      handleNewPhrase();
+    });
+}
+
+function populateFilterOptions() {
+  if (!phrases || phrases.length === 0) return;
+
+  const types = new Set();
+  const diffs = new Set();
+  const topics = new Set();
+
+  for (const p of phrases) {
+    if (!p) continue;
+
+    if (p.type && p.type !== "NONE") {
+      types.add(p.type);
+    }
+    if (p.difficulty && p.difficulty !== "NONE") {
+      diffs.add(p.difficulty);
+    }
+    if (p.topic && p.topic !== "NONE") {
+      topics.add(p.topic);
+    }
+  }
+
+  function fillSelect(selectEl, values) {
+    if (!selectEl) return;
+
+    // Clear any existing options
+    selectEl.innerHTML = "";
+
+    // "Any" option
+    const optAny = document.createElement("option");
+    optAny.value = "any";
+    optAny.textContent = "Any";
+    selectEl.appendChild(optAny);
+
+    const sorted = Array.from(values).sort((a, b) =>
+      a.localeCompare(b, "en", { sensitivity: "base" })
+    );
+
+    for (const v of sorted) {
+      const opt = document.createElement("option");
+      opt.value = v;
+      opt.textContent = v;
+      selectEl.appendChild(opt);
+    }
+  }
+
+  fillSelect(typeFilterEl, types);
+  fillSelect(difficultyFilterEl, diffs);
+  fillSelect(topicFilterEl, topics);
+
+  // Reset filters to "any"
+  currentTypeFilter = "any";
+  currentDifficultyFilter = "any";
+  currentTopicFilter = "any";
+}
+    const statusFilterEl = document.getElementById("statusFilter");
+    let currentStatusFilter = "all";
+
+const bennyFooterEl = document.querySelector(".benny-footer");
+
+function setFooterVisible(isVisible) {
+  if (!bennyFooterEl) return;
+  bennyFooterEl.style.display = isVisible ? "" : "none";
+}
+
+    const bgPhraseEl = document.getElementById("bgPhrase");
+    const bgHintEl = document.getElementById("bgHint");
+    const translationPanelEl = document.getElementById("enTranslation");
+    const translationTextEl = document.getElementById("enText");
+    const translationLabelEl = document.getElementById("translationLabel");
+    const latinLineEl = document.getElementById("latinLine");
+    const latinTextEl = document.getElementById("latinText");
+    const latinLabelEl = document.getElementById("latinLabel");
+    const newPhraseBtn = document.getElementById("newPhraseBtn");
+    const showTranslationBtn = document.getElementById("showTranslationBtn");
+    const toggleLatinBtn = document.getElementById("toggleLatinBtn");
+    const toggleModeBtn = document.getElementById("toggleModeBtn");
+    const markCorrectBtn = document.getElementById("markCorrectBtn");
+    const markWrongBtn = document.getElementById("markWrongBtn");
+    const treatCountEl = document.getElementById("treatCount");
+    const streakValueEl = document.getElementById("streakValue");
+    const moodDotEl = document.getElementById("moodDot");
+    const moodTextEl = document.getElementById("moodText");
+    const bennyIntroEl = document.getElementById("bennyIntro");
+    const modeLabelEl = document.getElementById("modeLabel");
+    const typeFilterEl = document.getElementById("typeFilter");
+    const filtersPanel = document.getElementById("filtersPanel");
+    const toggleFiltersBtn = document.getElementById("toggleFiltersBtn");
+    const difficultyFilterEl = document.getElementById("difficultyFilter");
+    const topicFilterEl = document.getElementById("topicFilter");
+    const languageSelectEl = document.getElementById("languageSelect");
+    const progressListsToggle = document.getElementById("progressListsToggle");
+    const progressListsContainer = document.getElementById("progressListsContainer");
+    const progressPanelEl = document.getElementById("progressPanel");
+    const progressToggleBtn = document.getElementById("progressToggleBtn");
+    const controlsEl = document.querySelector(".controls");
+    const progressCloseBtn = document.getElementById("progressCloseBtn");
+
+ 
+/* Show / hide the word lists inside the progress panel */
+if (progressListsToggle && progressListsContainer) {
+  progressListsToggle.addEventListener("click", () => {
+    const isHidden = progressListsContainer.hasAttribute("hidden");
+
+    if (isHidden) {
+      progressListsContainer.removeAttribute("hidden");
+      progressListsToggle.textContent = "▼ Hide lists";
+    } else {
+      progressListsContainer.setAttribute("hidden", "true");
+      progressListsToggle.textContent = "▶ Show lists";
+    }
+  });
+}
+
+/* Open/close the whole progress overlay */
+function setProgressOpen(isOpen) {
+  if (!progressPanelEl) return;
+
+  if (isOpen) {
+    progressPanelEl.classList.add("open");
+  } else {
+    progressPanelEl.classList.remove("open");
+  }
+
+  // Hide or show the main control bar
+  if (controlsEl) {
+    controlsEl.classList.toggle("hidden", isOpen);
+  }
+
+  // Reset the lists toggle when opening
+  if (isOpen && progressListsContainer && progressListsToggle) {
+    progressListsContainer.setAttribute("hidden", "true");
+    progressListsToggle.textContent = "▶ Show lists";
+  }
+
+  // Update the footer button text
+  if (progressToggleBtn) {
+    progressToggleBtn.textContent = isOpen ? "✖ Close progress" : "📊 Progress";
+  }
+}
+
+/* Footer "Progress" button */
+if (progressToggleBtn) {
+  progressToggleBtn.addEventListener("click", () => {
+    const isCurrentlyOpen = progressPanelEl.classList.contains("open");
+    setProgressOpen(!isCurrentlyOpen);
+  });
+}
+
+/* Close button inside the panel */
+if (progressCloseBtn) {
+  progressCloseBtn.addEventListener("click", () => {
+    setProgressOpen(false);
+  });
+}
+
+    let currentIndex = -1;
+    let treatCount = 0;
+    let streak = 0;
+    // "bgToEn" or "enToBg"
+    let mode = "bgToEn";
+    // Filters: "any" = no filter
+    let currentTypeFilter = "any";
+    let currentDifficultyFilter = "any";
+    let currentTopicFilter = "any";
+    // UI state
+let focusLock = false;   // hides mood + filters during practice focus
+    
+// --- Spaced Repetition state, stored per language ---
+let srsProgress = {
+  bg: {},  // phraseIndex -> { box, due, lastSeen, correctStreak, total }
+  ge: {}
+};
+
+
+// Language: "bg" = Bulgarian, "ge" = Georgian
+let currentLanguage = "bg";
+
+async function loadOrCreateSession() {
+  const now = Date.now();
+
+  try {
+    const raw = localStorage.getItem(SESSION_KEY);
+    if (!raw) return startNewSession("First run");
+
+    const prev = JSON.parse(raw);
+    if (!prev || !prev.id || !prev.startedAt) return startNewSession("Invalid session data");
+
+    const age = now - prev.startedAt;
+
+    if (age < ONE_HOUR) {
+      const choice = await showSessionChoiceModal({
+        title: "Continue session?",
+        text: "Continue your current session (timer resets to 1 hour), or start a new one?"
+      });
+
+      return (choice === "continue") ? startNewSession("Continue chosen (reset timer)") 
+                                    : startNewSession("User started new session");
+    }
+
+    return startNewSession("Session expired (>1 hour)");
+  } catch (e) {
+    console.warn("Session load failed, starting new session.", e);
+    return startNewSession("Session load error");
+  }
+}
+
+function startNewSession(reason) {
+  const now = Date.now();
+  const s = { id: "sess_" + now, startedAt: now };
+  localStorage.setItem(SESSION_KEY, JSON.stringify(s));
+  console.log("New session:", reason, s);
+  return s;
+}
+
+const languageFiles = {
+  bg: "word_database_bg.csv",
+  ge: "word_database_ge.csv"
+};
+function getSRSKeyForCurrentLanguage() {
+  return "bennySRS_v1_" + currentLanguage;
+}
+
+function loadSRSForCurrentLanguage() {
+  const key = getSRSKeyForCurrentLanguage();
+  try {
+    const raw = window.localStorage.getItem(key);
+    if (raw) {
+      const data = JSON.parse(raw);
+      if (typeof data === "object" && data !== null) {
+        srsProgress[currentLanguage] = data;
+      } else {
+        srsProgress[currentLanguage] = {};
+      }
+    } else {
+      srsProgress[currentLanguage] = {};
+    }
+  } catch (e) {
+    console.warn("Could not load SRS data:", e);
+    srsProgress[currentLanguage] = {};
+  }
+}
+
+function saveSRSForCurrentLanguage() {
+  const key = getSRSKeyForCurrentLanguage();
+  try {
+    const toSave = srsProgress[currentLanguage] || {};
+    window.localStorage.setItem(key, JSON.stringify(toSave));
+  } catch (e) {
+    console.warn("Could not save SRS data:", e);
+  }
+}
+
+function getStatsForIndex(idx) {
+  const langMap = srsProgress[currentLanguage] || {};
+  const info = langMap[String(idx)] || null;
+
+  const total   = info?.total ?? 0;
+  const correct = info?.correct ?? 0;
+  const wrong   = info?.wrong  ?? Math.max(0, total - correct);
+  const box     = info?.box    ?? 1;
+
+  const accuracy = total > 0 ? correct / total : 0;
+
+  // Lifetime
+  const neverTested = total === 0;
+  const learned = (total >= 4 && accuracy >= 0.75);
+  const notLearned = !learned;
+
+  const difficult = !!info?.everDifficult;
+  const tricky = (total >= 3 && accuracy < 0.5);
+
+  // Session-based (1 hour session)
+  const testedThisSession = !!info?.lastSessionId && info.lastSessionId === sessionInfo.id;
+  const untestedThisSession = !testedThisSession;
+
+  // Last wrong
+  const lastWrong = !!info?.lastWasWrong;
+
+  return {
+    total,
+    correct,
+    wrong,
+    box,
+    accuracy,
+    neverTested,
+    learned,
+    notLearned,
+    difficult,
+    tricky,
+    testedThisSession,
+    untestedThisSession,
+    lastWrong
+  };
+}
+
+function passesStatusFilter(idx) {
+  const stats = getStatsForIndex(idx);
+
+  switch (currentStatusFilter) {
+    case "untestedSession": return stats.untestedThisSession;
+    case "neverTested":     return stats.neverTested;
+    case "lastWrong":       return stats.lastWrong;   // 👈 ADD THIS
+    case "tricky":          return stats.tricky;
+    case "difficult":       return stats.difficult;
+    case "notLearned":      return stats.notLearned;
+    case "all":
+    default:
+      return true;
+  }
+}
+
+
+
+    function pickRandomIndex() {
+  if (!phrases || phrases.length === 0) return -1;
+
+  // 1) Filter by Type / Level / Topic
+  const baseCandidates = [];
+  for (let i = 0; i < phrases.length; i++) {
+    const p = phrases[i];
+    if (!p) continue;
+
+    const typeOk =
+      currentTypeFilter === "any" || (p.type && p.type === currentTypeFilter);
+
+    const diffOk =
+      currentDifficultyFilter === "any" ||
+      (p.difficulty && p.difficulty === currentDifficultyFilter);
+
+    const topicOk =
+      currentTopicFilter === "any" ||
+      (p.topic && p.topic === currentTopicFilter);
+
+    if (typeOk && diffOk && topicOk) {
+      baseCandidates.push(i);
+    }
+  }
+
+  // No phrase matches the type/level/topic filters
+  if (baseCandidates.length === 0) {
+    return -1;
+  }
+
+  // 2) Apply status filter (untested/tested/tricky/difficult/notLearned/all)
+  const statusCandidates = baseCandidates.filter(idx => passesStatusFilter(idx));
+
+  // Nothing matches the status filter → NO MATCH
+  if (statusCandidates.length === 0) {
+    return -1;
+  }
+
+  // 3) Spaced repetition weighting within statusCandidates
+  const langMap   = srsProgress[currentLanguage] || {};
+  const todayStr  = new Date().toISOString().slice(0, 10);
+
+  const dueNow = [];
+  const notDue = [];
+
+  for (const idx of statusCandidates) {
+    const info = langMap[String(idx)];
+    if (!info || !info.due || info.due <= todayStr) {
+      dueNow.push(idx);      // new or due items
+    } else {
+      notDue.push(idx);
+    }
+  }
+
+  // Prefer due items; if none, use all statusCandidates
+  const pool = (dueNow.length > 0 ? dueNow : statusCandidates);
+
+  // Still nothing? (defensive, but safe)
+  if (pool.length === 0) {
+    return -1;
+  }
+
+  if (pool.length === 1) return pool[0];
+
+  // Simple weighting: lower boxes (1) appear more often than higher ones (5)
+  function getBox(idx) {
+    const info = langMap[String(idx)];
+    return info && info.box ? info.box : 1;
+  }
+
+  function getWeight(idx) {
+    const box = getBox(idx);      // 1–5
+    return Math.max(1, 6 - box);  // box1=5, box5=1
+  }
+
+  let totalWeight = 0;
+  for (const idx of pool) {
+    totalWeight += getWeight(idx);
+  }
+
+  let r = Math.random() * totalWeight;
+  for (const idx of pool) {
+    const w = getWeight(idx);
+    if (r < w) return idx;
+    r -= w;
+  }
+
+  // Fallback (should rarely hit)
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+   function updateMood() {
+  // If any of the mood elements are missing, don't crash the app
+    if (!moodDotEl || !moodTextEl || !bennyIntroEl || !streakValueEl) {
+    console.warn("Mood elements missing from DOM; skipping mood update.");
+    return;
+    }
+
+    if (streak <= 1) {
+    moodDotEl.classList.remove("mood-happy", "mood-hopeful");
+    moodTextEl.textContent = "Starving (obviously)";
+    bennyIntroEl.textContent = "Аз никога не съм ял, обещавам…";
+    } else if (streak <= 4) {
+    moodDotEl.classList.remove("mood-happy");
+    moodDotEl.classList.add("mood-hopeful");
+    moodTextEl.textContent = "Hopeful… chicken is coming.";
+    bennyIntroEl.textContent = "Само още една фраза и може би ще има лакомство…";
+  } else {
+    moodDotEl.classList.remove("mood-hopeful");
+    moodDotEl.classList.add("mood-happy");
+    moodTextEl.textContent = "Blissfully full (for now).";
+    bennyIntroEl.textContent = "Добре, днес си отличен ученик. Заслужаваш похвала!";
+  }
+
+    streakValueEl.textContent = String(streak);
+}
+function updateMoodVisibility() {
+  const translationVisible =
+    translationPanelEl?.classList.contains("visible");
+
+  const filtersOpen =
+    filtersPanel?.classList.contains("open");
+
+  const shouldShowMood = !translationVisible && !filtersOpen;
+
+  setFooterVisible(shouldShowMood);
+
+}
+
+
+function getLanguageLabel() {
+  if (currentLanguage === "ge") return "GE";  // or "GE" if you prefer
+  return "BG";                                // default for Bulgarian
+}
+
+
+  function updateModeUI() {
+  if (mode === "bgToEn") {
+    modeLabelEl.textContent = "BG ➜ EN phrases";
+  } else {
+    modeLabelEl.textContent = "EN ➜ BG phrases";
+  }
+}
+
+
+    function showPhrase(index) {
+      if (index < 0 || index >= phrases.length) {
+        bgPhraseEl.textContent = "Няма фрази. Добави още в кода.";
+        if (bgHintEl) bgHintEl.textContent = "";
+        translationTextEl.textContent = "";
+        translationPanelEl.classList.remove("visible");
+        resetLatinControls();
+        setFooterVisible(true);
+        return;
+      }
+
+      const phrase = phrases[index];
+      currentIndex = index;
+
+      if (mode === "bgToEn") {
+        bgPhraseEl.textContent = phrase.bg;
+        translationTextEl.textContent = phrase.en;
+        translationLabelEl.textContent = "English";
+      } else {
+        bgPhraseEl.textContent = phrase.en;
+        translationTextEl.textContent = phrase.bg;
+        translationLabelEl.textContent = "Bulgarian";
+      }
+
+      latinTextEl.textContent = phrase.lat || "";
+
+      translationPanelEl.classList.remove("visible");
+     resetLatinControls();
+      if (bgHintEl) bgHintEl.textContent = "";
+    }
+
+    function handleNewPhrase() {
+  // ✅ New phrase = translation is "closed" and UI can reset
+  translationPanelEl.classList.remove("visible"); // close translation panel if open
+  resetLatinControls();                           // hide latin again (optional but consistent)
+  setFooterVisible(true);                         // show mood/footer again
+
+  // ✅ auto-hide filters so the screen is clean
+  setFiltersOpen(false);
+
+  const index = pickRandomIndex();
+
+  if (index === -1) {
+    // No phrases match the current filters
+    bgPhraseEl.textContent = "No phrases match these filters.";
+    if (bgHintEl) {
+      bgHintEl.textContent = "Try relaxing Type / Level / Topic.";
+    }
+
+    translationTextEl.textContent = "";
+    translationPanelEl.classList.remove("visible");
+
+    resetLatinControls();
+    setFooterVisible(true);
+    return;
+  }
+
+  showPhrase(index);
+}
+
+
+
+    function showTranslation() {
+      translationPanelEl.classList.add("visible");
+       // optional: also hide filters when you reveal translation
+      setFiltersOpen(false);
+      setFooterVisible(false);
+      updateMoodVisibility();
+    }
+
+    function toggleLatin() {
+  const isVisible = latinLineEl.classList.contains("visible");
+  const langLabel = getLanguageLabel();
+
+  if (isVisible) {
+    latinLineEl.classList.remove("visible");
+    latinLabelEl.textContent = `Latin (${langLabel})`;
+  } else {
+    latinLineEl.classList.add("visible");
+    toggleLatinBtn.textContent = "Hide Lat";
+  }
+} 
+
+ function updateSRS(index, isCorrect) {
+  if (index == null || index < 0) return;
+
+  const lang = currentLanguage;
+  const langMap = srsProgress[lang] || (srsProgress[lang] = {});
+  const key = String(index);
+  const now = new Date();
+
+  // Initialise full stats object if it doesn't exist yet
+  let info = langMap[key] || {
+    box: 1,
+    correctStreak: 0,
+    wrongStreak: 0,
+    total: 0,
+    correct: 0,
+    wrong: 0,
+    everDifficult: false,
+
+    // NEW: session + last-wrong tracking
+    lastSessionId: null,
+    lastWasWrong: false
+  };
+
+  // Basic counts
+  info.total += 1;
+
+  if (isCorrect) {
+    info.correct += 1;
+    info.correctStreak += 1;
+    info.wrongStreak = 0;          // reset wrong streak
+  } else {
+    info.wrong += 1;
+    info.wrongStreak += 1;
+    info.correctStreak = 0;        // reset correct streak
+  }
+
+  // NEW: mark "tested this session" + last-wrong flag
+  // (sessionInfo is the 1-hour session object you added in Step 2)
+  info.lastSessionId = sessionInfo.id;
+  info.lastWasWrong = !isCorrect;
+
+  // Mark as "difficult" if 5 wrong in a row – permanent
+  if (info.wrongStreak >= 5) {
+    info.everDifficult = true;
+  }
+
+  // Box movement: promote after 2 correct in a row, demote on any wrong
+  if (isCorrect) {
+    if (info.box < 5 && info.correctStreak >= 2) {
+      info.box += 1;
+      info.correctStreak = 0;      // start a new streak in the higher box
+    }
+  } else {
+    info.box = Math.max(1, info.box - 1);
+  }
+
+  // Next due date based on box
+  const boxDays = { 1: 0, 2: 1, 3: 3, 4: 7, 5: 14 };
+  const days = boxDays[info.box] ?? 0;
+  const due = new Date(now.getTime() + days * 24 * 60 * 60 * 1000);
+
+  info.due = due.toISOString().slice(0, 10);
+  info.lastSeen = now.toISOString();
+
+  langMap[key] = info;
+  saveSRSForCurrentLanguage();
+}
+
+function recomputeProgressReport() {
+  if (!phrases || phrases.length === 0) return;
+
+  let countUntestedRun = 0;
+  let countUnlearned   = 0;   // (we’ll rename to Last wrong later if you want)
+  let countDifficult   = 0;
+  let countLearned     = 0;
+
+  const listUntestedEl  = document.getElementById("neverTestedList"); // your UL id
+  const listUnlearnedEl = document.getElementById("unlearnedList");
+  const listDifficultEl = document.getElementById("difficultList");
+  const listLearnedEl   = document.getElementById("learnedList");
+
+  if (listUntestedEl)  listUntestedEl.innerHTML  = "";
+  if (listUnlearnedEl) listUnlearnedEl.innerHTML = "";
+  if (listDifficultEl) listDifficultEl.innerHTML = "";
+  if (listLearnedEl)   listLearnedEl.innerHTML   = "";
+
+  for (let i = 0; i < phrases.length; i++) {
+    const p = phrases[i];
+    if (!p) continue;
+
+    // Respect Type / Level / Topic filters (NOT status filter)
+    const typeOk =
+      currentTypeFilter === "any" || (p.type && p.type === currentTypeFilter);
+
+    const diffOk =
+      currentDifficultyFilter === "any" ||
+      (p.difficulty && p.difficulty === currentDifficultyFilter);
+
+    const topicOk =
+      currentTopicFilter === "any" || (p.topic && p.topic === currentTopicFilter);
+
+    if (!typeOk || !diffOk || !topicOk) continue;
+
+    const stats = getStatsForIndex(i);
+
+    // Untested this run (session)
+      if (stats.untestedThisSession) {
+        countUntestedRun++;
+      if (listUntestedEl) {
+        const li = document.createElement("li");
+        li.textContent = p.bg || p.en || "(empty)";
+        listUntestedEl.appendChild(li);
+      }
+    }
+
+    // Last wrong
+    if (stats.lastWrong) {
+      countUnlearned++;
+    if (listUnlearnedEl) {
+    const li = document.createElement("li");
+    li.textContent = p.bg || p.en || "(empty)";
+    listUnlearnedEl.appendChild(li);
+  }
+}
+
+
+    if (stats.difficult) {
+      countDifficult++;
+      if (listDifficultEl) {
+        const li = document.createElement("li");
+        li.textContent = p.bg || p.en || "(empty)";
+        listDifficultEl.appendChild(li);
+      }
+    }
+
+    if (stats.learned) {
+      countLearned++;
+      if (listLearnedEl) {
+        const li = document.createElement("li");
+        li.textContent = p.bg || p.en || "(empty)";
+        listLearnedEl.appendChild(li);
+      }
+    }
+  }
+
+  // Update the numbers (your existing IDs)
+  const elUntested  = document.getElementById("neverTestedValue"); // label says “Untested this run”
+  const elUnlearned = document.getElementById("unlearnedValue");
+  const elDifficult = document.getElementById("difficultValue");
+  const elLearned   = document.getElementById("learnedValue");
+
+  if (elUntested)  elUntested.textContent  = String(countUntestedRun);
+  if (elUnlearned) elUnlearned.textContent = String(countUnlearned);
+  if (elDifficult) elDifficult.textContent = String(countDifficult);
+  if (elLearned)   elLearned.textContent   = String(countLearned);
+}
+
+
+  function handleAnswer(isCorrect) {
+  // (No markSeenThisSession anymore — session is tracked via lastSessionId)
+
+  if (isCorrect) {
+    streak++;
+    treatCount++;
+    if (treatCountEl) treatCountEl.textContent = String(treatCount);
+  } else {
+    streak = 0;
+  }
+
+  // Show translation
+  if (translationPanelEl) translationPanelEl.classList.add("visible");
+
+  // Update Benny’s mood
+  updateMood();
+
+  // Update spaced repetition progress (lifetime + session markers)
+  updateSRS(currentIndex, isCorrect);  // updateSRS now saves too (or handleAnswer saves right after)
+  saveSRSForCurrentLanguage();
+
+  // Recompute the progress summary + lists
+  recomputeProgressReport();
+
+  // Serve a new phrase
+  handleNewPhrase();
+}
+
+
+function markCorrect() {
+  handleAnswer(true);
+}
+
+function markWrong() {
+  handleAnswer(false);
+}
+
+    function toggleMode() {
+    mode = mode === "bgToEn" ? "enToBg" : "bgToEn";
+    updateModeUI();
+    if (currentIndex !== -1) {
+    showPhrase(currentIndex);
+    }
+}
+
+    // Button wiring
+    newPhraseBtn.addEventListener("click", handleNewPhrase);
+    toggleModeBtn.addEventListener("click", toggleMode);
+    showTranslationBtn.addEventListener("click", showTranslation);
+    toggleLatinBtn.addEventListener("click", toggleLatin);
+    markCorrectBtn.addEventListener("click", markCorrect);
+    markWrongBtn.addEventListener("click", markWrong);
+
+   
+// Close button inside the overlay
+if (progressCloseBtn && progressPanelEl) {
+  progressCloseBtn.addEventListener("click", () => {
+    setProgressOpen(false);
+  });
+}
+
+    if (typeFilterEl) {
+    typeFilterEl.addEventListener("change", () => {
+    currentTypeFilter = typeFilterEl.value;
+    handleNewPhrase();
+    recomputeProgressReport();
+    });
+  }
+    if (difficultyFilterEl) {
+    difficultyFilterEl.addEventListener("change", () => {
+    currentDifficultyFilter = difficultyFilterEl.value;
+    handleNewPhrase();
+    recomputeProgressReport();
+    });
+  }
+
+    if (topicFilterEl) {
+    topicFilterEl.addEventListener("change", () => {
+    currentTopicFilter = topicFilterEl.value;
+    recomputeProgressReport();
+  });
+  }
+    if (statusFilterEl) {
+    statusFilterEl.addEventListener("change", () => {
+    currentStatusFilter = statusFilterEl.value;
+    handleNewPhrase();
+    recomputeProgressReport();
+  });
+  }
+
+  if (languageSelectEl) {
+  languageSelectEl.value = currentLanguage;  // ensure dropdown matches state
+  languageSelectEl.addEventListener("change", () => {
+    currentLanguage = languageSelectEl.value;
+
+    // Reset indexes and counters so new language starts fresh
+    currentIndex = -1;
+    streak = 0;
+    treatCount = 0;
+
+  // NEW: Start a fresh session on language switch (recommended)
+  sessionInfo = startNewSession("Language changed");
+
+
+    if (streakValueEl) streakValueEl.textContent = "0";
+    if (treatCountEl) treatCountEl.textContent = "0";
+
+    // Reset Benny mood
+    updateMood();
+    updateModeUI();       // <- update header mode labels
+    resetLatinControls(); // <- update Latin text labels
+
+    // Reload CSV for the selected language
+    loadPhrasesFromFile();
+  });
+}
+   // Helper: open/close the filters panel
+function setFiltersOpen(isOpen) {
+  if (!filtersPanel || !toggleFiltersBtn) return;
+
+  if (isOpen) {
+    filtersPanel.classList.add("open");
+    setFooterVisible(false);   // ✅ hide mood/footer when filters open
+  } else {
+    filtersPanel.classList.remove("open");
+    setFooterVisible(true);    // ✅ show mood/footer when filters close
+  }
+
+  toggleFiltersBtn.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+}
+
+
+// Benny filters toggle
+if (toggleFiltersBtn && filtersPanel) {
+  toggleFiltersBtn.addEventListener("click", () => {
+    const isOpen = !filtersPanel.classList.contains("open");
+    setFiltersOpen(isOpen);
+  });
+}
+window.addEventListener("DOMContentLoaded", () => {
+  initApp();
+});
+
+    // Keyboard shortcuts:
+    // N=new, M=mode, C=correct, W=wrong, T=translation, L=Latin
+    document.addEventListener("keydown", (event) => {
+      if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") return;
+      const key = event.key.toLowerCase();
+      if (key === "n") handleNewPhrase();
+      else if (key === "m") toggleMode();
+      else if (key === "c") markCorrect();
+      else if (key === "w") markWrong();
+      else if (key === "t") showTranslation();
+      else if (key === "l") toggleLatin();
+    });
+
+    </script>
+
+  <!-- SESSION MODAL -->
+ 
+</div>
+
+</div> <!-- end of .app -->
+</body>
+</html>

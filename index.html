@@ -1493,9 +1493,15 @@ async function initApp() {
   loadPhrasesFromFile();  // this will call handleNewPhrase() when ready
   updateMood();
 }
-window.addEventListener("DOMContentLoaded", initApp);
+let appStarted = false;
 
+function initAppOnce() {
+  if (appStarted) return;
+  appStarted = true;
+  initApp();
+}
 
+window.addEventListener("DOMContentLoaded", initAppOnce, { once: true });
 
 function escapeHtml(str) {
   return String(str)
@@ -1510,9 +1516,9 @@ function resetLatinControls() {
   if (latinLabelEl) {
     latinLabelEl.textContent = `Latin (${langLabel})`;
   }
-  if (toggleLatinBtn) {
-    latinLabelEl.textContent = `Latin (${langLabel})`;
-  }
+ if (toggleLatinBtn) {
+  toggleLatinBtn.textContent = `Lat (${langLabel})`;
+}
 }
 
 function showSessionChoiceModal({ title, text }) {
@@ -2486,9 +2492,6 @@ if (toggleFiltersBtn && filtersPanel) {
     setFiltersOpen(isOpen);
   });
 }
-window.addEventListener("DOMContentLoaded", () => {
-  initApp();
-});
 
     // Keyboard shortcuts:
     // N=new, M=mode, C=correct, W=wrong, T=translation, L=Latin

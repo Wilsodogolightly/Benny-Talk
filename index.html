@@ -1476,89 +1476,9 @@
 
 
   <script>
-    const fallbackPhrases = [
-      {
-        bg: "ðØð░ð©ÐüÐéð©ð¢ð░ ð╗ð© ð¢ÐÅð╝ð░ ð┐ð¥ð▓ðÁÐçðÁ ð┐ð©ð╗ðÁÐêð║ð¥ ðÀð░ ð╝ðÁð¢?",
-        en: "Is there really no more chicken for me?",
-        lat: "Naistina li nyama poveche pileshko za men?",
-        type: "question",
-        difficulty: "A2",
-        topic: "food"
-      },
-      {
-        bg: "TO ADD .",
-        en: "Look at these sad eyes and reconsider the treat.",
-        lat: "Pogledni tezi tazhni ochi i pomisli pak za lakomstvo.",
-        type: "persuasion",
-        difficulty: "B1",
-        topic: "dogs"
-      },
-      {
-        bg: "TO ADD .",
-        en: "I promise to be very well behaved - for at least five minutes.",
-        lat: "Obeshtavam da bada mnogo poslushen... pone pet minuti.",
-        type: "promise",
-        difficulty: "A2",
-        topic: "behaviour"
-      },
-      {
-        bg: "TO ADD ?",
-        en: "Are you sure my bowl is really empty?",
-        lat: "Siguren li si, che kupata mi e naistina prazna?",
-        type: "question",
-        difficulty: "A2",
-        topic: "food"
-      },
-      {
-        bg: "TO ADD .",
-        en: "It's walk time, right? I make the rules.",
-        lat: "Vreme e za razhodka, nali? Az reshavam pravilata.",
-        type: "statement",
-        difficulty: "B1",
-        topic: "walks"
-      },
-      { 
-        bg: "TO ADD ?",
-        en: "Isn't it a wonderful idea to eat just a little more now?",
-        lat: "Ne e li chudesna ideya da hapnem oshte malko sega?",
-        type: "suggestion",
-        difficulty: "B1",
-        topic: "food"
-      },
-      {
-        bg: "TO ADD ",
-        en: "If you give me a treat, I'll allow you to study Bulgarian in peace.",
-        lat: "Ako mi dadesh lakomstvo, shte ti pozvolya da uchish balgarski na spokoystvie.",
-        type: "condition",
-        difficulty: "B1",
-        topic: "study"
-      },
-      {
-        bg: "TO ADD ",
-        en: "I'm hungry even though I just ate. It's science.",
-        lat: "Gladen sam, vupreki che toku-shto yadoh. Tova e nauka.",
-        type: "statement",
-        difficulty: "A2",
-        topic: "food"
-      },
-      {
-        bg: "TO ADD ",
-        en: "I'll keep looking this sad until you give in.",
-        lat: "Shte gledam taka tazhno, dokato ne se predadesh.",
-        type: "threat (cute)",
-        difficulty: "B1",
-        topic: "behaviour"
-      },
-      {
-        bg: "TO ADD ",
-        en: "The best Bulgarian students always bring chicken for the teacher.",
-        lat: "Nai-dobrite uchenitsi po balgarski vinagi nosyat pileshko za uchitelya.",
-        type: "statement",
-        difficulty: "B1",
-        topic: "study"
-      }
-    ];
-    let phrases = fallbackPhrases.slice();  // start with built-in phrases
+    
+let phrases = [];
+
 
 // ---------- Session constants (MUST be above loadOrCreateSession) ----------
 const SESSION_KEY = "benny_session_v1";
@@ -1661,13 +1581,20 @@ function loadPhrasesFromFile() {
       // If the file is effectively empty, fall back
       if (lines.length < 2) {
         console.warn("CSV is empty or only headers using fallback phrases for", currentLanguage);
-        phrases = fallbackPhrases.slice();
+        phrases = [];
         populateFilterOptions();
         loadSRSForCurrentLanguage();
         recomputeProgressReport();
-        handleNewPhrase();
-        return;
+
+        bgPhraseEl.textContent = "No phrases available.";
+      if (bgHintEl) {
+        bgHintEl.textContent = "The CSV file is empty or missing data.";
       }
+        translationPanelEl.classList.remove("visible");
+        resetLatinControls();
+        setFooterVisible(true);
+      return;
+    }
 
       // --- Simple CSV parser that handles commas + quotes ---
       function parseCSVLine(line) {
@@ -1728,11 +1655,18 @@ function loadPhrasesFromFile() {
     })
     .catch(err => {
       console.error("Could not load CSV for language", currentLanguage, "using fallback.", err);
-      phrases = fallbackPhrases.slice();
+      phrases = [];
       populateFilterOptions();
       loadSRSForCurrentLanguage();
       recomputeProgressReport();
-      handleNewPhrase();
+
+      bgPhraseEl.textContent = "Could not load phrases.";
+    if (bgHintEl) {
+      bgHintEl.textContent = "Check the CSV file and try again.";
+}
+      translationPanelEl.classList.remove("visible");
+      resetLatinControls();
+      setFooterVisible(true);
     });
 }
 

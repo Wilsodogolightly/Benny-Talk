@@ -550,6 +550,7 @@
     text-align: right;
   }
 
+
   .filter-group {
     display: flex;
     flex-direction: column;
@@ -606,8 +607,15 @@
   line-height: normal;
   box-sizing: border-box;
 }
-
-
+/* When Filters panel is open, hide everything else in the content card */
+    #filtersPanel.open ~ #bgPhrase,
+    #filtersPanel.open ~ #latinLine,
+    #filtersPanel.open ~ #enTranslation,
+    #filtersPanel.open ~ .controls,
+    #filtersPanel.open ~ .benny-footer,
+    #filtersPanel.open ~ .benny-runner {
+    display: none !important;
+}
 
   button {
     border: none;
@@ -1437,7 +1445,6 @@ const SESSION_KEY = "benny_session_v1";
 const ONE_HOUR = 60 * 60 * 1000;
 
 let sessionInfo = null;
-let isFiltersView = false;
 let appStarted = false;
 
     const statusFilterEl = document.getElementById("statusFilter");
@@ -1498,49 +1505,6 @@ const LARGE_TEXT_KEY = "benny_large_text_v1";
 
 // If you have a dedicated close button for the filters panel, define it here.
 // If you DON'T have one, leave this as null and the "if (closeFiltersBtn)" block will do nothing.
-const closeFiltersBtn = document.getElementById("closeFiltersBtn");
-
-// ---------- View update (visibility only) ----------
-function updateUIView() {
-  const hideForFilters = isFiltersView;
-
-  if (bgPhraseEl) bgPhraseEl.hidden = hideForFilters;
-  if (bgHintEl) bgHintEl.hidden = hideForFilters;
-
-  if (translationPanelEl) translationPanelEl.hidden = hideForFilters;
-
-  if (latinLineEl) {
-    latinLineEl.hidden = hideForFilters;
-    latinLineEl.classList.toggle(
-      "visible",
-      !hideForFilters && toggleLatinBtn && toggleLatinBtn.classList.contains("active")
-    );
-  }
-
-  if (controlsEl) controlsEl.hidden = hideForFilters;
-
-  if (bennyIntroEl) bennyIntroEl.hidden = hideForFilters;
-  if (progressToggleBtn) progressToggleBtn.hidden = hideForFilters;
-
-
-  if (filtersPanel) filtersPanel.hidden = !hideForFilters;
-
-  setFooterVisible(!hideForFilters);
-}
-
-if (toggleFiltersBtn) {
-  toggleFiltersBtn.onclick = () => {
-    isFiltersView = !isFiltersView;
-    updateUIView();
-  };
-}
-
-if (closeFiltersBtn) {
-  closeFiltersBtn.onclick = () => {
-    isFiltersView = false;
-    updateUIView();
-  };
-}
 
 // ---------- Utility ----------
 function escapeHtml(str) {

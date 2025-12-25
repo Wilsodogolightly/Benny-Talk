@@ -323,6 +323,29 @@
     opacity: 0.9;
     margin-right: 4px;
   }
+/* Latin line: label above, text centered */
+    #latinLine {
+    display: none;           /* keep existing behaviour */
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+  }
+
+  #latinLine.visible { 
+    display: flex; 
+  }
+
+  #latinLine #latinText {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  #latinLine .latin-label {
+    opacity: 0.85;
+    margin-right: 0;   /* remove your current right-margin */
+}
 
   .en-label {
     font-size: 0.8rem;
@@ -1174,9 +1197,21 @@
   font-size: 1.9rem;
 }
   /* Large text mode */
-  .content-card.large-text .bg-phrase { font-size: 1.78rem; line-height: 1.45; }
-  .content-card.large-text .en-translation { font-size: 1.78rem; line-height: 1.45; }
-  .content-card.large-text .latin-line { font-size: 1.35rem; line-height: 1.35;font-style: italic; color: #111827; /* black */ }
+  .content-card.large-text .bg-phrase {
+  font-size: 1.78rem;
+  line-height: 1.45;
+}
+  .content-card.large-text .en-translation {
+  font-size: 1.78rem;
+  line-height: 1.45;
+}
+  .content-card.large-text .latin-line {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  font-style: italic;
+  color: #f9fafb;        /* near-white */
+  font-weight: 500;     /* slightly stronger for large size */
+}
   
 .content-card.large-text{
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -2466,25 +2501,23 @@ if (progressCloseBtn && progressPanelEl) {
 
     // Reload CSV for the selected language
     loadPhrasesFromFile();
-  });
-}
-   // Helper: open/close the filters panel
-function setFiltersOpen(isOpen) {
-  if (!filtersPanel || !toggleFiltersBtn) return;
-
-  if (isOpen) {
-    filtersPanel.classList.add("open");
-    setFooterVisible(false);   // = hide mood/footer when filters open
-  } else {
-    filtersPanel.classList.remove("open");
-    setFooterVisible(true);    // = show mood/footer when filters close
+    });
   }
+   // Helper: open/close the filters panel
+    function setFiltersOpen(isOpen) {
+    if (!filtersPanel || !toggleFiltersBtn) return;
 
-  toggleFiltersBtn.setAttribute(
+    filtersPanel.classList.toggle("open", isOpen);
+
+    toggleFiltersBtn.setAttribute(
     "aria-expanded",
     isOpen ? "true" : "false"
-  );
-}
+    );
+
+  // Always let the unified rule decide footer visibility
+    updateMoodVisibility();
+  }
+
 
 
 // Benny filters toggle

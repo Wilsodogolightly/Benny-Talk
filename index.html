@@ -2080,18 +2080,15 @@ function passesStatusFilter(idx) {
 
     streakValueEl.textContent = String(streak);
 }
-function updateMoodVisibility() {
-  const translationVisible =
-    translationPanelEl?.classList.contains("visible");
+    function updateMoodVisibility() {
+    const translationVisible = translationPanelEl?.classList.contains("visible");
+    const filtersOpen = filtersPanel?.classList.contains("open");
+    const latinVisible = latinLineEl?.classList.contains("visible");
 
-  const filtersOpen =
-    filtersPanel?.classList.contains("open");
-
-  const shouldShowMood = !translationVisible && !filtersOpen;
-
-  setFooterVisible(shouldShowMood);
-
+    const shouldShowMood = !translationVisible && !filtersOpen && !latinVisible;
+    setFooterVisible(shouldShowMood);
 }
+
 
 
 function getLanguageLabel() {
@@ -2143,16 +2140,16 @@ function getLanguageLabel() {
     function handleNewPhrase() {
   //  New phrase = translation is "closed" and UI can reset
 
-  translationPanelEl.classList.remove("visible"); // close translation panel if open
-  resetLatinControls();                           // hide latin again (optional but consistent)
-  setFooterVisible(true);                         // show mood/footer again
+    translationPanelEl.classList.remove("visible"); // close translation panel if open
+    resetLatinControls();                           // hide latin again (optional but consistent)
+    updateMoodVisibility();
 
   //  auto-hide filters so the screen is clean
-  setFiltersOpen(false);
+    setFiltersOpen(false);
 
-  const index = pickRandomIndex();
+    const index = pickRandomIndex();
 
-  if (index === -1) {
+    if (index === -1) {
     // No phrases match the current filters
     bgPhraseEl.textContent = "No phrases match these filters.";
     if (bgHintEl) {
@@ -2163,7 +2160,7 @@ function getLanguageLabel() {
     translationPanelEl.classList.remove("visible");
 
     resetLatinControls();
-    setFooterVisible(true);
+    updateMoodVisibility();
     return;
   }
 
@@ -2173,29 +2170,31 @@ function getLanguageLabel() {
 
 
     function showTranslation() {
-      translationPanelEl.classList.add("visible");
-       // optional: also hide filters when you reveal translation
-      setFiltersOpen(false);
-      setFooterVisible(false);
-      updateMoodVisibility();
-    }
+    translationPanelEl.classList.add("visible");
+    setFiltersOpen(false);
+    updateMoodVisibility();
+}
 
-   function toggleLatin() {
-  const isVisible = latinLineEl.classList.contains("visible");
 
-  if (isVisible) {
+
+    function toggleLatin() {
+    const isVisible = latinLineEl.classList.contains("visible");
+
+    if (isVisible) {
     latinLineEl.classList.remove("visible");
     toggleLatinBtn.classList.remove("active");
     toggleLatinBtn.setAttribute("aria-pressed", "false");
-  } else {
+    } else {
     latinLineEl.classList.add("visible");
     toggleLatinBtn.classList.add("active");
     toggleLatinBtn.setAttribute("aria-pressed", "true");
   }
 
-  // Always keep the button label simple
-  toggleLatinBtn.textContent = "abc";
+    toggleLatinBtn.textContent = "abc";
+
+    updateMoodVisibility(); // <-- add this
 }
+
 
 
  function updateSRS(index, isCorrect) {
@@ -2385,8 +2384,8 @@ function recomputeProgressReport() {
   handleNewPhrase();
 }
 
-function markCorrect() { handleAnswer(true); }
-function markWrong() { handleAnswer(false); }
+    function markCorrect() { handleAnswer(true); }
+    function markWrong() { handleAnswer(false); }
 
 
 

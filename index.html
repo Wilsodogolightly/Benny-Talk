@@ -1187,41 +1187,6 @@
   border-radius: 999px;
   height: var(--btn-circle);
 }
-.answer-confirm{
-  position: sticky;
-  top: 0;                 /* stays visible when content scrolls */
-  z-index: 5;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-
-  padding: 8px 10px;
-  border-radius: 14px;
-  background: rgba(0,0,0,0.18);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-}
-
-.answer-confirm[hidden]{ display: none; }
-
-.answer-confirm-text{
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.92);
-}
-
-.answer-confirm-actions{
-  display: inline-flex;
-  gap: 8px;
-}
-
-.answer-tag{
-  padding: 6px 10px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
 
 </style>
 </head>
@@ -1342,14 +1307,6 @@
       <div id="enText"></div>
     </div>
 
-<div id="answerConfirmBar" class="answer-confirm" hidden>
-  <div class="answer-confirm-text" id="answerConfirmText">Recorded.</div>
-  <div class="answer-confirm-actions">
-    <button type="button" class="btn-ghost answer-tag" id="markEasyBtn">Easy</button>
-    <button type="button" class="btn-ghost answer-tag" id="markDifficultBtn">Difficult</button>
-  </div>
-</div>
-
     <!-- CONTROLS: -->
     <section class="controls" aria-label="Controls">
  
@@ -1392,7 +1349,7 @@
       </div>
 
       <div id="bennyIntro" class="benny-intro">
-        ðÉðÀ ð¢ð©ð║ð¥ð│ð░ ð¢ðÁ ÐüÐèð╝ ÐÅð╗, ð¥ð▒ðÁÐëð░ð▓ð░ð╝ÔÇª
+        Аз никога не съм ял, обещавам…
       </div>
 
       <div class="treats-row">
@@ -1480,25 +1437,112 @@ const SESSION_KEY = "benny_session_v1";
 const ONE_HOUR = 60 * 60 * 1000;
 
 let sessionInfo = null;
-
-
-async function initApp() {
-  sessionInfo = await loadOrCreateSession();
-
-  updateModeUI();
-  loadPhrasesFromFile();  // this will call handleNewPhrase() when ready
-  updateMood();
-}
+let isFiltersView = false;
 let appStarted = false;
 
-function initAppOnce() {
-  if (appStarted) return;
-  appStarted = true;
-  initApp();
+    const statusFilterEl = document.getElementById("statusFilter");
+    let currentStatusFilter = "all";
+
+const bennyFooterEl = document.querySelector(".benny-footer");
+
+function setFooterVisible(isVisible) {
+  if (!bennyFooterEl) return;
+  bennyFooterEl.style.display = isVisible ? "" : "none";
 }
 
-window.addEventListener("DOMContentLoaded", initAppOnce, { once: true });
+// ---------- DOM refs ----------
+const bgPhraseEl = document.getElementById("bgPhrase");
+const bgHintEl = document.getElementById("bgHint");
+const translationPanelEl = document.getElementById("enTranslation");
+const translationTextEl = document.getElementById("enText");
+const translationLabelEl = document.getElementById("translationLabel");
 
+const latinLineEl = document.getElementById("latinLine");
+const latinTextEl = document.getElementById("latinText");
+const latinLabelEl = document.getElementById("latinLabel");
+
+const newPhraseBtn = document.getElementById("newPhraseBtn");
+const showTranslationBtn = document.getElementById("showTranslationBtn");
+const toggleLatinBtn = document.getElementById("toggleLatinBtn");
+const toggleModeBtn = document.getElementById("toggleModeBtn");
+
+const markCorrectBtn = document.getElementById("markCorrectBtn");
+const markWrongBtn = document.getElementById("markWrongBtn");
+
+const treatCountEl = document.getElementById("treatCount");
+const streakValueEl = document.getElementById("streakValue");
+const moodDotEl = document.getElementById("moodDot");
+const moodTextEl = document.getElementById("moodText");
+
+const bennyIntroEl = document.getElementById("bennyIntro");
+const modeLabelEl = document.getElementById("modeLabel");
+
+const typeFilterEl = document.getElementById("typeFilter");
+const filtersPanel = document.getElementById("filtersPanel");
+const toggleFiltersBtn = document.getElementById("toggleFiltersBtn");
+const difficultyFilterEl = document.getElementById("difficultyFilter");
+const topicFilterEl = document.getElementById("topicFilter");
+const languageSelectEl = document.getElementById("languageSelect");
+
+const progressListsToggle = document.getElementById("progressListsToggle");
+const progressListsContainer = document.getElementById("progressListsContainer");
+const progressPanelEl = document.getElementById("progressPanel");
+const progressToggleBtn = document.getElementById("progressToggleBtn");
+const progressCloseBtn = document.getElementById("progressCloseBtn");
+
+const controlsEl = document.querySelector(".controls");
+const contentCardEl = document.querySelector(".content-card");
+const toggleLargeTextBtn = document.getElementById("toggleLargeTextBtn");
+
+const LARGE_TEXT_KEY = "benny_large_text_v1";
+
+// If you have a dedicated close button for the filters panel, define it here.
+// If you DON'T have one, leave this as null and the "if (closeFiltersBtn)" block will do nothing.
+const closeFiltersBtn = document.getElementById("closeFiltersBtn");
+
+// ---------- View update (visibility only) ----------
+function updateUIView() {
+  const hideForFilters = isFiltersView;
+
+  if (bgPhraseEl) bgPhraseEl.hidden = hideForFilters;
+  if (bgHintEl) bgHintEl.hidden = hideForFilters;
+
+  if (translationPanelEl) translationPanelEl.hidden = hideForFilters;
+
+  if (latinLineEl) {
+    latinLineEl.hidden = hideForFilters;
+    latinLineEl.classList.toggle(
+      "visible",
+      !hideForFilters && toggleLatinBtn && toggleLatinBtn.classList.contains("active")
+    );
+  }
+
+  if (controlsEl) controlsEl.hidden = hideForFilters;
+
+  if (bennyIntroEl) bennyIntroEl.hidden = hideForFilters;
+  if (progressToggleBtn) progressToggleBtn.hidden = hideForFilters;
+
+
+  if (filtersPanel) filtersPanel.hidden = !hideForFilters;
+
+  setFooterVisible(!hideForFilters);
+}
+
+if (toggleFiltersBtn) {
+  toggleFiltersBtn.onclick = () => {
+    isFiltersView = !isFiltersView;
+    updateUIView();
+  };
+}
+
+if (closeFiltersBtn) {
+  closeFiltersBtn.onclick = () => {
+    isFiltersView = false;
+    updateUIView();
+  };
+}
+
+// ---------- Utility ----------
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -1719,55 +1763,6 @@ function populateFilterOptions() {
   currentDifficultyFilter = "any";
   currentTopicFilter = "any";
 }
-    const statusFilterEl = document.getElementById("statusFilter");
-    let currentStatusFilter = "all";
-
-const bennyFooterEl = document.querySelector(".benny-footer");
-
-function setFooterVisible(isVisible) {
-  if (!bennyFooterEl) return;
-  bennyFooterEl.style.display = isVisible ? "" : "none";
-}
-
-    const bgPhraseEl = document.getElementById("bgPhrase");
-    const bgHintEl = document.getElementById("bgHint");
-    const translationPanelEl = document.getElementById("enTranslation");
-    const translationTextEl = document.getElementById("enText");
-    const translationLabelEl = document.getElementById("translationLabel");
-    const latinLineEl = document.getElementById("latinLine");
-    const latinTextEl = document.getElementById("latinText");
-    const latinLabelEl = document.getElementById("latinLabel");
-    const newPhraseBtn = document.getElementById("newPhraseBtn");
-    const showTranslationBtn = document.getElementById("showTranslationBtn");
-    const toggleLatinBtn = document.getElementById("toggleLatinBtn");
-    const toggleModeBtn = document.getElementById("toggleModeBtn");
-    const markCorrectBtn = document.getElementById("markCorrectBtn");
-    const markWrongBtn = document.getElementById("markWrongBtn");
-    const treatCountEl = document.getElementById("treatCount");
-    const streakValueEl = document.getElementById("streakValue");
-    const moodDotEl = document.getElementById("moodDot");
-    const moodTextEl = document.getElementById("moodText");
-    const bennyIntroEl = document.getElementById("bennyIntro");
-    const modeLabelEl = document.getElementById("modeLabel");
-    const typeFilterEl = document.getElementById("typeFilter");
-    const filtersPanel = document.getElementById("filtersPanel");
-    const toggleFiltersBtn = document.getElementById("toggleFiltersBtn");
-    const difficultyFilterEl = document.getElementById("difficultyFilter");
-    const topicFilterEl = document.getElementById("topicFilter");
-    const languageSelectEl = document.getElementById("languageSelect");
-    const progressListsToggle = document.getElementById("progressListsToggle");
-    const progressListsContainer = document.getElementById("progressListsContainer");
-    const progressPanelEl = document.getElementById("progressPanel");
-    const progressToggleBtn = document.getElementById("progressToggleBtn");
-    const controlsEl = document.querySelector(".controls");
-    const progressCloseBtn = document.getElementById("progressCloseBtn");
-    const contentCardEl = document.querySelector(".content-card");
-    const toggleLargeTextBtn = document.getElementById("toggleLargeTextBtn");
-    const LARGE_TEXT_KEY = "benny_large_text_v1";
-    const answerConfirmBar  = document.getElementById("answerConfirmBar");
-    const answerConfirmText = document.getElementById("answerConfirmText");
-    const markEasyBtn       = document.getElementById("markEasyBtn");
-    const markDifficultBtn  = document.getElementById("markDifficultBtn");
 
 
     function applyLargeText(isOn) {
@@ -2152,7 +2147,7 @@ function getLanguageLabel() {
 
     function showPhrase(index) {
       if (index < 0 || index >= phrases.length) {
-        bgPhraseEl.textContent = "ðØÐÅð╝ð░ ÐäÐÇð░ðÀð©. ðöð¥ð▒ð░ð▓ð© ð¥ÐëðÁ ð▓ ð║ð¥ð┤ð░.";
+        bgPhraseEl.textContent = "Няма фрази. Добави още в кода.";
         if (bgHintEl) bgHintEl.textContent = "";
         translationTextEl.textContent = "";
         translationPanelEl.classList.remove("visible");
@@ -2549,6 +2544,21 @@ if (toggleFiltersBtn && filtersPanel) {
       else if (key === "t") showTranslation();
       else if (key === "l") toggleLatin();
     });
+  async function initApp() {
+    sessionInfo = await loadOrCreateSession();
+
+    updateModeUI();
+    loadPhrasesFromFile();  // this will call handleNewPhrase() when ready
+    updateMood();
+}
+
+  function initAppOnce() {
+    if (appStarted) return;
+    appStarted = true;
+    initApp();
+}
+
+window.addEventListener("DOMContentLoaded", initAppOnce, { once: true });
 
     </script>
 

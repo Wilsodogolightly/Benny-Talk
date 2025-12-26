@@ -304,47 +304,44 @@
   }
 
   .latin-line {
-    overflow-wrap: break-word;
-    position: relative;
-    z-index: 1;
-    margin-top: 3px;
-    font-size: 1.0rem;
-    color: #f4f4f4;
-    font-weight: 500;
-    display: none;
-  }
+  overflow-wrap: break-word;
+  position: relative;
+  z-index: 1;
+  margin-top: 10px;
 
-  .latin-line.visible { display: block; }
+  font-size: 1.0rem;
+  color: #f4f4f4;
+  font-weight: 500;
 
-  .latin-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    opacity: 0.9;
-    margin-right: 4px;
-  }
-/* Latin line: label above, text centered */
-    #latinLine {
-    display: none;           /* keep existing behaviour */
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    text-align: center;
-  }
+  display: none;          /* hidden until .visible */
+  text-align: center;     /* whole block centered */
+}
 
-  #latinLine.visible { 
-    display: flex; 
-  }
+.latin-line.visible {
+  display: block;         /* normal block so text wraps naturally */
+}
 
-  #latinLine #latinText {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
+.latin-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+  white-space: nowrap;
+}
 
-  #latinLine .latin-label {
-    opacity: 0.85;
-    margin-right: 0;   /* remove your current right-margin */
+/* Dots between label and text */
+.latin-label::after{
+  content: "....";
+  margin: 0 10px 0 8px;
+  opacity: 0.8;
+}
+
+/* Keep latin text inline so it continues after the label, then wraps */
+#latinText{
+  display: inline;
+  line-height: 1.35;
 }
 
   .en-label {

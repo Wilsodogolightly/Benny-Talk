@@ -1409,6 +1409,7 @@ function loadPhrasesFromFile() {
         resetLatinControls();
         setFooterVisible(true);
         return;
+        
       }
 
       function parseCSVLine(line) {
@@ -1438,21 +1439,40 @@ function loadPhrasesFromFile() {
         return result;
       }
 
-      const header = parseCSVLine(lines[0]);
+        const header = parseCSVLine(lines[0]);
 
-      phrases = lines.slice(1).map(line => {
-        const cols = parseCSVLine(line);
+        const parsed = lines.slice(1)
+  .map(line => {
+    const cols = parseCSVLine(line);
 
-        const bg         = (cols[0] || "").trim();
-        const en         = (cols[1] || "").trim();
-        const lat        = (cols[2] || "").trim();
-        const type       = ((cols[3] || "").trim()) || "NONE";
-        const difficulty = ((cols[4] || "").trim()) || "NONE";
-        const topic      = ((cols[5] || "").trim()) || "NONE";
+    const id = (cols[0] || "").trim();
+    if (!id) return null;
 
-        return { bg, en, lat, type, difficulty, topic };
-      });
+    const bg = (cols[1] || "").trim();
+    const en = (cols[2] || "").trim();
+    const lat = (cols[3] || "").trim();
+    const type = ((cols[4] || "").trim()) || "NONE";
+    const difficulty = ((cols[5] || "").trim()) || "NONE";
+    const topic = ((cols[6] || "").trim()) || "NONE";
 
+    return { id, bg, en, lat, type, difficulty, topic };
+  });
+
+const dropped = parsed.filter(p => !p).length;
+phrases = parsed.filter(Boolean);
+
+if (dropped > 0) {
+  alert(`Warning: ${dropped} CSV row(s) were ignored because they are missing an id.`);
+}
+if (phrases.length === 0) {
+  bgPhraseEl.textContent = "No phrases available.";
+  if (bgHintEl) bgHintEl.textContent = "All rows were ignored (missing id).";
+  translationPanelEl.classList.remove("visible");
+  resetLatinControls();
+  setFooterVisible(true);
+  return;
+}
+     
       populateFilterOptions();
       loadSRSForCurrentLanguage();
       recomputeProgressReport();
@@ -1666,7 +1686,12 @@ function saveSRSForCurrentLanguage() {
 
 function getStatsForIndex(idx) {
   const langMap = srsProgress[currentLanguage] || {};
-  const info = langMap[String(idx)] || null;
+
+  const phrase = phrases?.[idx];
+  const pid = phrase?.id ? String(phrase.id) : null;
+
+  const info = pid ? (langMap[pid] || null) : null;
+
 
   const total   = info?.total ?? 0;
   const correct = info?.correct ?? 0;
@@ -1682,7 +1707,9 @@ function getStatsForIndex(idx) {
   const difficult = !!info?.everDifficult;
   const tricky = (total >= 3 && accuracy < 0.5);
 
-  const testedThisSession = !!info?.lastSessionId && info.lastSessionId === sessionInfo.id;
+  const testedThisSession =
+  !!info?.lastSessionId && !!sessionInfo?.id && info.lastSessionId === sessionInfo.id;
+
   const untestedThisSession = !testedThisSession;
 
   const lastWrong = !!info?.lastWasWrong;
@@ -1739,23 +1766,37 @@ function pickRandomIndex() {
   const statusCandidates = baseCandidates.filter(idx => passesStatusFilter(idx));
   if (statusCandidates.length === 0) return -1;
 
-  const langMap  = srsProgress[currentLanguage] || {};
-  const todayStr = new Date().toISOString().slice(0, 10);
+ const langMap  = srsProgress[currentLanguage] || {};
+const todayStr = new Date().toISOString().slice(0, 10);
 
-  const dueNow = [];
-  for (const idx of statusCandidates) {
-    const info = langMap[String(idx)];
-    if (!info || !info.due || info.due <= todayStr) dueNow.push(idx);
+const dueNow = [];
+const notDue = [];
+
+for (const idx of statusCandidates) {
+  const pid = phrases?.[idx]?.id ? String(phrases[idx].id) : null;
+  const info = pid ? langMap[pid] : null;
+
+  if (!info || !info.due || info.due <= todayStr) {
+    dueNow.push(idx);
+  } else {
+    notDue.push(idx);
   }
+}
 
-  const pool = (dueNow.length > 0 ? dueNow : statusCandidates);
-  if (pool.length === 0) return -1;
-  if (pool.length === 1) return pool[0];
+// Prefer due items; if none, use all statusCandidates
+const pool = (dueNow.length > 0 ? dueNow : statusCandidates);
 
-  function getBox(idx) {
-    const info = langMap[String(idx)];
-    return info && info.box ? info.box : 1;
-  }
+// Still nothing? (defensive)
+if (pool.length === 0) return -1;
+if (pool.length === 1) return pool[0];
+
+// Weighting: lower boxes appear more often
+function getBox(idx) {
+  const pid = phrases?.[idx]?.id ? String(phrases[idx].id) : null;
+  const info = pid ? langMap[pid] : null;
+  return info && info.box ? info.box : 1;
+}
+
   function getWeight(idx) {
     const box = getBox(idx);
     return Math.max(1, 6 - box);
@@ -1898,9 +1939,12 @@ function toggleLatin() {
 function updateSRS(index, isCorrect) {
   if (index == null || index < 0) return;
 
+  const phrase = phrases?.[index];
+  const key = phrase?.id ? String(phrase.id) : null;
+  if (!key) return;
+
   const lang = currentLanguage;
   const langMap = srsProgress[lang] || (srsProgress[lang] = {});
-  const key = String(index);
   const now = new Date();
 
   let info = langMap[key] || {
@@ -1914,6 +1958,7 @@ function updateSRS(index, isCorrect) {
     lastSessionId: null,
     lastWasWrong: false
   };
+
 
   info.total += 1;
 

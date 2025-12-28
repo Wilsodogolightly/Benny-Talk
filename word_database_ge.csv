@@ -1,299 +1,299 @@
-﻿bg,en,lat,type,difficulty,topic
-კულტურული,Cultural,k'ult'uruli,ADJECTIVE,EASY,
-სერიოზული,Serious,seriozuli,ADJECTIVE,EASY,
-ხშირი,Frequent / Often,khshiri,ADJECTIVE,EASY,
-მშვიდი,Calm / Peaceful,mshvidi,ADJECTIVE,EASY,
-მყუდრო,Cozy,mqudro,ADJECTIVE,EASY,
-საინტერესო,Interesting / Captivating,sainteresо,ADJECTIVE,EASY,
-სასარგებლო,Useful / Beneficial,sasargeblo,ADJECTIVE,EASY,
-უაზრო,Meaningless / Nonsensical,uazro,ADJECTIVE,EASY,
-კეთილი,Kind,k'etili,ADJECTIVE,EASY,
-მამაცი,Brave / Courageous,mamatsi,ADJECTIVE,EASY,
-ჭკვიანი,Smart / Clever,ch'k'viani,ADJECTIVE,EASY,
-პასუხისმგებელი,Responsible,p'asukhisamgebeli,ADJECTIVE,EASY,
-დაღლილი,Tired / Exhausted,daghlili,ADJECTIVE,EASY,
-გემრიელი,Delicious / Tasty,gemrieli,ADJECTIVE,EASY,
-ცხარე,Spicy / Hot,tskhare,ADJECTIVE,EASY,
-მჟავე,Sour / Acidic,mzhhave,ADJECTIVE,EASY,
-ნათელი,Bright / Clear (color or light),nateli,ADJECTIVE,EASY,
-ბნელი,Dark,bneli,ADJECTIVE,EASY,
-სწრაფი,Fast / Quick,st'srap'i,ADJECTIVE,EASY,
-ნელი,Slow,neli,ADJECTIVE,EASY,
-უცხო,Foreign / Strange,utskho,ADJECTIVE,EASY,
-ადგილობრივი,Local,adgilobrivi,ADJECTIVE,EASY,
-მნიშვნელოვანი,Important / Significant,mnishvnelovani,ADJECTIVE,EASY,
-საიდუმლო,Secret / Mysterious,saidumlo,ADJECTIVE,EASY,
-საიმედო,Reliable / Trustworthy,saimedo,ADJECTIVE,EASY,
-ღია,"Open (e.g., door, opportunity, color)",ghia,ADJECTIVE,EASY,
-დახურული,Closed,dakhuruli,ADJECTIVE,EASY,
-რთული,Difficult / Hard / Complex,rtuli,ADJECTIVE,EASY,
-მარტივი,Simple / Easy,mart'ivi,ADJECTIVE,EASY,
-გამოცდილი,Experienced,gamotsdili,ADJECTIVE,EASY,
-ახალგაზრდა,Young,akhalgazrda,ADJECTIVE,EASY,
-ხანდაზმული,Elderly / Aged,khandazmuli,ADJECTIVE,EASY,
-თავისუფალი,Free / Independent,tavisupali,ADJECTIVE,EASY,
-საყვარელი,Favorite / Beloved / Cute,saq'vareli,ADJECTIVE,EASY,
-ყოველდღიური,Everyday / Daily,q'oveldghiuri,ADJECTIVE,EASY,
-ცნობილი,Famous / Well-known,tsnobili,ADJECTIVE,EASY,
-უცნობი,Unknown,utsnobi,ADJECTIVE,EASY,
-სავალდებულო,Mandatory / Compulsory,savalddebulo,ADJECTIVE,EASY,
-ბუნებრივი,Natural,bunebrivi,ADJECTIVE,EASY,
-გამარჯობა,Hello,gamarjoba,SHORT,EASY,CONVERSATION
-დილა მშვიდობისა,Good morning,dila mshvidobisa,PHRASE,EASY,CONVERSATION
-ნახვამდის,Goodbye,nakhvamdis,SHORT,EASY,CONVERSATION
-როგორ ხარ?,How are you? (singular/informal),rogor khar?,PHRASE,EASY,CONVERSATION
-მადლობა,Thank you,madloba,SHORT,EASY,CONVERSATION
-არაფრის,You're welcome (It's nothing),arapris,SHORT,EASY,CONVERSATION
-კი / არა,Yes / No,ki / ara,SHORT,EASY,CONVERSATION
-ბოდიში,Excuse me / Sorry,bodishi,SHORT,EASY,CONVERSATION
-გთხოვთ,Please,gthkhovt,SHORT,EASY,CONVERSATION
-მიყვარხარ,I love you,miq'varkhar,SHORT,EASY,CONVERSATION
-საღამო მშვიდობისა,Good evening,saghamo mshvidobisa,PHRASE,EASY,CONVERSATION
-ღამე მშვიდობისა,Good night,ghame mshvidobisa,PHRASE,EASY,CONVERSATION
-ძალიან კარგად,Very well,dzalian kargad,PHRASE,EASY,CONVERSATION
-რა გქვია?,What is your name?,ra gkvia?,PHRASE,EASY,CONVERSATION
-ჩემი სახელია...,My name is...,chemi sakhelia...,PHRASE,EASY,CONVERSATION
-საიდან ხარ?,Where are you from?,saidan khar?,PHRASE,EASY,CONVERSATION
-მშვენიერი,Wonderful / Great,mshvenieri,SHORT,EASY,CONVERSATION
-გილოცავ!,Congratulations!,gilocav!,SHORT,EASY,CONVERSATION
-რა ღირს?,How much does it cost?,ra ghirs?,PHRASE,EASY,CONVERSATION
-გაიხარე!,"Cheers! / Be happy! (A common, versatile response)",gaikhare!,SHORT,EASY,CONVERSATION
-წერს,He writes,ts'ers,VERB,EASY,
-კითხულობს,He reads,kitkhulobs,VERB,EASY,
-ლაპარაკობს,He speaks/talks,lap'arak'obs,VERB,EASY,
-ჭამს,He eats,ch'ams,VERB,EASY,
-სვამს,He drinks,svams,VERB,EASY,
-ცხოვრობს,He lives,tskhovrobs,VERB,EASY,
-მუშაობს,He works,mushaobs,VERB,EASY,
-სწავლობს,He studies/learns,st's'avlobs,VERB,EASY,
-უყურებს,"He watches (e.g., TV)",uq'urebs,VERB,EASY,
-ხედავს,He sees,khedavs,VERB,EASY,
-ისმენს,He listens (to),ismens,VERB,EASY,
-იცის,He knows (a fact/how to),itsis,VERB,EASY,
-ფიქრობს,He thinks,pikrobs,VERB,EASY,
-იცინის,He laughs,itsinis,VERB,EASY,
-ტირის,He cries,t'iris,VERB,EASY,
-მღერის,He sings,mgheris,VERB,EASY,
-ცეკვავს,He dances,tsek'vavs,VERB,EASY,
-თამაშობს,He plays (a game/music),tamashobs,VERB,EASY,
-დგას,He stands,dgas,VERB,EASY,
-ზის,He sits,zis,VERB,EASY,
-წევს,He lies down,ts'evs,VERB,EASY,
-სძინავს,He sleeps,sdzinavs,VERB,EASY,
-მიდის,He goes/is going (general),midis,VERB,EASY,
-მოდის,He comes/is coming (to),modis,VERB,EASY,
-ჩადის,He goes down/arrives,chadis,VERB,EASY,
-ამოდის,He comes up,amodis,VERB,EASY,
-ყიდულობს,He buys,q'idulobs,VERB,EASY,
-ყიდის,He sells,q'idis,VERB,EASY,
-აშენებს,He builds,ashenebs,VERB,EASY,
-აძლევს,He gives (it to someone),adzlevs,VERB,EASY,
-ართმევს,He takes (it from someone),artmevs,VERB,EASY,
-ეხმარება,He helps (someone),ekhmareba,VERB,EASY,
-აცვია,He wears/is wearing (clothes),atsvia,VERB,EASY,
-აკეთებს,He does/makes,ak'et'ebs,VERB,EASY,
-აჩერებს,He stops (something/someone),acherebs,VERB,EASY,
-რჩება,He remains/stays,rcheba,VERB,EASY,
-იწყებს,He begins/starts (something),i'ts'q'ebs,VERB,EASY,
-ამთავრებს,He finishes,amtavrebs,VERB,EASY,
-უნდა,He wants/should,unda,VERB,EASY,
-შეუძლია,He can/is able to,sheudzlia,VERB,EASY,
-ოთახი,room,otakhi,SHORT,EASY,HOUSEHOLD
-ავეჯი,furniture,aveji,SHORT,EASY,HOUSEHOLD
-მაგიდა,table,magida,SHORT,EASY,HOUSEHOLD
-სკამი,chair,sk'ami,SHORT,EASY,HOUSEHOLD
-დივანი,sofa/couch,divani,SHORT,EASY,LIVING ROOM
-კარადა,closet/cupboard,k'arada,SHORT,EASY,HOUSEHOLD
-თარო,shelf,taro,SHORT,EASY,HOUSEHOLD
-ფანჯარა,window,panjara,SHORT,EASY,HOUSEHOLD
-კარი,door,k'ari,SHORT,EASY,HOUSEHOLD
-ფარდა,curtain,parda,SHORT,EASY,HOUSEHOLD
-ხალიჩა,rug/carpet,khalicha,SHORT,EASY,HOUSEHOLD
-ნათურა,lamp/lightbulb,natura,SHORT,EASY,HOUSEHOLD
-საათი,clock/watch,saati,SHORT,EASY,HOUSEHOLD
-ტელევიზორი,television,televizori,SHORT,EASY,LIVING ROOM
-სარკე,mirror,sark'e,SHORT,EASY,HOUSEHOLD
-სარეცხი მანქანა,washing machine,saretskhi mankana,MEDIUM,EASY,HOUSEHOLD
-სამრეცხაო,laundry room,samretskha'o,SHORT,EASY,HOUSEHOLD
-გასაღები,key (singular),gasaghebi,SHORT,EASY,HOUSEHOLD
-ხელსაწყო,tool,khelsats'q'o,SHORT,EASY,HOUSEHOLD
-ცოცხი,broom,tso'tskhi,SHORT,EASY,HOUSEHOLD
-ნაგავი,trash/garbage,nagavi,SHORT,EASY,HOUSEHOLD
-ელექტროობა,electricity,elekt'rooba,SHORT,EASY,HOUSEHOLD
-მილი,pipe,mili,SHORT,EASY,HOUSEHOLD
-საძინებელი,bedroom,sadzinebeli,SHORT,EASY,BEDROOM
-საწოლი,bed,sats'oli,SHORT,EASY,BEDROOM
-ლეიბი,mattress,leibi,SHORT,EASY,BEDROOM
-ბალიში,pillow,balishi,SHORT,EASY,BEDROOM
-საბანი,blanket,sabani,SHORT,EASY,BEDROOM
-ზეწარი,sheet,zets'ari,SHORT,EASY,BEDROOM
-გადასაფარებელი,bedspread,gadasaparebeli,MEDIUM,EASY,BEDROOM
-ტანსაცმელი,clothing/clothes,t'ansatsmeli,SHORT,EASY,CLOTHES
-საცვალი,drawer,satsvali,SHORT,EASY,BEDROOM
-საკიდი,hanger,sak'idi,SHORT,EASY,BEDROOM
-ფეხსაცმელი,shoe,pekhsatsmeli,SHORT,EASY,CLOTHES
-თეთრეული,linen,tetreuli,SHORT,EASY,BEDROOM
-სარეცხი,laundry,saretskhi,SHORT,EASY,HOUSEHOLD
-ფუნჯი,brush (general),punji,SHORT,EASY,HOUSEHOLD
-სამზარეულო,kitchen,samzareulo,SHORT,EASY,KITCHEN
-ღუმელი,oven,ghumeli,SHORT,EASY,KITCHEN
-მაცივარი,refrigerator,matsivari,SHORT,EASY,KITCHEN
-ჭურჭელი,dishes/crockery,ch'urch'eli,SHORT,EASY,KITCHEN
-ქვაბი,pot,kvabi,SHORT,EASY,KITCHEN
-ტაფა,pan,t'apa,SHORT,EASY,KITCHEN
-დანა,knife,dana,SHORT,EASY,KITCHEN
-ჩანგალი,fork,changali,SHORT,EASY,KITCHEN
-კოვზი,spoon,k'ovzi,SHORT,EASY,KITCHEN
-თეფში,plate,tepshi,SHORT,EASY,KITCHEN
-ჭიქა,cup/glass,ch'ikha,SHORT,EASY,KITCHEN
-ბოთლი,bottle,botli,SHORT,EASY,KITCHEN
-წყალი,water,ts'q'ali,SHORT,EASY,FOOD & DRINK
-პური,bread,p'uri,SHORT,EASY,FOOD & DRINK
-ყავა,coffee,q'ava,SHORT,EASY,FOOD & DRINK
-აბაზანა,bathroom / bath,abazana,SHORT,EASY,BATHROOM
-საპონი,soap,sap'oni,SHORT,EASY,BATHROOM
-ონკანი,faucet/tap,onk'ani,SHORT,EASY,BATHROOM
-ნიჟარა,sink/basin,nizhara,SHORT,EASY,BATHROOM
-შხაპი,shower,shkhap'i,SHORT,EASY,BATHROOM
-ტუალეტი,toilet,t'ualet'i,SHORT,EASY,BATHROOM
-სარჩული,drain,sarchuli,SHORT,EASY,BATHROOM
-პირსახოცი,towel,p'irsakhotsi,SHORT,EASY,BATHROOM
-თმის ჯაგრისი,hairbrush,tmis jagrisi,SHORT,EASY,BEDROOM
-პური,bread,p'uri,SHORT,EASY,FOOD & DRINK
-ყველი,cheese,q'veli,SHORT,EASY,FOOD & DRINK
-ხორცი,meat,khortsi,SHORT,EASY,FOOD & DRINK
-თევზი,fish,tevzi,SHORT,EASY,FOOD & DRINK
-კვერცხი,egg,k'v’ertskhi,SHORT,EASY,FOOD & DRINK
-რძე,milk,rdze,SHORT,EASY,FOOD & DRINK
-კარაქი,butter,k'arakhi,SHORT,EASY,FOOD & DRINK
-ზეთი,oil,zeti,SHORT,EASY,FOOD & DRINK
-შაქარი,sugar,shakari,SHORT,EASY,FOOD & DRINK
-მარილი,salt,marili,SHORT,EASY,FOOD & DRINK
-ფქვილი,flour,pkvili,SHORT,EASY,FOOD & DRINK
-ბრინჯი,rice,brinji,SHORT,EASY,FOOD & DRINK
-ცომი,dough,tsomi,SHORT,EASY,FOOD & DRINK
-მაწონი,matsoni (yogurt),mats'oni,SHORT,EASY,FOOD & DRINK
-თაფლი,honey,tapli,SHORT,EASY,FOOD & DRINK
-ხილი,fruit,khili,SHORT,EASY,FOOD & DRINK
-ბოსტნეული,vegetable,bostneuli,SHORT,EASY,FOOD & DRINK
-ვაშლი,apple,vashli,SHORT,EASY,FOOD & DRINK
-ბანანი,banana,banani,SHORT,EASY,FOOD & DRINK
-ყურძენი,grapes,q'urzeni,SHORT,EASY,FOOD & DRINK
-ფორთოხალი,orange,portokhali,SHORT,EASY,FOOD & DRINK
-კარტოფილი,potato,k'art'opili,SHORT,EASY,FOOD & DRINK
-პომიდორი,tomato,p'omido'ri,SHORT,EASY,FOOD & DRINK
-კიტრი,cucumber,k'it'ri,SHORT,EASY,FOOD & DRINK
-ხახვი,onion,khakhvi,SHORT,EASY,FOOD & DRINK
-ნიორი,garlic,niori,SHORT,EASY,FOOD & DRINK
-სალათის ფოთოლი,lettuce leaf,salatis potoli,SHORT,EASY,FOOD & DRINK
-სოკო,mushroom,sok'o,SHORT,EASY,FOOD & DRINK
-წიწაკა,pepper (chili/bell),ts'its'ak'a,SHORT,EASY,FOOD & DRINK
-ლობიო,beans/kidney beans,lobio,SHORT,EASY,FOOD & DRINK
-წყალი,water,ts'q'ali,SHORT,EASY,FOOD & DRINK
-ღვინო,wine,ghvino,SHORT,EASY,FOOD & DRINK
-ლუდი,beer,ludi,SHORT,EASY,FOOD & DRINK
-ჭაჭა,Chacha (grape brandy),ch'ach'a,SHORT,EASY,FOOD & DRINK
-ყავა,coffee,q'ava,SHORT,EASY,FOOD & DRINK
-ჩაი,tea,chai,SHORT,EASY,FOOD & DRINK
-წვენი,juice,ts'veni,SHORT,EASY,FOOD & DRINK
-ლიმონათი,lemonade,limonati,SHORT,EASY,FOOD & DRINK
-გაზიანი წყალი,sparkling water,gaziani ts'q'ali,SHORT,EASY,FOOD & DRINK
-ნატურალური,"natural (e.g., natural juice)",nat'uraluri,SHORT,EASY,FOOD & DRINK
-ტკბილი,sweet,t'k'bili,SHORT,EASY,FOOD & DRINK
-მწარე,bitter/spicy,m'ts'are,SHORT,EASY,FOOD & DRINK
-ცივი,cold,tsivi,SHORT,EASY,FOOD & DRINK
-თბილი,warm,tbili,SHORT,EASY,FOOD & DRINK
-მინერალური წყალი,mineral water,mineraluri ts'q'ali,SHORT,EASY,FOOD & DRINK
-ხინკალი,Khinkali (dumplings),khink'ali,SHORT,EASY,FOOD & DRINK
-ხაჭაპური,Khachapuri (cheese bread),khach'ap'uri,SHORT,EASY,FOOD & DRINK
-საცივი,Satsivi (walnut sauce),satsivi,SHORT,EASY,FOOD & DRINK
-მწვადი,Mtsvadi (shashlik/skewered meat),mts'vadi,SHORT,EASY,FOOD & DRINK
-ქაბაბი,Kababi (kebab),k'ababi,SHORT,EASY,FOOD & DRINK
-ფხალი,Pkhali (vegetable paste),pkhali,SHORT,EASY,FOOD & DRINK
-აჯიკა,Ajika (spicy paste),ajik'a,SHORT,EASY,FOOD & DRINK
-სუნელი,spice / dried herb,suneli,SHORT,EASY,FOOD & DRINK
-ნიგოზი,walnut,nigozi,SHORT,EASY,FOOD & DRINK
-პილპილი,black pepper,p'ilp'ili,SHORT,EASY,FOOD & DRINK
-ქინძი,coriander/cilantro,kinzi,SHORT,EASY,FOOD & DRINK
-ტარხუნა,tarragon,t'arkhuna,SHORT,EASY,FOOD & DRINK
-პიტნა,mint,p'it'na,SHORT,EASY,FOOD & DRINK
-ხარჩო,Kharcho (beef stew),kharcho,SHORT,EASY,FOOD & DRINK
-ჭარხალი,beetroot,ch'arkhali,SHORT,EASY,FOOD & DRINK
-ზე,on / upon,ze,PREPOSITIONS,EASY,POSITION
-ქვეშ,under,kvesh,PREPOSITIONS,EASY,POSITION
-ში,in / inside,shi,PREPOSITIONS,EASY,POSITION
-წინ,in front of / before,ts'in,PREPOSITIONS,EASY,POSITION
-უკან,behind / at the back of,uk'an,PREPOSITIONS,EASY,POSITION
-გვერდით,next to / beside,gverdit,PREPOSITIONS,EASY,POSITION
-შორის,between / among,shoris,PREPOSITIONS,EASY,POSITION
-ირგვლივ,around (spatially),irgvliv,PREPOSITIONS,EASY,POSITION
-გარშემო,around (circumference),garshemo,PREPOSITIONS,EASY,POSITION
-მოპირდაპირე,opposite,mop'irdap'ire,PREPOSITIONS,EASY,POSITION
-ახლოს,near / close to,akhlos,PREPOSITIONS,EASY,POSITION
-შორს,far,shors,PREPOSITIONS,EASY,POSITION
-ზემოთ,up / above (direction),zemot,PREPOSITIONS,EASY,POSITION
-ქვემოთ,down / below (direction),kvemot,PREPOSITIONS,EASY,POSITION
-გარეთ,outside,garet,PREPOSITIONS,EASY,POSITION
-დან,from (place/origin),dan,PREPOSITIONS,EASY,DIRECTION
-კენ,toward / in the direction of,k'en,PREPOSITIONS,EASY,DIRECTION
-თან,with (person/at a person's place),tan,PREPOSITIONS,EASY,DIRECTION
-მიმართ,toward / regarding,mimart,PREPOSITIONS,EASY,DIRECTION
-გამო,because of / due to,gamo,PREPOSITIONS,EASY,
-მიერ,"by (agent, e.g., written by him)",mier,PREPOSITIONS,EASY,
-გავლით,via / through,gavlit,PREPOSITIONS,EASY,DIRECTION
-კავშირი,connection / link,k'avshiri,PREPOSITIONS,EASY,DIRECTION
-გარედან,from the outside,garedan,PREPOSITIONS,EASY,DIRECTION
-შიგნიდან,from the inside,shignidan,PREPOSITIONS,EASY,DIRECTION
-აქეთ,toward here / this way,aket,PREPOSITIONS,EASY,DIRECTION
-იქით,that way / beyond,ikit,PREPOSITIONS,EASY,DIRECTION
-სულ,altogether / completely,sul,PREPOSITIONS,EASY,
-ხოლმე,habitually / often,kholme,PREPOSITIONS,EASY,
-თავიდან,from the beginning / again,tav’idan,PREPOSITIONS,EASY,DIRECTION
-და,and,da,PREPOSITIONS,EASY,LINKS
-მაგრამ,but,magaram,PREPOSITIONS,EASY,LINKS
-ან,or,an,PREPOSITIONS,EASY,LINKS
-თუ,if / whether,tu,PREPOSITIONS,EASY,LINKS
-რომ,that (subordinating conjunction),rom,PREPOSITIONS,EASY,LINKS
-რადგან,because / since,radgan,PREPOSITIONS,EASY,LINKS
-ამიტომ,therefore / so,amit'om,PREPOSITIONS,EASY,LINKS
-ასევე,also / as well,aseve,PREPOSITIONS,EASY,LINKS
-მხოლოდ,only,mkholod,PREPOSITIONS,EASY,LINKS
-თუმცა,although / however,tumtsa,PREPOSITIONS,EASY,LINKS
-არც,neither / nor,arts,PREPOSITIONS,EASY,LINKS
-ყოველთვის,always,q'oveltvis,PREPOSITIONS,EASY,LINKS
-არასდროს,never,arasdros,PREPOSITIONS,EASY,LINKS
-ხშირად,often,kshirad,PREPOSITIONS,EASY,LINKS
-იშვიათად,rarely,ishviat'ad,PREPOSITIONS,EASY,LINKS
-ა,a,Like 'a' in father,ALPHABET,EASY,GRAMMAR
-ბ,b,Like 'b' in ball,ALPHABET,EASY,GRAMMAR
-გ,g,Like 'g' in go,ALPHABET,EASY,GRAMMAR
-დ,d,Like 'd' in dog,ALPHABET,EASY,GRAMMAR
-ე,e,Like 'e' in bed,ALPHABET,EASY,GRAMMAR
-ვ,v,Like 'v' in vet,ALPHABET,EASY,GRAMMAR
-ზ,z,Like 'z' in zoo,ALPHABET,EASY,GRAMMAR
-თ,t,"Like 't' in time (soft, aspirated)",ALPHABET,EASY,GRAMMAR
-ი,i,Like 'ee' in see,ALPHABET,EASY,GRAMMAR
-კ,k',"Ejective 'k'. Made without aspiration, held briefly.",ALPHABET,EASY,GRAMMAR
-ლ,l,Like 'l' in light,ALPHABET,EASY,GRAMMAR
-მ,m,Like 'm' in man,ALPHABET,EASY,GRAMMAR
-ნ,n,Like 'n' in no,ALPHABET,EASY,GRAMMAR
-ო,o,Like 'o' in law (or Italian 'o'),ALPHABET,EASY,GRAMMAR
-პ,p',"Ejective 'p'. Made without aspiration, held briefly.",ALPHABET,EASY,GRAMMAR
-ჟ,zh,"Like 's' in pleasure, or French 'j'",ALPHABET,EASY,GRAMMAR
-რ,r,Trilled 'r' (like Spanish or Italian 'r'),ALPHABET,EASY,GRAMMAR
-ს,s,Like 's' in sun,ALPHABET,EASY,GRAMMAR
-ტ,t',"Ejective 't'. Made without aspiration, held briefly.",ALPHABET,EASY,GRAMMAR
-უ,u,Like 'oo' in food,ALPHABET,EASY,GRAMMAR
-ფ,p,Like 'p' in pin (aspirated/with breath),ALPHABET,EASY,GRAMMAR
-ქ,k,Like 'k' in kite (aspirated/with breath),ALPHABET,EASY,GRAMMAR
-ღ,gh,"Guttural 'g', similar to French or German 'r' (a voiced uvular fricative).",ALPHABET,EASY,GRAMMAR
-ყ,q',"Ejective 'q'. A deeper, throaty, ejective sound.",ALPHABET,EASY,GRAMMAR
-შ,sh,Like 'sh' in ship,ALPHABET,EASY,GRAMMAR
-ჩ,ch,Like 'ch' in church (aspirated/with breath),ALPHABET,EASY,GRAMMAR
-ც,ts,Like 'ts' in cats (aspirated/with breath),ALPHABET,EASY,GRAMMAR
-ძ,dz,Like 'ds' in pods,ALPHABET,EASY,GRAMMAR
-წ,ts',"Ejective 'ts'. Made without aspiration, held briefly.",ALPHABET,EASY,GRAMMAR
-ჭ,ch',"Ejective 'ch'. Like 'ch' in chip, but held briefly.",ALPHABET,EASY,GRAMMAR
-ხ,kh,"Guttural 'h', like 'ch' in Scottish loch.",ALPHABET,EASY,GRAMMAR
-ჯ,j,Like 'j' in jam,ALPHABET,EASY,GRAMMAR
-ჰ,h,Like 'h' in hat,ALPHABET,EASY,GRAMMAR
+﻿id,bg,en,lat,type,difficulty,topic
+ge_00001,კულტურული,Cultural,k'ult'uruli,ADJECTIVE,EASY,
+ge_00002,სერიოზული,Serious,seriozuli,ADJECTIVE,EASY,
+ge_00003,ხშირი,Frequent / Often,khshiri,ADJECTIVE,EASY,
+ge_00004,მშვიდი,Calm / Peaceful,mshvidi,ADJECTIVE,EASY,
+ge_00005,მყუდრო,Cozy,mqudro,ADJECTIVE,EASY,
+ge_00006,საინტერესო,Interesting / Captivating,sainteresо,ADJECTIVE,EASY,
+ge_00007,სასარგებლო,Useful / Beneficial,sasargeblo,ADJECTIVE,EASY,
+ge_00008,უაზრო,Meaningless / Nonsensical,uazro,ADJECTIVE,EASY,
+ge_00009,კეთილი,Kind,k'etili,ADJECTIVE,EASY,
+ge_00010,მამაცი,Brave / Courageous,mamatsi,ADJECTIVE,EASY,
+ge_00011,ჭკვიანი,Smart / Clever,ch'k'viani,ADJECTIVE,EASY,
+ge_00012,პასუხისმგებელი,Responsible,p'asukhisamgebeli,ADJECTIVE,EASY,
+ge_00013,დაღლილი,Tired / Exhausted,daghlili,ADJECTIVE,EASY,
+ge_00014,გემრიელი,Delicious / Tasty,gemrieli,ADJECTIVE,EASY,
+ge_00015,ცხარე,Spicy / Hot,tskhare,ADJECTIVE,EASY,
+ge_00016,მჟავე,Sour / Acidic,mzhhave,ADJECTIVE,EASY,
+ge_00017,ნათელი,Bright / Clear (color or light),nateli,ADJECTIVE,EASY,
+ge_00018,ბნელი,Dark,bneli,ADJECTIVE,EASY,
+ge_00019,სწრაფი,Fast / Quick,st'srap'i,ADJECTIVE,EASY,
+ge_00020,ნელი,Slow,neli,ADJECTIVE,EASY,
+ge_00021,უცხო,Foreign / Strange,utskho,ADJECTIVE,EASY,
+ge_00022,ადგილობრივი,Local,adgilobrivi,ADJECTIVE,EASY,
+ge_00023,მნიშვნელოვანი,Important / Significant,mnishvnelovani,ADJECTIVE,EASY,
+ge_00024,საიდუმლო,Secret / Mysterious,saidumlo,ADJECTIVE,EASY,
+ge_00025,საიმედო,Reliable / Trustworthy,saimedo,ADJECTIVE,EASY,
+ge_00026,ღია,"Open (e.g., door, opportunity, color)",ghia,ADJECTIVE,EASY,
+ge_00027,დახურული,Closed,dakhuruli,ADJECTIVE,EASY,
+ge_00028,რთული,Difficult / Hard / Complex,rtuli,ADJECTIVE,EASY,
+ge_00029,მარტივი,Simple / Easy,mart'ivi,ADJECTIVE,EASY,
+ge_00030,გამოცდილი,Experienced,gamotsdili,ADJECTIVE,EASY,
+ge_00031,ახალგაზრდა,Young,akhalgazrda,ADJECTIVE,EASY,
+ge_00032,ხანდაზმული,Elderly / Aged,khandazmuli,ADJECTIVE,EASY,
+ge_00033,თავისუფალი,Free / Independent,tavisupali,ADJECTIVE,EASY,
+ge_00034,საყვარელი,Favorite / Beloved / Cute,saq'vareli,ADJECTIVE,EASY,
+ge_00035,ყოველდღიური,Everyday / Daily,q'oveldghiuri,ADJECTIVE,EASY,
+ge_00036,ცნობილი,Famous / Well-known,tsnobili,ADJECTIVE,EASY,
+ge_00037,უცნობი,Unknown,utsnobi,ADJECTIVE,EASY,
+ge_00038,სავალდებულო,Mandatory / Compulsory,savalddebulo,ADJECTIVE,EASY,
+ge_00039,ბუნებრივი,Natural,bunebrivi,ADJECTIVE,EASY,
+ge_00040,გამარჯობა,Hello,gamarjoba,SHORT,EASY,CONVERSATION
+ge_00041,დილა მშვიდობისა,Good morning,dila mshvidobisa,PHRASE,EASY,CONVERSATION
+ge_00042,ნახვამდის,Goodbye,nakhvamdis,SHORT,EASY,CONVERSATION
+ge_00043,როგორ ხარ?,How are you? (singular/informal),rogor khar?,PHRASE,EASY,CONVERSATION
+ge_00044,მადლობა,Thank you,madloba,SHORT,EASY,CONVERSATION
+ge_00045,არაფრის,You're welcome (It's nothing),arapris,SHORT,EASY,CONVERSATION
+ge_00046,კი / არა,Yes / No,ki / ara,SHORT,EASY,CONVERSATION
+ge_00047,ბოდიში,Excuse me / Sorry,bodishi,SHORT,EASY,CONVERSATION
+ge_00048,გთხოვთ,Please,gthkhovt,SHORT,EASY,CONVERSATION
+ge_00049,მიყვარხარ,I love you,miq'varkhar,SHORT,EASY,CONVERSATION
+ge_00050,საღამო მშვიდობისა,Good evening,saghamo mshvidobisa,PHRASE,EASY,CONVERSATION
+ge_00051,ღამე მშვიდობისა,Good night,ghame mshvidobisa,PHRASE,EASY,CONVERSATION
+ge_00052,ძალიან კარგად,Very well,dzalian kargad,PHRASE,EASY,CONVERSATION
+ge_00053,რა გქვია?,What is your name?,ra gkvia?,PHRASE,EASY,CONVERSATION
+ge_00054,ჩემი სახელია...,My name is...,chemi sakhelia...,PHRASE,EASY,CONVERSATION
+ge_00055,საიდან ხარ?,Where are you from?,saidan khar?,PHRASE,EASY,CONVERSATION
+ge_00056,მშვენიერი,Wonderful / Great,mshvenieri,SHORT,EASY,CONVERSATION
+ge_00057,გილოცავ!,Congratulations!,gilocav!,SHORT,EASY,CONVERSATION
+ge_00058,რა ღირს?,How much does it cost?,ra ghirs?,PHRASE,EASY,CONVERSATION
+ge_00059,გაიხარე!,"Cheers! / Be happy! (A common, versatile response)",gaikhare!,SHORT,EASY,CONVERSATION
+ge_00060,წერს,He writes,ts'ers,VERB,EASY,
+ge_00061,კითხულობს,He reads,kitkhulobs,VERB,EASY,
+ge_00062,ლაპარაკობს,He speaks/talks,lap'arak'obs,VERB,EASY,
+ge_00063,ჭამს,He eats,ch'ams,VERB,EASY,
+ge_00064,სვამს,He drinks,svams,VERB,EASY,
+ge_00065,ცხოვრობს,He lives,tskhovrobs,VERB,EASY,
+ge_00066,მუშაობს,He works,mushaobs,VERB,EASY,
+ge_00067,სწავლობს,He studies/learns,st's'avlobs,VERB,EASY,
+ge_00068,უყურებს,"He watches (e.g., TV)",uq'urebs,VERB,EASY,
+ge_00069,ხედავს,He sees,khedavs,VERB,EASY,
+ge_00070,ისმენს,He listens (to),ismens,VERB,EASY,
+ge_00071,იცის,He knows (a fact/how to),itsis,VERB,EASY,
+ge_00072,ფიქრობს,He thinks,pikrobs,VERB,EASY,
+ge_00073,იცინის,He laughs,itsinis,VERB,EASY,
+ge_00074,ტირის,He cries,t'iris,VERB,EASY,
+ge_00075,მღერის,He sings,mgheris,VERB,EASY,
+ge_00076,ცეკვავს,He dances,tsek'vavs,VERB,EASY,
+ge_00077,თამაშობს,He plays (a game/music),tamashobs,VERB,EASY,
+ge_00078,დგას,He stands,dgas,VERB,EASY,
+ge_00079,ზის,He sits,zis,VERB,EASY,
+ge_00080,წევს,He lies down,ts'evs,VERB,EASY,
+ge_00081,სძინავს,He sleeps,sdzinavs,VERB,EASY,
+ge_00082,მიდის,He goes/is going (general),midis,VERB,EASY,
+ge_00083,მოდის,He comes/is coming (to),modis,VERB,EASY,
+ge_00084,ჩადის,He goes down/arrives,chadis,VERB,EASY,
+ge_00085,ამოდის,He comes up,amodis,VERB,EASY,
+ge_00086,ყიდულობს,He buys,q'idulobs,VERB,EASY,
+ge_00087,ყიდის,He sells,q'idis,VERB,EASY,
+ge_00088,აშენებს,He builds,ashenebs,VERB,EASY,
+ge_00089,აძლევს,He gives (it to someone),adzlevs,VERB,EASY,
+ge_00090,ართმევს,He takes (it from someone),artmevs,VERB,EASY,
+ge_00091,ეხმარება,He helps (someone),ekhmareba,VERB,EASY,
+ge_00092,აცვია,He wears/is wearing (clothes),atsvia,VERB,EASY,
+ge_00093,აკეთებს,He does/makes,ak'et'ebs,VERB,EASY,
+ge_00094,აჩერებს,He stops (something/someone),acherebs,VERB,EASY,
+ge_00095,რჩება,He remains/stays,rcheba,VERB,EASY,
+ge_00096,იწყებს,He begins/starts (something),i'ts'q'ebs,VERB,EASY,
+ge_00097,ამთავრებს,He finishes,amtavrebs,VERB,EASY,
+ge_00098,უნდა,He wants/should,unda,VERB,EASY,
+ge_00099,შეუძლია,He can/is able to,sheudzlia,VERB,EASY,
+ge_00100,ოთახი,room,otakhi,SHORT,EASY,HOUSEHOLD
+ge_00101,ავეჯი,furniture,aveji,SHORT,EASY,HOUSEHOLD
+ge_00102,მაგიდა,table,magida,SHORT,EASY,HOUSEHOLD
+ge_00103,სკამი,chair,sk'ami,SHORT,EASY,HOUSEHOLD
+ge_00104,დივანი,sofa/couch,divani,SHORT,EASY,LIVING ROOM
+ge_00105,კარადა,closet/cupboard,k'arada,SHORT,EASY,HOUSEHOLD
+ge_00106,თარო,shelf,taro,SHORT,EASY,HOUSEHOLD
+ge_00107,ფანჯარა,window,panjara,SHORT,EASY,HOUSEHOLD
+ge_00108,კარი,door,k'ari,SHORT,EASY,HOUSEHOLD
+ge_00109,ფარდა,curtain,parda,SHORT,EASY,HOUSEHOLD
+ge_00110,ხალიჩა,rug/carpet,khalicha,SHORT,EASY,HOUSEHOLD
+ge_00111,ნათურა,lamp/lightbulb,natura,SHORT,EASY,HOUSEHOLD
+ge_00112,საათი,clock/watch,saati,SHORT,EASY,HOUSEHOLD
+ge_00113,ტელევიზორი,television,televizori,SHORT,EASY,LIVING ROOM
+ge_00114,სარკე,mirror,sark'e,SHORT,EASY,HOUSEHOLD
+ge_00115,სარეცხი მანქანა,washing machine,saretskhi mankana,MEDIUM,EASY,HOUSEHOLD
+ge_00116,სამრეცხაო,laundry room,samretskha'o,SHORT,EASY,HOUSEHOLD
+ge_00117,გასაღები,key (singular),gasaghebi,SHORT,EASY,HOUSEHOLD
+ge_00118,ხელსაწყო,tool,khelsats'q'o,SHORT,EASY,HOUSEHOLD
+ge_00119,ცოცხი,broom,tso'tskhi,SHORT,EASY,HOUSEHOLD
+ge_00120,ნაგავი,trash/garbage,nagavi,SHORT,EASY,HOUSEHOLD
+ge_00121,ელექტროობა,electricity,elekt'rooba,SHORT,EASY,HOUSEHOLD
+ge_00122,მილი,pipe,mili,SHORT,EASY,HOUSEHOLD
+ge_00123,საძინებელი,bedroom,sadzinebeli,SHORT,EASY,BEDROOM
+ge_00124,საწოლი,bed,sats'oli,SHORT,EASY,BEDROOM
+ge_00125,ლეიბი,mattress,leibi,SHORT,EASY,BEDROOM
+ge_00126,ბალიში,pillow,balishi,SHORT,EASY,BEDROOM
+ge_00127,საბანი,blanket,sabani,SHORT,EASY,BEDROOM
+ge_00128,ზეწარი,sheet,zets'ari,SHORT,EASY,BEDROOM
+ge_00129,გადასაფარებელი,bedspread,gadasaparebeli,MEDIUM,EASY,BEDROOM
+ge_00130,ტანსაცმელი,clothing/clothes,t'ansatsmeli,SHORT,EASY,CLOTHES
+ge_00131,საცვალი,drawer,satsvali,SHORT,EASY,BEDROOM
+ge_00132,საკიდი,hanger,sak'idi,SHORT,EASY,BEDROOM
+ge_00133,ფეხსაცმელი,shoe,pekhsatsmeli,SHORT,EASY,CLOTHES
+ge_00134,თეთრეული,linen,tetreuli,SHORT,EASY,BEDROOM
+ge_00135,სარეცხი,laundry,saretskhi,SHORT,EASY,HOUSEHOLD
+ge_00136,ფუნჯი,brush (general),punji,SHORT,EASY,HOUSEHOLD
+ge_00137,სამზარეულო,kitchen,samzareulo,SHORT,EASY,KITCHEN
+ge_00138,ღუმელი,oven,ghumeli,SHORT,EASY,KITCHEN
+ge_00139,მაცივარი,refrigerator,matsivari,SHORT,EASY,KITCHEN
+ge_00140,ჭურჭელი,dishes/crockery,ch'urch'eli,SHORT,EASY,KITCHEN
+ge_00141,ქვაბი,pot,kvabi,SHORT,EASY,KITCHEN
+ge_00142,ტაფა,pan,t'apa,SHORT,EASY,KITCHEN
+ge_00143,დანა,knife,dana,SHORT,EASY,KITCHEN
+ge_00144,ჩანგალი,fork,changali,SHORT,EASY,KITCHEN
+ge_00145,კოვზი,spoon,k'ovzi,SHORT,EASY,KITCHEN
+ge_00146,თეფში,plate,tepshi,SHORT,EASY,KITCHEN
+ge_00147,ჭიქა,cup/glass,ch'ikha,SHORT,EASY,KITCHEN
+ge_00148,ბოთლი,bottle,botli,SHORT,EASY,KITCHEN
+ge_00149,წყალი,water,ts'q'ali,SHORT,EASY,FOOD & DRINK
+ge_00150,პური,bread,p'uri,SHORT,EASY,FOOD & DRINK
+ge_00151,ყავა,coffee,q'ava,SHORT,EASY,FOOD & DRINK
+ge_00152,აბაზანა,bathroom / bath,abazana,SHORT,EASY,BATHROOM
+ge_00153,საპონი,soap,sap'oni,SHORT,EASY,BATHROOM
+ge_00154,ონკანი,faucet/tap,onk'ani,SHORT,EASY,BATHROOM
+ge_00155,ნიჟარა,sink/basin,nizhara,SHORT,EASY,BATHROOM
+ge_00156,შხაპი,shower,shkhap'i,SHORT,EASY,BATHROOM
+ge_00157,ტუალეტი,toilet,t'ualet'i,SHORT,EASY,BATHROOM
+ge_00158,სარჩული,drain,sarchuli,SHORT,EASY,BATHROOM
+ge_00159,პირსახოცი,towel,p'irsakhotsi,SHORT,EASY,BATHROOM
+ge_00160,თმის ჯაგრისი,hairbrush,tmis jagrisi,SHORT,EASY,BEDROOM
+ge_00161,პური,bread,p'uri,SHORT,EASY,FOOD & DRINK
+ge_00162,ყველი,cheese,q'veli,SHORT,EASY,FOOD & DRINK
+ge_00163,ხორცი,meat,khortsi,SHORT,EASY,FOOD & DRINK
+ge_00164,თევზი,fish,tevzi,SHORT,EASY,FOOD & DRINK
+ge_00165,კვერცხი,egg,k'v’ertskhi,SHORT,EASY,FOOD & DRINK
+ge_00166,რძე,milk,rdze,SHORT,EASY,FOOD & DRINK
+ge_00167,კარაქი,butter,k'arakhi,SHORT,EASY,FOOD & DRINK
+ge_00168,ზეთი,oil,zeti,SHORT,EASY,FOOD & DRINK
+ge_00169,შაქარი,sugar,shakari,SHORT,EASY,FOOD & DRINK
+ge_00170,მარილი,salt,marili,SHORT,EASY,FOOD & DRINK
+ge_00171,ფქვილი,flour,pkvili,SHORT,EASY,FOOD & DRINK
+ge_00172,ბრინჯი,rice,brinji,SHORT,EASY,FOOD & DRINK
+ge_00173,ცომი,dough,tsomi,SHORT,EASY,FOOD & DRINK
+ge_00174,მაწონი,matsoni (yogurt),mats'oni,SHORT,EASY,FOOD & DRINK
+ge_00175,თაფლი,honey,tapli,SHORT,EASY,FOOD & DRINK
+ge_00176,ხილი,fruit,khili,SHORT,EASY,FOOD & DRINK
+ge_00177,ბოსტნეული,vegetable,bostneuli,SHORT,EASY,FOOD & DRINK
+ge_00178,ვაშლი,apple,vashli,SHORT,EASY,FOOD & DRINK
+ge_00179,ბანანი,banana,banani,SHORT,EASY,FOOD & DRINK
+ge_00180,ყურძენი,grapes,q'urzeni,SHORT,EASY,FOOD & DRINK
+ge_00181,ფორთოხალი,orange,portokhali,SHORT,EASY,FOOD & DRINK
+ge_00182,კარტოფილი,potato,k'art'opili,SHORT,EASY,FOOD & DRINK
+ge_00183,პომიდორი,tomato,p'omido'ri,SHORT,EASY,FOOD & DRINK
+ge_00184,კიტრი,cucumber,k'it'ri,SHORT,EASY,FOOD & DRINK
+ge_00185,ხახვი,onion,khakhvi,SHORT,EASY,FOOD & DRINK
+ge_00186,ნიორი,garlic,niori,SHORT,EASY,FOOD & DRINK
+ge_00187,სალათის ფოთოლი,lettuce leaf,salatis potoli,SHORT,EASY,FOOD & DRINK
+ge_00188,სოკო,mushroom,sok'o,SHORT,EASY,FOOD & DRINK
+ge_00189,წიწაკა,pepper (chili/bell),ts'its'ak'a,SHORT,EASY,FOOD & DRINK
+ge_00190,ლობიო,beans/kidney beans,lobio,SHORT,EASY,FOOD & DRINK
+ge_00191,წყალი,water,ts'q'ali,SHORT,EASY,FOOD & DRINK
+ge_00192,ღვინო,wine,ghvino,SHORT,EASY,FOOD & DRINK
+ge_00193,ლუდი,beer,ludi,SHORT,EASY,FOOD & DRINK
+ge_00194,ჭაჭა,Chacha (grape brandy),ch'ach'a,SHORT,EASY,FOOD & DRINK
+ge_00195,ყავა,coffee,q'ava,SHORT,EASY,FOOD & DRINK
+ge_00196,ჩაი,tea,chai,SHORT,EASY,FOOD & DRINK
+ge_00197,წვენი,juice,ts'veni,SHORT,EASY,FOOD & DRINK
+ge_00198,ლიმონათი,lemonade,limonati,SHORT,EASY,FOOD & DRINK
+ge_00199,გაზიანი წყალი,sparkling water,gaziani ts'q'ali,SHORT,EASY,FOOD & DRINK
+ge_00200,ნატურალური,"natural (e.g., natural juice)",nat'uraluri,SHORT,EASY,FOOD & DRINK
+ge_00201,ტკბილი,sweet,t'k'bili,SHORT,EASY,FOOD & DRINK
+ge_00202,მწარე,bitter/spicy,m'ts'are,SHORT,EASY,FOOD & DRINK
+ge_00203,ცივი,cold,tsivi,SHORT,EASY,FOOD & DRINK
+ge_00204,თბილი,warm,tbili,SHORT,EASY,FOOD & DRINK
+ge_00205,მინერალური წყალი,mineral water,mineraluri ts'q'ali,SHORT,EASY,FOOD & DRINK
+ge_00206,ხინკალი,Khinkali (dumplings),khink'ali,SHORT,EASY,FOOD & DRINK
+ge_00207,ხაჭაპური,Khachapuri (cheese bread),khach'ap'uri,SHORT,EASY,FOOD & DRINK
+ge_00208,საცივი,Satsivi (walnut sauce),satsivi,SHORT,EASY,FOOD & DRINK
+ge_00209,მწვადი,Mtsvadi (shashlik/skewered meat),mts'vadi,SHORT,EASY,FOOD & DRINK
+ge_00210,ქაბაბი,Kababi (kebab),k'ababi,SHORT,EASY,FOOD & DRINK
+ge_00211,ფხალი,Pkhali (vegetable paste),pkhali,SHORT,EASY,FOOD & DRINK
+ge_00212,აჯიკა,Ajika (spicy paste),ajik'a,SHORT,EASY,FOOD & DRINK
+ge_00213,სუნელი,spice / dried herb,suneli,SHORT,EASY,FOOD & DRINK
+ge_00214,ნიგოზი,walnut,nigozi,SHORT,EASY,FOOD & DRINK
+ge_00215,პილპილი,black pepper,p'ilp'ili,SHORT,EASY,FOOD & DRINK
+ge_00216,ქინძი,coriander/cilantro,kinzi,SHORT,EASY,FOOD & DRINK
+ge_00217,ტარხუნა,tarragon,t'arkhuna,SHORT,EASY,FOOD & DRINK
+ge_00218,პიტნა,mint,p'it'na,SHORT,EASY,FOOD & DRINK
+ge_00219,ხარჩო,Kharcho (beef stew),kharcho,SHORT,EASY,FOOD & DRINK
+ge_00220,ჭარხალი,beetroot,ch'arkhali,SHORT,EASY,FOOD & DRINK
+ge_00221,ზე,on / upon,ze,PREPOSITIONS,EASY,POSITION
+ge_00222,ქვეშ,under,kvesh,PREPOSITIONS,EASY,POSITION
+ge_00223,ში,in / inside,shi,PREPOSITIONS,EASY,POSITION
+ge_00224,წინ,in front of / before,ts'in,PREPOSITIONS,EASY,POSITION
+ge_00225,უკან,behind / at the back of,uk'an,PREPOSITIONS,EASY,POSITION
+ge_00226,გვერდით,next to / beside,gverdit,PREPOSITIONS,EASY,POSITION
+ge_00227,შორის,between / among,shoris,PREPOSITIONS,EASY,POSITION
+ge_00228,ირგვლივ,around (spatially),irgvliv,PREPOSITIONS,EASY,POSITION
+ge_00229,გარშემო,around (circumference),garshemo,PREPOSITIONS,EASY,POSITION
+ge_00230,მოპირდაპირე,opposite,mop'irdap'ire,PREPOSITIONS,EASY,POSITION
+ge_00231,ახლოს,near / close to,akhlos,PREPOSITIONS,EASY,POSITION
+ge_00232,შორს,far,shors,PREPOSITIONS,EASY,POSITION
+ge_00233,ზემოთ,up / above (direction),zemot,PREPOSITIONS,EASY,POSITION
+ge_00234,ქვემოთ,down / below (direction),kvemot,PREPOSITIONS,EASY,POSITION
+ge_00235,გარეთ,outside,garet,PREPOSITIONS,EASY,POSITION
+ge_00236,დან,from (place/origin),dan,PREPOSITIONS,EASY,DIRECTION
+ge_00237,კენ,toward / in the direction of,k'en,PREPOSITIONS,EASY,DIRECTION
+ge_00238,თან,with (person/at a person's place),tan,PREPOSITIONS,EASY,DIRECTION
+ge_00239,მიმართ,toward / regarding,mimart,PREPOSITIONS,EASY,DIRECTION
+ge_00240,გამო,because of / due to,gamo,PREPOSITIONS,EASY,
+ge_00241,მიერ,"by (agent, e.g., written by him)",mier,PREPOSITIONS,EASY,
+ge_00242,გავლით,via / through,gavlit,PREPOSITIONS,EASY,DIRECTION
+ge_00243,კავშირი,connection / link,k'avshiri,PREPOSITIONS,EASY,DIRECTION
+ge_00244,გარედან,from the outside,garedan,PREPOSITIONS,EASY,DIRECTION
+ge_00245,შიგნიდან,from the inside,shignidan,PREPOSITIONS,EASY,DIRECTION
+ge_00246,აქეთ,toward here / this way,aket,PREPOSITIONS,EASY,DIRECTION
+ge_00247,იქით,that way / beyond,ikit,PREPOSITIONS,EASY,DIRECTION
+ge_00248,სულ,altogether / completely,sul,PREPOSITIONS,EASY,
+ge_00249,ხოლმე,habitually / often,kholme,PREPOSITIONS,EASY,
+ge_00250,თავიდან,from the beginning / again,tav’idan,PREPOSITIONS,EASY,DIRECTION
+ge_00251,და,and,da,PREPOSITIONS,EASY,LINKS
+ge_00252,მაგრამ,but,magaram,PREPOSITIONS,EASY,LINKS
+ge_00253,ან,or,an,PREPOSITIONS,EASY,LINKS
+ge_00254,თუ,if / whether,tu,PREPOSITIONS,EASY,LINKS
+ge_00255,რომ,that (subordinating conjunction),rom,PREPOSITIONS,EASY,LINKS
+ge_00256,რადგან,because / since,radgan,PREPOSITIONS,EASY,LINKS
+ge_00257,ამიტომ,therefore / so,amit'om,PREPOSITIONS,EASY,LINKS
+ge_00258,ასევე,also / as well,aseve,PREPOSITIONS,EASY,LINKS
+ge_00259,მხოლოდ,only,mkholod,PREPOSITIONS,EASY,LINKS
+ge_00260,თუმცა,although / however,tumtsa,PREPOSITIONS,EASY,LINKS
+ge_00261,არც,neither / nor,arts,PREPOSITIONS,EASY,LINKS
+ge_00262,ყოველთვის,always,q'oveltvis,PREPOSITIONS,EASY,LINKS
+ge_00263,არასდროს,never,arasdros,PREPOSITIONS,EASY,LINKS
+ge_00264,ხშირად,often,kshirad,PREPOSITIONS,EASY,LINKS
+ge_00265,იშვიათად,rarely,ishviat'ad,PREPOSITIONS,EASY,LINKS
+ge_00266,ა,a,Like 'a' in father,ALPHABET,EASY,GRAMMAR
+ge_00267,ბ,b,Like 'b' in ball,ALPHABET,EASY,GRAMMAR
+ge_00268,გ,g,Like 'g' in go,ALPHABET,EASY,GRAMMAR
+ge_00269,დ,d,Like 'd' in dog,ALPHABET,EASY,GRAMMAR
+ge_00270,ე,e,Like 'e' in bed,ALPHABET,EASY,GRAMMAR
+ge_00271,ვ,v,Like 'v' in vet,ALPHABET,EASY,GRAMMAR
+ge_00272,ზ,z,Like 'z' in zoo,ALPHABET,EASY,GRAMMAR
+ge_00273,თ,t,"Like 't' in time (soft, aspirated)",ALPHABET,EASY,GRAMMAR
+ge_00274,ი,i,Like 'ee' in see,ALPHABET,EASY,GRAMMAR
+ge_00275,კ,k',"Ejective 'k'. Made without aspiration, held briefly.",ALPHABET,EASY,GRAMMAR
+ge_00276,ლ,l,Like 'l' in light,ALPHABET,EASY,GRAMMAR
+ge_00277,მ,m,Like 'm' in man,ALPHABET,EASY,GRAMMAR
+ge_00278,ნ,n,Like 'n' in no,ALPHABET,EASY,GRAMMAR
+ge_00279,ო,o,Like 'o' in law (or Italian 'o'),ALPHABET,EASY,GRAMMAR
+ge_00280,პ,p',"Ejective 'p'. Made without aspiration, held briefly.",ALPHABET,EASY,GRAMMAR
+ge_00281,ჟ,zh,"Like 's' in pleasure, or French 'j'",ALPHABET,EASY,GRAMMAR
+ge_00282,რ,r,Trilled 'r' (like Spanish or Italian 'r'),ALPHABET,EASY,GRAMMAR
+ge_00283,ს,s,Like 's' in sun,ALPHABET,EASY,GRAMMAR
+ge_00284,ტ,t',"Ejective 't'. Made without aspiration, held briefly.",ALPHABET,EASY,GRAMMAR
+ge_00285,უ,u,Like 'oo' in food,ALPHABET,EASY,GRAMMAR
+ge_00286,ფ,p,Like 'p' in pin (aspirated/with breath),ALPHABET,EASY,GRAMMAR
+ge_00287,ქ,k,Like 'k' in kite (aspirated/with breath),ALPHABET,EASY,GRAMMAR
+ge_00288,ღ,gh,"Guttural 'g', similar to French or German 'r' (a voiced uvular fricative).",ALPHABET,EASY,GRAMMAR
+ge_00289,ყ,q',"Ejective 'q'. A deeper, throaty, ejective sound.",ALPHABET,EASY,GRAMMAR
+ge_00290,შ,sh,Like 'sh' in ship,ALPHABET,EASY,GRAMMAR
+ge_00291,ჩ,ch,Like 'ch' in church (aspirated/with breath),ALPHABET,EASY,GRAMMAR
+ge_00292,ც,ts,Like 'ts' in cats (aspirated/with breath),ALPHABET,EASY,GRAMMAR
+ge_00293,ძ,dz,Like 'ds' in pods,ALPHABET,EASY,GRAMMAR
+ge_00294,წ,ts',"Ejective 'ts'. Made without aspiration, held briefly.",ALPHABET,EASY,GRAMMAR
+ge_00295,ჭ,ch',"Ejective 'ch'. Like 'ch' in chip, but held briefly.",ALPHABET,EASY,GRAMMAR
+ge_00296,ხ,kh,"Guttural 'h', like 'ch' in Scottish loch.",ALPHABET,EASY,GRAMMAR
+ge_00297,ჯ,j,Like 'j' in jam,ALPHABET,EASY,GRAMMAR
+ge_00298,ჰ,h,Like 'h' in hat,ALPHABET,EASY,GRAMMAR

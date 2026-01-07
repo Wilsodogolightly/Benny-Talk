@@ -1,43 +1,43 @@
-﻿id,bg,en,lat,type,difficulty,topic
-ge_00001,კულტურული,Cultural,k'ult'uruli,ADJECTIVE,EASY,
-ge_00002,სერიოზული,Serious,seriozuli,ADJECTIVE,EASY,
-ge_00003,ხშირი,Frequent / Often,khshiri,ADJECTIVE,EASY,
-ge_00004,მშვიდი,Calm / Peaceful,mshvidi,ADJECTIVE,EASY,
-ge_00005,მყუდრო,Cozy,mqudro,ADJECTIVE,EASY,
-ge_00006,საინტერესო,Interesting / Captivating,sainteresо,ADJECTIVE,EASY,
-ge_00007,სასარგებლო,Useful / Beneficial,sasargeblo,ADJECTIVE,EASY,
-ge_00008,უაზრო,Meaningless / Nonsensical,uazro,ADJECTIVE,EASY,
-ge_00009,კეთილი,Kind,k'etili,ADJECTIVE,EASY,
-ge_00010,მამაცი,Brave / Courageous,mamatsi,ADJECTIVE,EASY,
-ge_00011,ჭკვიანი,Smart / Clever,ch'k'viani,ADJECTIVE,EASY,
-ge_00012,პასუხისმგებელი,Responsible,p'asukhisamgebeli,ADJECTIVE,EASY,
-ge_00013,დაღლილი,Tired / Exhausted,daghlili,ADJECTIVE,EASY,
-ge_00014,გემრიელი,Delicious / Tasty,gemrieli,ADJECTIVE,EASY,
-ge_00015,ცხარე,Spicy / Hot,tskhare,ADJECTIVE,EASY,
-ge_00016,მჟავე,Sour / Acidic,mzhhave,ADJECTIVE,EASY,
-ge_00017,ნათელი,Bright / Clear (color or light),nateli,ADJECTIVE,EASY,
-ge_00018,ბნელი,Dark,bneli,ADJECTIVE,EASY,
-ge_00019,სწრაფი,Fast / Quick,st'srap'i,ADJECTIVE,EASY,
-ge_00020,ნელი,Slow,neli,ADJECTIVE,EASY,
-ge_00021,უცხო,Foreign / Strange,utskho,ADJECTIVE,EASY,
-ge_00022,ადგილობრივი,Local,adgilobrivi,ADJECTIVE,EASY,
-ge_00023,მნიშვნელოვანი,Important / Significant,mnishvnelovani,ADJECTIVE,EASY,
-ge_00024,საიდუმლო,Secret / Mysterious,saidumlo,ADJECTIVE,EASY,
-ge_00025,საიმედო,Reliable / Trustworthy,saimedo,ADJECTIVE,EASY,
-ge_00026,ღია,"Open (e.g., door, opportunity, color)",ghia,ADJECTIVE,EASY,
-ge_00027,დახურული,Closed,dakhuruli,ADJECTIVE,EASY,
-ge_00028,რთული,Difficult / Hard / Complex,rtuli,ADJECTIVE,EASY,
-ge_00029,მარტივი,Simple / Easy,mart'ivi,ADJECTIVE,EASY,
-ge_00030,გამოცდილი,Experienced,gamotsdili,ADJECTIVE,EASY,
-ge_00031,ახალგაზრდა,Young,akhalgazrda,ADJECTIVE,EASY,
-ge_00032,ხანდაზმული,Elderly / Aged,khandazmuli,ADJECTIVE,EASY,
-ge_00033,თავისუფალი,Free / Independent,tavisupali,ADJECTIVE,EASY,
-ge_00034,საყვარელი,Favorite / Beloved / Cute,saq'vareli,ADJECTIVE,EASY,
-ge_00035,ყოველდღიური,Everyday / Daily,q'oveldghiuri,ADJECTIVE,EASY,
-ge_00036,ცნობილი,Famous / Well-known,tsnobili,ADJECTIVE,EASY,
-ge_00037,უცნობი,Unknown,utsnobi,ADJECTIVE,EASY,
-ge_00038,სავალდებულო,Mandatory / Compulsory,savalddebulo,ADJECTIVE,EASY,
-ge_00039,ბუნებრივი,Natural,bunebrivi,ADJECTIVE,EASY,
+﻿id,bg,en,lat,type,level,topic
+ge_00001,კულტურული,Cultural,k'ult'uruli,ADJECTIVE,EASY,none
+ge_00002,სერიოზული,Serious,seriozuli,ADJECTIVE,EASY,none
+ge_00003,ხშირი,Frequent / Often,khshiri,ADJECTIVE,EASY,none
+ge_00004,მშვიდი,Calm / Peaceful,mshvidi,ADJECTIVE,EASY,none
+ge_00005,მყუდრო,Cozy,mqudro,ADJECTIVE,EASY,none
+ge_00006,საინტერესო,Interesting / Captivating,sainteresо,ADJECTIVE,EASY,none
+ge_00007,სასარგებლო,Useful / Beneficial,sasargeblo,ADJECTIVE,EASY,none
+ge_00008,უაზრო,Meaningless / Nonsensical,uazro,ADJECTIVE,EASY,none
+ge_00009,კეთილი,Kind,k'etili,ADJECTIVE,EASY,none
+ge_00010,მამაცი,Brave / Courageous,mamatsi,ADJECTIVE,EASY,none
+ge_00011,ჭკვიანი,Smart / Clever,ch'k'viani,ADJECTIVE,EASY,none
+ge_00012,პასუხისმგებელი,Responsible,p'asukhisamgebeli,ADJECTIVE,EASY,none
+ge_00013,დაღლილი,Tired / Exhausted,daghlili,ADJECTIVE,EASY,none
+ge_00014,გემრიელი,Delicious / Tasty,gemrieli,ADJECTIVE,EASY,none
+ge_00015,ცხარე,Spicy / Hot,tskhare,ADJECTIVE,EASY,none
+ge_00016,მჟავე,Sour / Acidic,mzhhave,ADJECTIVE,EASY,none
+ge_00017,ნათელი,Bright / Clear (color or light),nateli,ADJECTIVE,EASY,none
+ge_00018,ბნელი,Dark,bneli,ADJECTIVE,EASY,none
+ge_00019,სწრაფი,Fast / Quick,st'srap'i,ADJECTIVE,EASY,none
+ge_00020,ნელი,Slow,neli,ADJECTIVE,EASY,none
+ge_00021,უცხო,Foreign / Strange,utskho,ADJECTIVE,EASY,none
+ge_00022,ადგილობრივი,Local,adgilobrivi,ADJECTIVE,EASY,none
+ge_00023,მნიშვნელოვანი,Important / Significant,mnishvnelovani,ADJECTIVE,EASY,none
+ge_00024,საიდუმლო,Secret / Mysterious,saidumlo,ADJECTIVE,EASY,none
+ge_00025,საიმედო,Reliable / Trustworthy,saimedo,ADJECTIVE,EASY,none
+ge_00026,ღია,"Open (e.g., door, opportunity, color)",ghia,ADJECTIVE,EASY,none
+ge_00027,დახურული,Closed,dakhuruli,ADJECTIVE,EASY,none
+ge_00028,რთული,Difficult / Hard / Complex,rtuli,ADJECTIVE,EASY,none
+ge_00029,მარტივი,Simple / Easy,mart'ivi,ADJECTIVE,EASY,none
+ge_00030,გამოცდილი,Experienced,gamotsdili,ADJECTIVE,EASY,none
+ge_00031,ახალგაზრდა,Young,akhalgazrda,ADJECTIVE,EASY,none
+ge_00032,ხანდაზმული,Elderly / Aged,khandazmuli,ADJECTIVE,EASY,none
+ge_00033,თავისუფალი,Free / Independent,tavisupali,ADJECTIVE,EASY,none
+ge_00034,საყვარელი,Favorite / Beloved / Cute,saq'vareli,ADJECTIVE,EASY,none
+ge_00035,ყოველდღიური,Everyday / Daily,q'oveldghiuri,ADJECTIVE,EASY,none
+ge_00036,ცნობილი,Famous / Well-known,tsnobili,ADJECTIVE,EASY,none
+ge_00037,უცნობი,Unknown,utsnobi,ADJECTIVE,EASY,none
+ge_00038,სავალდებულო,Mandatory / Compulsory,savalddebulo,ADJECTIVE,EASY,none
+ge_00039,ბუნებრივი,Natural,bunebrivi,ADJECTIVE,EASY,none
 ge_00040,გამარჯობა,Hello,gamarjoba,SHORT,EASY,CONVERSATION
 ge_00041,დილა მშვიდობისა,Good morning,dila mshvidobisa,PHRASE,EASY,CONVERSATION
 ge_00042,ნახვამდის,Goodbye,nakhvamdis,SHORT,EASY,CONVERSATION

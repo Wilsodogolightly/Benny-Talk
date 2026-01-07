@@ -1142,29 +1142,44 @@
         </div>
 
         <div class="filter-group">
-          <label for="difficultyFilter">Level</label>
-          <select id="difficultyFilter"></select>
-        </div>
+          <label for="levelFilter">Level</label>
+          <select id="levelFilter"></select>
+      </div>
+
 
         <div class="filter-group">
           <label for="topicFilter">Topic</label>
           <select id="topicFilter"></select>
         </div>
 
-        <div class="filter-group status-group">
-          <label for="statusFilter">Status</label>
-          <select id="statusFilter">
-            <option value="all">All</option>
-            <option value="untestedSession">Untested*</option>
-            <option value="neverTested">Never tested</option>
-            <option value="lastWrong">Last wrong</option>
-            <option value="tricky">Tricky</option>
-            <option value="difficult">Difficult</option>
-            <option value="notLearned">Not-learned</option>
-          </select>
+       <div class="filter-group status-group">
+  <!-- Focus -->
+  <div class="filter-group">
+    <label for="focusFilter">Focus</label>
+    <select id="focusFilter">
+      <option value="all">All</option>
+      <option value="untestedSession">Untested – this run</option>
+      <option value="untested">Untested</option>
+      <option value="lastWrong">Last Wrong</option>
+      <option value="unlearned">Unlearned</option>
+      <option value="ignoreEasy">Ignore Easy</option>
+    </select>
+  </div>
 
-          <p class="filter-note">*Untested = this session only</p>
-        </div>
+  <!-- Difficulty -->
+  <div class="filter-group">
+    <label for="difficultyFilter">Difficulty</label>
+    <select id="difficultyFilter">
+      <option value="all">All</option>
+      <option value="difficult">Difficult</option>
+      <option value="tricky">Tricky</option>
+      <option value="unlearned">Unlearned</option>
+      <option value="ignoreEasy">Ignore Easy</option>
+    </select>
+  </div>
+ 
+</div>
+
       </div>
 
       <div class="bg-phrase" id="bgPhrase">
@@ -1231,23 +1246,42 @@
       <div class="progress-header">PROGRESS (CURRENT FILTERS)</div>
 
       <div class="progress-summary">
-        <div>
-          <div>Untested this run:</div>
-          <strong id="neverTestedValue">0</strong>
-        </div>
-        <div>
-          <div>Last wrong:</div>
-          <strong id="unlearnedValue">0</strong>
-        </div>
-        <div>
-          <div>Difficult (5+ wrong):</div>
-          <strong id="difficultValue">0</strong>
-        </div>
-        <div>
-          <div>Learned (3+ correct):</div>
-          <strong id="learnedValue">0</strong>
-        </div>
-      </div>
+  <div>
+    <div>Total in selection:</div>
+    <strong id="totalInFilterValue">0</strong>
+  </div>
+
+  <div>
+    <div>Untested (ever):</div>
+    <strong id="untestedEverValue">0</strong>
+  </div>
+
+  <div>
+    <div>Untested – this run:</div>
+    <strong id="untestedThisSessionValue">0</strong>
+  </div>
+
+  <div>
+    <div>Last wrong:</div>
+    <strong id="lastWrongValue">0</strong>
+  </div>
+
+  <div>
+    <div>Difficult:</div>
+    <strong id="difficultValue">0</strong>
+  </div>
+
+  <div>
+    <div>Unlearned:</div>
+    <strong id="unlearnedValue">0</strong>
+  </div>
+
+  <div>
+    <div>Learned:</div>
+    <strong id="learnedValue">0</strong>
+  </div>
+</div>
+
 
       <button type="button" class="progress-toggle" id="progressListsToggle">
         📋 Show lists
@@ -1329,7 +1363,9 @@ const modeLabelEl = document.getElementById("modeLabel");
 const typeFilterEl = document.getElementById("typeFilter");
 const filtersPanel = document.getElementById("filtersPanel");
 const toggleFiltersBtn = document.getElementById("toggleFiltersBtn");
-const difficultyFilterEl = document.getElementById("difficultyFilter");
+const levelFilterEl = document.getElementById("levelFilter");       // CSV Level
+const difficultyFilterEl = document.getElementById("difficultyFilter"); // SRS Difficulty
+
 const topicFilterEl = document.getElementById("topicFilter");
 const languageSelectEl = document.getElementById("languageSelect");
 
@@ -1344,6 +1380,11 @@ const contentCardEl = document.querySelector(".content-card");
 const toggleLargeTextBtn = document.getElementById("toggleLargeTextBtn");
 
 const LARGE_TEXT_KEY = "benny_large_text_v1";
+
+const focusFilterEl = document.getElementById("focusFilter");
+let currentFocusFilter = "all";
+
+let currentDifficultyFilter = "all";
 
 // ---------- Utility ----------
 function escapeHtml(str) {
@@ -1472,10 +1513,10 @@ function loadPhrasesFromFile() {
     const en = (cols[2] || "").trim();
     const lat = (cols[3] || "").trim();
     const type = ((cols[4] || "").trim()) || "NONE";
-    const difficulty = ((cols[5] || "").trim()) || "NONE";
+    const level = ((cols[5] || "").trim()) || "NONE";
     const topic = ((cols[6] || "").trim()) || "NONE";
 
-    return { id, bg, en, lat, type, difficulty, topic };
+    return { id, bg, en, lat, type, level, topic };
   });
 
 const dropped = parsed.filter(p => !p).length;
@@ -1523,7 +1564,7 @@ function populateFilterOptions() {
   for (const p of phrases) {
     if (!p) continue;
     if (p.type && p.type !== "NONE") types.add(p.type);
-    if (p.difficulty && p.difficulty !== "NONE") diffs.add(p.difficulty);
+    if (p.level && p.level !== "NONE") diffs.add(p.level);
     if (p.topic && p.topic !== "NONE") topics.add(p.topic);
   }
 
@@ -1550,11 +1591,11 @@ function populateFilterOptions() {
   }
 
   fillSelect(typeFilterEl, types);
-  fillSelect(difficultyFilterEl, diffs);
+  fillSelect(levelFilterEl, diffs);
   fillSelect(topicFilterEl, topics);
 
   currentTypeFilter = "any";
-  currentDifficultyFilter = "any";
+  currentLevelFilter = "any";
   currentTopicFilter = "any";
 }
 
@@ -1623,7 +1664,7 @@ let streak = 0;
 let mode = "bgToEn";
 
 let currentTypeFilter = "any";
-let currentDifficultyFilter = "any";
+let currentLevelFilter = "any";
 let currentTopicFilter = "any";
 
 let focusLock = false;
@@ -1632,34 +1673,48 @@ let srsProgress = { bg: {}, ge: {} };
 let currentLanguage = "bg";
 
 async function loadOrCreateSession() {
+  const raw = localStorage.getItem(SESSION_KEY);
   const now = Date.now();
 
-  try {
-    const raw = localStorage.getItem(SESSION_KEY);
-    if (!raw) return startNewSession("First run");
+  if (raw) {
+    try {
+      const prev = JSON.parse(raw);
 
-    const prev = JSON.parse(raw);
-    if (!prev || !prev.id || !prev.startedAt) return startNewSession("Invalid session data");
+      if (prev && prev.id && prev.startedAt) {
+        const expired = (now - prev.startedAt) > ONE_HOUR;
 
-    const age = now - prev.startedAt;
+        // 🔔 ASK if expired OR page was hard-reloaded
+        if (expired) {
+          const choice = await showSessionChoiceModal({
+            title: "Continue session?",
+            text: "Your last session is over an hour old."
+          });
 
-    if (age < ONE_HOUR) {
-      const choice = await showSessionChoiceModal({
-        title: "Continue session?",
-        text: "Continue your current session (timer resets to 1 hour), or start a new one?"
-      });
+          if (choice === "continue") {
+            return prev;
+          } else {
+            return startNewSession("Expired — user chose new");
+          }
+        }
 
-      return (choice === "continue")
-        ? startNewSession("Continue chosen (reset timer)")
-        : startNewSession("User started new session");
-    }
-
-    return startNewSession("Session expired (>1 hour)");
-  } catch (e) {
-    console.warn("Session load failed, starting new session.", e);
-    return startNewSession("Session load error");
+        // ✅ Still valid → reuse silently
+        return prev;
+      }
+    } catch {}
   }
+
+  // 🔔 First load or missing data → ask
+  const choice = await showSessionChoiceModal({
+    title: "Start a session",
+    text: "Do you want to continue your previous session or start a new one?"
+  });
+
+  return (choice === "continue")
+    ? startNewSession("Continue without prior session")
+    : startNewSession("First run");
 }
+
+
 
 function startNewSession(reason) {
   const now = Date.now();
@@ -1750,6 +1805,19 @@ function getStatsForIndex(idx) {
     lastWrong
   };
 }
+function markSeenThisSession(index) {
+  if (index == null || index < 0) return;
+
+  const phrase = phrases[index];
+  const pid = phrase?.id ? String(phrase.id) : null;
+  if (!pid) return;
+
+  const langMap = srsProgress[currentLanguage] || (srsProgress[currentLanguage] = {});
+  const info = langMap[pid] || { total: 0 };
+
+  info.lastSessionId = sessionInfo.id;   // 👈 THIS is the key
+  langMap[pid] = info;
+}
 
 function passesStatusFilter(idx) {
   const stats = getStatsForIndex(idx);
@@ -1765,57 +1833,133 @@ function passesStatusFilter(idx) {
     default:                return true;
   }
 }
+function passesFocusFilter(idx) {
+  const stats = getStatsForIndex(idx);
+
+  const phrase = phrases?.[idx];
+  const pid = phrase?.id ? String(phrase.id) : null;
+  const info = pid ? (srsProgress?.[currentLanguage] || {})[pid] : null;
+
+  const manualDifficulty = info?.manualDifficulty ?? null;
+  const isEasy = manualDifficulty === "easy";
+
+  switch (currentFocusFilter) {
+
+    case "untestedThisRun":
+      return stats.untestedThisSession;
+
+    case "untested":
+      return stats.neverTested;
+
+    case "lastWrong":
+      return stats.lastWrong;
+
+    case "unlearned":
+      return (!stats.learned) && (!isEasy);
+
+    case "ignoreEasy":
+      return !isEasy;
+
+    case "all":
+    default:
+      return true;
+  }
+}
+
+function passesDifficultyFilter(idx) {
+  const stats = getStatsForIndex(idx);
+
+  const phrase = phrases?.[idx];
+  const pid = phrase?.id ? String(phrase.id) : null;
+  const info = pid ? (srsProgress?.[currentLanguage] || {})[pid] : null;
+
+  const manualDifficulty = info?.manualDifficulty ?? null; // "easy" | "difficult" | null
+
+  const isEasy = manualDifficulty === "easy";
+  const isOverrideDifficult = manualDifficulty === "difficult";
+  const isSrsDifficult = !!info?.everDifficult;
+
+  const isDifficult = isOverrideDifficult || isSrsDifficult;
+  const isTricky = stats.tricky || isDifficult;            // Tricky OR Difficult
+  const isUnlearned = (!stats.learned) && (!isEasy);       // Unlearned + Not easy
+  const ignoreEasy = !isEasy;
+
+  switch (currentDifficultyFilter) {
+    case "difficult":  return isDifficult;
+    case "tricky":     return isTricky;
+    case "unlearned":  return isUnlearned;
+    case "ignoreEasy": return ignoreEasy;
+    case "all":
+    default:           return true;
+  }
+}
+
 
 function pickRandomIndex() {
   if (!phrases || phrases.length === 0) return -1;
 
+  // 1) CSV-level filters (Type / Level / Topic)
   const baseCandidates = [];
   for (let i = 0; i < phrases.length; i++) {
     const p = phrases[i];
     if (!p) continue;
 
-    const typeOk = currentTypeFilter === "any" || (p.type && p.type === currentTypeFilter);
-    const diffOk = currentDifficultyFilter === "any" || (p.difficulty && p.difficulty === currentDifficultyFilter);
+    const typeOk  = currentTypeFilter === "any" || (p.type && p.type === currentTypeFilter);
+    const levelOk = currentLevelFilter === "any" || (p.level && p.level === currentLevelFilter);
     const topicOk = currentTopicFilter === "any" || (p.topic && p.topic === currentTopicFilter);
 
-    if (typeOk && diffOk && topicOk) baseCandidates.push(i);
+    if (typeOk && levelOk && topicOk) baseCandidates.push(i);
   }
-
   if (baseCandidates.length === 0) return -1;
 
-  const statusCandidates = baseCandidates.filter(idx => passesStatusFilter(idx));
-  if (statusCandidates.length === 0) return -1;
+  // 2) Stats-level filters (Status + Focus + Difficulty)
+  let filteredCandidates = baseCandidates
+    .filter(idx => passesStatusFilter(idx))
+    .filter(idx => passesFocusFilter(idx))
+    .filter(idx => passesDifficultyFilter(idx));
 
- const langMap  = srsProgress[currentLanguage] || {};
-const todayStr = new Date().toISOString().slice(0, 10);
+  if (filteredCandidates.length === 0) return -1;
 
-const dueNow = [];
-const notDue = [];
-
-for (const idx of statusCandidates) {
-  const pid = phrases?.[idx]?.id ? String(phrases[idx].id) : null;
-  const info = pid ? langMap[pid] : null;
-
-  if (!info || !info.due || info.due <= todayStr) {
-    dueNow.push(idx);
-  } else {
-    notDue.push(idx);
+  // EXTRA SAFETY: if Focus is "Untested – this run", enforce it here too
+  // (prevents repeats even if something else mis-tags a phrase)
+  
+  if (currentFocusFilter === "untestedToday" || currentFocusFilter === "untestedSession" || currentFocusFilter === "untestedThisRun") {
+    filteredCandidates = filteredCandidates.filter(idx => {
+      const stats = getStatsForIndex(idx);
+      return stats.untestedThisSession;
+    });
+    if (filteredCandidates.length === 0) return -1;
   }
-}
 
-// Prefer due items; if none, use all statusCandidates
-const pool = (dueNow.length > 0 ? dueNow : statusCandidates);
+  // 3) SRS due-date preference ALWAYS applies (prefer due, but never block)
+  const langMap = srsProgress[currentLanguage] || {};
+  const todayStr = new Date().toISOString().slice(0, 10);
 
-// Still nothing? (defensive)
-if (pool.length === 0) return -1;
-if (pool.length === 1) return pool[0];
+  const dueNow = [];
+  const notDue = [];
 
-// Weighting: lower boxes appear more often
-function getBox(idx) {
-  const pid = phrases?.[idx]?.id ? String(phrases[idx].id) : null;
-  const info = pid ? langMap[pid] : null;
-  return info && info.box ? info.box : 1;
-}
+  for (const idx of filteredCandidates) {
+    const pid = phrases?.[idx]?.id ? String(phrases[idx].id) : null;
+    const info = pid ? langMap[pid] : null;
+
+    if (!info || !info.due || info.due <= todayStr) {
+      dueNow.push(idx);
+    } else {
+      notDue.push(idx);
+    }
+  }
+
+  // Prefer due items; if none, use all filteredCandidates
+  const pool = (dueNow.length > 0 ? dueNow : filteredCandidates);
+  if (pool.length === 0) return -1;
+  if (pool.length === 1) return pool[0];
+
+  // Weighting: lower boxes appear more often
+  function getBox(idx) {
+    const pid = phrases?.[idx]?.id ? String(phrases[idx].id) : null;
+    const info = pid ? langMap[pid] : null;
+    return info && info.box ? info.box : 1;
+  }
 
   function getWeight(idx) {
     const box = getBox(idx);
@@ -1834,6 +1978,7 @@ function getBox(idx) {
 
   return pool[Math.floor(Math.random() * pool.length)];
 }
+
 
 function updateMood() {
   if (!moodDotEl || !moodTextEl || !bennyIntroEl || !streakValueEl) {
@@ -1885,6 +2030,7 @@ function showPhrase(index) {
 
   const phrase = phrases[index];
   currentIndex = index;
+  
 
   if (mode === "bgToEn") {
     bgPhraseEl.textContent = phrase.bg;
@@ -1968,15 +2114,16 @@ function updateSRS(index, isCorrect) {
   const now = new Date();
 
   let info = langMap[key] || {
-    box: 1,
-    correctStreak: 0,
-    wrongStreak: 0,
-    total: 0,
-    correct: 0,
-    wrong: 0,
-    everDifficult: false,
-    lastSessionId: null,
-    lastWasWrong: false
+  box: 1,
+  correctStreak: 0,
+  wrongStreak: 0,
+  total: 0,
+  correct: 0,
+  wrong: 0,
+  everDifficult: false,   // existing "tricky / difficult" signal — unchanged
+  manualDifficulty: null, // NEW: "easy" | "difficult" | null
+  lastSessionId: null,
+  lastWasWrong: false
   };
 
 
@@ -2016,82 +2163,135 @@ function updateSRS(index, isCorrect) {
   langMap[key] = info;
   saveSRSForCurrentLanguage();
 }
+function setManualDifficultyForCurrent(index, value) {
+  if (index == null || index < 0) return;
+
+  const phrase = phrases?.[index];
+  const key = phrase?.id ? String(phrase.id) : null;
+  if (!key) return;
+
+  const lang = currentLanguage;
+  const langMap = srsProgress[lang] || (srsProgress[lang] = {});
+
+  // ALWAYS create or retrieve the record
+  const info = langMap[key] || {
+    box: 1,
+    correctStreak: 0,
+    wrongStreak: 0,
+    total: 0,
+    correct: 0,
+    wrong: 0,
+    everDifficult: false,
+    manualDifficulty: null,
+    lastSessionId: null,
+    lastWasWrong: false
+  };
+
+  // Normalise input
+  if (value !== "easy" && value !== "difficult") {
+    info.manualDifficulty = null;
+  } else {
+    info.manualDifficulty = value; // mutually exclusive by design
+  }
+
+  // WRITE BACK (this is the critical part)
+  langMap[key] = info;
+
+  saveSRSForCurrentLanguage();
+}
+
 
 function recomputeProgressReport() {
   if (!phrases || phrases.length === 0) return;
 
+  // Existing list elements (DO NOT rename HTML)
+  const listUntestedRunEl = document.getElementById("neverTestedList");  // heading: Untested this run
+  const listLastWrongEl   = document.getElementById("unlearnedList");    // heading: Last wrong
+  const listDifficultEl   = document.getElementById("difficultList");    // heading: Difficult (we'll feed tricky+difficult)
+  const listLearnedEl     = document.getElementById("learnedList");      // heading: Learned
+
+  if (listUntestedRunEl) listUntestedRunEl.innerHTML = "";
+  if (listLastWrongEl)   listLastWrongEl.innerHTML = "";
+  if (listDifficultEl)   listDifficultEl.innerHTML = "";
+  if (listLearnedEl)     listLearnedEl.innerHTML = "";
+
+  const addToList = (ul, phrase) => {
+    if (!ul) return;
+    const li = document.createElement("li");
+    li.textContent = phrase?.bg || phrase?.en || "(empty)";
+    ul.appendChild(li);
+  };
+
+  // Counts (you can surface these in the summary panel as you like)
+  let totalInCombined = 0;
+  let countUntestedEver = 0;
   let countUntestedRun = 0;
-  let countUnlearned   = 0;
-  let countDifficult   = 0;
-  let countLearned     = 0;
+  let countLastWrong = 0;
+  let countDifficult = 0;   // Override OR SRS difficult
+  let countUnlearned = 0;   // NOT learned AND NOT easy
+  let countLearned = 0;     // learned OR easy
 
-  const listUntestedEl  = document.getElementById("neverTestedList");
-  const listUnlearnedEl = document.getElementById("unlearnedList");
-  const listDifficultEl = document.getElementById("difficultList");
-  const listLearnedEl   = document.getElementById("learnedList");
-
-  if (listUntestedEl)  listUntestedEl.innerHTML  = "";
-  if (listUnlearnedEl) listUnlearnedEl.innerHTML = "";
-  if (listDifficultEl) listDifficultEl.innerHTML = "";
-  if (listLearnedEl)   listLearnedEl.innerHTML   = "";
+  const langMap = srsProgress?.[currentLanguage] || {};
 
   for (let i = 0; i < phrases.length; i++) {
     const p = phrases[i];
     if (!p) continue;
 
-    const typeOk = currentTypeFilter === "any" || (p.type && p.type === currentTypeFilter);
-    const diffOk = currentDifficultyFilter === "any" || (p.difficulty && p.difficulty === currentDifficultyFilter);
+    // 1) CSV-level filters (Type / Level / Topic)
+    const typeOk  = currentTypeFilter === "any" || (p.type && p.type === currentTypeFilter);
+    const levelOk = currentLevelFilter === "any" || (p.level && p.level === currentLevelFilter);
     const topicOk = currentTopicFilter === "any" || (p.topic && p.topic === currentTopicFilter);
-    if (!typeOk || !diffOk || !topicOk) continue;
+    if (!typeOk || !levelOk || !topicOk) continue;
+
+    // 2) Combined “what the user is working on now” filters
+    if (!passesStatusFilter(i)) continue;
+    if (!passesFocusFilter(i)) continue;
+    if (!passesDifficultyFilter(i)) continue;
+
+    totalInCombined++;
 
     const stats = getStatsForIndex(i);
 
-    if (stats.untestedThisSession) {
-      countUntestedRun++;
-      if (listUntestedEl) {
-        const li = document.createElement("li");
-        li.textContent = p.bg || p.en || "(empty)";
-        listUntestedEl.appendChild(li);
-      }
-    }
+    // Pull manual override from SRS record
+    const pid = p?.id ? String(p.id) : null;
+    const info = pid ? (langMap[pid] || null) : null;
 
-    if (stats.lastWrong) {
-      countUnlearned++;
-      if (listUnlearnedEl) {
-        const li = document.createElement("li");
-        li.textContent = p.bg || p.en || "(empty)";
-        listUnlearnedEl.appendChild(li);
-      }
-    }
+    const manualDifficulty = info?.manualDifficulty ?? null; // "easy" | "difficult" | null
+    const isEasy = manualDifficulty === "easy";
+    const isOverrideDifficult = manualDifficulty === "difficult";
+    const isSrsDifficult = !!info?.everDifficult;
 
-    if (stats.difficult) {
-      countDifficult++;
-      if (listDifficultEl) {
-        const li = document.createElement("li");
-        li.textContent = p.bg || p.en || "(empty)";
-        listDifficultEl.appendChild(li);
-      }
-    }
+    const isDifficult = isOverrideDifficult || isSrsDifficult;
+    const isTrickyIncludingDifficult = stats.tricky || isDifficult;
 
-    if (stats.learned) {
-      countLearned++;
-      if (listLearnedEl) {
-        const li = document.createElement("li");
-        li.textContent = p.bg || p.en || "(empty)";
-        listLearnedEl.appendChild(li);
-      }
-    }
+    // Counts
+    if (stats.neverTested) countUntestedEver++;
+    if (stats.untestedThisSession) countUntestedRun++;
+    if (stats.lastWrong) countLastWrong++;
+    if (isDifficult) countDifficult++;
+    if ((!stats.learned) && (!isEasy)) countUnlearned++;
+    if (stats.learned || isEasy) countLearned++;
+
+    // Lists
+    if (stats.untestedThisSession) addToList(listUntestedRunEl, p);
+    if (stats.lastWrong) addToList(listLastWrongEl, p);
+    if (isTrickyIncludingDifficult) addToList(listDifficultEl, p);
+    if (stats.learned || isEasy) addToList(listLearnedEl, p);
   }
 
-  const elUntested  = document.getElementById("neverTestedValue");
-  const elUnlearned = document.getElementById("unlearnedValue");
-  const elDifficult = document.getElementById("difficultValue");
-  const elLearned   = document.getElementById("learnedValue");
+  // If you have summary value spans, wire them here. If not, harmless.
+  const setText = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = String(value);
+  };
 
-  if (elUntested)  elUntested.textContent  = String(countUntestedRun);
-  if (elUnlearned) elUnlearned.textContent = String(countUnlearned);
-  if (elDifficult) elDifficult.textContent = String(countDifficult);
-  if (elLearned)   elLearned.textContent   = String(countLearned);
+  setText("totalInFilterValue", totalInCombined);
+  setText("untestedEverValue", countUntestedEver);
+  setText("untestedThisSessionValue", countUntestedRun);
+  setText("lastWrongValue", countLastWrong);
+  setText("difficultValue", countDifficult);
+  setText("unlearnedValue", countUnlearned);
+  setText("learnedValue", countLearned);
 }
 
 function handleAnswer(isCorrect) {
@@ -2107,6 +2307,23 @@ function handleAnswer(isCorrect) {
 
   updateMood();
 
+  // Ensure sessionInfo exists (recover from localStorage first; only then create)
+  if (!sessionInfo || !sessionInfo.id) {
+    try {
+      const raw = localStorage.getItem(SESSION_KEY);
+      if (raw) sessionInfo = JSON.parse(raw);
+    } catch (e) {}
+  }
+
+  console.log("ANSWER", {
+    sessionInfoId: sessionInfo?.id,
+    currentIndex,
+    phraseId: phrases?.[currentIndex]?.id
+  });
+
+  // ✅ MARK AS TESTED *HERE* (after answering, not when shown)
+  markSeenThisSession(currentIndex);
+
   updateSRS(currentIndex, isCorrect);
   saveSRSForCurrentLanguage();
 
@@ -2114,6 +2331,7 @@ function handleAnswer(isCorrect) {
 
   handleNewPhrase();
 }
+
 
 function markCorrect() { handleAnswer(true); }
 function markWrong() { handleAnswer(false); }
@@ -2139,13 +2357,15 @@ if (typeFilterEl) {
   });
 }
 
-if (difficultyFilterEl) {
-  difficultyFilterEl.addEventListener("change", () => {
-    currentDifficultyFilter = difficultyFilterEl.value;
+if (levelFilterEl) {
+  levelFilterEl.addEventListener("change", () => {
+    currentLevelFilter = levelFilterEl.value;
     handleNewPhrase();
     recomputeProgressReport();
   });
 }
+
+
 
 if (topicFilterEl) {
   topicFilterEl.addEventListener("change", () => {
@@ -2161,6 +2381,13 @@ if (statusFilterEl) {
     recomputeProgressReport();
   });
 }
+if (focusFilterEl) {
+  focusFilterEl.addEventListener("change", () => {
+    currentFocusFilter = focusFilterEl.value;
+    handleNewPhrase();
+    recomputeProgressReport();
+  });
+}
 
 if (languageSelectEl) {
   languageSelectEl.value = currentLanguage;
@@ -2170,8 +2397,6 @@ if (languageSelectEl) {
     currentIndex = -1;
     streak = 0;
     treatCount = 0;
-
-    sessionInfo = startNewSession("Language changed");
 
     if (streakValueEl) streakValueEl.textContent = "0";
     if (treatCountEl) treatCountEl.textContent = "0";

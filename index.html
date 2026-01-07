@@ -1676,6 +1676,9 @@ async function loadOrCreateSession() {
   const raw = localStorage.getItem(SESSION_KEY);
   const now = Date.now();
 
+  const nav = performance.getEntriesByType?.("navigation")?.[0];
+  const isReload = nav?.type === "reload"; // hard refresh / reload
+
   if (raw) {
     try {
       const prev = JSON.parse(raw);
@@ -1683,39 +1686,34 @@ async function loadOrCreateSession() {
       if (prev && prev.id && prev.startedAt) {
         const expired = (now - prev.startedAt) > ONE_HOUR;
 
-        // 🔔 ASK if expired OR page was hard-reloaded
-        if (expired) {
+        // Ask if expired OR user reloaded the page
+        if (expired || isReload) {
           const choice = await showSessionChoiceModal({
             title: "Continue session?",
-            text: "Your last session is over an hour old."
+            text: expired
+              ? "Your last session is over an hour old."
+              : "Reload detected — continue the previous session or start a new one?"
           });
 
-          if (choice === "continue") {
-            return prev;
-          } else {
-            return startNewSession("Expired — user chose new");
-          }
+          if (choice === "continue") return prev;
+          return startNewSession(expired ? "Expired — user chose new" : "Reload — user chose new");
         }
 
-        // ✅ Still valid → reuse silently
+        // Still valid and not a reload → reuse silently
         return prev;
       }
     } catch {}
   }
 
-  // 🔔 First load or missing data → ask
+  // No previous session found → ask
   const choice = await showSessionChoiceModal({
     title: "Start a session",
     text: "Do you want to continue your previous session or start a new one?"
   });
 
-  return (choice === "continue")
-    ? startNewSession("Continue without prior session")
-    : startNewSession("First run");
+  // If there is no previous session, "continue" just means "start new"
+  return startNewSession(choice === "continue" ? "Continue requested (no prior session)" : "First run");
 }
-
-
-
 function startNewSession(reason) {
   const now = Date.now();
   const s = { id: "sess_" + now, startedAt: now };

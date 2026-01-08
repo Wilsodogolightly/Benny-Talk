@@ -1319,7 +1319,7 @@ let phrases = [];
 
 // ---------- Session constants (MUST be above loadOrCreateSession) ----------
 const SESSION_KEY = "benny_session_v1";
-const ONE_HOUR = 60 * 60 * 1000;
+const ONE_HOUR = 10 * 1000;
 
 let sessionInfo = null;
 let appStarted = false;
@@ -2424,19 +2424,75 @@ document.addEventListener("keydown", (event) => {
   else if (key === "t") showTranslation();
   else if (key === "l") toggleLatin();
 });
+let sessionExpiryTimerId = null;
+
+function startSessionExpiryTimer() {
+  if (!sessionInfo || typeof sessionInfo.startedAt !== "number") return;
+
+  if (sessionExpiryTimerId) {
+    clearTimeout(sessionExpiryTimerId);
+    sessionExpiryTimerId = null;
+  }
+
+  const now = Date.now();
+  const msUntilExpiry = (sessionInfo.startedAt + ONE_HOUR) - now;
+
+  sessionExpiryTimerId = setTimeout(() => {
+    // When the timer fires, force the expiry check (no tab switch needed)
+    maybePromptSessionExpiry();
+  }, Math.max(0, msUntilExpiry));
+}
 
 async function initApp() {
   sessionInfo = await loadOrCreateSession();
+  startSessionExpiryTimer();   // <--- add this line
   updateModeUI();
   loadPhrasesFromFile();
   updateMood();
 }
+
 
 function initAppOnce() {
   if (appStarted) return;
   appStarted = true;
   initApp();
 }
+
+function maybePromptSessionExpiry() {
+  if (!sessionInfo || typeof sessionInfo.startedAt !== "number") return;
+
+  const now = Date.now();
+  const expired = (now - sessionInfo.startedAt) > ONE_HOUR;
+  if (!expired) return;
+
+  if (maybePromptSessionExpiry._prompting) return;
+  maybePromptSessionExpiry._prompting = true;
+
+  showSessionChoiceModal({
+    title: "Continue session?",
+    text: "This session is over an hour old. Continue or start a new one?"
+  }).then((choice) => {
+    if (choice === "new") {
+      sessionInfo = startNewSession("Expired while open — user chose new");
+    } else {
+      // Continue = renew timer
+      sessionInfo.startedAt = Date.now();
+      localStorage.setItem(SESSION_KEY, JSON.stringify(sessionInfo));
+    }
+
+    // IMPORTANT: schedule the next expiry
+    startSessionExpiryTimer();
+  }).finally(() => {
+    maybePromptSessionExpiry._prompting = false;
+  });
+}
+
+
+// When you come back to the tab/window
+window.addEventListener("focus", maybePromptSessionExpiry);
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) maybePromptSessionExpiry();
+});
 
 window.addEventListener("DOMContentLoaded", initAppOnce, { once: true });
     </script>

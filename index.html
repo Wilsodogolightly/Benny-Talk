@@ -19,6 +19,10 @@
     --error: #f97373;
     --success: #4ade80;
     --radius: 1.25rem;
+      /* Typography scale */
+    --text-base: 1.10rem;   /* normal BG + English */
+    --text-large: 1.90rem;  /* large-text mode */
+    --latin-scale: 0.95;    /* Latin relative size */
   }
 
   html, body {
@@ -73,6 +77,70 @@
     background: rgba(0, 0, 0, 0.12);
     scrollbar-gutter: stable;
   }
+  /* =========================
+   TYPOGRAPHY — SINGLE SOURCE
+   ========================= */
+
+.content-card {
+  font-size: var(--text-base);/*text varies with base in root*/
+}
+
+/* BG phrase is the key */
+.bg-phrase {
+  font-size: 1em;
+  line-height: 1.4;
+  font-weight: 550;
+}
+
+/* English follows BG exactly */
+.en-translation {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 540;
+}
+
+/* Latin is intentionally smaller */
+.latin-line {
+  overflow-wrap: break-word;
+  position: relative;
+  z-index: 1;
+  margin-top: 10px;
+
+  /* visibility */
+  display: none;
+  text-align: center;
+
+  /* typography */
+  font-size: calc(var(--latin-scale) * 1em);
+  line-height: 1.35;
+  font-style: italic;
+  font-weight: 500;
+
+  /* colour */
+  color: #f4f4f4;color: #f9fafb;
+
+}
+
+
+.content-card.large-text {
+  font-size: var(--text-large);   /*text varies with base in root*/
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* BG phrase remains the key */
+.content-card.large-text .bg-phrase {
+  font-size: 1em;
+  line-height: 1.45;
+}
+
+/* English follows BG automatically */
+.content-card.large-text .en-translation {
+  font-size: inherit;
+  line-height: inherit;
+}
+
 /* Confirm bar container (pending answer UI) */
   #answerConfirmBar{
     display: none;                 /* JS controls visibility */
@@ -273,51 +341,39 @@
   .benny-eyes { font-size: 0.95rem; }
 
   .bg-phrase {
-    position: relative;
-    z-index: 1;
-    font-size: 1.25rem;
-    line-height: 1.4;
-    font-weight: 550;
-    letter-spacing: 0.01em;
-    margin-top: 4px;
-    margin-bottom: 16px;
-    overflow-wrap: break-word;
-    padding: 10px 12px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.25);
-    width: 100%;
-    max-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
+  position: relative;
+  z-index: 1;
+  line-height: 1.4;
+  font-weight: 550;
+  letter-spacing: 0.01em;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  overflow-wrap: break-word;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
-  .en-translation {
-    position: relative;
-    margin-top: 10px;
-    padding: 8px 10px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.25);
-    overflow-wrap: break-word;
-    display: none;
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 540;
-  }
+
+.en-translation {
+  position: relative;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  overflow-wrap: break-word;
+  display: none;
+  color: #ffffff;
+  font-weight: 540;
+}
+
 
   .en-translation.visible { display: block; }
-
-  .latin-line {
-    overflow-wrap: break-word;
-    position: relative;
-    z-index: 1;
-    margin-top: 10px;
-    font-size: 1.0rem;
-    color: #f4f4f4;
-    font-weight: 500;
-    display: none;
-    text-align: center;
-  }
 
   .latin-line.visible { display: block; }
 
@@ -733,7 +789,7 @@
       padding: 0.25rem 0.5rem;
     }
   }
-
+  
   .treat-counter {
     font-size: 0.78rem;
     color: var(--text-muted);
@@ -1069,29 +1125,6 @@
   #markWrongBtn,
   #markCorrectBtn { font-size: 1.9rem; }
 
-  .content-card.large-text .bg-phrase {
-    font-size: 1.78rem;
-    line-height: 1.45;
-  }
-
-  .content-card.large-text .en-translation {
-    font-size: 1.78rem;
-    line-height: 1.45;
-  }
-
-  .content-card.large-text .latin-line {
-    font-size: 1.35rem;
-    line-height: 1.35;
-    font-style: italic;
-    color: #f9fafb;
-    font-weight: 500;
-  }
-
-  .content-card.large-text{
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-  }
 
   #showTranslationBtn.btn-circle{ width: auto; }
 

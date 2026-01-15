@@ -1917,7 +1917,8 @@ function getStatsForIndex(idx) {
   const accuracy = total > 0 ? correct / total : 0;
 
   const neverTested = total === 0;
-  const learned = (total >= 4 && accuracy >= 0.75);
+  const learned = (total >= 3 && !!info?.learnedStreak2);
+
   const notLearned = !learned;
 
   const difficult = !!info?.everDifficult;
@@ -2259,6 +2260,7 @@ function updateSRS(index, isCorrect) {
   box: 1,
   correctStreak: 0,
   wrongStreak: 0,
+  learnedStreak2: false,
   total: 0,
   correct: 0,
   wrong: 0,
@@ -2272,14 +2274,21 @@ function updateSRS(index, isCorrect) {
   info.total += 1;
 
   if (isCorrect) {
-    info.correct += 1;
-    info.correctStreak += 1;
-    info.wrongStreak = 0;
-  } else {
-    info.wrong += 1;
-    info.wrongStreak += 1;
-    info.correctStreak = 0;
-  }
+  info.correct += 1;
+  info.correctStreak += 1;
+  info.wrongStreak = 0;
+
+  // ✅ learned signal: achieved 2 correct in a row at least once since last wrong
+  if (info.correctStreak >= 2) info.learnedStreak2 = true;
+
+} else {
+  info.wrong += 1;
+  info.wrongStreak += 1;
+  info.correctStreak = 0;
+
+  // ❌ any wrong wipes the "last 2 correct" status
+  info.learnedStreak2 = false;
+}
 
   info.lastSessionId = sessionInfo.id;
   info.lastWasWrong = !isCorrect;

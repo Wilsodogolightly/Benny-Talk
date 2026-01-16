@@ -1510,6 +1510,22 @@ function getLanguageLabel() {
   if (currentLanguage === "ge") return "GE";
   return "BG";
 }
+function getDirectionKey() {
+  return (mode === "bgToEn") ? "bgToEn" : "enToBg";
+}
+
+function getSrsIdForPhrase(phrase) {
+  const pid = phrase?.id ? String(phrase.id) : null;
+  if (!pid) return null;
+  return `${pid}__${getDirectionKey()}`;
+}
+
+// Optional: legacy fallback read (so old stats still “show” until new ones build)
+function getSrsInfo(langMap, phrase) {
+  const sid = getSrsIdForPhrase(phrase);
+  if (!sid) return null;
+  return langMap[sid] || langMap[String(phrase.id)] || null; // fallback to old key
+}
 
 function resetLatinControls() {
   const langLabel = getLanguageLabel();
@@ -1951,14 +1967,15 @@ function markSeenThisSession(index) {
   if (index == null || index < 0) return;
 
   const phrase = phrases[index];
-  const pid = phrase?.id ? String(phrase.id) : null;
-  if (!pid) return;
+const key = getSrsIdForPhrase(phrase);
+if (!key) return;
 
-  const langMap = srsProgress[currentLanguage] || (srsProgress[currentLanguage] = {});
-  const info = langMap[pid] || { total: 0 };
+const langMap = srsProgress[currentLanguage] || (srsProgress[currentLanguage] = {});
+const info = langMap[key] || { total: 0, learnedStreak2: false };
 
-  info.lastSessionId = sessionInfo.id;   // 👈 THIS is the key
-  langMap[pid] = info;
+info.lastSessionId = sessionInfo.id;
+langMap[key] = info;
+
 }
 
 function passesStatusFilter(idx) {
@@ -2081,8 +2098,10 @@ function pickRandomIndex() {
   const notDue = [];
 
   for (const idx of filteredCandidates) {
-    const pid = phrases?.[idx]?.id ? String(phrases[idx].id) : null;
-    const info = pid ? langMap[pid] : null;
+    const phrase = phrases?.[idx];
+    const sid = getSrsIdForPhrase(phrase);
+    const info = sid ? (langMap[sid] || null) : null;
+
 
     if (!info || !info.due || info.due <= todayStr) {
       dueNow.push(idx);
@@ -2249,7 +2268,8 @@ function updateSRS(index, isCorrect) {
   if (index == null || index < 0) return;
 
   const phrase = phrases?.[index];
-  const key = phrase?.id ? String(phrase.id) : null;
+  const key = getSrsIdForPhrase(phrase);
+
   if (!key) return;
 
   const lang = currentLanguage;
@@ -2264,11 +2284,12 @@ function updateSRS(index, isCorrect) {
   total: 0,
   correct: 0,
   wrong: 0,
-  everDifficult: false,   // existing "tricky / difficult" signal — unchanged
-  manualDifficulty: null, // NEW: "easy" | "difficult" | null
+  everDifficult: false,
+  manualDifficulty: null,
   lastSessionId: null,
   lastWasWrong: false
-  };
+};
+
 
 
   info.total += 1;
@@ -2318,7 +2339,8 @@ function setManualDifficultyForCurrent(index, value) {
   if (index == null || index < 0) return;
 
   const phrase = phrases?.[index];
-  const key = phrase?.id ? String(phrase.id) : null;
+  const key = getSrsIdForPhrase(phrase);
+
   if (!key) return;
 
   const lang = currentLanguage;
@@ -2353,6 +2375,7 @@ function setManualDifficultyForCurrent(index, value) {
 
 
 function recomputeProgressReport() {
+  const idx = (typeof currentIndex === "number") ? currentIndex : 0;
   if (!phrases || phrases.length === 0) return;
 
   // Existing list elements (DO NOT rename HTML)
@@ -2405,7 +2428,9 @@ function recomputeProgressReport() {
 
     // Pull manual override from SRS record
     const pid = p?.id ? String(p.id) : null;
-    const info = pid ? (langMap[pid] || null) : null;
+    const phrase = phrases?.[idx];
+    const info = phrase ? getSrsInfo(langMap, phrase) : null;
+
 
     const manualDifficulty = info?.manualDifficulty ?? null; // "easy" | "difficult" | null
     const isEasy = manualDifficulty === "easy";

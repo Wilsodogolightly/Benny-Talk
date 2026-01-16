@@ -1499,6 +1499,7 @@ if (difficultyFilterEl) {
 }
 
 // ---------- Utility ----------
+
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -1520,12 +1521,13 @@ function getSrsIdForPhrase(phrase) {
   return `${pid}__${getDirectionKey()}`;
 }
 
-// Optional: legacy fallback read (so old stats still “show” until new ones build)
 function getSrsInfo(langMap, phrase) {
   const sid = getSrsIdForPhrase(phrase);
   if (!sid) return null;
-  return langMap[sid] || langMap[String(phrase.id)] || null; // fallback to old key
+  return langMap[sid] || null;
 }
+
+
 
 function resetLatinControls() {
   const langLabel = getLanguageLabel();
@@ -1890,6 +1892,46 @@ function getSRSKeyForCurrentLanguage() {
   return "bennySRS_v1_" + currentLanguage;
 }
 
+function migrateLegacySrsToBgToEnOnlyForCurrentLanguage() {
+  const MIGRATION_FLAG = "benny_migrate_legacy_to_bgToEn_only_v2_" + currentLanguage;
+
+  // run once per language
+  if (localStorage.getItem(MIGRATION_FLAG) === "1") return;
+
+  const langMap = srsProgress?.[currentLanguage];
+  if (!langMap) {
+    localStorage.setItem(MIGRATION_FLAG, "1");
+    return;
+  }
+
+  let moved = 0;
+
+  // Copy legacy records (plain "bg_00001") into bgToEn direction keys ("bg_00001__bgToEn")
+  for (const k of Object.keys(langMap)) {
+    // legacy keys do NOT contain "__"
+    if (k.includes("__")) continue;
+
+    const legacy = langMap[k];
+    const targetKey = `${k}__bgToEn`;
+
+    if (!langMap[targetKey]) {
+      langMap[targetKey] = legacy;
+      moved++;
+    }
+
+    // IMPORTANT: remove legacy key so EN->BG can't "inherit" it
+    delete langMap[k];
+  }
+
+  // Persist
+  srsProgress[currentLanguage] = langMap;
+  saveSRSForCurrentLanguage();
+
+
+  localStorage.setItem(MIGRATION_FLAG, "1");
+  console.log(`[SRS] Migrated legacy -> bgToEn only (${currentLanguage}). moved=${moved}`);
+}
+
 function loadSRSForCurrentLanguage() {
   const key = getSRSKeyForCurrentLanguage();
   try {
@@ -1900,6 +1942,8 @@ function loadSRSForCurrentLanguage() {
     } else {
       srsProgress[currentLanguage] = {};
     }
+    migrateLegacySrsToBgToEnOnlyForCurrentLanguage();
+
   } catch (e) {
     console.warn("Could not load SRS data:", e);
     srsProgress[currentLanguage] = {};
@@ -1920,10 +1964,7 @@ function getStatsForIndex(idx) {
   const langMap = srsProgress[currentLanguage] || {};
 
   const phrase = phrases?.[idx];
-  const pid = phrase?.id ? String(phrase.id) : null;
-
-  const info = pid ? (langMap[pid] || null) : null;
-
+  const info = phrase ? getSrsInfo(langMap, phrase) : null; // ✅ uses id__direction
 
   const total   = info?.total ?? 0;
   const correct = info?.correct ?? 0;
@@ -1996,14 +2037,13 @@ function passesFocusFilter(idx) {
   const stats = getStatsForIndex(idx);
 
   const phrase = phrases?.[idx];
-  const pid = phrase?.id ? String(phrase.id) : null;
-  const info = pid ? (srsProgress?.[currentLanguage] || {})[pid] : null;
+  const langMap = srsProgress?.[currentLanguage] || {};
+  const info = phrase ? getSrsInfo(langMap, phrase) : null;
 
   const manualDifficulty = info?.manualDifficulty ?? null;
   const isEasy = manualDifficulty === "easy";
 
   switch (currentFocusFilter) {
-
     case "untestedSession":
       return stats.untestedThisSession;
 
@@ -2025,12 +2065,13 @@ function passesFocusFilter(idx) {
   }
 }
 
+
 function passesDifficultyFilter(idx) {
   const stats = getStatsForIndex(idx);
 
   const phrase = phrases?.[idx];
-  const pid = phrase?.id ? String(phrase.id) : null;
-  const info = pid ? (srsProgress?.[currentLanguage] || {})[pid] : null;
+  const langMap = srsProgress?.[currentLanguage] || {};
+  const info = phrase ? getSrsInfo(langMap, phrase) : null;
 
   const manualDifficulty = info?.manualDifficulty ?? null; // "easy" | "difficult" | null
 
@@ -2039,8 +2080,8 @@ function passesDifficultyFilter(idx) {
   const isSrsDifficult = !!info?.everDifficult;
 
   const isDifficult = isOverrideDifficult || isSrsDifficult;
-  const isTricky = stats.tricky || isDifficult;            // Tricky OR Difficult
-  const isUnlearned = (!stats.learned) && (!isEasy);       // Unlearned + Not easy
+  const isTricky = stats.tricky || isDifficult;      // Tricky OR Difficult
+  const isUnlearned = (!stats.learned) && (!isEasy); // Unlearned + Not easy
   const ignoreEasy = !isEasy;
 
   switch (currentDifficultyFilter) {
@@ -2052,6 +2093,7 @@ function passesDifficultyFilter(idx) {
     default:           return true;
   }
 }
+
 
 
 function pickRandomIndex() {
@@ -2079,16 +2121,17 @@ function pickRandomIndex() {
 
   if (filteredCandidates.length === 0) return -1;
 
-  // EXTRA SAFETY: if Focus is "Untested – this run", enforce it here too
-  // (prevents repeats even if something else mis-tags a phrase)
-  
-  if (currentFocusFilter === "untestedToday" || currentFocusFilter === "untestedSession" || currentFocusFilter === "untestedThisRun") {
-    filteredCandidates = filteredCandidates.filter(idx => {
-      const stats = getStatsForIndex(idx);
-      return stats.untestedThisSession;
-    });
-    if (filteredCandidates.length === 0) return -1;
-  }
+  // EXTRA SAFETY: if Focus is "Untested — this run", enforce it here too
+// (prevents repeats even if something else mis-tags a phrase)
+if (currentFocusFilter === "untestedSession") {
+  filteredCandidates = filteredCandidates.filter(idx => {
+    const stats = getStatsForIndex(idx);
+    return stats.untestedThisSession;
+  });
+
+  if (filteredCandidates.length === 0) return -1;
+}
+
 
   // 3) SRS due-date preference ALWAYS applies (prefer due, but never block)
   const langMap = srsProgress[currentLanguage] || {};
@@ -2116,11 +2159,13 @@ function pickRandomIndex() {
   if (pool.length === 1) return pool[0];
 
   // Weighting: lower boxes appear more often
-  function getBox(idx) {
-    const pid = phrases?.[idx]?.id ? String(phrases[idx].id) : null;
-    const info = pid ? langMap[pid] : null;
-    return info && info.box ? info.box : 1;
-  }
+ function getBox(idx) {
+  const phrase = phrases?.[idx];
+  const sid = getSrsIdForPhrase(phrase);
+  const info = sid ? langMap[sid] : null;
+  return info?.box ?? 1;
+}
+
 
   function getWeight(idx) {
     const box = getBox(idx);
@@ -2381,7 +2426,7 @@ function recomputeProgressReport() {
   // Existing list elements (DO NOT rename HTML)
   const listUntestedRunEl = document.getElementById("neverTestedList");  // heading: Untested this run
   const listLastWrongEl   = document.getElementById("unlearnedList");    // heading: Last wrong
-  const listDifficultEl   = document.getElementById("difficultList");    // heading: Difficult (we'll feed tricky+difficult)
+  const listDifficultEl   = document.getElementById("difficultList");    // heading: Difficult
   const listLearnedEl     = document.getElementById("learnedList");      // heading: Learned
 
   if (listUntestedRunEl) listUntestedRunEl.innerHTML = "";
@@ -2396,12 +2441,12 @@ function recomputeProgressReport() {
     ul.appendChild(li);
   };
 
-  // Counts (you can surface these in the summary panel as you like)
+  // Counts
   let totalInCombined = 0;
   let countUntestedEver = 0;
   let countUntestedRun = 0;
   let countLastWrong = 0;
-  let countDifficult = 0;   // Override OR SRS difficult
+  let countDifficult = 0;   // Override OR SRS difficult (STRICT)
   let countUnlearned = 0;   // NOT learned AND NOT easy
   let countLearned = 0;     // learned OR easy
 
@@ -2426,19 +2471,16 @@ function recomputeProgressReport() {
 
     const stats = getStatsForIndex(i);
 
-    // Pull manual override from SRS record
-    const pid = p?.id ? String(p.id) : null;
-    const phrase = phrases?.[idx];
-    const info = phrase ? getSrsInfo(langMap, phrase) : null;
-
+    // IMPORTANT: info must be for *this phrase p*, not phrases[idx]
+    const info = getSrsInfo(langMap, p);
 
     const manualDifficulty = info?.manualDifficulty ?? null; // "easy" | "difficult" | null
     const isEasy = manualDifficulty === "easy";
     const isOverrideDifficult = manualDifficulty === "difficult";
     const isSrsDifficult = !!info?.everDifficult;
 
+    // STRICT difficult (does NOT include tricky)
     const isDifficult = isOverrideDifficult || isSrsDifficult;
-    const isTrickyIncludingDifficult = stats.tricky || isDifficult;
 
     // Counts
     if (stats.neverTested) countUntestedEver++;
@@ -2451,11 +2493,10 @@ function recomputeProgressReport() {
     // Lists
     if (stats.untestedThisSession) addToList(listUntestedRunEl, p);
     if (stats.lastWrong) addToList(listLastWrongEl, p);
-    if (isTrickyIncludingDifficult) addToList(listDifficultEl, p);
+    if (isDifficult) addToList(listDifficultEl, p);       // ✅ STRICT difficult only
     if (stats.learned || isEasy) addToList(listLearnedEl, p);
   }
 
-  // If you have summary value spans, wire them here. If not, harmless.
   const setText = (id, value) => {
     const el = document.getElementById(id);
     if (el) el.textContent = String(value);
@@ -2534,8 +2575,17 @@ function markWrong() { handleAnswer(false); }
 function toggleMode() {
   mode = mode === "bgToEn" ? "enToBg" : "bgToEn";
   updateModeUI();
+
+  clearPendingAnswer();          // avoid carrying a pending ✓/✕ across direction
+  recomputeProgressReport();     // ✅ refresh progress for the new direction
+
+  // Option A: keep the same phrase, just swap prompt/answer
   if (currentIndex !== -1) showPhrase(currentIndex);
+
+  // Option B (often better): uncomment this to immediately draw a new phrase in the new direction
+  // handleNewPhrase();
 }
+
 
 newPhraseBtn.addEventListener("click", handleNewPhrase);
 toggleModeBtn.addEventListener("click", toggleMode);
@@ -2547,6 +2597,10 @@ markWrongBtn.addEventListener("click", markWrong);
 document.getElementById("markEasyBtn")
   ?.addEventListener("click", () => {
     if (currentIndex < 0) return;
+
+    // Must have a pending ✓/✕ for THIS phrase
+    if (pendingAnswer === null || pendingIndex !== currentIndex) return;
+
     setManualDifficultyForCurrent(currentIndex, "easy");
     recomputeProgressReport();
     applyAnswer(pendingAnswer);
@@ -2555,10 +2609,15 @@ document.getElementById("markEasyBtn")
 document.getElementById("markDifficultBtn")
   ?.addEventListener("click", () => {
     if (currentIndex < 0) return;
+
+    // Must have a pending ✓/✕ for THIS phrase
+    if (pendingAnswer === null || pendingIndex !== currentIndex) return;
+
     setManualDifficultyForCurrent(currentIndex, "difficult");
     recomputeProgressReport();
     applyAnswer(pendingAnswer);
   });
+
 
 
 

@@ -860,8 +860,11 @@ button{
 </head>
 
 <body>
+
+  <!-- ========== APP: WRAPPER ========== -->
   <div class="app" aria-label="English with Benny - practice phrases">
-    
+
+    <!-- ========== HEADER: AVATAR + TITLE + TOP STATS ========== -->
     <header class="header">
       <div class="avatar">
         <img src="benny.png" alt="Benny the dog" />
@@ -870,6 +873,7 @@ button{
       <div class="title-block">
         <h1 class="title">English with Benny</h1>
 
+        <!-- ========== HEADER: LANGUAGE + MODE + STREAK ========== -->
         <div class="stats-row header-top-row">
           <div class="language-header">
             <select id="languageSelect">
@@ -896,10 +900,13 @@ button{
       </div>
     </header>
 
+    <!-- ========== MAIN: CONTENT CARD (PHRASE AREA) ========== -->
     <section class="content-card" aria-live="polite">
-      
+
+      <!-- ========== BUILD BADGE ========== -->
       <div id="buildBadge" class="build-badge">BUILD</div>
 
+      <!-- ========== UI: FILTERS TOGGLE + LARGE TEXT ========== -->
       <div class="filters-toggle-row" style="justify-content: space-between; align-items:center;">
         <button type="button" class="benny-filters-btn" id="toggleFiltersBtn" aria-expanded="false" aria-controls="filtersPanel">
           <span class="benny-filters-avatar">
@@ -914,6 +921,7 @@ button{
         </button>
       </div>
 
+      <!-- ========== UI: FILTERS PANEL ========== -->
       <div id="filtersPanel" class="filter-row">
         <div class="filter-group">
           <label for="typeFilter">Type</label>
@@ -923,59 +931,61 @@ button{
         <div class="filter-group">
           <label for="levelFilter">Level</label>
           <select id="levelFilter"></select>
-      </div>
-
+        </div>
 
         <div class="filter-group">
           <label for="topicFilter">Topic</label>
           <select id="topicFilter"></select>
         </div>
 
-       <div class="filter-group status-group">
-  <!-- Focus -->
-  <div class="filter-group">
-    <label for="focusFilter">Focus</label>
-    <select id="focusFilter">
-      <option value="all">All</option>
-      <option value="untestedSession">Untested – this run</option>
-      <option value="untested">Untested</option>
-      <option value="lastWrong">Last Wrong</option>
-      <option value="unlearned">Unlearned</option>
-      <option value="ignoreEasy">Ignore Easy</option>
-    </select>
-  </div>
+        <!-- ========== FILTERS: FOCUS + DIFFICULTY ========== -->
+        <div class="filter-group status-group">
 
-  <!-- Difficulty -->
-  <div class="filter-group">
-    <label for="difficultyFilter">Difficulty</label>
-    <select id="difficultyFilter">
-      <option value="all">All</option>
-      <option value="difficult">Difficult</option>
-      <option value="tricky">Tricky</option>
-      <option value="unlearned">Unlearned</option>
-      <option value="ignoreEasy">Ignore Easy</option>
-    </select>
-  </div>
- 
-</div>
+          <div class="filter-group">
+            <label for="focusFilter">Focus</label>
+            <select id="focusFilter">
+              <option value="all">All</option>
+              <option value="untestedSession">Untested – this run</option>
+              <option value="untested">Untested</option>
+              <option value="lastWrong">Last Wrong</option>
+              <option value="unlearned">Unlearned</option>
+              <option value="ignoreEasy">Ignore Easy</option>
+            </select>
+          </div>
 
+          <div class="filter-group">
+            <label for="difficultyFilter">Difficulty</label>
+            <select id="difficultyFilter">
+              <option value="all">All</option>
+              <option value="difficult">Difficult</option>
+              <option value="tricky">Tricky</option>
+              <option value="unlearned">Unlearned</option>
+              <option value="ignoreEasy">Ignore Easy</option>
+            </select>
+          </div>
+
+        </div>
       </div>
 
+      <!-- ========== PHRASE: PROMPT ========== -->
       <div class="bg-phrase" id="bgPhrase">
         Зареждане…
         <small id="bgHint">Натисни „Нова фраза“, за да започнеш.</small>
       </div>
 
+      <!-- ========== PHRASE: LATIN LINE ========== -->
       <div class="latin-line" id="latinLine">
         <span class="latin-label" id="latinLabel">Latin (BG)</span>
         <span id="latinText"></span>
       </div>
 
+      <!-- ========== PHRASE: TRANSLATION PANEL ========== -->
       <div class="en-translation" id="enTranslation">
         <div class="en-label" id="translationLabel">English</div>
         <div id="enText"></div>
       </div>
 
+      <!-- ========== FOOTER: MOOD + TREATS (INSIDE CARD) ========== -->
       <div class="benny-footer">
         <div class="benny-mood-row">
           <span class="mood-dot" id="moodDot"></span>
@@ -993,52 +1003,51 @@ button{
         </div>
       </div>
 
+      <!-- ========== DECORATION: BENNY RUNNER ========== -->
       <div class="benny-runner" aria-hidden="true"></div>
     </section>
 
+    <!-- ========== FOOTER: PRACTICE CONTROLS ========== -->
     <footer class="app-footer" aria-label="Practice controls">
-      
       <section class="controls" aria-label="Controls">
 
-  <!-- Pending note + Easy/Difficult -->
-  <div id="answerConfirmBar">
-    <div id="answerConfirmText"
-         style="font-size:0.85rem; text-align:center; opacity:0.9; margin-bottom:6px;">
-      ✓ selected — tap ✓ to confirm or ✕ to change. Or select Easy / Difficult to fast-track.
-    </div>
+        <!-- ========== ANSWER: CONFIRM BAR + EASY/DIFFICULT ========== -->
+        <div id="answerConfirmBar">
+          <div id="answerConfirmText"
+               style="font-size:0.85rem; text-align:center; opacity:0.9; margin-bottom:6px;">
+            ✓ selected — tap ✓ to confirm or ✕ to change. Or select Easy / Difficult to fast-track.
+          </div>
 
-    <div style="display:flex; gap:10px; justify-content:center;">
-      <button type="button" class="btn-tag btn-easy" id="markEasyBtn">Easy</button>
-      <button type="button" class="btn-tag btn-difficult" id="markDifficultBtn">Difficult</button>
+          <div style="display:flex; gap:10px; justify-content:center;">
+            <button type="button" class="btn-tag btn-easy" id="markEasyBtn">Easy</button>
+            <button type="button" class="btn-tag btn-difficult" id="markDifficultBtn">Difficult</button>
+          </div>
+        </div>
 
-    </div>
-  </div>
+        <!-- ========== CONTROLS: ✓ / ✕ + ANS + LATIN ========== -->
+        <div class="row-group row-circles">
+          <button type="button" class="btn-circle btn-judge btn-wrong" id="markWrongBtn" title="I got it wrong">✕</button>
 
-  <!-- ✓ / ✕ row (NOW ABOVE Progress/New) -->
-  <div class="row-group row-circles">
-    <button type="button" class="btn-circle btn-judge btn-wrong" id="markWrongBtn" title="I got it wrong">✕</button>
+          <div class="mid-pills">
+            <button type="button" class="btn-pill btn-ans" id="showTranslationBtn">Ans</button>
+            <button type="button" class="btn-pill" id="toggleLatinBtn">abc…</button>
+          </div>
 
-    <div class="mid-pills">
-      <button type="button" class="btn-pill btn-ans" id="showTranslationBtn">Ans</button>
-      <button type="button" class="btn-pill" id="toggleLatinBtn">abc…</button>
-    </div>
+          <button type="button" class="btn-circle btn-judge btn-right" id="markCorrectBtn" title="I got it right">✓</button>
+        </div>
 
-    <button type="button" class="btn-circle btn-judge btn-right" id="markCorrectBtn" title="I got it right">✓</button>
-  </div>
+        <!-- ========== CONTROLS: PROGRESS + NEW ========== -->
+        <div class="controls-row row-b">
+          <div class="row-group row-bottom">
+            <button type="button" class="btn-ghost" id="progressToggleBtn">📊 Progress</button>
+            <button type="button" class="btn-new btn-new-inline" id="newPhraseBtn">&#x1F501; New</button>
+          </div>
+        </div>
 
-  <!-- Progress + New (STAYS AT BOTTOM) -->
-  <div class="controls-row row-b">
-    <div class="row-group row-bottom">
-      <button type="button" class="btn-ghost" id="progressToggleBtn">📊 Progress</button>
-      <button type="button" class="btn-new btn-new-inline" id="newPhraseBtn">&#x1F501; New</button>
-    </div>
-  </div>
-
-</section>
-
+      </section>
     </footer>
 
-    <!-- PROGRESS PANEL (overlay inside .app) -->
+    <!-- ========== UI: PROGRESS PANEL (OVERLAY) ========== -->
     <div class="progress-panel" id="progressPanel">
       <div class="progress-header">PROGRESS (CURRENT FILTERS)</div>
 

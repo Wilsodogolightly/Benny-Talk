@@ -894,6 +894,11 @@ button{
           </div>
         </div>
       </div>
+<button id="devResetBtn" style="display:none; position:fixed; top:44px; right:10px; padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px; z-index:9999; opacity:.92;">
+  RESET DEV
+</button>
+
+
     </header>
 
     <section class="content-card" aria-live="polite">
@@ -1131,6 +1136,24 @@ function applyBuildTag() {
   if (BUILD_TAG === "LIVE") badge.classList.add("live"); else badge.classList.add("dev");
   document.title = `English with Benny (${BUILD_TAG})`;
 }
+
+
+function setupDevResetButton() {
+  const btn = document.getElementById("devResetBtn");
+  if (!btn) return;
+
+  if (BUILD_TAG !== "DEV") return;
+
+  btn.style.display = "block";
+
+  btn.addEventListener("click", () => {
+    if (!confirm("Clear localStorage and reload?")) return;
+    localStorage.clear();
+    location.reload();
+  });
+}
+
+
 // ========== APP: GLOBAL FLAGS ==========
 let sessionInfo = null;
 let appStarted = false;
@@ -2442,6 +2465,8 @@ function startSessionExpiryTimer() {
 
 async function initApp() {
   applyBuildTag();
+  setupDevResetButton();
+
   sessionInfo = await loadOrCreateSession();
   startSessionExpiryTimer();
   updateModeUI();

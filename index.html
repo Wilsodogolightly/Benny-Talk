@@ -1122,10 +1122,11 @@ const ONE_HOUR = 60 * 60 * 1000;
 
 // ========== APP: BUILD TAG ==========
 const BUILD_TAG = "DEV"; // modular="DEV",
+const BUILD_DATE = "2026-01-20";
 function applyBuildTag() {
   const badge = document.getElementById("buildBadge");
   if (!badge) return;
-  badge.textContent = BUILD_TAG;
+  badge.textContent = `${BUILD_TAG} ${BUILD_DATE}`;
   badge.classList.remove("live", "dev");
   if (BUILD_TAG === "LIVE") badge.classList.add("live"); else badge.classList.add("dev");
   document.title = `English with Benny (${BUILD_TAG})`;

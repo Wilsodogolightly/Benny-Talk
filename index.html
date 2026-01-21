@@ -861,6 +861,8 @@ button{
 
 <body>
   <div class="app" aria-label="English with Benny - practice phrases">
+
+    <!-- ===== HEADER: BRAND + LANGUAGE + DIRECTION + STREAK ===== -->
     
     <header class="header">
       <div class="avatar">
@@ -870,39 +872,55 @@ button{
       <div class="title-block">
         <h1 class="title">English with Benny</h1>
 
-        <div class="stats-row header-top-row">
-          <div class="language-header">
-            <select id="languageSelect">
-              <option value="bg">Bulgarian</option>
-              <option value="ge">Georgian</option>
-            </select>
-          </div>
+       <div class="stats-row header-top-row">
 
-          <button
-            type="button"
-            class="stat-chip mode-chip"
-            id="toggleModeBtn"
-            title="Swap BG → EN (M)"
-          >
-            <span class="treat-dot"></span>
-            <span id="modeLabel">BG → EN phrases</span>
-          </button>
+  <!-- HEADER CONTROLS: LANGUAGE SELECT (#languageSelect) -->
+  <div class="language-header">
+    <select id="languageSelect">
+      <option value="bg">Bulgarian</option>
+      <option value="ge">Georgian</option>
+    </select>
+  </div>
 
-          <div class="stat-chip">
-            <span>🧠</span>
-            <span><strong>Streak:</strong> <span id="streakValue">0</span></span>
-          </div>
-        </div>
+  <!-- NEW: APP MODE (Learning / Practice) -->
+  <div class="stat-chip">
+  <button type="button" class="btn-ghost" id="appModeToggleBtn">Learning</button>
+</div>
+
+
+  <!-- HEADER CONTROLS: DIRECTION / MODE CHIP (BG→EN etc.) -->
+  <button
+    type="button"
+    class="stat-chip mode-chip"
+    id="toggleModeBtn"
+    title="Swap BG → EN (M)"
+  >
+    <span class="treat-dot"></span>
+    <span id="modeLabel">BG → EN phrases</span>
+  </button>
+
+  <div class="stat-chip">
+    <span>🧠</span>
+    <span><strong>Streak:</strong> <span id="streakValue">0</span></span>
+  </div>
+
+</div>
+
       </div>
-<button id="devResetBtn" style="display:none; position:fixed; top:44px; right:10px; padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px; z-index:9999; opacity:.92;">
+<!-- DEV-ONLY OVERLAY: RESET BUTTON (shows only when BUILD_TAG="DEV") -->
+  <button id="devResetBtn" style="display:none; position:fixed; top:44px; right:10px; padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px; z-index:9999; opacity:.92;">
   RESET DEV
 </button>
 
 
     </header>
 
+    <!-- ===== /HEADER ===== -->
+    <!-- ===== CONTENT CARD: FILTERS + PHRASE + BENNY ===== -->
+
     <section class="content-card" aria-live="polite">
       
+    <!-- OVERLAY: BUILD BADGE (#buildBadge) -->
       <div id="buildBadge" class="build-badge">BUILD</div>
 
       <div class="filters-toggle-row" style="justify-content: space-between; align-items:center;">
@@ -1000,6 +1018,9 @@ button{
 
       <div class="benny-runner" aria-hidden="true"></div>
     </section>
+    <!-- ===== /CONTENT CARD ===== -->
+
+    <!-- ===== FOOTER: ANSWER CONTROLS ===== -->
 
     <footer class="app-footer" aria-label="Practice controls">
       
@@ -1042,6 +1063,8 @@ button{
 </section>
 
     </footer>
+    <!-- ===== /FOOTER ===== -->
+
 
     <!-- PROGRESS PANEL (overlay inside .app) -->
     <div class="progress-panel" id="progressPanel">
@@ -2461,10 +2484,39 @@ function startSessionExpiryTimer() {
   }, Math.max(0, msUntilExpiry));
 }
 
+// ========== APP MODE: Learning vs Practice ==========
+const APP_MODE_KEY = "benny_app_mode_v1";
+let appMode = localStorage.getItem(APP_MODE_KEY) || "learning";
+
+function applyAppModeUI() {
+  const btn = document.getElementById("appModeToggleBtn");
+  if (!btn) return;
+  btn.textContent = (appMode === "learning") ? "Learning" : "Practice";
+  btn.classList.toggle("active", appMode === "practice");
+}
+
+function toggleAppMode() {
+  appMode = (appMode === "learning") ? "practice" : "learning";
+  localStorage.setItem(APP_MODE_KEY, appMode);
+  applyAppModeUI();
+}
+
+function wireAppModeToggle() {
+  const btn = document.getElementById("appModeToggleBtn");
+  if (!btn) return;
+  btn.addEventListener("click", toggleAppMode);
+}
+
+
+
+
+
 // ========== INIT ==========
 
 async function initApp() {
   applyBuildTag();
+  wireAppModeToggle();
+  applyAppModeUI();
   setupDevResetButton();
 
   sessionInfo = await loadOrCreateSession();

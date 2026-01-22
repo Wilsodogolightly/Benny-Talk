@@ -1857,6 +1857,55 @@ function passesDifficultyFilter(idx) {
   }
 }
 
+function getDirectionKeyA(lang) {
+  if (lang === "bg") return "bgToEn";
+  if (lang === "ge") return "geToEn";
+  return `${lang}ToEn`;
+}
+
+function getDirectionKeyB(lang) {
+  if (lang === "bg") return "enToBg";
+  if (lang === "ge") return "enToGe";
+  // fallback (rarely used)
+  return `enTo${String(lang).toUpperCase()}`;
+}
+
+// Your current direction must be one of the above keys.
+// If your app stores direction differently, we’ll align it after you paste your direction variable.
+function getCurrentDirectionKey() {
+  return mode; // mode is "bgToEn" or "enToBg"
+}
+
+
+function getDirectionalKeyForIndex(idx, directionKey) {
+  const phrase = phrases?.[idx];
+  if (!phrase) return null;
+
+  // IMPORTANT: this must return the same phrase ID you use everywhere else.
+  // You are already using getSrsIdForPhrase(phrase). We'll use it.
+  const pid = getSrsIdForPhrase(phrase);
+  if (!pid) return null;
+
+  return `${pid}__${directionKey}`;
+}
+
+function isEasyOrLearnedForIndex(idx, directionKey) {
+  const langMap = srsProgress?.[currentLanguage] || {};
+  const k = getDirectionalKeyForIndex(idx, directionKey);
+  const rec = k ? (langMap[k] || null) : null;
+  if (!rec) return false;
+
+  if (rec.manualDifficulty === "easy") return true;
+  if (rec.learnedStreak2 === true) return true;
+
+  return false;
+}
+
+function isPracticeEligibleIndex(idx) {
+  const dirA = getDirectionKeyA(currentLanguage);
+  const dirB = getDirectionKeyB(currentLanguage);
+  return isEasyOrLearnedForIndex(idx, dirA) && isEasyOrLearnedForIndex(idx, dirB);
+}
 
 
 function pickRandomIndex() {
@@ -1883,6 +1932,17 @@ function pickRandomIndex() {
     .filter(idx => passesDifficultyFilter(idx));
 
   if (filteredCandidates.length === 0) return -1;
+    // 2.5) MODE GATE (Learning vs Practice)
+  if (appMode === "learning") {
+    const dirKey = getCurrentDirectionKey();
+    filteredCandidates = filteredCandidates.filter(idx => !isEasyOrLearnedForIndex(idx, dirKey));
+  } else {
+    // Practice mode: only phrases learned/easy in BOTH directions
+    filteredCandidates = filteredCandidates.filter(idx => isPracticeEligibleIndex(idx));
+  }
+
+  if (filteredCandidates.length === 0) return -1;
+
 
   // EXTRA SAFETY: if Focus is "Untested — this run", enforce it here too
 // (prevents repeats even if something else mis-tags a phrase)
@@ -1896,38 +1956,44 @@ if (currentFocusFilter === "untestedSession") {
 }
 
 
-  // 3) SRS due-date preference ALWAYS applies (prefer due, but never block)
-  const langMap = srsProgress[currentLanguage] || {};
-  const todayStr = new Date().toISOString().slice(0, 10);
+    // 3) Practice mode only: SRS due-date preference (prefer due, but never block)
+  if (appMode === "practice") {
+    const langMap = srsProgress[currentLanguage] || {};
+    const todayStr = new Date().toISOString().slice(0, 10);
 
-  const dueNow = [];
-  const notDue = [];
+    const dueNow = [];
+    const notDue = [];
 
-  for (const idx of filteredCandidates) {
-    const phrase = phrases?.[idx];
-    const sid = getSrsIdForPhrase(phrase);
-    const info = sid ? (langMap[sid] || null) : null;
+    for (const idx of filteredCandidates) {
+      const phrase = phrases?.[idx];
+      const sid = getSrsIdForPhrase(phrase);
+      const info = sid ? (langMap[sid] || null) : null;
 
-
-    if (!info || !info.due || info.due <= todayStr) {
-      dueNow.push(idx);
-    } else {
-      notDue.push(idx);
+      if (!info || !info.due || info.due <= todayStr) {
+        dueNow.push(idx);
+      } else {
+        notDue.push(idx);
+      }
     }
+
+    filteredCandidates = (dueNow.length > 0 ? dueNow : filteredCandidates);
+    if (filteredCandidates.length === 0) return -1;
   }
 
-  // Prefer due items; if none, use all filteredCandidates
-  const pool = (dueNow.length > 0 ? dueNow : filteredCandidates);
+  const pool = filteredCandidates;
+
   if (pool.length === 0) return -1;
   if (pool.length === 1) return pool[0];
 
   // Weighting: lower boxes appear more often
- function getBox(idx) {
+function getBox(idx) {
+  const langMapLocal = srsProgress[currentLanguage] || {};
   const phrase = phrases?.[idx];
   const sid = getSrsIdForPhrase(phrase);
-  const info = sid ? langMap[sid] : null;
+  const info = sid ? langMapLocal[sid] : null;
   return info?.box ?? 1;
 }
+
 
 
   function getWeight(idx) {
@@ -2045,6 +2111,13 @@ function handleNewPhrase() {
     updateMoodVisibility();
     return;
   }
+  console.log("PICK", {
+  index,
+  id: getSrsIdForPhrase(phrases[index]),
+  mode,
+  focus: currentFocusFilter,
+  session: sessionInfo?.id
+});
 
   showPhrase(index);
 }
@@ -2508,6 +2581,39 @@ function wireAppModeToggle() {
 }
 
 
+// ========== MODE GATES (Learning vs Practice) ==========
+
+// returns ["bgToEn","enToBg"] etc.
+function getDirectionsForLanguage(lang) {
+  // adjust if your Georgian direction keys differ
+  if (lang === "bg") return ["bgToEn", "enToBg"];
+  if (lang === "ge") return ["geToEn", "enToGe"];
+  // fallback: treat as target<->en
+  return [`${lang}ToEn`, `enTo${lang.toUpperCase()}`];
+}
+
+function getProgressRec(phraseId, direction) {
+  const langMap = (srsProgress && srsProgress[currentLanguage]) ? srsProgress[currentLanguage] : {};
+  return langMap[`${phraseId}__${direction}`] || null;
+}
+
+function isEasyOrLearned(phraseId, direction) {
+  const rec = getProgressRec(phraseId, direction);
+  if (!rec) return false;
+
+  // Easy is manual-only and counts as learned immediately
+  if (rec.manualDifficulty === "easy") return true;
+
+  // learnedStreak2 is your learned rule output (preferred)
+  if (rec.learnedStreak2 === true) return true;
+
+  return false;
+}
+
+function isPracticeEligible(phraseId) {
+  const [dirA, dirB] = getDirectionsForLanguage(currentLanguage);
+  return isEasyOrLearned(phraseId, dirA) && isEasyOrLearned(phraseId, dirB);
+}
 
 
 
@@ -2520,6 +2626,9 @@ async function initApp() {
   setupDevResetButton();
 
   sessionInfo = await loadOrCreateSession();
+  console.log("SESSION", sessionInfo);
+  console.log("FILTERS", { currentTypeFilter, currentLevelFilter, currentTopicFilter, currentFocusFilter, currentDifficultyFilter, mode });
+
   startSessionExpiryTimer();
   updateModeUI();
   loadPhrasesFromFile();

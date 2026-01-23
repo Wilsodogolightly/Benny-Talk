@@ -1069,6 +1069,8 @@ button{
     <!-- PROGRESS PANEL (overlay inside .app) -->
     <div class="progress-panel" id="progressPanel">
       <div class="progress-header">PROGRESS (CURRENT FILTERS)</div>
+      <div id="practiceReport">
+
 
       <div class="progress-summary">
   <div>
@@ -1133,6 +1135,51 @@ button{
           <ul class="progress-list" id="learnedList"></ul>
         </div>
       </div>
+  </div>
+
+<!--------- LEARNING PANEL ------------>
+
+<div id="learningReport" hidden>
+  <div class="progress-header">LEARNING REPORT (CURRENT FILTERS)</div>
+
+  <div style="margin-top:10px; font-size:0.95rem; opacity:0.9;">
+    <div>Total in learning batch:</div>
+    <strong id="learnBatchTotal">0</strong>
+  </div>
+
+  <div style="margin-top:12px;">
+    <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:6px 4px;">Direction</th>
+          <th style="text-align:right; padding:6px 4px;">0</th>
+          <th style="text-align:right; padding:6px 4px;">1</th>
+          <th style="text-align:right; padding:6px 4px;">2+</th>
+          <th style="text-align:right; padding:6px 4px;">Learned</th>
+          <th style="text-align:right; padding:6px 4px;">Easy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:6px 4px;"><span id="learnDirA">A</span></td>
+          <td style="text-align:right; padding:6px 4px;" id="learnA0">0</td>
+          <td style="text-align:right; padding:6px 4px;" id="learnA1">0</td>
+          <td style="text-align:right; padding:6px 4px;" id="learnA2p">0</td>
+          <td style="text-align:right; padding:6px 4px;" id="learnALearned">0</td>
+          <td style="text-align:right; padding:6px 4px;" id="learnAEasy">0</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 4px;"><span id="learnDirB">B</span></td>
+          <td style="text-align:right; padding:6px 4px;" id="learnB0">0</td>
+          <td style="text-align:right; padding:6px 4px;" id="learnB1">0</td>
+          <td style="text-align:right; padding:6px 4px;" id="learnB2p">0</td>
+          <td style="text-align:right; padding:6px 4px;" id="learnBLearned">0</td>
+          <td style="text-align:right; padding:6px 4px;" id="learnBEasy">0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
       <button type="button" class="progress-close" id="progressCloseBtn">
         ✖ Close progress
@@ -1271,18 +1318,28 @@ function getDirectionKey() {
   return (mode === "bgToEn") ? "bgToEn" : "enToBg";
 }
 
-function getSrsIdForPhrase(phrase) {
-  const pid = phrase?.id ? String(phrase.id) : null;
-  if (!pid) return null;
-  return `${pid}__${getDirectionKey()}`;
+function getSrsIdForPhrase(phrase, dirKey) {
+  if (!phrase) return null;
+
+  const baseId =
+    phrase.id ||
+    phrase.ID ||
+    phrase.Id ||
+    phrase.sid ||
+    null;
+
+  if (!baseId) return null;
+
+  const dk = dirKey || getCurrentDirectionKey(); // fallback
+  return `${baseId}__${dk}`;
 }
 
-function getSrsInfo(langMap, phrase) {
-  const sid = getSrsIdForPhrase(phrase);
+
+function getSrsInfo(langMap, phrase, dirKey) {
+  const sid = getSrsIdForPhrase(phrase, dirKey);
   if (!sid) return null;
   return langMap[sid] || null;
 }
-
 
 
 function resetLatinControls() {
@@ -1351,7 +1408,7 @@ function loadPhrasesFromFile() {
         populateFilterOptions();
         loadSRSForCurrentLanguage();
         recomputeProgressReport();
-
+        recomputeLearningReport();
         bgPhraseEl.textContent = "No phrases available.";
         if (bgHintEl) bgHintEl.textContent = "The CSV file is empty or missing data.";
         translationPanelEl.classList.remove("visible");
@@ -1433,7 +1490,7 @@ if (phrases.length === 0) {
       populateFilterOptions();
       loadSRSForCurrentLanguage();
       recomputeProgressReport();
-
+      recomputeLearningReport();
       bgPhraseEl.textContent = "Could not load phrases.";
       if (bgHintEl) bgHintEl.textContent = "Check the CSV file and try again.";
       translationPanelEl.classList.remove("visible");
@@ -1723,11 +1780,13 @@ function saveSRSForCurrentLanguage() {
   }
 }
 
-function getStatsForIndex(idx) {
+function getStatsForIndex(idx, dirKey) {
+  dirKey = dirKey || getCurrentDirectionKey();
+
   const langMap = srsProgress[currentLanguage] || {};
 
   const phrase = phrases?.[idx];
-  const info = phrase ? getSrsInfo(langMap, phrase) : null; // ✅ uses id__direction
+  const info = phrase ? getSrsInfo(langMap, phrase, dirKey) : null; // ✅ uses id__direction
 
   const total   = info?.total ?? 0;
   const correct = info?.correct ?? 0;
@@ -1901,12 +1960,30 @@ function isEasyOrLearnedForIndex(idx, directionKey) {
   return false;
 }
 
+
+
+function isEasyOrLearnedForIndex(idx, dirKey) {
+  const stats = getStatsForIndex(idx, dirKey); // directional stats
+  if (!stats) return false;
+
+  // Easy is stored in SRS info (manualDifficulty)
+  const phrase = phrases?.[idx];
+  const langMap = srsProgress?.[currentLanguage] || {};
+  const info = phrase ? getSrsInfo(langMap, phrase, dirKey) : null;
+
+  const manualDifficulty = info?.manualDifficulty ?? null;
+  const isEasy = manualDifficulty === "easy";
+
+  // learned is your existing rule per direction
+  const isLearned = !!stats.learned;
+
+  return isEasy || isLearned;
+}
 function isPracticeEligibleIndex(idx) {
   const dirA = getDirectionKeyA(currentLanguage);
   const dirB = getDirectionKeyB(currentLanguage);
   return isEasyOrLearnedForIndex(idx, dirA) && isEasyOrLearnedForIndex(idx, dirB);
 }
-
 
 function pickRandomIndex() {
   if (!phrases || phrases.length === 0) return -1;
@@ -1924,24 +2001,37 @@ function pickRandomIndex() {
     if (typeOk && levelOk && topicOk) baseCandidates.push(i);
   }
   if (baseCandidates.length === 0) return -1;
+  console.log("STAGE1 baseCandidates", baseCandidates.length);
 
-  // 2) Stats-level filters (Status + Focus + Difficulty)
-  let filteredCandidates = baseCandidates
-    .filter(idx => passesStatusFilter(idx))
-    .filter(idx => passesFocusFilter(idx))
-    .filter(idx => passesDifficultyFilter(idx));
 
-  if (filteredCandidates.length === 0) return -1;
-    // 2.5) MODE GATE (Learning vs Practice)
-  if (appMode === "learning") {
-    const dirKey = getCurrentDirectionKey();
-    filteredCandidates = filteredCandidates.filter(idx => !isEasyOrLearnedForIndex(idx, dirKey));
-  } else {
-    // Practice mode: only phrases learned/easy in BOTH directions
-    filteredCandidates = filteredCandidates.filter(idx => isPracticeEligibleIndex(idx));
-  }
+// 2) MODE GATE first (Learning vs Practice)
+let filteredCandidates = baseCandidates;
 
-  if (filteredCandidates.length === 0) return -1;
+if (appMode === "learning") {
+  const dirKey = getCurrentDirectionKey();
+  filteredCandidates = filteredCandidates.filter(idx => !isEasyOrLearnedForIndex(idx, dirKey));
+} else {
+  filteredCandidates = filteredCandidates.filter(idx => isPracticeEligibleIndex(idx));
+}
+
+// If nothing left after mode gate, stop early
+if (filteredCandidates.length === 0) return -1;
+
+// 3) NOW apply your normal filters (Status + Focus + Difficulty)
+filteredCandidates = filteredCandidates
+  .filter(idx => passesStatusFilter(idx))
+  .filter(idx => passesFocusFilter(idx))
+  .filter(idx => passesDifficultyFilter(idx));
+
+if (filteredCandidates.length === 0) return -1;
+
+console.log("STAGE2 after filters", filteredCandidates.length, {
+  status: currentStatusFilter,
+  focus: currentFocusFilter,
+  difficulty: currentDifficultyFilter,
+  appMode
+});
+
 
 
   // EXTRA SAFETY: if Focus is "Untested — this run", enforce it here too
@@ -1975,6 +2065,8 @@ if (currentFocusFilter === "untestedSession") {
         notDue.push(idx);
       }
     }
+
+    console.log("STAGE3 due split", { dueNow: dueNow.length, notDue: notDue.length });
 
     filteredCandidates = (dueNow.length > 0 ? dueNow : filteredCandidates);
     if (filteredCandidates.length === 0) return -1;
@@ -2103,14 +2195,21 @@ function handleNewPhrase() {
   const index = pickRandomIndex();
 
   if (index === -1) {
-    bgPhraseEl.textContent = "No phrases match these filters.";
-    if (bgHintEl) bgHintEl.textContent = "Try relaxing Type / Level / Topic.";
-    translationTextEl.textContent = "";
-    translationPanelEl.classList.remove("visible");
-    resetLatinControls();
-    updateMoodVisibility();
-    return;
-  }
+  if (appMode === "practice") {
+  bgPhraseEl.textContent = "No eligible practice phrases yet.";
+  bgPhraseEl.textContent = "No eligible practice phrases yet. Learn phrases in BOTH directions to unlock Practice.";
+if (bgHintEl) bgHintEl.textContent = "";
+  if (bgHintEl) bgHintEl.textContent = "Try relaxing Type / Level / Topic.";
+}
+
+
+  translationTextEl.textContent = "";
+  translationPanelEl.classList.remove("visible");
+  resetLatinControls();
+  updateMoodVisibility();
+  return;
+}
+
   console.log("PICK", {
   index,
   id: getSrsIdForPhrase(phrases[index]),
@@ -2255,6 +2354,87 @@ function setManualDifficultyForCurrent(index, value) {
 }
 
 // ========== PROGRESS: RECOMPUTE ==========
+function recomputeLearningReport() {
+  const totalEl = document.getElementById("learnBatchTotal");
+  if (!totalEl) return;
+
+  const dirA = getDirectionKeyA(currentLanguage);
+  const dirB = getDirectionKeyB(currentLanguage);
+
+  // labels
+  const dirALabel = document.getElementById("learnDirA");
+  const dirBLabel = document.getElementById("learnDirB");
+  if (dirALabel) dirALabel.textContent = dirA;
+  if (dirBLabel) dirBLabel.textContent = dirB;
+
+  // Build the learning batch = CSV filters + (Learning exclusions should already apply via pickRandomIndex gate)
+  // For reporting we follow spec: after Type/Level/Topic + exclusions.
+  const baseIdx = [];
+  for (let i = 0; i < phrases.length; i++) {
+    const p = phrases[i];
+    if (!p) continue;
+
+    const typeOk  = currentTypeFilter === "any" || (p.type && p.type === currentTypeFilter);
+    const levelOk = currentLevelFilter === "any" || (p.level && p.level === currentLevelFilter);
+    const topicOk = currentTopicFilter === "any" || (p.topic && p.topic === currentTopicFilter);
+
+    if (typeOk && levelOk && topicOk) baseIdx.push(i);
+  }
+
+  // Apply the same status/focus/difficulty filters you already use
+  let batch = baseIdx
+    .filter(idx => passesStatusFilter(idx))
+    .filter(idx => passesFocusFilter(idx))
+    .filter(idx => passesDifficultyFilter(idx));
+
+  // Learning-mode hard exclusion: Learned OR Easy in the CURRENT learning direction
+  // (this matches your spec; current direction is 'mode')
+  const learningDir = getCurrentDirectionKey(); // returns 'mode'
+  batch = batch.filter(idx => !isEasyOrLearnedForIndex(idx, learningDir));
+
+  totalEl.textContent = String(batch.length);
+
+  // Count per direction: 0 / 1 / 2+ / Learned / Easy
+  function countForDirection(directionKey) {
+    let c0 = 0, c1 = 0, c2p = 0, cLearned = 0, cEasy = 0;
+
+    for (const idx of batch) {
+      const langMap = srsProgress?.[currentLanguage] || {};
+      const k = getDirectionalKeyForIndex(idx, directionKey);
+      const rec = k ? (langMap[k] || null) : null;
+
+      const total = rec?.total ?? 0;
+      const easy = (rec?.manualDifficulty === "easy");
+      const learned = (rec?.learnedStreak2 === true);
+
+      if (easy) cEasy++;
+      if (learned || easy) cLearned++; // Easy counts as learned in your spec
+
+      if (total <= 0) c0++;
+      else if (total === 1) c1++;
+      else c2p++;
+    }
+
+    return { c0, c1, c2p, cLearned, cEasy };
+  }
+
+  const A = countForDirection(dirA);
+  const B = countForDirection(dirB);
+
+  const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = String(v); };
+
+  setText("learnA0", A.c0);
+  setText("learnA1", A.c1);
+  setText("learnA2p", A.c2p);
+  setText("learnALearned", A.cLearned);
+  setText("learnAEasy", A.cEasy);
+
+  setText("learnB0", B.c0);
+  setText("learnB1", B.c1);
+  setText("learnB2p", B.c2p);
+  setText("learnBLearned", B.cLearned);
+  setText("learnBEasy", B.cEasy);
+}
 
 function recomputeProgressReport() {
   const idx = (typeof currentIndex === "number") ? currentIndex : 0;
@@ -2416,6 +2596,8 @@ function toggleMode() {
 
   clearPendingAnswer();          // avoid carrying a pending ✓/✕ across direction
   recomputeProgressReport();     // ✅ refresh progress for the new direction
+  recomputeLearningReport();
+
 
   // Option A: keep the same phrase, just swap prompt/answer
   if (currentIndex !== -1) showPhrase(currentIndex);
@@ -2566,6 +2748,7 @@ function applyAppModeUI() {
   if (!btn) return;
   btn.textContent = (appMode === "learning") ? "Learning" : "Practice";
   btn.classList.toggle("active", appMode === "practice");
+  updateProgressPanelForAppMode();
 }
 
 function toggleAppMode() {
@@ -2619,10 +2802,25 @@ function isPracticeEligible(phraseId) {
 
 // ========== INIT ==========
 
+function updateProgressPanelForAppMode() {
+  const practice = document.getElementById("practiceReport");
+  const learning = document.getElementById("learningReport");
+  if (!practice || !learning) return;
+
+  if (appMode === "learning") {
+    practice.hidden = true;
+    learning.hidden = false;
+  } else {
+    learning.hidden = true;
+    practice.hidden = false;
+  }
+}
+
 async function initApp() {
   applyBuildTag();
   wireAppModeToggle();
   applyAppModeUI();
+  updateProgressPanelForAppMode();
   setupDevResetButton();
 
   sessionInfo = await loadOrCreateSession();

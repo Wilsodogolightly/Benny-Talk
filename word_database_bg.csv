@@ -1146,7 +1146,7 @@ bg_01144,и така нататък,and so on,i taka natatŭk,MEDIUM,EASY,none
 bg_01145,както и да е,anyway (to dismiss a subject),kakto I da e,MEDIUM,EASY,none
 bg_01146,опит/-и,attempt,opit/-i,MEDIUM,EASY,none
 bg_01147,условие/-я,condition,uslovie/-ya,MEDIUM,EASY,none
-bg_01148,"провежда/-м, проведе/-а x2","conduct, carry out  x2 tenses  (експеримент, проучване и т.н.)","provezhda/-m, provede/-a (eksperiment, prouchvane i t.n.) x2",VERB,HARD,none
+bg_01148,"провежда/-м, проведе/-а x2","conduct, carry out  x2 tenses  (експеримент и т.н.)","provezhda/-m, provede/-a (eksperiment, prouchvane i t.n.) x2",VERB,HARD,none
 bg_01149,държава/-и,country,dŭrzhava/-i,MEDIUM,EASY,none
 bg_01150,за първи път (не 'първия'),for the first time,za pŭrvi put (ne 'pŭrviya'),SHORT PHRASE,UNTESTED,none
 bg_01151,в миналото,in the past,v minaloto,MEDIUM,EASY,none
@@ -1827,7 +1827,7 @@ bg_01826,паяк/паяци,spider,payak/payatsi,SHORT,15/01 NEW,Living Nature
 bg_01827,Не ги интересува. / Не им пука.,They don't care. X 2,Ne gi interesuvam. / Ne im puka.,MEDIUM PHRASE,15/01 NEW,none
 bg_01828,неприемлив/-а/-о/-и,unacceptable,nepriemliv/-a/-o/-i,ADJECTIVE,15/01 NEW,none
 bg_01829,ударение/-я,word stress,udarenie/-ya,SHORT,15/01 NEW,Grammar
-bg_01830,две хиляди двайсет и четвърта / 2024 г.,2024,2024 g. dva khilyadi dvaĭset i chetvŭrta,LONG PHRASE,15/01 NEW,Date/Time
+bg_01830,две хиляди двайсет и четвърта г.,2024,2024 g. dva khilyadi dvaĭset i chetvŭrta,LONG PHRASE,15/01 NEW,Date/Time
 bg_01831,"позволява/-м, позволи/-я или разрешава/-м x 2","allow, let  x2  tenses","pozvolyava/-m, pozvolyava/-ya ili razreshava/-m x 2",VERB,15/01 NEW,Society
 bg_01832,Слънцето се отразява в телевизора.,The sun is reflected in the TV.,Slŭntseto se otrazyava v televizora.,LONG PHRASE,15/01 NEW,Weather
 bg_01833,Много впечатляващо. (n.),Very impressive. (n.),Mnogo vpechatlyavashto. (n.),MEDIUM PHRASE,15/01 NEW,none
@@ -1897,7 +1897,7 @@ bg_01896,скоро,soon,skoro,SHORT,22/01 NEW,Date/Time
 bg_01897,абонира/-м се,subscribe,abonira/-m se,VERB,22/01 NEW,Commerce
 bg_01898,абонат/-и,subscriber,abonat/-i,SHORT,22/01 NEW,Commerce
 bg_01899,абонамент,subscription,abonament,MEDIUM,22/01 NEW,Commerce
-bg_01900,"В сайта пишеше, че В сайта пише, че",The site said that... x 2,"V saĭta pisheshe, che V saĭta pishe, che",MEDIUM PHRASE,22/01 NEW,Mechanical/Technical
+bg_01900,"В сайта пишеше, че/  В сайта пише, че",The site said that... x 2,"V saĭta pisheshe, che V saĭta pishe, che",MEDIUM PHRASE,22/01 NEW,Mechanical/Technical
 bg_01901,"настройва/-м, настрои/-я (например аларма)",to set  x2  tenses,"nastroĭva/-m, nastroi/-ya (napr. alarma)",VERB,22/01 NEW,none
 bg_01902,шейсет (не 'шайсет'),60,sheĭset (ne 'shaĭset'),MEDIUM PHRASE,22/01 NEW,Number
 bg_01903,"функция, функции","function, functions","funktsiya, funktsii",SHORT,22/01 NEW,Mechanical/Technical
@@ -1927,3 +1927,1514 @@ bg_01926,приятелски настроен/-а/-о/-и,friendly,priyatelski 
 bg_01927,оптимистично настроен/-а/-о/-и,optimistic,optimistichno nastroen/-a/-o/-i,ADJECTIVE,22/01 NEW,People
 bg_01928,"Надявах се, че войната ще свърши.",I was hoping the war would end.,"Nadyavakh se, che voĭnata shte svŭrshi.",LONG PHRASE,22/01 NEW,World
 bg_01929,Трябва да се надяваме за най-доброто.,We should hope for the best.,Tryabva da se nadyavate za naĭ-dobroto.,LONG PHRASE,22/01 NEW,People
+bg_01930,пет ча̀са,5 hours,pet chasa,SHORT PHRASE,26/01 NEW,Date/Time
+bg_01931,пет часа̀,5 o'clock,pet chasà,SHORT PHRASE,26/01 NEW,Date/Time
+bg_01932,ѝзкоп/-и,a trench,ìzkop/-i,SHORT,26/01 NEW,World
+bg_01933,дъ̀но,bottom,dŭ̀no,SHORT,26/01 NEW,none
+bg_01934,бетон,concrete,beton,SHORT,26/01 NEW,Human environment
+bg_01935,копае/-я,dig,kopae/-ya,VERB,26/01 NEW,Work
+bg_01936,"пота̀пя/-м, потопѝ/-я̀ x 2","dip, submerge x 2 tenses","potàpya/-m, potopì/-yà kh 2 vremena",VERB,26/01 NEW,none
+bg_01937,щеше да свързва,it was going to connect,shteshe da svŭrzva,SHORT PHRASE,26/01 NEW,Mechanical/Technical
+bg_01938,разположен/-а/-о/-и x 2,located; placed,razpolozhen/-a/-o/-i,ADJECTIVE,26/01 NEW,World
+bg_01939,кал (f.),mud,kal (zh.),SHORT,26/01 NEW,World
+bg_01940,тръба̀/-ѝ x 2,"pipe, tube",trŭbà/-ì,SHORT,26/01 NEW,Mechanical/Technical
+bg_01941,железопътен/-тна/-тно/-тни,railway,zhelezopŭten/-tna/-tno/-tni,ADJECTIVE,26/01 NEW,Travel
+bg_01942,стоманобетон,reinforced concrete,stomanobeton,MEDIUM,26/01 NEW,Human environment
+bg_01943,скала̀,rock,skalà,SHORT,26/01 NEW,World
+bg_01944,за съжаление x 2,"sadly, unfortunately",za sŭzhalenie,SHORT PHRASE,26/01 NEW,none
+bg_01945,изречение,sentence,izrechenie,MEDIUM,26/01 NEW,Grammar
+bg_01946,стомана,steel,stomana,SHORT,26/01 NEW,Human environment
+bg_01947,петата тръба,the 5th tube,petata trŭba,SHORT PHRASE,26/01 NEW,Human environment
+bg_01948,петтѐ тръби,the five tubes,pettè truba,SHORT PHRASE,26/01 NEW,Human environment
+bg_01949,по този начин,this way,po tozi nachin,SHORT PHRASE,26/01 NEW,none
+bg_01950,подземен/-мна/-мно/-мни,underground,podzemen/-mna/-mno/-mni,ADJECTIVE,26/01 NEW,Human environment
+bg_01951,подводен/-дна/-дно/-дни,underwater,podvoden/-dna/-dno/-dni,ADJECTIVE,26/01 NEW,World
+bg_01952,Ламанш / Ламанша/Ламаншът x 2, English Channel/The English Channel,Lamansh / Lamansha/Lamanshŭt,MEDIUM,26/01 NEW,Travel
+bg_01953,мръсна дума / мръсни думи,dirty word / dirty words,mrŭsna duma / mrŭsni dumi,SHORT PHRASE,26/01 NEW,Grammar
+bg_01954,отношение / отношения / отношенията,relationship / relationships / the relationships,otnoshenie / otnosheniya / otnosheniyata,MEDIUM,26/01 NEW,Society
+bg_01955,"в изкоп ""фископ""",in a trench,"v izkop ""fiskop""",SHORT PHRASE,26/01 NEW,World
+bg_01956,видеоигра/-и,video game/s,videoigra/-i,MEDIUM,26/01 NEW,Leisure
+bg_01957,"една тръба, две тръби","one pipe, two pipes","edna trŭba, dve trŭbi",SHORT PHRASE,26/01 NEW,Human environment
+bg_01958,железопътен транспорт,rail transport ,zhelezopŭten transport,MEDIUM PHRASE,26/01 NEW,Travel
+bg_01959,железопътна линия,railway,zhelezopŭtna liniya,MEDIUM PHRASE,26/01 NEW,Travel
+bg_01960,жп /же пе/ линия x 2,railway /railway line x 3,zhp /zhe pe/ liniya x 3,SHORT,26/01 NEW,Travel
+bg_01961,зависи от работата / зависи от вида работа,depends on the job / depends on the type of job,zavisi ot rabotata / zavisi ot vida rabota,MEDIUM PHRASE,26/01 NEW,Work
+bg_01962,мих колата (не 'миях'),I washed the car ,mikh kolata (ne 'miyakh'),SHORT PHRASE,26/01 NEW,Human environment
+bg_01963,Много ми е тъжно.,I am very sad.,Mnogo mi e tŭzhno.,MEDIUM PHRASE,26/01 NEW,People
+bg_01964,"Не се интересуват от свободата, (а) само от пари.","They are not interested in freedom, (but) only in money.","Ne se interesuvat ot svobodata, (a) samo ot parite.",LONG PHRASE,26/01 NEW,Society
+bg_01965,среща/-м някого,I am meeting someone – not arranged,sreshta/-m nyakogo,VERB,26/01 NEW,People
+bg_01966,среща/-м се с някого,I am meeting someone - arranged,sreshta/-m se s nyakogo,VERB,26/01 NEW,People
+bg_01967,стресира/-м се,I am stressed,stresira/-m se,VERB,26/01 NEW,People
+bg_01968,тунѐл,tunnel,tunèl,SHORT,26/01 NEW,Human environment
+bg_01969,тунела/тунелът под Ламанша,the tunnel/ the Channel Tunnel,tunela/tunelŭt pod Lamansha,MEDIUM PHRASE,26/01 NEW,Human environment
+bg_01970,включва / включи / включи ( x2),"turn on, include",vklyuchva / vklyuchi / vklyuchi ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01971,забелязва / забележи / забеляза,notice,zabelyazva / zabelezhi / zabelyaza,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01972,закъснява / закъснее / закъсня,arrive late,zakŭsnyava / zakŭsnee / zakŭsnya,VERB,"B1 VERBS Imp, Perf, Past P NEW",Travel
+bg_01973,записва / запише / записа,write down,zapisva / zapise / zapisa,VERB,"B1 VERBS Imp, Perf, Past P NEW",Communication
+bg_01974,заспива / заспи / заспа,fall asleep,zaspiva / zaspi / zaspa,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_01975,затваря (на някого) / затвори / затвори,Hang up,zatvarya (na nyakogo) / zatvori / zatvori,VERB,"B1 VERBS Imp, Perf, Past P NEW",Communication
+bg_01976,запознава се / запознае се / запозна се,meet for the first time (not среща),zapoznava se / zapoznae se / zapozna se,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_01977,извинява се / извини се / извини се,apologise,izvinyava se / izvini se / izvini se,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_01978,изкарва / изкара / изкара ( x2),take out/earn,izkarva / izkara / izkara ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01979,излиза / излезе / изляза / излезе / излязох,go out (2 x perf  & p perf),izliza / izliza / izlyaza / izliza / izlyazokh,VERB,"B1 VERBS Imp, Perf, Past P NEW",Travel
+bg_01980,излита / излети / излетя ( x2),"take off, fly away",izlita / izleti / izletya ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",Travel
+bg_01981,изплаква / изплакне / изплакна,rinse,izplakva / izplakne / izplakna,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01982,изпотрява / изпоти / изпоти,sweat,izpotryava / izpoti / izpoti,VERB,"B1 VERBS Imp, Perf, Past P NEW",Body
+bg_01983,изпуска / изпусне / изпусна (Еng x3),miss (bus) / drop / let fall,izpuska / izpusne / izpusna (Eng x3),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01984,изтрива / изтрие / изтри ( x2),delete/erase,iztriva / iztrie / iztri ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",Communication
+bg_01985,изчезва / изчезне / изчезна,disappear,izchezva / izchezne / izchezna,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01986,каца / кацне / кацна,land,katsa / katsne / katsna,VERB,"B1 VERBS Imp, Perf, Past P NEW",Travel
+bg_01987,качва / качи / качи ( x2),put up / upload,kachva / kachi / kachi ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01988,качва се / качи се / качи се ( x2),get in/up (a vehicle),kachva se / kachi se / kachi se ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",Travel
+bg_01989,маха/ махне / махна ( x2),remove / put away,makh/ makhne / makhna ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01990,наема / наеме / нае,rent,naema / naeme / nae,VERB,"B1 VERBS Imp, Perf, Past P NEW",Commerce
+bg_01991,намалява / намалее / намаля ( x2),"reduce in size, number etc - no object",namalyava / namalee / namalya ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01992,наспива се / наспи се / наспа се,have enough sleep,naspiva se / naspi se / naspa se,VERB,"B1 VERBS Imp, Perf, Past P NEW",Health
+bg_01993,настива / настине / настина,catch a cold,nastiva / nastine / nastina,VERB,"B1 VERBS Imp, Perf, Past P NEW",Health
+bg_01994,натиска / натисне / натисна ( x2),push (down) press,natiska / natisne / natisna ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_01995,наяжда се / наяде/наям се  / наяде/наядох се ,eat enough (until full) (2 x p & ps),nayazhda se / nayade/nayam se / nayade/nayadokh se ,VERB,"B1 VERBS Imp, Perf, Past P NEW",Food and Drink
+bg_01996,обажда се / обади се / обади се,call,obazhda se / obadi se / obadi se,VERB,"B1 VERBS Imp, Perf, Past P NEW",Communication
+bg_01997,обещава / обещае / обеща,promise,obeshtava / obeshtae / obeshtava,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_01998,облича се / облече се / облека се / облече се / облякох се,get dressed (2 x perf & past p),oblicha se / obleche se / obleka se / obleche se / oblyakokh se,VERB,"B1 VERBS Imp, Perf, Past P NEW",Clothes
+bg_01999,облича / облече / облека / облече / облякох ( x2),"put on clothes, dress someone (2 x perf  & p perf)",oblicha / obleche / obleka / obleche / oblyakokh ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",Clothes
+bg_02000,обува / обуе / обу, put on shoes etc.,obuva / obue / obu,VERB,"B1 VERBS Imp, Perf, Past P NEW",Clothes
+bg_02001,обува се / обуе се / обу се,put on one's shoes socks trousers,obuva se / obue se / obu se,VERB,"B1 VERBS Imp, Perf, Past P NEW",Clothes
+bg_02002,ограничава / ограничи / ограничи ( x2),"limit, restrict",ogranichava / ogranichava / ogranichava ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02003,ожаднява / ожаднее / ожадня,get thirsty,ozhadnyava / ozhadnee / ozhadnya,VERB,"B1 VERBS Imp, Perf, Past P NEW",Food and Drink
+bg_02004,оздравява / оздравее / оздравя,recover from illness,ozdravyava / ozdravee / ozdravya,VERB,"B1 VERBS Imp, Perf, Past P NEW",Health
+bg_02005,оплаква се / оплаче се / оплака се,complain,oplakvam se / oplache se / oplaka se,VERB,"B1 VERBS Imp, Perf, Past P NEW",Communication
+bg_02006,осъзнава / осъзнае / осъзна,realise,osŭznava / osŭznae / osŭznavam,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02007,отглежда / отгледа / отгледа ( x2),grow (plants) raise (children),gleda / otgleda / otgleda ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",Living Nature
+bg_02008,отказва / откаже / отказа,refuse,otkazva / otkazhe / otkazva,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02009,отказва се / откаже се / отказа се,give up,otkazva se / otkazhe se / otkaz se,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02010,отключва / отключи / отключи,unlock,otklyuchva / otklyuchi / otklyuchi,VERB,"B1 VERBS Imp, Perf, Past P NEW",Mechanical/Technical
+bg_02011,открива / открие / откри ( x2),"discover, find out",otkriva /otkriva/ otkri ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02012,отслабва / отслабне / отслабна ( x3),"become weaker, decrease, lose weight",ot·slabva / ot·slabne / ot·slabna ( x3),VERB,"B1 VERBS Imp, Perf, Past P NEW",Health
+bg_02013,отсяда / отсeдне / отсeдна,stay (in a hotel or the night with someone),ot·syada / ot·sedne / ot·sedna,VERB,"B1 VERBS Imp, Perf, Past P NEW",Travel
+bg_02014,пада / падне / падна,fall,pada / padne / padna,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02015,подава (подаде/ подам / подаде/ подадох,"pass (salt), hand in (document) (x2 p, ps)",podava (podade/ podam / podadu/ podadokh,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02016,подарява / подари / подари,give as a present,podaryava / podari / podari,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02017,"подстригва / подстриже / подстрига, + ce","cut someone's hair , have a haircut","podstrigva / podstrizhe / podstriga, + ce",VERB,"B1 VERBS Imp, Perf, Past P NEW",Body
+bg_02018,поздравява / поздрави / поздрави ( x2),"greet, congratulate",pozdravyava / pozdravi / pozdravi ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02019,полива / полее / поля,water (plants),poliva / polee / polya,VERB,"B1 VERBS Imp, Perf, Past P NEW",Living Nature
+bg_02020,поправя / поправи / поправи,correct,popravya / popravi / popravi,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02021,постига / постигне / постигна,achieve,postiga / postiga / postiga,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02022,почива / почине / почина ( x2),"relax, take a break",pochiva / pochine / zapochva ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",Leisure
+bg_02023,прави / no perf / прави ( x2),"make, do, ",pravi / bez perf / pravi ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02024,превежда / преведе / преведе ( x2),"translate, interpret",prevezhda / prevede / prevede ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",Communication
+bg_02025,предписва / предпише / предписа,prescribe,predpisva / predpishe / predpisa,VERB,"B1 VERBS Imp, Perf, Past P NEW",Health
+bg_02026,предполага / предположи / предположи,suppose,predpolagam / predpolagam / predpolozhim,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02027,предпочита / предпочете / предпочете,prefer,predpochitam / predpochete / predpochitate,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02028,представя / представи / представи + се,"present (someone), present oneself ",predstavya / predstavya / predstavi + se,VERB,"B1 VERBS Imp, Perf, Past P NEW",Society
+bg_02029,представя си / представи си / представи си,imagine,predstavya si / predstavi si / predstavi si,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02030,преоблича / преоблече/ преоблека / преоблече/ преоблякох,change clothes  (2 x perf  & p perf),preoblicha / preobleche/ preobleka / preobleche/ preoblyakokh,VERB,"B1 VERBS Imp, Perf, Past P NEW",Clothes
+bg_02031,преобува / преобуе/ преобуя / преобу/ преобух,"change shoes, socks, trousers (2 x perf  & p perf)",preobuva / preobue/ preobuya / preobu/ preobukh,VERB,"B1 VERBS Imp, Perf, Past P NEW",Clothes
+bg_02032,пресича / пресече/ пресека / пресече/  пресякох ,cross (2 x perf  & p perf),presicha / preseche/ preseka / preseche/ presyakokh ,VERB,"B1 VERBS Imp, Perf, Past P NEW",Travel
+bg_02033,прибира / прибере / прибра,put something in something else,pribira / pribere / pribra,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02034,притеснява / притесни / притесни ( x2),"worry, bother (someone, about something) + ce",prilozhim / pritesni / pritesni ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02035,причинява / причини / причини,cause,prichinyava / prichini / prichini,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02036,проверява / провери / провери,check,proveryava / proveri / proveri,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02037,продава / продаде/ продам / продаде/ продадох,"sell (x2 p, ps)",prodava / prodade/ prodam / prodade/ prodadokh,VERB,"B1 VERBS Imp, Perf, Past P NEW",Commerce
+bg_02038,разбира / разбере / разбра,understand,razbira / razbere / razbra,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02039,разваля / развали / развали ( x3),"spoil, ruin, break",razvalya / razvali / razvali ( x3),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02040,разваля се / развали се / развали се ( x3),"break down/stop working, go bad (food)",razvalya se / razvali se / razvali se ( x3),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02041,разсейва / разсее / разсея + се,"distract, get distracted",razseĭva / razsee / razseya + se,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02042,разхожда / разходи / разходи,take for a walk,razkhozhda / razkhodi / razkhodi,VERB,"B1 VERBS Imp, Perf, Past P NEW",Leisure
+bg_02043,свиква / свикне / свикна,get used to,svikva / svikne / svikna,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02044,сипва / сипе / сипа ( x2),"pour, serve",sipva / sipe / sipa ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",Food and Drink
+bg_02045,сменя / смени / смени ( x2),"change, replace",smeni / smeni / smeni ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02046,смесва / смеси / смеси ( x2),"mix, blend",smesva / smesi / smesi ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02047,знае / знае / зная/ знаях,know (x2 ps),znae / znae / znaya/ znayakh,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02048,оцелява / оцелее / оцеля,survive,otselyava / otselee / otselya,VERB,"B1 VERBS Imp, Perf, Past P NEW",Health
+bg_02049,сравнява / сравни / сравни,compare,sravnyava / sravni / sravni,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02050,"губи се, изгубва се / изгуби се / изгуби се",get lost (x2 pres),"gubi se, izgubva se / izgubi se / izgubi se",VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02051,спазва / спази / спази ( x2),"complies, obeys the law",spazva / spazi / spazi ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",Society
+bg_02052,разказва / разкаже / разказа,tell a story,razkazva / razkazhe / razkaza,VERB,"B1 VERBS Imp, Perf, Past P NEW",Communication
+bg_02053,проучва / проучи / проучи,research (not изъ…),prouchva / prouvi / prouchi,VERB,"B1 VERBS Imp, Perf, Past P NEW",Education
+bg_02054,откарва / откара / откара,take in a vehicle,otkarva / otkara / otkara,VERB,"B1 VERBS Imp, Perf, Past P NEW",Travel
+bg_02055,поисква / поиска / поиска ( x2),"request, ask for",poiskva / poiska / poiska ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02056,предупреждава / предупреди / предупреди,warn,preduprezhdava / predupredi / predupredi,VERB,"B1 VERBS Imp, Perf, Past P NEW",People
+bg_02057,справя се (със) / справи се / справи се,cope with (+ prep),spravya se (sŭs) / spravi se / spravi se,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02058,означава / означава / означава,mean sth,oznachava / oznachava / oznachava,VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02059,замества / замести / замести ( x2),substitute replace,zamestva / zamesti / zamesti ( x2),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02060,no imp / направи / направи ( x4),"finish with a particular result, make/create sth, do sth in a particular situation",ne imp / napravi / napravi ( x4),VERB,"B1 VERBS Imp, Perf, Past P NEW",none
+bg_02061,"книга, написана от",a book written by,"kniga, napisana ot",MEDIUM PHRASE,29/01 NEW,Communication
+bg_02062,връзка/-и x 2,"a tie, connection",vrŭzka/-i x 2,SHORT,29/01 NEW,none
+bg_02063,около,around,okolo,SHORT,29/01 NEW,none
+bg_02064,ражда/-м се,be born,razhda/-m se,VERB,29/01 NEW,Living Nature
+bg_02065,радва/-м се,be glad,radvam se,VERB,29/01 NEW,People
+bg_02066,бежов/-а/-о/-и,beige,bezhov/-a/-o/-i,ADJECTIVE,29/01 NEW,none
+bg_02067,главна буква,capital letter,glavna bukva,SHORT PHRASE,29/01 NEW,Grammar
+bg_02068,определителен член,definite article,opredelen chlen,MEDIUM PHRASE,29/01 NEW,Grammar
+bg_02069,"описва/-м, опише/-а",describe x 2 tenses,"opisva/-m, opise/-a",VERB,29/01 NEW,Communication
+bg_02070,край / краища x 2,"end / ends, extremes",kraĭ / kraishta x 2,SHORT,29/01 NEW,none
+bg_02071,не помня точно,I don't remember exactly,ne pomnya tochno,MEDIUM PHRASE,29/01 NEW,People
+bg_02072,незначителен/-лна/-лно/-лни,insignificant,neznachitelen/-lna/-lno/-lni,ADJECTIVE,29/01 NEW,none
+bg_02073,близък/-зка/-зко/-зки,near (adj.),blizŭk/-zka/-zko/-zki,ADJECTIVE,29/01 NEW,none
+bg_02074,близо,near (adverb),do,SHORT,29/01 NEW,none
+bg_02075,вратовръзка/-и,necktie,vratovrŭzka/-i,MEDIUM,29/01 NEW,none
+bg_02076,нота/-и,note,nota/-i,SHORT,29/01 NEW,Art
+bg_02077,мнение за (не 'от'),opinion about,mnenie za (ne 'ot'),SHORT PHRASE,29/01 NEW,People
+bg_02078,пази/-я се от,protect oneself from,pazi/-ya se ot,VERB,29/01 NEW,People
+bg_02079,бегач,runner,begach,SHORT,29/01 NEW,Leisure
+bg_02080,значителен/-лна/-лно/-лни,significant,znachitelen/-lna/-lno/-lni,ADJECTIVE,29/01 NEW,none
+bg_02081,заобиколен/-а/-о/-и от,surrounded,zaobikolen/-a/-o/-i ot,ADJECTIVE,29/01 NEW,none
+bg_02082,безполезен/-зна/-зно/-зни,useless,bezpolezen/-zna/-zno/-zni,ADJECTIVE,29/01 NEW,People
+bg_02083,"посещава/-м, посети/-я",visit x 2 tenses,"poseshtava/-m, poseti/-ya",VERB,29/01 NEW,People
+bg_02084,какъв цвят би описал седмицата ви,what colour would describe your week,kakŭv tsvyat bi opisal sedmitsata vi,LONG PHRASE,29/01 NEW,People
+bg_02085,"в Англия , /фанглия/ или /въф Англия/",in England,"v Angliya , /fangliya/ ili /vŭf Angliya/",SHORT PHRASE,29/01 NEW,Travel
+bg_02086,близък/-зка/-зко/-зки,nearby - adj.,blizŭk/-zka/-zko/-zki,ADJECTIVE,29/01 NEW,none
+bg_02087,наблизо,nearby - adv.,nablizo,SHORT,29/01 NEW,none
+bg_02088,прави / правене,do / doing,pravi / pravene,VERB,29/01 NEW,none
+bg_02089,пътува / пътуване,travel / travelling,pŭtuvane / pŭtuvane,VERB,29/01 NEW,Travel
+bg_02090,главни букви,capital letters,glavni bukvi,MEDIUM PHRASE,29/01 NEW,Grammar
+bg_02091,зависи/-я (една дума),depends,zavisi/-ya (edna duma),VERB,29/01 NEW,none
+bg_02092,първите два параграфа (не 'две параграфи'),first two paragraphs ,pŭrvite dva paragrafa (ne 'dva paragrafa'),MEDIUM PHRASE,29/01 NEW,Communication
+bg_02093,можеш да стигнеш / може да се стигне,you can get to / can be reached,mozhesh da stignesh / mozhe da se stigne,MEDIUM PHRASE,29/01 NEW,Travel
+bg_02094,най-близкото летище,the nearest airport,naĭ-blizkoto letishte,MEDIUM PHRASE,29/01 NEW,Travel
+bg_02095,най-близката жп гара,the nearest train station,naĭ-blizkata zhp gara,MEDIUM PHRASE,29/01 NEW,Travel
+bg_02096,Обединеното кралство,United Kingdom,Obedinenoto kralstvo,MEDIUM PHRASE,29/01 NEW,World
+bg_02097,Може да посетиш автобусната спирка на Боби.,You can visit Bobby's bus stop.,Mozhe da posetish avtobusnata spirka na Bobi.,LONG PHRASE,29/01 NEW,Leisure
+bg_02098,не помня името (не 'разбирам'),I don't remember the name,ne pomnya imeto (ne 'razbiram'),MEDIUM PHRASE,29/01 NEW,People
+bg_02099,спорове за малки неща (не 'от'),arguments about small things ,sporove za malki neshta (ne 'ot'),MEDIUM PHRASE,29/01 NEW,People
+bg_02100,Щяхме да ходим на театър.,We were going to the theatre.,Shtyakhme da khodim na teatŭra.,MEDIUM PHRASE,29/01 NEW,Leisure
+bg_02101,Вчера обявиха грипна епидемия в Пловдив.,Yesterday they declared a flu epidemic in Plovdiv.,Vchera obyavikha gripna epidemiya v Plovdiv.,LONG PHRASE,29/01 NEW,Health
+bg_02102,социалистически/-ска/-ско/-ски,socialist/-ska/-ska,sotsialisticheski/-ska/-sko/-ski,ADJECTIVE,29/01 NEW,Society
+bg_02103,английската култура,English culture,angliĭskata kultura,MEDIUM PHRASE,29/01 NEW,Society
+bg_02104,Тези неща са незначителни.,These things are insignificant.,Tezi neshta sa neznachitelni.,LONG PHRASE,29/01 NEW,none
+bg_02105,политическата среда,political environment,politicheskata sreda,MEDIUM PHRASE,29/01 NEW,Society
+bg_02106,международен/-дна/-дно/-дни,international,mezhdunaroden/-dna/-dno/-dni,ADJECTIVE,29/01 NEW,World
+bg_02107,спортист/-и,athlete/-s,sportist/-i,SHORT,29/01 NEW,Leisure
+bg_02108,трима спортисти,three athletes,trima sportisti,MEDIUM PHRASE,29/01 NEW,Leisure
+bg_02109,същия(т) спорт (не 'същото'),same sport ,sŭshtiya(t) sport (ne 'sŭshtoto'),SHORT PHRASE,29/01 NEW,Leisure
+bg_02110,тенис на маса,table tennis,tenis na masa,SHORT PHRASE,29/01 NEW,Leisure
+bg_02111,Всичко може да се научи.,Everything can be learned.,Vsichko mozhe da se nauchi.,MEDIUM PHRASE,29/01 NEW,Education
+bg_02112,"Ако не си висок, е трудно да станеш баскетболист.","If you're not tall, it's hard to become a basketball player.","Ako ne si visok, e trudno da stanesh basketbolist.",LONG PHRASE,29/01 NEW,Leisure
+bg_02113,музикални ноти,musical notes,muzikalni noti,MEDIUM PHRASE,29/01 NEW,Art
+bg_02114,събота,Saturday,sŭbota,SHORT,02/02 NEW,Date/Time
+bg_02115,зАгуба на време,a waste of time,zAguba na vreme,MEDIUM PHRASE,02/02 NEW,People
+bg_02116,цяла сюрия внуци,a whole bunch of grandchildren,tsyala syuriya vnutsi,MEDIUM PHRASE,02/02 NEW,People
+bg_02117,двусмислен/-а/-о/-и,ambiguous,dvusmislen/-a/-o/-i,ADJECTIVE,02/02 NEW,none
+bg_02118,купа/-и x 2,bowl; cup (in sport),kupa/-i kh 2,SHORT,02/02 NEW,Leisure
+bg_02119,конкурент/-и,competitor,konkurent/-i,MEDIUM,02/02 NEW,Leisure
+bg_02120,критикува/-м,criticize,kritikuva/-m,VERB,02/02 NEW,none
+bg_02121,лукав/-а/-о/-и x 2,"cunning, crafty",lukav/-a/-o/-i kh 2,ADJECTIVE,02/02 NEW,none
+bg_02122,изпълнител на завещание,executor of a will,izpŭlnitel na zaveshtanie,MEDIUM PHRASE,02/02 NEW,People
+bg_02123,Никога не ни виждаше.,He never saw us.,Nikoga ne ni vizhdashe.,MEDIUM PHRASE,02/02 NEW,none
+bg_02124,магистрала/-и,highway,magistrala/-i,MEDIUM,02/02 NEW,Travel
+bg_02125,"задължава/-м, задължи/-а x 2","oblige, force x 2 tenses","zadŭlzhava/-m, zadŭlzhi/-a x 2",VERB,02/02 NEW,People
+bg_02126,като цяло,overall,kato tsyalo,SHORT PHRASE,02/02 NEW,none
+bg_02127,предава/-м,pass on,predava/-m,VERB,02/02 NEW,People
+bg_02128,"поставя/-м, постави/-я x 2","put, place x 2 tenses","postavi/-m, postavi/-ya x 2",VERB,02/02 NEW,People
+bg_02129,относителен/-лна/-лно/-лни,relative,otnositelen/-lna/-lno/-lni,ADJECTIVE,02/02 NEW,People
+bg_02130,препрочита/-м,reread,preprochita/-m,VERB,02/02 NEW,Communication
+bg_02131,уважава/-м,respect,uvazhava/-m,VERB,02/02 NEW,People
+bg_02132,Рим,Rome,Rim,SHORT,02/02 NEW,World
+bg_02133,мисли/-я за,think about,misli/-ya za,VERB,02/02 NEW,People
+bg_02134,озърта/-м сеq оглежда/-м се,look around x 2,ozerta/-m seq oglezhda/-m se,VERB,02/02 NEW,none
+bg_02135,превръща/-м се във,turn into,prevrŭshta/-m se vŭv,VERB,02/02 NEW,none
+bg_02136,напечатано на машина,typewritten,napechatano na mashina,MEDIUM PHRASE,02/02 NEW,Communication
+bg_02137,недвусмислен/-а/-о/-и,unambiguous,nedvusmislen/-a/-o/-i,ADJECTIVE,02/02 NEW,none
+bg_02138,вдовица/-и,widow,vdovitsa/-i,MEDIUM,02/02 NEW,People
+bg_02139,"връх, върха/върхът",peak/the peak,"vrŭkh, vrŭkh/vŭrkhŭt",SHORT,02/02 NEW,World
+bg_02140,"планинА, планинИ (mountains)","mountain, mountains","planinA, planinI (planini)",SHORT,02/02 NEW,World
+bg_02141,"приложение, приложения (pl.)",application/s ,"prilozhenie, prilozheniya (mn.)",MEDIUM,02/02 NEW,Mechanical/Technical
+bg_02142,"халосва/-м ,удря/-м",hit x 2,"khalosva/-m ,udrya/-m",VERB,02/02 NEW,none
+bg_02143,"факт, факти (не'фактове')","fact, facts","fakt, fakti (ne'faktove')",SHORT,02/02 NEW,none
+bg_02144,човек / хора  (двама/колко/няколко души),person / people (two/a few/a few people),chovek / khora (dvama/kolko/nyakolko dushi),SHORT,02/02 NEW,People
+bg_02145,обща култура,"general culture, (a wide range of knowledge about the world, history, science, arts, etc.)",obshta kultura,SHORT PHRASE,02/02 NEW,People
+bg_02146,на върхА на лИгата,at the top of the league,na vŭrkhA na lIgata,MEDIUM PHRASE,02/02 NEW,Leisure
+bg_02147,Шампионска лига,Champions League,Shampionska liga,MEDIUM PHRASE,02/02 NEW,Leisure
+bg_02148,Магистралата ще е почистена.,The highway will be cleaned.,Magistralata shte e pochistena.,MEDIUM PHRASE,02/02 NEW,Travel
+bg_02149,някои хора,some people,nyakoi khora,SHORT PHRASE,02/02 NEW,People
+bg_02150,ежедневни неща/проблеми x 2,everyday things/problems,ezhednevni neshta/problemi x 2,MEDIUM PHRASE,02/02 NEW,People
+bg_02151,такива хора (не 'такиви'),such people ,takiva khora (ne 'takivi'),SHORT PHRASE,02/02 NEW,People
+bg_02152,ще мога (не 'можа'),I will be able ,shte moga (ne 'mozha'),VERB,02/02 NEW,none
+bg_02153,нещо полезно (не 'полезен'),something useful ,neshto polezno (ne 'polezen'),SHORT PHRASE,02/02 NEW,none
+bg_02154,За мен беше важно да правя неща различно от баща ми. (не 'се правя' и 'нещо различни'),It was important for me to do things differently from my father. ,Za men beshe vazhno da pravya neshto razlichno ot bashta mi. (ne 'se pravya' i 'neshto razlichni'),LONG PHRASE,02/02 NEW,Body
+bg_02155,ВременАта се променят. (не 'времета'),Times change. ,VremenAta se promenyat. (ne 'vremeta'),MEDIUM PHRASE,02/02 NEW,family
+bg_02156,връща/-м се = прибира/-м се,return x 2,vrŭshta/-m se = pribira/-m se,VERB,02/02 NEW,Travel
+bg_02157,Излизаше рано и се прибираше късно.,He would leave early and come home late.,Izlizashe rano i se pribirashe kŭsno.,LONG PHRASE,02/02 NEW,Travel
+bg_02158,Пътувах 20 минути до работа.,I traveled 20 minutes to work.,Pŭtuvakh 20 minuti do rabota.,MEDIUM PHRASE,02/02 NEW,Travel
+bg_02159,Хирурзите трябва да знаят всичко.,Surgeons have to know everything.,Khirurzite tryabva da znayat vsichko.,LONG PHRASE,02/02 NEW,Work
+bg_02160,"Ако си хирург, трябва да знаеш всичко.","If you are a surgeon, you have to know everything.","Ako si khirurg, tryabva da znaesh vsichko.",LONG PHRASE,02/02 NEW,Work
+bg_02161,Фактите могат да се проверят. / Можеш да провериш фактите.,Facts can be checked. / You can check the facts. x 2,Faktite mogat da se proveryat. / Mozhesh da proverish faktite.,MEDIUM PHRASE,02/02 NEW,none
+bg_02162,Византия,Byzantium,Vizantiya,MEDIUM,02/02 NEW,World
+bg_02163,само едно нещо,just one thing,samo edno neshto,MEDIUM PHRASE,02/02 NEW,none
+bg_02164,"книгата, за която ти казах миналия път",the book I told you about last time,"knigata, za koyato ti kazakh minaliya pŭt",LONG PHRASE,02/02 NEW,Communication
+bg_02165,можем да четем (не 'мога да четаме'),we can read ,mozhem da chetem (ne 'moga da chetame'),MEDIUM PHRASE,02/02 NEW,Communication
+bg_02166,бѐден/-дна/-дно/-дни,poor x 4,bèden/-dna/-dno/-dni,ADJECTIVE,B1 VOCAB,none
+bg_02167,безопа̀сен/-сна/-сно/-сни,safe (not involving danger) x 4,bezopàsen/-sna/-sno/-sni,ADJECTIVE,B1 VOCAB,none
+bg_02168,безотгово̀рен/-рна/-рно/-рни,irresponsible x 4,bezotgovòren/-rna/-rno/-rni,ADJECTIVE,B1 VOCAB,none
+bg_02169,блѝзък/-зка/-зко/-зки x 2,"near, close x 4",blìzŭk/-zka/-zko/-zki,ADJECTIVE,B1 VOCAB,none
+bg_02170,бога̀т/-а/-о/-и,rich x 4,bogàt/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02171,в̀ъншен/-шна/-шно/-шни,exterior x 4,v̀ŭnshen/-shna/-shno/-shni,ADJECTIVE,B1 VOCAB,none
+bg_02172,в̀ътрешен/-шна/-шно/-шни,interior x 4,v̀ŭtreshen/-shna/-shno/-shni,ADJECTIVE,B1 VOCAB,none
+bg_02173,"вѐрен, вя̀рна, вя̀рно, вѐрни x 2","correct, true  x 4","vèren, vyàrna, vyàrno, vèrni",ADJECTIVE,B1 VOCAB,none
+bg_02174,внима̀телен/-лна/-лно/-лни,careful x 4,vnimatelen/-lna/-lno/-lni,ADJECTIVE,B1 VOCAB,none
+bg_02175,гла̀вен/-вна/-вно/-вни,main x 4,glàven/-vna/-vno/-vni,ADJECTIVE,B1 VOCAB,none
+bg_02176,годѝшен/-шна/-шно/-шни,annual x 4,godìshen/-shna/-shno/-shni,ADJECTIVE,B1 VOCAB,none
+bg_02177,гото̀в/-а/-о/-и,ready x 4,gotòv/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02178,грѐшен/-шна/-шно/-шни x 2,"incorrect, wrong x 4",grèshen/-shna/-shno/-shni,ADJECTIVE,B1 VOCAB,none
+bg_02179,д̀ървен/-а/-о/-и,wooden x 4,d̀ŭrven/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02180,двупосо̀чен/-чна/-чно/-чни,(of a street) two-way; (of a ticket) return x 4,dvuposòchen/-chna/-chno/-chni,ADJECTIVE,B1 VOCAB,none
+bg_02181,дѝв/-а/-о/-и,wild x 4,dìv/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02182,добре дош̀ъл/дошла̀/дошло̀/дошлѝ,welcome x 4,dobre dosh̀ŭl/doshlà/doshlò/doshlì,ADJECTIVE,B1 VOCAB,none
+bg_02183,държа̀вен/-вна/-вно/-вни x 3,"state-owned, public, governmental  x 4",dŭrzhàven/-vna/-vno/-vni,ADJECTIVE,B1 VOCAB,none
+bg_02184,"едѝнствения(т), едѝнствената, едѝнственото, едѝнствените",the only  x 4,"edìnstviya(t), edìnstvenata, edìnstvenoto, edìnstvenite",ADJECTIVE,B1 VOCAB,none
+bg_02185,естѐствен/-а/-о/-и,natural x 4,estèstven/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02186,за еднокра̀тна употрѐба,single-use x 4,za ednokràtna upotrèba,ADJECTIVE,B1 VOCAB,none
+bg_02187,за̀паден/-дна/-дно/-дни,western x 4,zàpaden/-dna/-dno/-dni,ADJECTIVE,B1 VOCAB,none
+bg_02188,заба̀вен/-вна/-вно/-вни,fun x 4,zabàven/-vna/-vno/-vni,ADJECTIVE,B1 VOCAB,none
+bg_02189,забранѐн/-а/-о/-и x 2,"banned, prohibited x 4",zabranèn/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02190,задължѝтелен/-лна/-лно/-лни x 2,"obligatory, mandatory  x 4",zadŭlzhìtelen/-lna/-lno/-lni,ADJECTIVE,B1 VOCAB,none
+bg_02191,ѝзточен/-чна/-чно/-чни,eastern  x 4,ìztochen/-chna/-chno/-chni,ADJECTIVE,B1 VOCAB,none
+bg_02192,ѝстински/-ска/-ско/-ски,real x 4,ìstinski/-ska/-sko/-ski,ADJECTIVE,B1 VOCAB,none
+bg_02193,извѐстен/-тна/-тно/-тни,famous x 4,izvèsten/-tna/-tno/-tni,ADJECTIVE,B1 VOCAB,none
+bg_02194,изнена̀дан/-а/-о/-и,surprised  x 4,iznenàdan/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02195,изнена̀дващ/-а/-о/-и,surprising  x 4,iznenàdvasht/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02196,кра̀тък/-тка/-тко/-тки x 2,"short (in time), brief  x 4",kràtŭk/-tka/-tko/-tki,ADJECTIVE,B1 VOCAB,none
+bg_02197,лѝчен/-чна/-чно/-чни,personal x 4,lìchen/-chna/-chno/-chni,ADJECTIVE,B1 VOCAB,none
+bg_02198,любопѝтен/-тна/-тно/-тни,curious x 4,lyubopìten/-tna/-tno/-tni,ADJECTIVE,B1 VOCAB,none
+bg_02199,мѐк/-а/-о/-и,soft x 4,mèk/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02200,мѐсечен/-чна/-чно/-чни,monthly  x 4,mèsechen/-chna/-chno/-chni,ADJECTIVE,B1 VOCAB,none
+bg_02201,междунаро̀ден/-дна/-дно/-дни,international x 4,mezhdunaròden/-dna/-dno/-dni,ADJECTIVE,B1 VOCAB,none
+bg_02202,мѝнал/-а/-о/-и,past  x 4,mìnal/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02203,мо̀кър/-кра/-кро/-кри,wet x 4,mòkŭr/-kra/-kro/-kri,ADJECTIVE,B1 VOCAB,none
+bg_02204,мързелѝв/-а/-о/-и,lazy x 4,mŭrzelìv/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02205,натова̀рен/-а/-о/-и x 3,"busy (e.g. day, schedule, traffic) x 4",natovàren/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02206,незако̀нен/-нна/-нно/-нни,illegal x 4,nezakònen/-nna/-nno/-nni,ADJECTIVE,B1 VOCAB,none
+bg_02207,неоча̀кван/-а/-о/-и,unexpected x 4,neochàkvan/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02208,образова̀телен/-лна/-лно/-лни,educational x 4,obrazovatelen/-lna/-lno/-lni,ADJECTIVE,B1 VOCAB,none
+bg_02209,общѐствен/-а/-о/-и,public x 4,obshtèstven/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02210,ограничѐн/-а/-о/-и,limited x 4,ogranichenèn/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02211,огро̀мен/-мна/-мно/-мни x 2,"huge, enormous x 4",ogròmen/-mna/-mno/-mni,ADJECTIVE,B1 VOCAB,none
+bg_02212,опа̀сен/-сна/-сно/-сни,dangerous x 4,opàsen/-sna/-sno/-sni,ADJECTIVE,B1 VOCAB,none
+bg_02213,отгово̀рен/-рна/-рно/-рни,responsible x 4,otgovòren/-rna/-rno/-rni,ADJECTIVE,B1 VOCAB,none
+bg_02214,отрица̀телен/-лна/-лно/-лни,negative x 4,otritsatelen/-lna/-lno/-lni,ADJECTIVE,B1 VOCAB,none
+bg_02215,очевѝден/-дна/-дно/-дни x 2,"obvious, evident x 4",ochevìden/-dna/-dno/-dni,ADJECTIVE,B1 VOCAB,none
+bg_02216,пла̀стмасов/-а/-о/-и,plastic x 4,plàstmasov/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02217,подо̀бен/-бна/-бно/-бни,similar x 4,podòben/-bna/-bno/-bni,ADJECTIVE,B1 VOCAB,none
+bg_02218,положѝтелен/-лна/-лно/-лни,positive x 4,polozhitelen/-lna/-lno/-lni,ADJECTIVE,B1 VOCAB,none
+bg_02219,послѐден/-дна/-дно/-дни,last (happening or coming after all other similar things or people) x 4,poslèden/-dna/-dno/-dni,ADJECTIVE,B1 VOCAB,none
+bg_02220,прия̀телски настро̀ен/-а/-о/-и,friendly  x 4,priyàtelski nastròen/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02221,про̀ст/-а/-о/-и,simple x 4,pròst/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02222,развѝт/-а/-о/-и,developed x 4,razvìt/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02223,разсѐйващ/-а/-о/-и,distracting x 4,razsèĭvasht/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02224,разсѐян/-а/-о/-и,distracted x 4,razsèyan/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02225,родѐн/-а/-о/-и,born x 4,rodèn/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02226,само̀тен/-тна/-тно/-тни,lonely  x 4,samòten/-tna/-tno/-tni,ADJECTIVE,B1 VOCAB,none
+bg_02227,св̀ързан/-а/-о/-и x 3,"related, connected, linked  x 4",sv̀ŭrzan/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02228,свѝкнал/-а/-о/-и със/да,used to  x 4,svìknal/-a/-o/-i sŭs/da,ADJECTIVE,B1 VOCAB,none
+bg_02229,свобо̀ден/-дна/-дно/-дни,free x 4,svobòden/-dna/-dno/-dni,ADJECTIVE,B1 VOCAB,none
+bg_02230,сѐверен/-рна/-рно/-рни,northern  x 4,sèveren/-rna/-rno/-rni,ADJECTIVE,B1 VOCAB,none
+bg_02231,сѐдмичен/-чна/-чно/-чни,weekly x 4,sèdmichen/-chna/-chno/-chni,ADJECTIVE,B1 VOCAB,none
+bg_02232,симпатѝчен/-чна/-чно/-чни,likeable  x 4,simpatìchen/-chna/-chno/-chni,ADJECTIVE,B1 VOCAB,none
+bg_02233,смѐшен/-шна/-шно/-шни,funny (that makes one laugh) x 4,smèshen/-shna/-shno/-shni,ADJECTIVE,B1 VOCAB,none
+bg_02234,срамежлѝв/-а/-о/-и,shy x 4,sramezhlìv/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02235,ст̀ъклен/-а/-о/-и,glass  x 4,st̀ŭklen/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02236,стра̀шен/-шна/-шно/-шни,scary x 4,stràshen/-shna/-shno/-shni,ADJECTIVE,B1 VOCAB,none
+bg_02237,страхо̀тен/-тна/-тно/-тни x 2,"awesome, great x 4",strakhòten/-tna/-tno/-tni,ADJECTIVE,B1 VOCAB,none
+bg_02238,стро̀г/-а/-о/-и,strict  x 4,stròg/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02239,су̀х/-а/-о/-и,dry x 4,sùkh/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02240,съгла̀сен/-сна/-сно/-сни + to be,to agree x 4,sŭglàsen/-sna/-sno/-sni + da bŭde,ADJECTIVE,B1 VOCAB,none
+bg_02241,съсѐден/-дна/-дно/-дни,neighboring  x 4,sŭsèden/-dna/-dno/-dni,ADJECTIVE,B1 VOCAB,none
+bg_02242,т̀ънък/-нка/-нко/-нки,thin x 4,t̀ŭnŭk/-nka/-nko/-nki,ADJECTIVE,B1 VOCAB,none
+bg_02243,"та̀ен, та̀йна/-о/-и",secret x 4,"tàen, tàĭna/-o/-i",ADJECTIVE,B1 VOCAB,none
+bg_02244,"так̀ъв, така̀ва, тако̀ва, такѝва",such x 4,"tak̀ŭv, takàva, takàva, takìva",ADJECTIVE,B1 VOCAB,none
+bg_02245,тв̀ърд/-а/-о/-и x 2,"hard, solid x 4",tv̀ŭrd/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02246,то̀чен/-чна/-чно/-чни,punctual; exact  x 4,tòchen/-chna/-chno/-chni,ADJECTIVE,B1 VOCAB,none
+bg_02247,търпелѝв/-а/-о/-и,patient  x 4,tŭrpelìv/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02248,удо̀бен/-бна/-бно/-бни,comfortable  x 4,udòben/-bna/-bno/-bni,ADJECTIVE,B1 VOCAB,none
+bg_02249,ужа̀сен/-сна/-сно/-сни,horrible x 4,uzhàsen/-sna/-sno/-sni,ADJECTIVE,B1 VOCAB,none
+bg_02250,уморѐн/-а/-о/-и,tired x 4,umorèn/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02251,успѐшен/-шна/-шно/-шни,successful  x 4,uspèshen/-shna/-shno/-shni,ADJECTIVE,B1 VOCAB,none
+bg_02252,учтѝв/-а/-о/-и,polite  x 4,uchtìv/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02253,фалшѝв/-а/-о/-и,fake x 4,falshìv/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02254,цвѐтен/-тна/-тно/-тни,colourful x 4,tsvèten/-tna/-tno/-tni,ADJECTIVE,B1 VOCAB,none
+bg_02255,"цѐлия(т), ця̀лата, ця̀лото, цѐлите",the whole x 4,"tsèliya(t), tsyàlata, tsyàloto, tsèlite",ADJECTIVE,B1 VOCAB,none
+bg_02256,чѐсто срѐщан/-а/-о/-и,common  x 4,chèsto srèshtan/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02257,ю̀жен/-жна/-жно/-жни,southern x 4,yùzhen/-zhna/-zhno/-zhni,ADJECTIVE,B1 VOCAB,none
+bg_02258,я̀сен/-сна/-сно/-сни,clear  x 4,yàsen/-sna/-sno/-sni,ADJECTIVE,B1 VOCAB,none
+bg_02259,ядо̀сан/-а/-о/-и,angry  x 4,yadòsan/-a/-o/-i,ADJECTIVE,B1 VOCAB,none
+bg_02260,абона̀т/-и,subscriber,abonàt/-i,NOUN,B1 VOCAB,none
+bg_02261,а̀втогара/-и,bus station,àavtogara/-i,NOUN,B1 VOCAB,none
+bg_02262,безопа̀сност (f.),safety,bezopàsnost (zh.),NOUN,B1 VOCAB,none
+bg_02263,бензиноста̀нция/-и,petrol station,benzinostantsiya/-i,NOUN,B1 VOCAB,none
+bg_02264,билѐт/-и,ticket,bilèt/-i,NOUN,B1 VOCAB,none
+bg_02265,боклу̀к/-ци,garbage,bokluk,NOUN,B1 VOCAB,none
+bg_02266,бо̀лница/-и,hospital,bolnitsa,NOUN,B1 VOCAB,none
+bg_02267,брой,number (as an amount),nomer (kato kolichestvo),NOUN,B1 VOCAB,none
+bg_02268,век/-овѐ,century,vek,NOUN,B1 VOCAB,none
+bg_02269,Великобрита̀ния,Great Britain,Velikobritaniya,NOUN,B1 VOCAB,none
+bg_02270,велоалея/-и,cycling  lane,velosipedna aleya,NOUN,B1 VOCAB,none
+bg_02271,вкус/-ове x 2,"taste, flavor","vkus, aromat",NOUN,B1 VOCAB,none
+bg_02272,влия̀ние x 2,"influence, effect","vliyanie, efekt",NOUN,B1 VOCAB,none
+bg_02273,внима̀ние,attention,vnimanie,NOUN,B1 VOCAB,none
+bg_02274,вола̀н/-и,steering wheel,volan,NOUN,B1 VOCAB,none
+bg_02275,въглеро̀ден диоксѝд,carbon dioxide,vŭgleroden dioksid,NOUN,B1 VOCAB,none
+bg_02276,в̀ъздух,air,vŭzdukh,NOUN,B1 VOCAB,none
+bg_02277,възмо̀жност/-и (f.) x 2,"opportunity, chance","vŭzmozhnost, shans",NOUN,B1 VOCAB,none
+bg_02278,въпро̀с/-и,question,vŭpros,NOUN,B1 VOCAB,none
+bg_02279,гимна̀зия/-и,high school,gimnaziya,NOUN,B1 VOCAB,none
+bg_02280,глѐдна то̀чка,point of view,gledna tochka,NOUN,B1 VOCAB,none
+bg_02281,гло̀ба/-и,a fine,globa,NOUN,B1 VOCAB,none
+bg_02282,горѝво/-а̀,fuel,gorivo,NOUN,B1 VOCAB,none
+bg_02283,гра̀жданин/гра̀ждани,citizen/-s,grazhdanin/i,NOUN,B1 VOCAB,none
+bg_02284,грѐшка/-и,mistake,greshka,NOUN,B1 VOCAB,none
+bg_02285,да̀нък/-ъци,tax,danŭk,NOUN,B1 VOCAB,none
+bg_02286,дѐйност/-и (f.),activity,deĭnost,NOUN,B1 VOCAB,none
+bg_02287,дѐйствие/-я,action,deĭstvie,NOUN,B1 VOCAB,none
+bg_02288,дѐтство,childhood,det·stvo,NOUN,B1 VOCAB,none
+bg_02289,доброво̀лец/-лци,volunteer,dobrovolets,NOUN,B1 VOCAB,none
+bg_02290,до̀говор/-и,contract,dogovor,NOUN,B1 VOCAB,none
+bg_02291,домакѝнска ра̀бота,household chores,domakinski zadŭlzheniya,NOUN,B1 VOCAB,none
+bg_02292,доста̀вка/-и,delivery,dostavka,NOUN,B1 VOCAB,none
+bg_02293,дърва̀,firewood,dŭrva za ogrev,NOUN,B1 VOCAB,none
+bg_02294,дърво̀/дървѐта,tree/-s,dŭrvo/a,NOUN,B1 VOCAB,none
+bg_02295,държа̀ва,country; state (in the sense of 'government'),dŭrzhava; shtat (v smisŭl na „pravitelstvo“),NOUN,B1 VOCAB,none
+bg_02296,екра̀н/-и,screen,ekran,NOUN,B1 VOCAB,none
+bg_02297,жѐртва/-и,victim,zhertva,NOUN,B1 VOCAB,none
+bg_02298,живо̀тно/-и,animal,zhivotno,NOUN,B1 VOCAB,none
+bg_02299,жѝтел/-и x 2,"resident, inhabitant","zhitel, obitatel",NOUN,B1 VOCAB,none
+bg_02300,забра̀на/-и x 2,"prohibition, ban","zabrana, zabrana",NOUN,B1 VOCAB,none
+bg_02301,за̀губа на врѐме,waste of time,zaguba na vreme,NOUN,B1 VOCAB,none
+bg_02302,зада̀ча/-и,task; Math problem,zadacha; matematicheska zadacha,NOUN,B1 VOCAB,none
+bg_02303,зако̀н/-и,law,zakon,NOUN,B1 VOCAB,none
+bg_02304,замърся̀ване,pollution,zamŭrsyavane,NOUN,B1 VOCAB,none
+bg_02305,запла̀та/-и,salary,zaplata,NOUN,B1 VOCAB,none
+bg_02306,здравеопа̀зване,healthcare,zdraveopazvane,NOUN,B1 VOCAB,none
+bg_02307,Земя̀та,the Earth,Zemyata,NOUN,B1 VOCAB,none
+bg_02308,значѐние/-я,meaning; importance,znachenie; vazhnost,NOUN,B1 VOCAB,none
+bg_02309,игра̀/-ѝ,game,igra,NOUN,B1 VOCAB,none
+bg_02310,игра̀чка/-и,toy,igrachka,NOUN,B1 VOCAB,none
+bg_02311,ѝзбор/-и,choice; pl. elections ,izbor; mn.ch. izbori,NOUN,B1 VOCAB,none
+bg_02312,изнена̀да/-и,а surprise,iznenada,NOUN,B1 VOCAB,none
+bg_02313,ѝме/имена̀,name/-s,ime/na,NOUN,B1 VOCAB,none
+bg_02314,камио̀н/-и x 2,"truck, lorry","kamion, kamion",NOUN,B1 VOCAB,none
+bg_02315,катастро̀фа/-и,road accident; catastrophe ,pŭtnotransportno proizshestvie; katastrofa,NOUN,B1 VOCAB,none
+bg_02316,квадра̀тен мѐтър,square meter,kvadraten metŭr,NOUN,B1 VOCAB,none
+bg_02317,киломѐтра в час,kilometers per hour,kilometri v chas,NOUN,B1 VOCAB,none
+bg_02318,кла̀сна ста̀я,classroom,klasna staya,NOUN,B1 VOCAB,none
+bg_02319,кмѐт/-ове,mayor (head of government),kmet (rŭkovoditel na pravitelstvoto),NOUN,B1 VOCAB,none
+bg_02320,книжа̀рница/-и,bookstore; stationery shop,knizharnitsa; magazin za kantselarski materiali,NOUN,B1 VOCAB,none
+bg_02321,кра̀ен срок,deadline,kraen srok,NOUN,B1 VOCAB,none
+bg_02322,край,end,kraĭ,NOUN,B1 VOCAB,none
+bg_02323,кр̀ъгово кръсто̀вище (или само 'кр̀ъгово'),roundabout,krŭgovo krŭstovishte,NOUN,B1 VOCAB,none
+bg_02324,кръсто̀вище/-а,intersection,krŭstovishte,NOUN,B1 VOCAB,none
+bg_02325,куро̀рт/-и,tourist resort,turisticheski kurort,NOUN,B1 VOCAB,none
+bg_02326,лека̀рство/-а,medicine,meditsina,NOUN,B1 VOCAB,none
+bg_02327,летѝще/-а,airport,letishte,NOUN,B1 VOCAB,none
+bg_02328,лицѐ/-а̀,face,litse,NOUN,B1 VOCAB,none
+bg_02329,ма̀йстор/-и,repairman,tekhnik,NOUN,B1 VOCAB,none
+bg_02330,ма̀рка/-и,brand,marka,NOUN,B1 VOCAB,none
+bg_02331,мнѐние/-я,opinion,mnenie,NOUN,B1 VOCAB,none
+bg_02332,мост/-ове,bridge,most,NOUN,B1 VOCAB,none
+bg_02333,"мя̀сто, места̀ x 2","place, places + pl","myasto, mesta + myasto",NOUN,B1 VOCAB,none
+bg_02334,на̀вик/-ци,habit,navik,NOUN,B1 VOCAB,none
+bg_02335,населѐние,population,naselenie,NOUN,B1 VOCAB,none
+bg_02336,настаня̀ване,accommodation,nastanyavane,NOUN,B1 VOCAB,none
+bg_02337,настроѐние/-я,mood,nastroenie,NOUN,B1 VOCAB,none
+bg_02338,нау̀ка/-и,science,nauka,NOUN,B1 VOCAB,none
+bg_02339,нача̀ло,beginning,nachalo,NOUN,B1 VOCAB,none
+bg_02340,на̀чин/-и,way (method of doing something),nachin (metod za pravene na neshto),NOUN,B1 VOCAB,none
+bg_02341,на̀чин на живо̀т,way of life,nachin na zhivot,NOUN,B1 VOCAB,none
+bg_02342,недоста̀тък/-тъци,disadvantage,nedostatŭk,NOUN,B1 VOCAB,none
+bg_02343,но̀мер/-а̀ x 2,"number (position in a list, series, etc.; phone number)","nomer (pozitsiya v spisŭk, poreditsa i dr.; telefonen nomer)",NOUN,B1 VOCAB,none
+bg_02344,ну̀жда/-и x 2,"need, necessity","nuzhda, neobkhodimost",NOUN,B1 VOCAB,none
+bg_02345,Обединѐното кра̀лство,the United Kingdom,Obedinenoto kralstvo,NOUN,B1 VOCAB,none
+bg_02346,образова̀ние,education,obrazovanie,NOUN,B1 VOCAB,none
+bg_02347,общѐствено мя̀сто,public place,publichno myasto,NOUN,B1 VOCAB,none
+bg_02348,общество̀,society,obshtestvo,NOUN,B1 VOCAB,none
+bg_02349,ограничѐние/-я,restriction,ogranichenie,NOUN,B1 VOCAB,none
+bg_02350,око̀лната среда̀,the environment,okolnata sreda,NOUN,B1 VOCAB,none
+bg_02351,опако̀вка/-и x 2,"packaging, wrapper","opakovka, obvivka",NOUN,B1 VOCAB,none
+bg_02352,опа̀сност/-и (f.),danger,opasnost,NOUN,B1 VOCAB,none
+bg_02353,опа̀шка/-и,queue; tail,opashka; opashka,NOUN,B1 VOCAB,none
+bg_02354,о̀пит x 3,"experience (skills and knowledge); a try, attempt","opit (umeniya i znaniya); opit, opit",NOUN,B1 VOCAB,none
+bg_02355,освобождѐние,liberation,osvobozhdenie,NOUN,B1 VOCAB,none
+bg_02356,о̀стров/-и,island,ostrov,NOUN,B1 VOCAB,none
+bg_02357,о̀тговор/-и,answer,otgovor,NOUN,B1 VOCAB,none
+bg_02358,отгово̀рност/-и (f.),responsibility,otgovornost,NOUN,B1 VOCAB,none
+bg_02359,па̀ркинг/-и,car park,parking,NOUN,B1 VOCAB,none
+bg_02360,паркомясто,parking space,parkomyasto,NOUN,B1 VOCAB,none
+bg_02361,пешехо̀дец/-дци,pedestrian,peshekhodets,NOUN,B1 VOCAB,none
+bg_02362,пешехо̀дна пътѐка,pedestrian crossing,peshekhodna pŭteka,NOUN,B1 VOCAB,none
+bg_02363,пла̀стмаса,plastic (noun),plastmasa (sŭshtestvitelno),NOUN,B1 VOCAB,none
+bg_02364,пла̀щане/-ания,payment/-s,plashtane/-ya,NOUN,B1 VOCAB,none
+bg_02365,площа̀д/-и,town square,gradski ploshtad,NOUN,B1 VOCAB,none
+bg_02366,плю̀сове и мѝнуси,pros and cons,plyusove i minusi,NOUN,B1 VOCAB,none
+bg_02367,пода̀рък/-ръци,gift,podarŭk,NOUN,B1 VOCAB,none
+bg_02368,позна̀т/-и,acquaintance,poznanstvo,NOUN,B1 VOCAB,none
+bg_02369,поку̀пка/-и,purchase,pokupka,NOUN,B1 VOCAB,none
+bg_02370,пол/-ове x 2,"gender, sex","pol, pol",NOUN,B1 VOCAB,none
+bg_02371,по̀лет/-и,flight,polet,NOUN,B1 VOCAB,none
+bg_02372,по̀лза/-и,benefit,polza,NOUN,B1 VOCAB,none
+bg_02373,полица̀й/-и,police officer,polza,NOUN,B1 VOCAB,none
+bg_02374,полѝция,police,politsaĭ,NOUN,B1 VOCAB,none
+bg_02375,по̀мощ (f.),help (noun),politsiya,NOUN,B1 VOCAB,none
+bg_02376,портфѐйл/-и,wallet,pomosht (sŭshtestvitelno),NOUN,B1 VOCAB,none
+bg_02377,посетѝтел/-и,visitor,portfeĭl,NOUN,B1 VOCAB,none
+bg_02378,посо̀ка/-и,direction,posetitel,NOUN,B1 VOCAB,none
+bg_02379,потребѝтел/-и x 2,"user, consumer",posoka,NOUN,B1 VOCAB,none
+bg_02380,пра̀вило/-̀а,rule,"potrebitel, potrebitel",NOUN,B1 VOCAB,none
+bg_02381,правѝтелство/-а,government,pravilo,NOUN,B1 VOCAB,none
+bg_02382,пра̀во/-а̀ x 2,"a right; Law (as a university degree, only sg. in this use)",pravitelstvo,NOUN,B1 VOCAB,none
+bg_02383,превода̀ч/-и x 2,"translator, interpreter","pravo; Pravo (kato universitet·ska stepen, samo ed. v tazi upotreba)",NOUN,B1 VOCAB,none
+bg_02384,прево̀зно срѐдство,vehicle,"prevodach, tŭlkuvatel",NOUN,B1 VOCAB,none
+bg_02385,предгра̀дие/-я,suburb,prevozno sredstvo,NOUN,B1 VOCAB,none
+bg_02386,предѝмство/-а,advantage,predgradie,NOUN,B1 VOCAB,none
+bg_02387,преживя̀ване/-ания,experience (something that has happened to someone),predimstvo,NOUN,B1 VOCAB,none
+bg_02388,препор̀ъка/-и,recommendation,"opit (neshto, koeto se e sluchilo na nyakogo)",NOUN,B1 VOCAB,none
+bg_02389,приложѐние/-я,app; application ,preporŭka,NOUN,B1 VOCAB,none
+bg_02390,прѝмер/-и,example,prilozhenie; prilozhenie ,NOUN,B1 VOCAB,none
+bg_02391,приро̀да,nature,primer,NOUN,B1 VOCAB,none
+bg_02392,причѝна/-и x 2,"reason, cause",estestvo,NOUN,B1 VOCAB,none
+bg_02393,проу̀чване/-ания,rеsearch,"prichina, prichina",NOUN,B1 VOCAB,none
+bg_02394,път/-и,time (an occasion when you do something or when something happens),izsledvane,NOUN,B1 VOCAB,none
+bg_02395,път/-ища,road,"vreme (povod, kogato pravite neshto ili kogato neshto se sluchva)",NOUN,B1 VOCAB,none
+bg_02396,п̀ътен знак,road sign,pŭt,NOUN,B1 VOCAB,none
+bg_02397,п̀ътна лѐнта,road lane,pŭten znak,NOUN,B1 VOCAB,none
+bg_02398,п̀ътник/-ци,passenger,pŭtna lenta,NOUN,B1 VOCAB,none
+bg_02399,пъту̀ване/-ания,trip,pŭtnik,NOUN,B1 VOCAB,none
+bg_02400,рабо̀тно врѐме,working hours,pŭtuvane,NOUN,B1 VOCAB,none
+bg_02401,рабо̀тно мя̀сто,workplace,rabotno vreme,NOUN,B1 VOCAB,none
+bg_02402,ра̀дост (f.),joy,ràdost (zh.),NOUN,B1 VOCAB,none
+bg_02403,развѝтие,development,razvìtie,NOUN,B1 VOCAB,none
+bg_02404,ра̀зговор/-и,conversation,ràzgovor/-i,NOUN,B1 VOCAB,none
+bg_02405,ра̀злика/-и,difference,ràzlika/-i,NOUN,B1 VOCAB,none
+bg_02406,размѐр/-и,size,razmèr/-i,NOUN,B1 VOCAB,none
+bg_02407,разписа̀ние/-я,timetable (e.g. of public transport),razpisànie/-ya,NOUN,B1 VOCAB,none
+bg_02408,разрешѐние/-я,permission; solution,razreshènie/-ya,NOUN,B1 VOCAB,none
+bg_02409,растѐние/-я,plant,rastènie/-ya,NOUN,B1 VOCAB,none
+bg_02410,ред,order (the way something is arranged),red,NOUN,B1 VOCAB,none
+bg_02411,резервоа̀р/-и,fuel tank,rezervoàr/-i,NOUN,B1 VOCAB,none
+bg_02412,решѐние/-я,decision; solution,reshènie/-ya,NOUN,B1 VOCAB,none
+bg_02413,самолѐт/-и,airplane,samolèt/-i,NOUN,B1 VOCAB,none
+bg_02414,светофа̀р/-и,traffic light,svetofàr/-i,NOUN,B1 VOCAB,none
+bg_02415,свобода̀,freedom,svobodà,NOUN,B1 VOCAB,none
+bg_02416,свобо̀дно врѐме,free time,svobòdno vrème,NOUN,B1 VOCAB,none
+bg_02417,седа̀лка/-и,seat,sedàlka/-i,NOUN,B1 VOCAB,none
+bg_02418,ско̀рост/-и (f.),speed; gear,skòrost/-i (zh.),NOUN,B1 VOCAB,none
+bg_02419,служѝтел/-и,employee,sluzhitel/-i,NOUN,B1 VOCAB,none
+bg_02420,снѝмка/-и,photo,snìmka/-i,NOUN,B1 VOCAB,none
+bg_02421,спо̀мен /-и,memory (recollection),spòmen /-i,NOUN,B1 VOCAB,none
+bg_02422,спор/-ове x 2,"argument, dispute",spor/-ove x 2,NOUN,B1 VOCAB,none
+bg_02423,сравнѐние/-я,comparison,sravnènie/-ya,NOUN,B1 VOCAB,none
+bg_02424,среда̀/-ѝ,middle,sredà/-ì,NOUN,B1 VOCAB,none
+bg_02425,срѐща/-и,meeting; gathering; romantic date,srèshta/-i,NOUN,B1 VOCAB,none
+bg_02426,ста̀тия/-и,article,stàtiya/-i,NOUN,B1 VOCAB,none
+bg_02427,сто̀лица/-и,capital city,stòlitsa/-i,NOUN,B1 VOCAB,none
+bg_02428,страна̀/-ѝ,country; side,stranà/-ì,NOUN,B1 VOCAB,none
+bg_02429,страх/-овѐ,fear,strakh/-ovè,NOUN,B1 VOCAB,none
+bg_02430,стъкло̀,glass (noun),stŭklò,NOUN,B1 VOCAB,none
+bg_02431,ст̀ъпка/-и,step,st̀ŭpka/-i,NOUN,B1 VOCAB,none
+bg_02432,събѝтие/-я,event,sŭbìtie/-ya,NOUN,B1 VOCAB,none
+bg_02433,съвѐт/-и,advice,sŭvèt/-i,NOUN,B1 VOCAB,none
+bg_02434,съдържа̀ние x 2,"content, contents",sŭdŭrzhanie x 2,NOUN,B1 VOCAB,none
+bg_02435,състоя̀ние/-я,condition (the state someone or something is in),sŭstoyaniènie/-ya,NOUN,B1 VOCAB,none
+bg_02436,та̀кса/-и x 2,"fee, charge",tàksa/-i x 2,NOUN,B1 VOCAB,none
+bg_02437,тротоа̀р/-и x 2,"sidewalk, pavement",trotoàr/-i kh 2,NOUN,B1 VOCAB,none
+bg_02438,търпѐние,patience,tŭrpènie,NOUN,B1 VOCAB,none
+bg_02439,увеличѐние,increase,uvelichènie,NOUN,B1 VOCAB,none
+bg_02440,уврѐждания,disabilities,uvrèzhdaniya,NOUN,B1 VOCAB,none
+bg_02441,удово̀лствие/-я,pleasure,udovòlstvie/-ya,NOUN,B1 VOCAB,none
+bg_02442,упра̀вител/-и,manager,upràvitel/-i,NOUN,B1 VOCAB,none
+bg_02443,управлѐние,management,upravlènie,NOUN,B1 VOCAB,none
+bg_02444,усло̀вие/-я x 2,"condition contingeny, eg someones current circumstances)",uslòvie/-ya kh 2,NOUN,B1 VOCAB,none
+bg_02445,услу̀га/-и,service; favour,uslùga/-i,NOUN,B1 VOCAB,none
+bg_02446,успѐх/-и,success,uspèkh/-i,NOUN,B1 VOCAB,none
+bg_02447,устро̀йство/-а,device,ustròĭstvo/-a,NOUN,B1 VOCAB,none
+bg_02448,уча̀стник/-ци,participant,uchàstnik/-tsi,NOUN,B1 VOCAB,none
+bg_02449,учѐбник/-ци,textbook,uchèbnik/-tsi,NOUN,B1 VOCAB,none
+bg_02450,у̀чен/-и,scientist,ùchen/-i,NOUN,B1 VOCAB,none
+bg_02451,цвѐте/цветя̀,flower/-s,tsvète/tsvetyà,NOUN,B1 VOCAB,none
+bg_02452,"цвя̀т, цветовѐ",colour/-s + pl,"tsvyàt, tsvetoveè",NOUN,B1 VOCAB,none
+bg_02453,цел/-и (f.) x 2,"purpose, goal",tsel/-i (f.) x 2,NOUN,B1 VOCAB,none
+bg_02454,часо̀вник/-ци x 2,"clock, watch",chasòvnik/-tsi x 2,NOUN,B1 VOCAB,none
+bg_02455,шанс/-ове,chance,shans/-ove,NOUN,B1 VOCAB,none
+bg_02456,шофьо̀рска кнѝжка (или само 'кнѝжка/-и'),driver's license,shof’òrska knìzhka (ili samo 'knìzhka/-i'),NOUN,B1 VOCAB,none
+bg_02457,благодарѐние на,thanks to,blagodarènie na,OTHER,B1 VOCAB,none
+bg_02458,Бързо оздравя̀ване!,Get well soon!,Bŭrzo ozdravyavane!,OTHER,B1 VOCAB,none
+bg_02459,в сравнѐние със,in comparison with,v sravnènie sŭs,OTHER,B1 VOCAB,none
+bg_02460,вероя̀тно,probably,naistinàtno,OTHER,B1 VOCAB,none
+bg_02461,включѝтелно,including,vklyuchitelno,OTHER,B1 VOCAB,none
+bg_02462,вмѐсто,instead of,vmèsto,OTHER,B1 VOCAB,none
+bg_02463,все още,still,vse oshte,OTHER,B1 VOCAB,none
+bg_02464,вс̀ъщност x 2,"actually, in fact",vs̀ŭshtnost x 2,OTHER,B1 VOCAB,none
+bg_02465,в̀ъпреки,despite,v̀ŭpreki,OTHER,B1 VOCAB,none
+bg_02466,в̀ъпреки че,although,v̀ŭpreki che,OTHER,B1 VOCAB,none
+bg_02467,върху x 2,"on, on top of",vŭrkhu x 2,OTHER,B1 VOCAB,none
+bg_02468,до̀ста x 2,"quite a lot, rather",dòsta x 2,OTHER,B1 VOCAB,none
+bg_02469,доста̀тъчно,enough,dostàtŭchno,OTHER,B1 VOCAB,none
+bg_02470,едноврѐменно,simultaneously,ednovrèmenno,OTHER,B1 VOCAB,none
+bg_02471,за да,in order to,za da,OTHER,B1 VOCAB,none
+bg_02472,за съжалѐние,unfortunately,za sŭzhalènie,OTHER,B1 VOCAB,none
+bg_02473,и така̀ ната̀тък,and so on,i takà natàtŭk,OTHER,B1 VOCAB,none
+bg_02474,изведн̀ъж,suddenly,izvedǹŭzh,OTHER,B1 VOCAB,none
+bg_02475,изо̀бщо,at all,izòbshto,OTHER,B1 VOCAB,none
+bg_02476,както и,as well as,kakto i,OTHER,B1 VOCAB,none
+bg_02477,като ця̀ло x 2,"as a whole, overall",kato tsyàlo x 2,OTHER,B1 VOCAB,none
+bg_02478,между дру̀гото,by the way,mezhdu drùgoto,OTHER,B1 VOCAB,none
+bg_02479,на вр̀ъщане,on the way back,na vrŭ̀ŭshtane,OTHER,B1 VOCAB,none
+bg_02480,на го̀сти,on a visit,na gòsti,OTHER,B1 VOCAB,none
+bg_02481,на отѝване,on the way there,na otìvane,OTHER,B1 VOCAB,none
+bg_02482,наврѐме,on time,navrème,OTHER,B1 VOCAB,none
+bg_02483,нався̀къде,everywhere,navsyàkŭde,OTHER,B1 VOCAB,none
+bg_02484,наѝстина,really,naìstina,OTHER,B1 VOCAB,none
+bg_02485,напослѐдък,lately,naposlèdŭk,OTHER,B1 VOCAB,none
+bg_02486,напрѝмер,for example,naprìmer,OTHER,B1 VOCAB,none
+bg_02487,незавѝсимо далѝ,regardless of whether,nezavìsimo dalì,OTHER,B1 VOCAB,none
+bg_02488,нѝкой,nobody,nìkoĭ,OTHER,B1 VOCAB,none
+bg_02489,нѝкъде,nowhere,nìkŭde,OTHER,B1 VOCAB,none
+bg_02490,ня̀кой,someone,nyàkoĭ,OTHER,B1 VOCAB,none
+bg_02491,ня̀къде,somewhere,nyàkŭde,OTHER,B1 VOCAB,none
+bg_02492,няма значѐние,it doesn't matter,nyama znachènie,OTHER,B1 VOCAB,none
+bg_02493,няма смѝсъл,there's no point,nyama smìsŭl,OTHER,B1 VOCAB,none
+bg_02494,оба̀че,however,obàche,OTHER,B1 VOCAB,none
+bg_02495,освѐн,except; aside from,osvèn,OTHER,B1 VOCAB,none
+bg_02496,освѐн ако,unless,osvèn ako,OTHER,B1 VOCAB,none
+bg_02497,освѐн това x 2,"moreover, besides",osvèn tova x 2,OTHER,B1 VOCAB,none
+bg_02498,осо̀бено,especially,osòbeno,OTHER,B1 VOCAB,none
+bg_02499,от сега̀ ната̀тък,from now on,ot segà natàtŭk,OTHER,B1 VOCAB,none
+bg_02500,отѝване и вр̀ъщане,round trip,otìvane i vr̀ŭshtane,OTHER,B1 VOCAB,none
+bg_02501,пак,again,pak,OTHER,B1 VOCAB,none
+bg_02502,по всяко време,at any time,po vsyako vreme,OTHER,B1 VOCAB,none
+bg_02503,по това време,at this time,po tova vreme,OTHER,B1 VOCAB,none
+bg_02504,по̀вечето,most + nouns,pòvecheto,OTHER,B1 VOCAB,none
+bg_02505,понѐ,at least,ponè,OTHER,B1 VOCAB,none
+bg_02506,почтѝ,almost,pochtì,OTHER,B1 VOCAB,none
+bg_02507,предварѝтелно,in advance,predvaritelno,OTHER,B1 VOCAB,none
+bg_02508,Прия̀тно прека̀рване!,Have a good time!,Priyatno prekàrvane!,OTHER,B1 VOCAB,none
+bg_02509,протѝв,against,protiv,OTHER,B1 VOCAB,none
+bg_02510,разбѝра се,of course,razbìra se,OTHER,B1 VOCAB,none
+bg_02511,срѐдно,on average,srèdno,OTHER,B1 VOCAB,none
+bg_02512,то̀лкова,so + adjectives; so much/so many,tòlkova,OTHER,B1 VOCAB,none
+bg_02513,тъй като,as (to state the reason for something),tŭĭ kato,OTHER,B1 VOCAB,none
+bg_02514,у вас,in your home,u vas,OTHER,B1 VOCAB,none
+bg_02515,у нас,in my/our home,u nas,OTHER,B1 VOCAB,none
+bg_02516,у тях,in his/her/their home,u tyakh,OTHER,B1 VOCAB,none
+bg_02517,абонѝра/-м се,subscribe,abonìra/-m se,VERB,B1 VOCAB,none
+bg_02518,анкетѝра/-м x 2,"poll, survey",anketira/-m x 2,VERB,B1 VOCAB,none
+bg_02519,бѝе/-я,beat (hit repeatedly or defeat in a game),bìe/-ya,VERB,B1 VOCAB,none
+bg_02520,бя̀га/-м,run,byàga/-m,VERB,B1 VOCAB,none
+bg_02521,валѝ,it rains; it snows; it hails,valm,VERB,B1 VOCAB,none
+bg_02522,влия̀е/-я на x 2,"influence, affect",vliyàe/-ya na x 2,VERB,B1 VOCAB,none
+bg_02523,внима̀ва/-м,be careful,vnimàva/-m,VERB,B1 VOCAB,none
+bg_02524,во̀ди/-я,lead; guide; take someone somewhere,vòdi/-ya,VERB,B1 VOCAB,none
+bg_02525,вървѝ/-я̀,walk,vŭrvì/-yà,VERB,B1 VOCAB,none
+bg_02526,гла̀ди/-я,iron,glàdi/-ya,VERB,B1 VOCAB,none
+bg_02527,гласу̀ва/-м,vote,glasùva/-m,VERB,B1 VOCAB,none
+bg_02528,глѐда/-м телевѝзия,watch TV,glèda/-m televìziya,VERB,B1 VOCAB,none
+bg_02529,горѝ/-я̀,burn,gorì/-yà,VERB,B1 VOCAB,none
+bg_02530,грѝжи/-а се за,take care of,grìzhi/-a se za,VERB,B1 VOCAB,none
+bg_02531,гу̀би/-я,lose; waste,gùbi/-ya,VERB,B1 VOCAB,none
+bg_02532,двѝжи/-а +/- се,move (set into motion) ,dvìzhi/-a +/- se,VERB,B1 VOCAB,none
+bg_02533,дѝша/-м,breathe,dìsha/-m,VERB,B1 VOCAB,none
+bg_02534,дра̀зни/-я x 2,"annoy, irritate",dràzni/-ya kh 2,VERB,B1 VOCAB,none
+bg_02535,държѝ/-а̀ +/- се,hold; се – behave,dŭrzhì/-à +/- se,VERB,B1 VOCAB,none
+bg_02536,жѐни/-я се,get married,zhèni/-ya se,VERB,B1 VOCAB,none
+bg_02537,забавля̀ва/-м се,have fun,zabavlyàva/-m se,VERB,B1 VOCAB,none
+bg_02538,завѝси/-я от,depend on,zavìsi/-ya ot,VERB,B1 VOCAB,none
+bg_02539,звучѝ/-а̀,sound,zvuchì/-à,VERB,B1 VOCAB,none
+bg_02540,звънѝ/-я̀,ring; call,zvŭnì/-yà,VERB,B1 VOCAB,none
+bg_02541,изглѐжда/-м,look (have a particular appearance); seem,izglèzhda/-m,VERB,B1 VOCAB,none
+bg_02542,ка̀ни/-я,invite,kàni/-ya,VERB,B1 VOCAB,none
+bg_02543,крѝе/-я,hide,krìe/-ya,VERB,B1 VOCAB,none
+bg_02544,к̀ъпе/-я +/- се x 2,"bathe, shower; се – take a shower/bath",k̀ŭpe/-ya +/- se x 2,VERB,B1 VOCAB,none
+bg_02545,лежѝ/-а̀ x 2,"lie, be lying (not standing or sitting)",lezhì/-à kh 2,VERB,B1 VOCAB,none
+bg_02546,летѝ/-я̀,fly,letì/-yà,VERB,B1 VOCAB,none
+bg_02547,мѐсти/я +/- се,move (from one place to another) ,mèsti/ya +/- se,VERB,B1 VOCAB,none
+bg_02548,мечта̀е/-я,dream (imagine something you want),mechtàe/-ya,VERB,B1 VOCAB,none
+bg_02549,мирѝше/-а,smell,mirìshe/-a,VERB,B1 VOCAB,none
+bg_02550,мо̀ли/-я +/- се x 2,"ask (for something, or someone to do something); beg; се – pray ",mòli/-ya +/- se x 2,VERB,B1 VOCAB,none
+bg_02551,мра̀зи/-я,hate,mràzi/-ya,VERB,B1 VOCAB,none
+bg_02552,мълчѝ/-а̀ x 2,"not speak, be silent",mŭlchì/-à x 2,VERB,B1 VOCAB,none
+bg_02553,надя̀ва/-м се,hope,nadyàva/-m se,VERB,B1 VOCAB,none
+bg_02554,но̀си/-я,carry; wear; bring,nòsi/-ya,VERB,B1 VOCAB,none
+bg_02555,нощу̀ва/-м,spend the night,noshtùva/-m,VERB,B1 VOCAB,none
+bg_02556,нужда̀е/-я се от,need,nuzhdàe/-ya se ot,VERB,B1 VOCAB,none
+bg_02557,няма значѐние,It doesn't matter,nyama znachènie,VERB,B1 VOCAB,none
+bg_02558,общу̀ва/-м,communicate,obshtùva/-m,VERB,B1 VOCAB,none
+bg_02559,означа̀ва/-м,mean (to have something as a meaning),oznachavàva/-m,VERB,B1 VOCAB,none
+bg_02560,оча̀ква/-м,expect,ochàkva/-m,VERB,B1 VOCAB,none
+bg_02561,пазару̀ва/-м x 2,"shop, do the shopping",pazarùva/-m x 2,VERB,B1 VOCAB,none
+bg_02562,па̀зи/-я x 2,"protect, look after",pàzi/-ya x 2,VERB,B1 VOCAB,none
+bg_02563,перѐ/-а̀ x 2,"wash (clothes, fabrics, etc.), do laundry",perè/-à x 2,VERB,B1 VOCAB,none
+bg_02564,пѝта/-м,ask (request information),pìta/-m,VERB,B1 VOCAB,none
+bg_02565,позна̀ва/-м,know (be familiar with),poznàva/-m,VERB,B1 VOCAB,none
+bg_02566,по̀мни/-я,remember,pòmni/-ya,VERB,B1 VOCAB,none
+bg_02567,празну̀ва/-м,celebrate,praznùva/-m,VERB,B1 VOCAB,none
+bg_02568,про̀бва/-м,try,pròbva/-m,VERB,B1 VOCAB,none
+bg_02569,п̀ълни/-я,fill,p̀ŭlni/-ya,VERB,B1 VOCAB,none
+bg_02570,ра̀два/-м се,be glad,ràdva/-m se,VERB,B1 VOCAB,none
+bg_02571,разчѝта/-м на x 2,"count on, rely on",razchìta/-m na x 2,VERB,B1 VOCAB,none
+bg_02572,растѐ/-а̀,grow,rastè/-à,VERB,B1 VOCAB,none
+bg_02573,рециклѝра/-м,recycle,retsiklìra/-m,VERB,B1 VOCAB,none
+bg_02574,свѝри/-я на,play + instrument,svìri/-ya na,VERB,B1 VOCAB,none
+bg_02575,седѝ/-я̀,sit (be seated),sedì/-yà,VERB,B1 VOCAB,none
+bg_02576,смѐе/-я се,laugh,smèe/-ya se,VERB,B1 VOCAB,none
+bg_02577,страху̀ва/-м се,be afraid,strakhùva/-m se,VERB,B1 VOCAB,none
+bg_02578,стру̀ва/-м,cost,strùva/-m,VERB,B1 VOCAB,none
+bg_02579,съд̀ържа/-м,contain,sŭd̀ŭrzha/-m,VERB,B1 VOCAB,none
+bg_02580,съну̀ва/-м,dream (while asleep),sŭnùva/-m,VERB,B1 VOCAB,none
+bg_02581,съществу̀ва/-м,exist,sŭshtestvùva/-m,VERB,B1 VOCAB,none
+bg_02582,таксу̀ва/-м,charge (ask an amount of money for a service),taksùva/-m,VERB,B1 VOCAB,none
+bg_02583,твърдѝ/-я̀,claim,tvŭrdì/-yà,VERB,B1 VOCAB,none
+bg_02584,то̀пли/-я x 2,"warm, heat",tòpli/-ya x 2,VERB,B1 VOCAB,none
+bg_02585,трево̀жи/-а се,worry,trevòzhi/-a se,VERB,B1 VOCAB,none
+bg_02586,управля̀ва/-м,manage; operate; govern,upravlyavàva/-m,VERB,B1 VOCAB,none
+bg_02587,уча̀ства/-м,participate,uchàstva/-m,VERB,B1 VOCAB,none
+bg_02588,фокусѝра/-м се,focus,fokusìra/-m se,VERB,B1 VOCAB,none
+bg_02589,шегу̀ва/-м се,joke,shega,VERB,B1 VOCAB,none
+bg_02590,ба̀ба/-и,grandmother,baba,NOUN,A2 VOCAB,none
+bg_02591,бакшѝш/-и,a tip (extra money for a service),bakshish (dopŭlnitelni pari za usluga),NOUN,A2 VOCAB,none
+bg_02592,баща̀/-ѝ (m.),father,bashta,NOUN,A2 VOCAB,none
+bg_02593,бо̀лест/-и (f.),illness,bolest,NOUN,A2 VOCAB,none
+bg_02594,бо̀лница/-и,hospital,bolnitsa,NOUN,A2 VOCAB,none
+bg_02595,боклу̀к/-ци,garbage,bokluk,NOUN,A2 VOCAB,none
+bg_02596,брак/-ове,marriage,brak,NOUN,A2 VOCAB,none
+bg_02597,брат/-я̀,brother,brat,NOUN,A2 VOCAB,none
+bg_02598,братовчѐд/-и,cousin,bratovched,NOUN,A2 VOCAB,none
+bg_02599,брой,number (as a quantity),chislo (kato kolichestvo),NOUN,A2 VOCAB,none
+bg_02600,в̀ъзраст/-и (f.),age (n.),vŭzrast (sŭsht.),NOUN,A2 VOCAB,none
+bg_02601,ва̀на/-и,bathtub,vana,NOUN,A2 VOCAB,none
+bg_02602,възмо̀жност/-и (f.) x 2,"opportunity, chance","vŭzmozhnost, shans",NOUN,A2 VOCAB,none
+bg_02603,въпро̀с/-и,question,vŭpros,NOUN,A2 VOCAB,none
+bg_02604,гара̀ж/-и,garage,garazh,NOUN,A2 VOCAB,none
+bg_02605,гра̀дски транспо̀рт,public transport,obshtestven transport,NOUN,A2 VOCAB,none
+bg_02606,грим,makeup,grim,NOUN,A2 VOCAB,none
+bg_02607,да̀нни,data,danni,NOUN,A2 VOCAB,none
+bg_02608,да̀нък/-ъци,tax,danŭk,NOUN,A2 VOCAB,none
+bg_02609,дво̀йка/-и,couple,dvoĭka,NOUN,A2 VOCAB,none
+bg_02610,двор/-ове,yard,dvor,NOUN,A2 VOCAB,none
+bg_02611,детѐ/деца̀,child/-ren,dete/detsa,NOUN,A2 VOCAB,none
+bg_02612,дистанцио̀нно,remote control,distantsionno upravlenie,NOUN,A2 VOCAB,none
+bg_02613,до̀ход/-и,income,dokhod,NOUN,A2 VOCAB,none
+bg_02614,дома̀шен любѝмец,pet,domashen lyubimets,NOUN,A2 VOCAB,none
+bg_02615,домакѝнска ра̀бота,household chores,domakinski zadŭlzheniya,NOUN,A2 VOCAB,none
+bg_02616,дъщеря̀/-ѝ,daughter,dŭshterya,NOUN,A2 VOCAB,none
+bg_02617,дя̀до/-вци (m.),grandfather,dyado,NOUN,A2 VOCAB,none
+bg_02618,Европѐйския(т) съю̀з,the EU,ES,NOUN,A2 VOCAB,none
+bg_02619,ежеднѐвие,everyday life,ezhednevie,NOUN,A2 VOCAB,none
+bg_02620,жена̀/-ѝ,woman; wife,zhena; sŭpruga,NOUN,A2 VOCAB,none
+bg_02621,живо̀т,life,zhivot,NOUN,A2 VOCAB,none
+bg_02622,зада̀ча/-и,task,zadacha,NOUN,A2 VOCAB,none
+bg_02623,запла̀та/-и,salary,zaplata,NOUN,A2 VOCAB,none
+bg_02624,здра̀ве,health,zdrave,NOUN,A2 VOCAB,none
+bg_02625,здравеопа̀зване,healthcare,zdraveopazvane,NOUN,A2 VOCAB,none
+bg_02626,изнена̀да/-и,surprise,iznenada,NOUN,A2 VOCAB,none
+bg_02627,к̀ърпа/-и,towel,kŭrpa,NOUN,A2 VOCAB,none
+bg_02628,ка̀сова белѐжка,receipt,kasova belezhka,NOUN,A2 VOCAB,none
+bg_02629,ка̀чество/-а,quality,kachestvo,NOUN,A2 VOCAB,none
+bg_02630,квадра̀тен мѐтър,square meter,kvadraten metŭr,NOUN,A2 VOCAB,none
+bg_02631,кварта̀л/-и,neighborhood,kvartal,NOUN,A2 VOCAB,none
+bg_02632,климатѝк/-ци,air conditioning,klimatik,NOUN,A2 VOCAB,none
+bg_02633,колѝчество/-а,quantity,kolichestvo,NOUN,A2 VOCAB,none
+bg_02634,конта̀кт/-и,socket,konteĭner,NOUN,A2 VOCAB,none
+bg_02635,коса̀,hair (on head),kosa (na glavata),NOUN,A2 VOCAB,none
+bg_02636,кош за боклу̀к,trash can,kofa za bokluk,NOUN,A2 VOCAB,none
+bg_02637,крак/крака̀,leg/-s,krak/i,NOUN,A2 VOCAB,none
+bg_02638,лѐля/-и,aunt,lelya,NOUN,A2 VOCAB,none
+bg_02639,лека̀рство/-а x 2,"medicine, medication","lekarstvo, medikamenti",NOUN,A2 VOCAB,none
+bg_02640,лицѐ/-а̀,face,litse,NOUN,A2 VOCAB,none
+bg_02641,ма̀йка/-и,mother,maĭka,NOUN,A2 VOCAB,none
+bg_02642,мѐбели (pl.),furniture,mebeli,NOUN,A2 VOCAB,none
+bg_02643,микров̀ълнова/-и,microwave,mikrovŭlnova pechka,NOUN,A2 VOCAB,none
+bg_02644,милиа̀рд/-и,billion,miliard,NOUN,A2 VOCAB,none
+bg_02645,мнѐние/-я,opinion,mnenie,NOUN,A2 VOCAB,none
+bg_02646,мъж/-ѐ,man; husband,mŭzh; sŭprug,NOUN,A2 VOCAB,none
+bg_02647,на̀вик/-ци,habit,navik,NOUN,A2 VOCAB,none
+bg_02648,на̀ем/-и,rent,naem,NOUN,A2 VOCAB,none
+bg_02649,на̀чин на живо̀т,lifestyle,nachin na zhivot,NOUN,A2 VOCAB,none
+bg_02650,наема̀тел/-и,tenant,naematel,NOUN,A2 VOCAB,none
+bg_02651,нача̀ло,beginning,nachalo,NOUN,A2 VOCAB,none
+bg_02652,о̀тговор/-и x 2,"answer, response","otgovor, reaktsiya",NOUN,A2 VOCAB,none
+bg_02653,образова̀ние,education,obrazovanie,NOUN,A2 VOCAB,none
+bg_02654,обу̀вки на ток,heeled shoes,obuvki na tokcheta,NOUN,A2 VOCAB,none
+bg_02655,одея̀ло/-а̀,blanket,odeyalo,NOUN,A2 VOCAB,none
+bg_02656,око̀/очѝ,eye/-s,ochi/-i,NOUN,A2 VOCAB,none
+bg_02657,отоплѐние,heating,otoplenie,NOUN,A2 VOCAB,none
+bg_02658,паза̀р/-и,market,pazar,NOUN,A2 VOCAB,none
+bg_02659,парѝ,money,pari,NOUN,A2 VOCAB,none
+bg_02660,пера̀лня/-и,washing machine,peralnya,NOUN,A2 VOCAB,none
+bg_02661,плѐменник/-ци,nephew,plemennik,NOUN,A2 VOCAB,none
+bg_02662,плѐменница/-и,niece,plemennitsa,NOUN,A2 VOCAB,none
+bg_02663,под/-ове,floor,pod,NOUN,A2 VOCAB,none
+bg_02664,посетѝтел/-и,visitor,posetitel,NOUN,A2 VOCAB,none
+bg_02665,прах за пранѐ,laundry detergent,perilen preparat,NOUN,A2 VOCAB,none
+bg_02666,приложѐние/-я,application,prilozhenie,NOUN,A2 VOCAB,none
+bg_02667,причѝна/-и x 2,"cause, reason","prichina, prichina",NOUN,A2 VOCAB,none
+bg_02668,проу̀чване/-ания x 2,"a study, research","prouchvane, izsledvane",NOUN,A2 VOCAB,none
+bg_02669,пу̀блично мя̀сто,public place,publichno myasto,NOUN,A2 VOCAB,none
+bg_02670,ра̀вни обу̀вки,flat shoes,ploski obuvki,NOUN,A2 VOCAB,none
+bg_02671,ра̀злика/-и,difference,razlika,NOUN,A2 VOCAB,none
+bg_02672,ра̀зход/-и,expense,razkhod,NOUN,A2 VOCAB,none
+bg_02673,рѐсто,change (the money you get back when you pay more),"resto (parite, koito poluchavate obratno, kogato plashtate poveche)",NOUN,A2 VOCAB,none
+bg_02674,рекла̀ма/-и x 2,"ad, commercial","reklama, reklama",NOUN,A2 VOCAB,none
+bg_02675,ремо̀нт/-и x 2,"renovation, repair","remont, remont",NOUN,A2 VOCAB,none
+bg_02676,решѐние/-я,decision; solution,reshenie; reshenie,NOUN,A2 VOCAB,none
+bg_02677,родѝтел/-и,parent,roditel,NOUN,A2 VOCAB,none
+bg_02678,свобо̀дно врѐме,free time,svobodno vreme,NOUN,A2 VOCAB,none
+bg_02679,"свят, света̀, свет̀ът x 2","world, the world","svyat, svetŭt",NOUN,A2 VOCAB,none
+bg_02680,сгра̀да/-и,building,sgrada,NOUN,A2 VOCAB,none
+bg_02681,сестра̀/-ѝ,sister,sestra,NOUN,A2 VOCAB,none
+bg_02682,син/-овѐ,son,sin,NOUN,A2 VOCAB,none
+bg_02683,слуша̀лки,headphones,slushalki,NOUN,A2 VOCAB,none
+bg_02684,снѝмка/-и,photograph,snimka,NOUN,A2 VOCAB,none
+bg_02685,со̀бственик/-ци,owner,sobstvenik,NOUN,A2 VOCAB,none
+bg_02686,социа̀лни мрѐжи,social networks,sotsialni mrezhi,NOUN,A2 VOCAB,none
+bg_02687,спестя̀вания (pl.),savings,spestyavaniya,NOUN,A2 VOCAB,none
+bg_02688,сто̀лица/-и,capital,kapital,NOUN,A2 VOCAB,none
+bg_02689,стра̀ница/-и,page,stranitsa,NOUN,A2 VOCAB,none
+bg_02690,страна̀/-ѝ,country,dŭrzhava,NOUN,A2 VOCAB,none
+bg_02691,съвѐт/-и,advice,sŭvet,NOUN,A2 VOCAB,none
+bg_02692,съсѐд/-и,neighbor,sŭsed,NOUN,A2 VOCAB,none
+bg_02693,тѐма/-и,topic,tema,NOUN,A2 VOCAB,none
+bg_02694,ток,electricity; heel (of a shoe),elektrichestvo; tok (na obuvka),NOUN,A2 VOCAB,none
+bg_02695,тя̀ло/тела̀,body/bodies,tyalo/tela,NOUN,A2 VOCAB,none
+bg_02696,услу̀га/-и,service; favour,usluga; usluga,NOUN,A2 VOCAB,none
+bg_02697,фотьо̀йл/-и,armchair,fot’oĭl,NOUN,A2 VOCAB,none
+bg_02698,цвя̀т/цветовѐ,color/-s,tsvyat/-i,NOUN,A2 VOCAB,none
+bg_02699,цена̀/-ѝ x 2,"price, cost","tsena, tsena",NOUN,A2 VOCAB,none
+bg_02700,чѝчо/-вци (m.),uncle,chicho,NOUN,A2 VOCAB,none
+bg_02701,чужденѐц/-нцѝ,foreigner,chuzhdenets,NOUN,A2 VOCAB,none
+bg_02702,спа̀лня/-и,bedroom,spalnya,NOUN,A2 VOCAB,none
+bg_02703,но̀щно шка̀фче,night stand,noshtno shkafche,NOUN,A2 VOCAB,none
+bg_02704,легло̀/-а̀,bed,leglo,NOUN,A2 VOCAB,none
+bg_02705,възгла̀вница/-и,pillow,vŭzglavnitsa,NOUN,A2 VOCAB,none
+bg_02706,гардеро̀б/-и,wardrobe,garderob,NOUN,A2 VOCAB,none
+bg_02707,чекмеджѐ/-та,drawer,chekmedzhe,NOUN,A2 VOCAB,none
+bg_02708,огледа̀ло/-а,mirror,ogledalo,NOUN,A2 VOCAB,none
+bg_02709,килѝм/-и,carpet,kilim,NOUN,A2 VOCAB,none
+bg_02710,котло̀н/-и x 2,"hob, stovetop ","kotlon, pechka",NOUN,A2 VOCAB,none
+bg_02711,пѐчка/-и,stove; heater ,pechka; nagrevatel ,NOUN,A2 VOCAB,none
+bg_02712,шка̀ф/-ове,cupboard ,shkaf ,NOUN,A2 VOCAB,none
+bg_02713,фу̀рна/-и,oven,furna ,NOUN,A2 VOCAB,none
+bg_02714,ска̀ра,grill ,gril ,NOUN,A2 VOCAB,none
+bg_02715,хладѝлник/-ци,fridge,khladilnik,NOUN,A2 VOCAB,none
+bg_02716,ра̀фт/-ове,shelf,raft,NOUN,A2 VOCAB,none
+bg_02717,чинѝя/-и,plate,chiniya,NOUN,A2 VOCAB,none
+bg_02718,мѝвка/-и,sink,mivka,NOUN,A2 VOCAB,none
+bg_02719,телевѝзор/-и,TV set,televizor,NOUN,A2 VOCAB,none
+bg_02720,дива̀н/-и,sofa,divan,NOUN,A2 VOCAB,none
+bg_02721,ку̀хня/-и,kitchen,kukhnya,NOUN,A2 VOCAB,none
+bg_02722,хол/-ове,living room,khol,NOUN,A2 VOCAB,none
+bg_02723,ба̀ня/-и,bathroom (with a shower/bathtub),banya (s dush/vana),NOUN,A2 VOCAB,none
+bg_02724,тоалѐтна/-и x 2,"toilet, restroom","toaletna, toaletna",NOUN,A2 VOCAB,none
+bg_02725,ду̀ш/-ове,shower ,dush ,NOUN,A2 VOCAB,none
+bg_02726,безпла̀тен/-тна/-тно/-тни,free (of charge) x 4,bezplatno (bezplatno) x 4,ADJECTIVE,A2 VOCAB,none
+bg_02727,в̀ъзрастен/-тна/-тно/-тни,adult; elderly x 4,vŭzrasten; vŭzrasten x 4,ADJECTIVE,A2 VOCAB,none
+bg_02728,ва̀жен/-жна/-жно/-жни,important x 4,vazhen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02729,вр̀еден/-дна/-дно/-дни x 2,"bad for health, harmful x 4","losho za zdraveto, vredno x 4",ADJECTIVE,A2 VOCAB,none
+bg_02730,възмо̀жен/-жна/-жно/-жни,possible x 4,vŭzmozhno x 4,ADJECTIVE,A2 VOCAB,none
+bg_02731,гла̀ден/-дна/-дно/-дни,hungry x 4,gladen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02732,глу̀пав/-а/-о/-и x 2,"stupid, dumb x 4","glupav, tŭp x 4",ADJECTIVE,A2 VOCAB,none
+bg_02733,дебѐл/-а/-о/-и,fat; thick x 4,debel; debel x 4,ADJECTIVE,A2 VOCAB,none
+bg_02734,дово̀лен/-лна/-лно/-лни x 2,"pleased, happy x 4","dovolen, shtastliv x 4",ADJECTIVE,A2 VOCAB,none
+bg_02735,дост̀ъпен/-пна/-пно/-пни,accessible; affordable x 4,dostŭpen; dostŭpen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02736,з̀ападен/-дна/-дно/-дни,western x 4,zapaden x 4,ADJECTIVE,A2 VOCAB,none
+bg_02737,заѐт/-а/-о/-и x 2,"busy (person), occupied x 4","zaet (chovek), zaet x 4",ADJECTIVE,A2 VOCAB,none
+bg_02738,ѝзточен/-чна/-чно/-чни,eastern x 4,iztochen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02739,к̀ъдрав/-а/-о/-и,curly x 4,kŭdrav x 4,ADJECTIVE,A2 VOCAB,none
+bg_02740,любѐзен/-зна/-зно/-зни,polite x 4,uchtiv x 4,ADJECTIVE,A2 VOCAB,none
+bg_02741,лют/-а/-о/-и,spicy x 4,pikanten x 4,ADJECTIVE,A2 VOCAB,none
+bg_02742,мѐстен/-тна/-тно/-тни,local x 4,mesten x 4,ADJECTIVE,A2 VOCAB,none
+bg_02743,мла̀д/-а/-о/-и,young x 4,mlad x 4,ADJECTIVE,A2 VOCAB,none
+bg_02744,мр̀ъсен/-сна/-сно/-сни,dirty x 4,mrŭsen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02745,невъзмо̀жен/-жна/-жно/-жни,impossible x 4,nevŭzmozhen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02746,ну̀жен/-жна/-жно/-жни,necessary x 4,neobkhodim x 4,ADJECTIVE,A2 VOCAB,none
+bg_02747,обзавѐден/-а/-о/-и,furnished x 4,obzaveden x 4,ADJECTIVE,A2 VOCAB,none
+bg_02748,п̀ълен/-лна/-лно/-лни,full; plump x 4,pŭlen; pukhkav x 4,ADJECTIVE,A2 VOCAB,none
+bg_02749,подходя̀щ/-а/-о/-и x 2,"appropriate, suitable x 4","podkhodyasht, podkhodyasht x 4",ADJECTIVE,A2 VOCAB,none
+bg_02750,полѐзен/-зна/-зно/-зни,healthy (good for health); useful x 4,zdravosloven (polezen za zdraveto); polezen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02751,прав/-а/-о/-и,straight (without bends or curves); right (correct in opinion or judgement) x 4,prav (bez izvivki ili krivi); pravilen (pravilen v mnenieto ili pretsenkata) x 4,ADJECTIVE,A2 VOCAB,none
+bg_02752,притеснѐн/-а/-о/-и x 2,"worried, nervous x 4","pritesnen, nerven x 4",ADJECTIVE,A2 VOCAB,none
+bg_02753,прия̀тен/-тна/-тно/-тни,pleasant x 4,priyaten x 4,ADJECTIVE,A2 VOCAB,none
+bg_02754,развалѐн/-а/-о/-и,broken (not working); spoilt (of food) x 4,razbit (nerabotesht); razvalen (ot khranata) x 4,ADJECTIVE,A2 VOCAB,none
+bg_02755,рус/-а/-о/-и,blond x 4,rus x 4,ADJECTIVE,A2 VOCAB,none
+bg_02756,с̀еверен/-рна/-рно/-рни,northern x 4,severen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02757,с̀игурен/-рна/-рно/-рни,sure x 4,siguren x 4,ADJECTIVE,A2 VOCAB,none
+bg_02758,"с̀ъщия(т), с̀ъщата, с̀ъщото, с̀ъщите",the same x 4,sŭshtiyat x 4,ADJECTIVE,A2 VOCAB,none
+bg_02759,сам/-а̀/-о̀/-ѝ,alone x 4,sam x 4,ADJECTIVE,A2 VOCAB,none
+bg_02760,свѐтъл/-тла/-тло/-тли x 2,"bright, light x 4","yarŭk, lek x 4",ADJECTIVE,A2 VOCAB,none
+bg_02761,серио̀зен/-зна/-зно/-зни,serious x 4,seriozen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02762,сѝгурен/-рна/-рно/-рни,sure x 4,siguren x 4,ADJECTIVE,A2 VOCAB,none
+bg_02763,ск̀учен/-чна/-чно/-чни,boring x 4,skuchen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02764,сла̀б/-а/-о/-и,thin; weak x 4,slab; slab x 4,ADJECTIVE,A2 VOCAB,none
+bg_02765,слѐдващ/-а/-о/-и,next x 4,sledvasht x 4,ADJECTIVE,A2 VOCAB,none
+bg_02766,"споко̀ен, споко̀йна/-о/-и x 2","calm, relaxed x 4","spokoen, otpusnat x 4",ADJECTIVE,A2 VOCAB,none
+bg_02767,срѐден/-дна/-дно/-дни,average x 4,sreden x 4,ADJECTIVE,A2 VOCAB,none
+bg_02768,стра̀нен/-нна/-нно/-нни,strange x 4,stranen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02769,стресѝран/-а/-о/-и,stressed x 4,stresiran x 4,ADJECTIVE,A2 VOCAB,none
+bg_02770,стресѝращ/-а/-о/-и,stressful x 4,stresirasht x 4,ADJECTIVE,A2 VOCAB,none
+bg_02771,тѝх/-а/-о/-и,quiet x 4,tikh x 4,ADJECTIVE,A2 VOCAB,none
+bg_02772,у̀мен/-мна/-мно/-мни,smart x 4,umen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02773,уж̀асен/-сна/-сно/-сни,horrible x 4,uzhasen x 4,ADJECTIVE,A2 VOCAB,none
+bg_02774,чѐстен/-тна/-тно/-тни,honest x 4,chesten x 4,ADJECTIVE,A2 VOCAB,none
+bg_02775,шу̀мен/-мна/-мно/-мни,noisy x 4,shùmen/-mna/-mno/-mni,ADJECTIVE,A2 VOCAB,none
+bg_02776,щастлѝв/-а/-о/-и,happy x 4,shtastlìv/-a/-o/-i,ADJECTIVE,A2 VOCAB,none
+bg_02777,ю̀жен/-жна/-жно/-жни,southern x 4,yùzhen/-zhna/-zhno/-zhni,ADJECTIVE,A2 VOCAB,none
+bg_02778,ако,if (with conditions),ako,OTHER,A2 VOCAB,none
+bg_02779,блѝзо до,close to,blìzo do,OTHER,A2 VOCAB,none
+bg_02780,в сравнѐние със,compared to,v sravnènie sŭs,OTHER,A2 VOCAB,none
+bg_02781,в чужбѝна,abroad,v chuzhbìna,OTHER,A2 VOCAB,none
+bg_02782,в̀ъпреки това̀ x 2,"nonetheless, despite this",v̀ŭpreki tovà x 2,OTHER,A2 VOCAB,none
+bg_02783,в̀ъпреки че,although,v̀ŭpreki che,OTHER,A2 VOCAB,none
+bg_02784,в̀ътре,inside,v̀ŭtre,OTHER,A2 VOCAB,none
+bg_02785,вдру̀гиден,the day after tomorrow,vdrùgiden,OTHER,A2 VOCAB,none
+bg_02786,вѐче,(in affirmative sentences) already; (in negative sentences) anymore; now (in contrast to before),vèche,OTHER,A2 VOCAB,none
+bg_02787,"виж (ти), вижте (вие)",Look! + pl,"vizh (ti), vizhte (vie)",OTHER,A2 VOCAB,none
+bg_02788,вк̀ъщи,at home,vk̀ŭshti,OTHER,A2 VOCAB,none
+bg_02789,включѝтелно,including,vklyuchitelno,OTHER,A2 VOCAB,none
+bg_02790,все още,still,vse oshte,OTHER,A2 VOCAB,none
+bg_02791,всѐки,every (m.),vsèki,OTHER,A2 VOCAB,none
+bg_02792,всѝчки,all; everybody,vsìchki,OTHER,A2 VOCAB,none
+bg_02793,вся̀ка,every (f.),vsyàka,OTHER,A2 VOCAB,none
+bg_02794,вся̀ко,every (n.),vsyàko,OTHER,A2 VOCAB,none
+bg_02795,вчѐра,yesterday,vchèra,OTHER,A2 VOCAB,none
+bg_02796,го̀ре,upstairs,gòre,OTHER,A2 VOCAB,none
+bg_02797,го̀ре-до̀лу x 2,"more or less, so-so",gòre-dòlu x 2,OTHER,A2 VOCAB,none
+bg_02798,далѐч,far away,dalèch,OTHER,A2 VOCAB,none
+bg_02799,далѝ,if (whether),dalì,OTHER,A2 VOCAB,none
+bg_02800,до̀ста x 3,"quite, quite a lot, rather",dòsta x 3,OTHER,A2 VOCAB,none
+bg_02801,довѐчера,tonight,dovèchera,OTHER,A2 VOCAB,none
+bg_02802,докато̀,while,dokatò,OTHER,A2 VOCAB,none
+bg_02803,доста̀тъчно,enough,dostàtŭchno,OTHER,A2 VOCAB,none
+bg_02804,един път,once,edin pŭt,OTHER,A2 VOCAB,none
+bg_02805,за съжалѐние,unfortunately,za sŭzhalènie,OTHER,A2 VOCAB,none
+bg_02806,за ща̀стие,fortunately,za shtàstie,OTHER,A2 VOCAB,none
+bg_02807,за̀едно,together,zàedno,OTHER,A2 VOCAB,none
+bg_02808,зарадѝ x 2,"because of, due to",radim x 2,OTHER,A2 VOCAB,none
+bg_02809,засега̀,for now,zasegà,OTHER,A2 VOCAB,none
+bg_02810,затова̀ x 2,"therefore, that's why",takà x 2,OTHER,A2 VOCAB,none
+bg_02811,и така̀ ната̀тък,etc.,i takà natàtŭk,OTHER,A2 VOCAB,none
+bg_02812,изо̀бщо,at all,izòbshto,OTHER,A2 VOCAB,none
+bg_02813,като ця̀ло,as a whole,kato tsyàlo,OTHER,A2 VOCAB,none
+bg_02814,като̀ x 3,"such as, like; followed by a verb – by doing something",katò x 3,OTHER,A2 VOCAB,none
+bg_02815,малко по малко,little by little,malko po malko,OTHER,A2 VOCAB,none
+bg_02816,онзиден,the other day,onziden,OTHER,A2 VOCAB,none
+bg_02817,мно̀го x 4,"much, many, a lot, very",mnogo kh 4,OTHER,A2 VOCAB,none
+bg_02818,на живо,in person; live,na zhivo,OTHER,A2 VOCAB,none
+bg_02819,наблѝзо,nearby,nablìzo,OTHER,A2 VOCAB,none
+bg_02820,нав̀ън,outside,nav̀ŭn,OTHER,A2 VOCAB,none
+bg_02821,наврѐме,on time,navrème,OTHER,A2 VOCAB,none
+bg_02822,над,over,nad,OTHER,A2 VOCAB,none
+bg_02823,надя̀сно,to the right,nadyàsno,OTHER,A2 VOCAB,none
+bg_02824,наѝстина,really,naìstina,OTHER,A2 VOCAB,none
+bg_02825,накра̀я x 2,"finally, in the end",nakraya x 2,OTHER,A2 VOCAB,none
+bg_02826,наля̀во,to the left,nalyàvo,OTHER,A2 VOCAB,none
+bg_02827,напра̀во,straight,napràvo,OTHER,A2 VOCAB,none
+bg_02828,напрѝмер,for example,naprìmer,OTHER,A2 VOCAB,none
+bg_02829,"недѐй (ти), недѐйте (вие) (да + imperfective verb)",don't (as an order) + pl,"nedèĭ (ti), nedèĭte (vie) (da + nesvŭrshen vid glagol)",OTHER,A2 VOCAB,none
+bg_02830,нѝкъде,nowhere,nìkŭde,OTHER,A2 VOCAB,none
+bg_02831,ня̀къде,somewhere,nyàkŭde,OTHER,A2 VOCAB,none
+bg_02832,о̀коло,around,òkolo,OTHER,A2 VOCAB,none
+bg_02833,оба̀че,however,obàche,OTHER,A2 VOCAB,none
+bg_02834,обра̀тното x 2,"the other way around, vice versa",obràtnoto x 2,OTHER,A2 VOCAB,none
+bg_02835,освѐн това̀,moreover,osvèn tovà,OTHER,A2 VOCAB,none
+bg_02836,осо̀бено,especially,osòbeno,OTHER,A2 VOCAB,none
+bg_02837,от дру̀га страна̀,on the other hand,ot drùga stranà,OTHER,A2 VOCAB,none
+bg_02838,от една̀ страна̀,on the one hand,ot ednà stranà,OTHER,A2 VOCAB,none
+bg_02839,от сега̀ ната̀тък,from now on,ot segà natàtŭk,OTHER,A2 VOCAB,none
+bg_02840,пак,again,pak,OTHER,A2 VOCAB,none
+bg_02841,пеша̀,on foot,peshà,OTHER,A2 VOCAB,none
+bg_02842,по-малко,less/fewer (with nouns); less (with verbs or adj.),po-malko,OTHER,A2 VOCAB,none
+bg_02843,по̀вече,more (with nouns or verbs),pòveche,OTHER,A2 VOCAB,none
+bg_02844,по̀вечето,most (with nouns),pòvecheto,OTHER,A2 VOCAB,none
+bg_02845,по̀сле x 4,"afterwards; then, after that",pòsle x 4,OTHER,A2 VOCAB,none
+bg_02846,под,under,pod,OTHER,A2 VOCAB,none
+bg_02847,понѐ,at least,ponè,OTHER,A2 VOCAB,none
+bg_02848,постоя̀нно,constantly,postoyànno,OTHER,A2 VOCAB,none
+bg_02849,почтѝ,almost,pochtì,OTHER,A2 VOCAB,none
+bg_02850,предѝ да,before + verb,predim da,OTHER,A2 VOCAB,none
+bg_02851,предѝ,before; in the past,predim,OTHER,A2 VOCAB,none
+bg_02852,про̀сто x 2,"just, simply",pròsto x 2,OTHER,A2 VOCAB,none
+bg_02853,разбѝра се x 2,"of course, sure",razbìra se x 2,OTHER,A2 VOCAB,none
+bg_02854,ря̀дко,rarely,ryàdko,OTHER,A2 VOCAB,none
+bg_02855,с изключѐние на,with the exception of,s izklyuchènie na,OTHER,A2 VOCAB,none
+bg_02856,с̀ъщо x 2,"also, too, as well",s̀ŭshto x 2,OTHER,A2 VOCAB,none
+bg_02857,са̀мо,only,sàmo,OTHER,A2 VOCAB,none
+bg_02858,ско̀ро,soon,skòro,OTHER,A2 VOCAB,none
+bg_02859,след като̀,after + verb,sled katò,OTHER,A2 VOCAB,none
+bg_02860,след,after,sled,OTHER,A2 VOCAB,none
+bg_02861,сно̀щи,last night,snòshti,OTHER,A2 VOCAB,none
+bg_02862,споко̀йно,calmly,spokoĭno,OTHER,A2 VOCAB,none
+bg_02863,според,according to,spored,OTHER,A2 VOCAB,none
+bg_02864,срѐдно,on average,srèdno,OTHER,A2 VOCAB,none
+bg_02865,стѝга,That's enough!,stiga,OTHER,A2 VOCAB,none
+bg_02866,"так̀ъв, така̀ва, тако̀ва, такѝва",such x 4,"tak̀ŭv, takàva, takàva, takìva",OTHER,A2 VOCAB,none
+bg_02867,така̀,this way,takà,OTHER,A2 VOCAB,none
+bg_02868,то̀лкова,so + adjectives; so much,tòlkova,OTHER,A2 VOCAB,none
+bg_02869,то̀чно,exactly,tochno,OTHER,A2 VOCAB,none
+bg_02870,тога̀ва,then,togàva,OTHER,A2 VOCAB,none
+bg_02871,я̀сно x 3,"clearly; I see, I understand",yasno kh 3,OTHER,A2 VOCAB,none
+bg_02872,"мой, моя, мое, мои",mine x 4,"moĭ, moya, moe, moi",OTHER,A2 VOCAB,none
+bg_02873,"твой, твоя, твое, твои",yours (sg. informal) x 4,"tvoĭ, tvoya, tvoe, tvoi",OTHER,A2 VOCAB,none
+bg_02874,"негов, негова, негово, негови",his x 4,"negov, negova, negovo, negovi",OTHER,A2 VOCAB,none
+bg_02875,"неин, нейна, нейно, нейни",hers x 4,"nein, neĭna, neĭno, neĭni",OTHER,A2 VOCAB,none
+bg_02876,"наш, наша, наше, наши",ours x 4,"nash, nasha, nashe, nashi",OTHER,A2 VOCAB,none
+bg_02877,"ваш, ваша, ваше, ваши",yours (pl.) x 4,"vash, vasha, vashe, vash",OTHER,A2 VOCAB,none
+bg_02878,"техен, тяхна, тяхно, техни",theirs  x 4,"tekhen, tyakhna, tyakhno, tekhni",OTHER,A2 VOCAB,none
+bg_02879,благодарѝ/-я̀,thank,blagodarì/-yà,VERB,A2 VOCAB,none
+bg_02880,бърше/-а,wipe,bŭrshe/-a,VERB,A2 VOCAB,none
+bg_02881,вървѝ/-я̀,walk,vŭrvì/-yà,VERB,A2 VOCAB,none
+bg_02882,гла̀ди/-я,iron,glàdi/-ya,VERB,A2 VOCAB,none
+bg_02883,завѝси/-я,depend,zavìsi/-ya,VERB,A2 VOCAB,none
+bg_02884,изпо̀лзва/-м,use,izpòlzva/-m,VERB,A2 VOCAB,none
+bg_02885,метѐ/-а̀,sweep,metè/-à,VERB,A2 VOCAB,none
+bg_02886,пазару̀ва/-м,do the shopping,pazarùva/-m,VERB,A2 VOCAB,none
+bg_02887,перѐ/-а̀,do laundry,perè/-à,VERB,A2 VOCAB,none
+bg_02888,простѝра/-м,hang (laundry),prostìra/-m,VERB,A2 VOCAB,none
+bg_02889,практику̀ва/-м,practice,praktikùva/-m,VERB,A2 VOCAB,none
+bg_02890,пържи/-а,fry,pŭrzhi/-a,VERB,A2 VOCAB,none
+bg_02891,тича/-м,run,ticha/-m,VERB,A2 VOCAB,none
+bg_02892,храни/-я,feed,khrani/-ya,VERB,A2 VOCAB,none
+bg_02893,безполѐзен/-зна/-зно/-зни,useless ,bezpolèzen/-zna/-zno/-zni,ADJECTIVE,B2 VOCAB,none
+bg_02894,бивш/-а/-е/-и x 2,"ex-, former",bivsh/-a/-e/-i x 2,ADJECTIVE,B2 VOCAB,none
+bg_02895,блед/-а/-о/-и,pale,bled/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02896,болѐзнен/-а/-о/-и,painful,bolèznen/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02897,брѐменна,pregnant,brèmenna,ADJECTIVE,B2 VOCAB,none
+bg_02898,бу̀ден/-дна/-дно/-дни,awake x 4,bùden/-dna/-dno/-dni,ADJECTIVE,B2 VOCAB,none
+bg_02899,вероя̀тен/-тна/-тно/-тни x 2,"probable, likely",veroyàten/-tna/-tno/-tni x 2,ADJECTIVE,B2 VOCAB,none
+bg_02900,вино̀вен/-вна/-вно/-вни,guilty,vinòven/-vna/-vno/-vni,ADJECTIVE,B2 VOCAB,none
+bg_02901,възпалѐн/-а/-о/-и,inflamed,vŭzpalèn/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02902,глух/-а/-о/-и,deaf,glukh/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02903,груб/-а/-о/-и x 3,"rough, coarse; rude",grub/-a/-o/-i x 3,ADJECTIVE,B2 VOCAB,none
+bg_02904,гъвкав/-а/-о/-и,flexible,gŭvkav/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02905,допълнѝтелен/-лна/-лно/-лни,additional,dopŭlnìtelen/-lna/-lno/-lni,ADJECTIVE,B2 VOCAB,none
+bg_02906,доса̀ден/-дна/-дно/-дни x 4,"tedious, weary, pesky, annoying x 4",dosàden/-dna/-dno/-dni x 4,ADJECTIVE,B2 VOCAB,none
+bg_02907,дълбо̀к/-а/-о/-и,deep ,dŭlbòk/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02908,дългосро̀чен/-чна/-чно/-чни,long-term,dŭlgosròchen/-chna/-chno/-chni,ADJECTIVE,B2 VOCAB,none
+bg_02909,ежеднѐвен/-вна/-вно/-вни x 2,"everyday, daily",ezhednèven/-vna/-vno/-vni x 2,ADJECTIVE,B2 VOCAB,none
+bg_02910,жив/-а/-о/-и,alive ,zhiv/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02911,запу̀шен/-а/-о/-и x 2,"clogged, blocked",zapùshen/-a/-o/-i x 2,ADJECTIVE,B2 VOCAB,none
+bg_02912,зара̀зен/-зна/-зно/-зни,infectious,zarazen/-zna/-zno/-zni,ADJECTIVE,B2 VOCAB,none
+bg_02913,заразѐн/-а/-о/-и,infected (with a disease),zarazèn/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02914,значителен/-лна/-лно/-лни,significant ,znachitelen/-lna/-lno/-lni,ADJECTIVE,B2 VOCAB,none
+bg_02915,изку̀ствен/-а/-о/-и,artificial,izkùstven/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02916,ка̀чествен/-а/-о/-и,of good quality,kàchestven/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02917,краткосро̀чен/-чна/-чно/-чни,short-term,kratkosròchen/-chna/-chno/-chni,ADJECTIVE,B2 VOCAB,none
+bg_02918,луд/-а/-о/-и,crazy,lud/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02919,ма̀зен/-зна/-зно/-зни x 2,"oily, greasy",màzen/-zna/-zno/-zni x 2,ADJECTIVE,B2 VOCAB,none
+bg_02920,малко вероя̀тен/-тна/-тно/-тни,unlikely,malko veroyàten/-tna/-tno/-tni,ADJECTIVE,B2 VOCAB,none
+bg_02921,мъртъв/-тва/-тво/-тви,dead,mŭrtŭv/-tva/-tvo/-tvi,ADJECTIVE,B2 VOCAB,none
+bg_02922,нау̀чен/-чна/-чно/-чни,scientific,naùchen/-chna/-chno/-chni,ADJECTIVE,B2 VOCAB,none
+bg_02923,невероя̀тен/-тна/-тно/-тни,incredible,neveroyàten/-tna/-tno/-tni,ADJECTIVE,B2 VOCAB,none
+bg_02924,невѝнен/-нна/-нно/-нни,innocent,nevìnen/-nna/-nno/-nni,ADJECTIVE,B2 VOCAB,none
+bg_02925,независим/-а/-о/-и,independent ,nezavisim/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02926,нео̀питен/-тна/-тно/-тни,inexperienced,neòpiten/-tna/-tno/-tni,ADJECTIVE,B2 VOCAB,none
+bg_02927,необходѝм/-а/-о/-и x 2,"necessary, needed",neobkhodìm/-a/-o/-i x 2,ADJECTIVE,B2 VOCAB,none
+bg_02928,о̀питен/-тна/-тно/-тни,experienced,òpiten/-tna/-tno/-tni,ADJECTIVE,B2 VOCAB,none
+bg_02929,о̀стър/-тра/-тро/-три,sharp; acute,òstŭr/-tra/-tro/-tri,ADJECTIVE,B2 VOCAB,none
+bg_02930,определѐн/-а/-о/-и x 2,defined; certain (e.g.certain people might …..),opredelèn/-a/-o/-i x 2,ADJECTIVE,B2 VOCAB,none
+bg_02931,осно̀вен/-вна/-вно/-вни x 2,"basic, principal",osnòven/-vna/-vno/-vni x 2,ADJECTIVE,B2 VOCAB,none
+bg_02932,постоя̀нен/-нна/-нно/-нни,constant,postoyànen/-nna/-nno/-nni,ADJECTIVE,B2 VOCAB,none
+bg_02933,привлекателен/-лна/-лно/-лни,attractive ,privlekatelen/-lna/-lno/-lni,ADJECTIVE,B2 VOCAB,none
+bg_02934,пра̀зен/-зна/-зно/-зни,empty,pràzen/-zna/-zno/-zni,ADJECTIVE,B2 VOCAB,none
+bg_02935,разнообра̀зен/-зна/-зно/-зни,diverse,raznoobrazen/-zna/-zno/-zni,ADJECTIVE,B2 VOCAB,none
+bg_02936,разочаро̀ван/-а/-о/-и,disappointed,razocharòvan/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02937,редо̀вен/-вна/-вно/-вни,regular,redòven/-vna/-vno/-vni,ADJECTIVE,B2 VOCAB,none
+bg_02938,сѝлен /-лна/-лно/-лни,strong,sìlen /-lna/-lno/-lni,ADJECTIVE,B2 VOCAB,none
+bg_02939,склонен/-нна/-нно/-нни x 3,"disposed, inclined, prone",sklonen/-nna/-nno/-nni x 3,ADJECTIVE,B2 VOCAB,none
+bg_02940,ско̀рошен/-шна/-шно/-шни,recent,skòroshen/-shna/-shno/-shni,ADJECTIVE,B2 VOCAB,none
+bg_02941,слаб/-а/-о/-и x 2,"weak; thin (of a person, not fat)",slab/-a/-o/-i kh 2,ADJECTIVE,B2 VOCAB,none
+bg_02942,сло̀жен/-жна/-жно/-жни x 2,"complex, complicated",slòzhen/-zhna/-zhno/-zhni x 2,ADJECTIVE,B2 VOCAB,none
+bg_02943,сляп/-а/-о/слепи,blind,slyap/-a/-o/slepi,ADJECTIVE,B2 VOCAB,none
+bg_02944,средиземномо̀рски/-ска/-ско/-ски,Mediterranean,sredizemnomòrski/-ska/-sko/-ski,ADJECTIVE,B2 VOCAB,none
+bg_02945,тѐжък/-жка/-жко/-жки,heavy,tèzhŭk/-zhka/-zhko/-zhki,ADJECTIVE,B2 VOCAB,none
+bg_02946,триъгълен/-лна/-лно/-лни,triangular,triŭgŭlen/-lna/-lno/-lni,ADJECTIVE,B2 VOCAB,none
+bg_02947,тъп/-а/-о/-и,blunt; stupid,tŭp/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02948,увѐрен/-а/-о/-и,confident,uvèren/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02949,хронѝчен/-чна/-чно/-чни,chronic,khronìchen/-chna/-chno/-chni,ADJECTIVE,B2 VOCAB,none
+bg_02950,чийто/чия̀то/чиѐто/чиито,whose (agrees in gender and number with the next word),chiĭto/chiyàto/chièto/chiito,ADJECTIVE,B2 VOCAB,none
+bg_02951,чувствѝтелен/-лна/-лно/-лни,sensitive,chuvstvìtelen/-lna/-lno/-lni,ADJECTIVE,B2 VOCAB,none
+bg_02952,чужд/-а/-о/-и,foreign ,chuzhd/-a/-o/-i,ADJECTIVE,B2 VOCAB,none
+bg_02953,акумула̀тор/-и,car battery,akumulator/-i,NOUN,B2 VOCAB,none
+bg_02954,асансьо̀р/-и,elevator,asans’òr/-i,NOUN,B2 VOCAB,none
+bg_02955,бедност (f.),poverty,bednost (e.),NOUN,B2 VOCAB,none
+bg_02956,бедро̀/-а̀,thigh,bedrò/-à,NOUN,B2 VOCAB,none
+bg_02957,бо̀лка/-и,pain,bòlka/-i,NOUN,B2 VOCAB,none
+bg_02958,бо̀лничен/-чни,sick leave; hospital (adj.),bòlnichen/-chni,NOUN,B2 VOCAB,none
+bg_02959,брѐменност/-и (f.),pregnancy,brèmennost/-i (zh.),NOUN,B2 VOCAB,none
+bg_02960,брѐменност/-и (f.),pregnancy,brèmennost/-i (zh.),NOUN,B2 VOCAB,none
+bg_02961,б̀ъбрек/-ци,kidney,b̀ŭbrek/-tsi,NOUN,B2 VOCAB,none
+bg_02962,б̀ърза п̀омощ (или 'сп̀ешна п̀омощ'),emergency services,b̀ŭrza p̀omosht (ili 'sp̀eshna p̀omosht'),NOUN,B2 VOCAB,none
+bg_02963,бял дроб / бели дробовѐ,lung/-s,byal drob / beli drobovè,NOUN,B2 VOCAB,none
+bg_02964,в̀ъзрастен/- тни,adult; в̀ъзрастен човек – elderly person,v̀ŭzrasten/- tni,NOUN,B2 VOCAB,none
+bg_02965,венцѝ,gums (in the mouth),ventsì,NOUN,B2 VOCAB,none
+bg_02966,вѐстник/-ци,newspaper ,vèstnik/-tsi,NOUN,B2 VOCAB,none
+bg_02967,вещество̀/-а̀,substance,veshtestvò/-à,NOUN,B2 VOCAB,none
+bg_02968,война̀/-ѝ,war,voĭnà/-ì,NOUN,B2 VOCAB,none
+bg_02969,врат/-овѐ,neck,vrat/-ovè,NOUN,B2 VOCAB,none
+bg_02970,връзка/-и x 4,"connection, relation, link, relationship",vrŭzka/-i x 4,NOUN,B2 VOCAB,none
+bg_02971,възмо̀жност/-и (f.) x 2,"chance, possibility",vŭzmòzhnost/-i (zh.) x 2,NOUN,B2 VOCAB,none
+bg_02972,възпалѐние/-я,inflammation,vŭzpalènie/-ya,NOUN,B2 VOCAB,none
+bg_02973,възраст (f.),age,vŭzrast (f.),NOUN,B2 VOCAB,none
+bg_02974,външен вид x 2,"appearance, looks",vŭnshen vid kh 2,NOUN,B2 VOCAB,none
+bg_02975,г̀ърло/-а̀,throat,g̀ŭrlo/-à,NOUN,B2 VOCAB,none
+bg_02976,га̀дене,nausea,gàdene,NOUN,B2 VOCAB,none
+bg_02977,герой/-и x 2,"hero; character (from a movie, book, etc.)",geroĭ/-i x 2,NOUN,B2 VOCAB,none
+bg_02978,главобо̀лие,headache,glavnobòlie,NOUN,B2 VOCAB,none
+bg_02979,глас/-овѐ,voice,glas/-ovè,NOUN,B2 VOCAB,none
+bg_02980,глупост/-и x 2,"nonsense, stupidity ",glupost/-i x 2,NOUN,B2 VOCAB,none
+bg_02981,гра̀ница/-и x 2,"limit, border",grànitsa/-i x 2,NOUN,B2 VOCAB,none
+bg_02982,гръб (гърбовѐ; гърба̀/гърб̀ът),back,grŭb (gŭrbovè; gŭrbà/gŭrb̀ŭt),NOUN,B2 VOCAB,none
+bg_02983,двига̀тел/-и (двига̀теля/-т),engine,dvigàtel/-i (dvigàtelya/-t),NOUN,B2 VOCAB,none
+bg_02984,движѐние/-я,movement,dvizhènie/-ya,NOUN,B2 VOCAB,none
+bg_02985,десетилѐтие/-я,decade,desetilètie/-ya,NOUN,B2 VOCAB,none
+bg_02986,ДНК (pronounced 'де ен ка'),DNA,DNK (proiznasya se „de en ka“),NOUN,B2 VOCAB,none
+bg_02987,довѐрие,trust,dovèrie,NOUN,B2 VOCAB,none
+bg_02988,доказа̀телство/-а x 2,"proof, evidence",dokazatelstvo/-a x 2,NOUN,B2 VOCAB,none
+bg_02989,ду̀пка/-и,hole,dùpka/-i,NOUN,B2 VOCAB,none
+bg_02990,дълг/-ове,debt,dŭlg/-ove,NOUN,B2 VOCAB,none
+bg_02991,ежеднѐвие,everyday life,ezhednèvie,NOUN,B2 VOCAB,none
+bg_02992,екѝп/-и,team (of people working together),ekìp/-i,NOUN,B2 VOCAB,none
+bg_02993,етикѐт/-и x 2,"label, etiquette",etikèt/-i kh 2,NOUN,B2 VOCAB,none
+bg_02994,жѝлище/-а x 4,"home, housing, lodging, dwelling",zhìlishte/-a kh 4,NOUN,B2 VOCAB,none
+bg_02995,жлеза̀/-ѝ,gland,zhlezà/-ì,NOUN,B2 VOCAB,none
+bg_02996,жп гара,railway station,zhp gara,NOUN,B2 VOCAB,none
+bg_02997,забавлѐние,entertainment,zabavlènie,NOUN,B2 VOCAB,none
+bg_02998,заболя̀ване/-ания,illness,zabolyàvane/-aniya,NOUN,B2 VOCAB,none
+bg_02999,заво̀й/-и,road bend,zavòĭ/-i,NOUN,B2 VOCAB,none
+bg_03000,заем/-и,loan,zaem/-i,NOUN,B2 VOCAB,none
+bg_03001,запа̀лка/-и,lighter,zapàlka/-i,NOUN,B2 VOCAB,none
+bg_03002,заря̀дно/-и,charger,zaryàdno/-i,NOUN,B2 VOCAB,none
+bg_03003,затво̀р/-и,prison ,zatvòr/-i,NOUN,B2 VOCAB,none
+bg_03004,звук/-ци,sound,zvuk/-tsi,NOUN,B2 VOCAB,none
+bg_03005,земетресѐние/-я,earthquake,zemetresènie/-ya,NOUN,B2 VOCAB,none
+bg_03006,зрѐние,vision,zrènie,NOUN,B2 VOCAB,none
+bg_03007,зъб/-и,tooth,zŭb/-i,NOUN,B2 VOCAB,none
+bg_03008,извинѐние/-я,excuse,izvinènie/-ya,NOUN,B2 VOCAB,none
+bg_03009,изключѐние/-я,exception,izklyuchènie/-ya,NOUN,B2 VOCAB,none
+bg_03010,изку̀ствен интелѐкт,artificial intelligence,izkùstven intelèkt,NOUN,B2 VOCAB,none
+bg_03011,изма̀ма/-и x 2,"scam, fraud",izmàma/-i kh 2,NOUN,B2 VOCAB,none
+bg_03012,изпит/-и,exam,izpit/-i,NOUN,B2 VOCAB,none
+bg_03013,инвалѝдна колѝчка,wheelchair,invalìdna kolìchka,NOUN,B2 VOCAB,none
+bg_03014,ка̀пка/-и x 2,"drop, droplet",kàpka/-i x 2,NOUN,B2 VOCAB,none
+bg_03015,ка̀риес/-и,cavity (in teeth),kàries/-i,NOUN,B2 VOCAB,none
+bg_03016,ка̀шлица,cough (noun),kàshlitsa,NOUN,B2 VOCAB,none
+bg_03017,кал (f.),mud,kal (zh.),NOUN,B2 VOCAB,none
+bg_03018,ко̀жа,skin,kòzha,NOUN,B2 VOCAB,none
+bg_03019,коля̀но/коленѐ,knee/-s,kolyàno/kolenè,NOUN,B2 VOCAB,none
+bg_03020,кост/-и (f.),bone,kost/-i (zh.),NOUN,B2 VOCAB,none
+bg_03021,кра̀жба/-и,theft,kràzhba/-i,NOUN,B2 VOCAB,none
+bg_03022,крак/-а̀,leg,krak/-à,NOUN,B2 VOCAB,none
+bg_03023,кръв (f.),blood,krŭv (e.),NOUN,B2 VOCAB,none
+bg_03024,кръвно наля̀гане (или само 'кръвно'),blood pressure,krŭvno nalyàgane (ili samo 'krŭvno'),NOUN,B2 VOCAB,none
+bg_03025,кръвоно̀сен/-сни съд/-ове,blood vessel/-s,krŭvonòsen/-sni sŭd/-ove,NOUN,B2 VOCAB,none
+bg_03026,кръст,cross; lower back,krŭst,NOUN,B2 VOCAB,none
+bg_03027,кървѐне,bleeding,kŭrvène,NOUN,B2 VOCAB,none
+bg_03028,лечѐние/-я,treatment,lechènie/-ya,NOUN,B2 VOCAB,none
+bg_03029,лѝпса,lack,lìpsa,NOUN,B2 VOCAB,none
+bg_03030,линѐйка/-и,ambulance,linèĭka/-i,NOUN,B2 VOCAB,none
+bg_03031,мазнина̀/-ѝ,fat (noun),mazninà/-ì,NOUN,B2 VOCAB,none
+bg_03032,маршру̀т/-и x 2,"route, itinerary",marshrùt/-i kh 2,NOUN,B2 VOCAB,none
+bg_03033,мечта̀/-ѝ,dream (the wish to have/achieve something),mechtà/-ì,NOUN,B2 VOCAB,none
+bg_03034,миризма̀/-ѝ,smell,mirizmà/-ì,NOUN,B2 VOCAB,none
+bg_03035,мо̀зък/-ци,brain,mòzŭk/-tsi,NOUN,B2 VOCAB,none
+bg_03036,му̀скул/-и,muscle,mùskul/-i,NOUN,B2 VOCAB,none
+bg_03037,"мярка, мерки x 2","measure, measures + pl","myarka, merki x 2",NOUN,B2 VOCAB,none
+bg_03038,на̀тиск,pressure (the act of trying to persuade or to force somebody to do something),nàtisk,NOUN,B2 VOCAB,none
+bg_03039,надѐжда/-и,hope,nadèzhda/-i,NOUN,B2 VOCAB,none
+bg_03040,намерѐние/-я,intention,namerènie/-ya,NOUN,B2 VOCAB,none
+bg_03041,нараня̀ване/нараня̀вания,injury,naranyàvane/naranyàvaniya,NOUN,B2 VOCAB,none
+bg_03042,насѝлие,violence,nasìlie,NOUN,B2 VOCAB,none
+bg_03043,небѐ,sky,nebè,NOUN,B2 VOCAB,none
+bg_03044,недо̀стиг x 2,"insufficiency, shortage",nedostig kh 2,NOUN,B2 VOCAB,none
+bg_03045,независимост (f.),independence,nezavisimost (e.),NOUN,B2 VOCAB,none
+bg_03046,ниво̀/-а̀,level,nivò/-à,NOUN,B2 VOCAB,none
+bg_03047,но̀кът/-кти,nail (on fingers and toes),nòkŭt/-kti,NOUN,B2 VOCAB,none
+bg_03048,нос/-овѐ,nose,nos/-ovè,NOUN,B2 VOCAB,none
+bg_03049,oръжие/-я x 2,"weapon, gun",orŭzhie/-ya kh 2,NOUN,B2 VOCAB,none
+bg_03050,о̀бласт/-и x 3,"region, area, district",òblast/-i x 3,NOUN,B2 VOCAB,none
+bg_03051,о̀бщност/-и (f.),community,òbshtnost/-i (zh.),NOUN,B2 VOCAB,none
+bg_03052,о̀гън/огньо̀ве,fire/-s,ògŭn/ogn’òve,NOUN,B2 VOCAB,none
+bg_03053,oръжие/-я x 2,"weapon, gun",orŭzhie/-ya kh 2,NOUN,B2 VOCAB,none
+bg_03054,о̀тпуск/-и,leave (time off work),òtpusk/-i,NOUN,B2 VOCAB,none
+bg_03055,облекчѐние,relief,oblekchènie,NOUN,B2 VOCAB,none
+bg_03056,обслу̀жване на клиенти,customer service,obsluzhvane na klienti,NOUN,B2 VOCAB,none
+bg_03057,одея̀ло/-а̀,blanket,odeyàlo/-à,NOUN,B2 VOCAB,none
+bg_03058,опера̀ция/-и x 2,"operation, surgery",operatsiya/-i x 2,NOUN,B2 VOCAB,none
+bg_03059,опла̀кване/опла̀квания,complaint/-s,oplàkvane/oplàkvaniya,NOUN,B2 VOCAB,none
+bg_03060,осигуро̀вки x 2,social security (i.e. government payments for healthcare etc.),osigurovki x 2,NOUN,B2 VOCAB,none
+bg_03061,отбо̀р/-и,team (of players),otbòr/-i,NOUN,B2 VOCAB,none
+bg_03062,отсла̀бване,weight loss,ot·slàbvane,NOUN,B2 VOCAB,none
+bg_03063,п̀ърва п̀омощ,first aid,p̀ŭrva p̀omosht,NOUN,B2 VOCAB,none
+bg_03064,па̀мет (f.),memory (the ability to remember),pàmet (f.),NOUN,B2 VOCAB,none
+bg_03065,пѐйка/-и,bench,pèĭka/-i,NOUN,B2 VOCAB,none
+bg_03066,пѐсен/-сни (f.),song,pèsen/-sni (zh.),NOUN,B2 VOCAB,none
+bg_03067,петно̀/-а̀,stain,petnò/-à,NOUN,B2 VOCAB,none
+bg_03068,печа̀лба/-и x 2,"gain, profit",pechàlba/-i x 2,NOUN,B2 VOCAB,none
+bg_03069,повр̀ъщане,vomiting,povŭr̀ŭshtane,NOUN,B2 VOCAB,none
+bg_03070,поддръжка,maintenance,poddrŭzhka,NOUN,B2 VOCAB,none
+bg_03071,подобрѐние/-я,improvement,podobrènie/-ya,NOUN,B2 VOCAB,none
+bg_03072,пожа̀р/-и,fire (out of control),pozhàr/-i,NOUN,B2 VOCAB,none
+bg_03073,послѐдица/-и или послѐдствие/-я,consequence,poslèditsa/-i ili poslèdstvie/-ya,NOUN,B2 VOCAB,none
+bg_03074,постижѐние/-я,achievement,postizhènie/-ya,NOUN,B2 VOCAB,none
+bg_03075,пот (f.),sweat,gŭrne (f.),NOUN,B2 VOCAB,none
+bg_03076,пранѐ,laundry,pranè,NOUN,B2 VOCAB,none
+bg_03077,предизвика̀телство/-а,a challenge,predizvikàtelstvo/-a,NOUN,B2 VOCAB,none
+bg_03078,предмѐт/-и x 2,"object (i.e. can be seen and touched, not alive); school subject",predmèt/-i kh 2,NOUN,B2 VOCAB,none
+bg_03079,предупреждѐние/-я,warning,preduprezhdènie/-ya,NOUN,B2 VOCAB,none
+bg_03080,прова̀л,failure,provàl,NOUN,B2 VOCAB,none
+bg_03081,произво̀дство,production,proizvòdstvo,NOUN,B2 VOCAB,none
+bg_03082,производѝтел/-и,producer,proizvodìtel/-i,NOUN,B2 VOCAB,none
+bg_03083,"пръст, пръсти x 2","finger, toe  + pl","prŭst, prŭsti x 2",NOUN,B2 VOCAB,none
+bg_03084,психѝчно здра̀ве,mental health,psikhichno zdràve,NOUN,B2 VOCAB,none
+bg_03085,ра̀ждане/-ния,birth,ràzhdane/-niya,NOUN,B2 VOCAB,none
+bg_03086,ра̀мо/раменѐ,shoulder/-s,ràmo/ramenè,NOUN,B2 VOCAB,none
+bg_03087,ра̀на/-и,wound,ràna/-i,NOUN,B2 VOCAB,none
+bg_03088,работода̀тел/-и,employer,rabotodàtel/-i,NOUN,B2 VOCAB,none
+bg_03089,разнообра̀зие,diversity,raznoobrazie,NOUN,B2 VOCAB,none
+bg_03090,разстоя̀ние/-я,distance,razstoyànie/-ya,NOUN,B2 VOCAB,none
+bg_03091,разстро̀йство,disorder; diarrhea,razstròĭstvo,NOUN,B2 VOCAB,none
+bg_03092,рак,cancer; crab,rak,NOUN,B2 VOCAB,none
+bg_03093,растѐж/-и,growth,rastèzh/-i,NOUN,B2 VOCAB,none
+bg_03094,ребро̀/-а̀,rib,rebrò/-à,NOUN,B2 VOCAB,none
+bg_03095,ръка̀/ръцѐ,arm; hand,rŭkà/rŭtsè,NOUN,B2 VOCAB,none
+bg_03096,ръст,height (of a person),rŭst,NOUN,B2 VOCAB,none
+bg_03097,сѝла/-и x 2,"strength, power",sìla/-i x 2,NOUN,B2 VOCAB,none
+bg_03098,слабост/-и (f.),weakness,slabost/-i (zh.),NOUN,B2 VOCAB,none
+bg_03099,слух,sense of hearing,slukh,NOUN,B2 VOCAB,none
+bg_03100,случай/-и,case (a particular situation),sluchaĭ/-i,NOUN,B2 VOCAB,none
+bg_03101,смърт (f.),death,smŭrt (zh.),NOUN,B2 VOCAB,none
+bg_03102,смях,laughter,smyakh,NOUN,B2 VOCAB,none
+bg_03103,социа̀лни мрежи,social networks,sotsialni mrezhi,NOUN,B2 VOCAB,none
+bg_03104,спирачки,brakes,spirachki,NOUN,B2 VOCAB,none
+bg_03105,споко̀йствие x 2,"calmness, tranquility",spokòĭstvie x 2,NOUN,B2 VOCAB,none
+bg_03106,ста̀ва/-и,joint (between bones),stàva/-i,NOUN,B2 VOCAB,none
+bg_03107,стома̀х/стома̀си,stomach/-s,stomàkh/stomàsi,NOUN,B2 VOCAB,none
+bg_03108,строѐж,construction site; the act of building,stroèzh,NOUN,B2 VOCAB,none
+bg_03109,съд,vessel; court,sŭd,NOUN,B2 VOCAB,none
+bg_03110,съмнѐние/-я,a doubt,sŭmnènie/-ya,NOUN,B2 VOCAB,none
+bg_03111,сън,sleep (noun; singular),sŭn,NOUN,B2 VOCAB,none
+bg_03112,сън/-ища (съня̀/съня̀т),dream (while asleep),sŭn/-ishta (sŭnyà/sŭnyàt),NOUN,B2 VOCAB,none
+bg_03113,сърцѐ/-а̀,heart,sŭrtsè/-à,NOUN,B2 VOCAB,none
+bg_03114,тегло̀,weight,teglò,NOUN,B2 VOCAB,none
+bg_03115,температу̀ра,temperature; fever,temperaturàra,NOUN,B2 VOCAB,none
+bg_03116,тишина̀,silence,tishinà,NOUN,B2 VOCAB,none
+bg_03117,трево̀жност (f.),anxiety,trevòzhnost (zh.),NOUN,B2 VOCAB,none
+bg_03118,тру̀дност/-и (f.)  x 2,"difficulty, hardship",trùdnost/-i (zh.) x 2,NOUN,B2 VOCAB,none
+bg_03119,тютю̀н,tobacco,tyutyùn,NOUN,B2 VOCAB,none
+bg_03120,тя̀ло/тела̀,body/bodies,tyàlo/telà,NOUN,B2 VOCAB,none
+bg_03121,у̀стна/-и,lip,ùstna/-i,NOUN,B2 VOCAB,none
+bg_03122,"убиец, убийци x 2","killer, killers + pl","ubiets, ubiĭtsi kh 2",NOUN,B2 VOCAB,none
+bg_03123,убийство/-а x 2,"killing, murder",ubiĭstvo/-a x 2,NOUN,B2 VOCAB,none
+bg_03124,уврѐждане/-ния x 2,"disability, impairment",uvrèzhdane/-niya kh 2,NOUN,B2 VOCAB,none
+bg_03125,ум/-овѐ,mind,um/-ovè,NOUN,B2 VOCAB,none
+bg_03126,умѐние/-я,a skill,umènie/-ya,NOUN,B2 VOCAB,none
+bg_03127,умо̀ра,tiredness,umòra,NOUN,B2 VOCAB,none
+bg_03128,уста̀/-ѝ,mouth,ustà/-ì,NOUN,B2 VOCAB,none
+bg_03129,фенѐр/-и,flashlight,fenèr/-i,NOUN,B2 VOCAB,none
+bg_03130,хиру̀рг/хиру̀рзи,surgeon/-s,khirùrg/khirùrzi,NOUN,B2 VOCAB,none
+bg_03131,чѐрен дроб,liver,chèren drob,NOUN,B2 VOCAB,none
+bg_03132,черво̀/-а̀,intestine,chervò/-à,NOUN,B2 VOCAB,none
+bg_03133,член/-ове,member,chlen/-ove,NOUN,B2 VOCAB,none
+bg_03134,шега̀/-ѝ,a joke,shegà/-ì,NOUN,B2 VOCAB,none
+bg_03135,шум/-ове,noise,shum/-ove,NOUN,B2 VOCAB,none
+bg_03136,бо̀ри/-я се срещу,fight against (i.e. oppose something you disagree with),bòri/-ya se sreshtu,VERB,B2 VOCAB,none
+bg_03137,важѝ/-а̀ за,apply to (affect or be relevant to) – Тези правила не важат за мен.,vazhì/-à za,VERB,B2 VOCAB,none
+bg_03138,варѝ/-я̀,boil (cook in boiling water) – Аз варя спагетите в солена вода.,varì/-yà,VERB,B2 VOCAB,none
+bg_03139,взема/-м предвид,take into account,vzema/-m predvid,VERB,B2 VOCAB,none
+bg_03140,вла̀чи/-а,drag,vlàchi/-a,VERB,B2 VOCAB,none
+bg_03141,ври/-я,boil (form bubbles and turn to steam or vapour) – Водата ври.,vri/-ya,VERB,B2 VOCAB,none
+bg_03142,възпо̀лзва/-м се от,take advantage of,vŭzpòlzva/-m se ot,VERB,B2 VOCAB,none
+bg_03143,въртѝ/-я̀ +/- се x 2,"turn, rotate",vŭrtì/-yà +/- se x 2,VERB,B2 VOCAB,none
+bg_03144,горчѝ/-а̀,be bitter,gorchì/-à,VERB,B2 VOCAB,none
+bg_03145,гърмѝ/-я̀,thunder,gŭrmì/-yà,VERB,B2 VOCAB,none
+bg_03146,д̀ъвче/-а,chew,d̀ŭvche/-a,VERB,B2 VOCAB,none
+bg_03147,дѐйства/-м,act,dèĭstva/-m,VERB,B2 VOCAB,none
+bg_03148,дължѝ/-а̀,owe,dŭlzhim/-à,VERB,B2 VOCAB,none
+bg_03149,жела̀е/-я x 2,"desire, wish",zhelàe/-ya kh 2,VERB,B2 VOCAB,none
+bg_03150,жужѝ/-а̀,buzz,zhuzhì/-à,VERB,B2 VOCAB,none
+bg_03151,звучѝ/-а̀,to sound ,zvuchì/-à,VERB,B2 VOCAB,none
+bg_03152,има/-м предвид,to mean (to intend to say something on a particular occasion),ima/-m predvid,VERB,B2 VOCAB,none
+bg_03153,колеба̀е/-я се,hesitate,kolebàe/-ya se,VERB,B2 VOCAB,none
+bg_03154,крадѐ/-а̀,steal,kradè/-à,VERB,B2 VOCAB,none
+bg_03155,кървѝ/-я̀,bleed,kŭrv/-yà,VERB,B2 VOCAB,none
+bg_03156,личѝ/-а̀ x 2,be visible/noticeable,lichì/-à x 2,VERB,B2 VOCAB,none
+bg_03157,лютѝ/-я̀,be spicy/hot – Тези чушки лютят ли много?,lyutì/-yà,VERB,B2 VOCAB,none
+bg_03158,метѐ/-а̀,sweep,metè/-à,VERB,B2 VOCAB,none
+bg_03159,мучѝ/-а̀,moo,muchì/-à,VERB,B2 VOCAB,none
+bg_03160,па̀ри/-я x 2,be very hot (e.g. of food or surface),pàri/-ya x 2,VERB,B2 VOCAB,none
+bg_03161,плу̀ва/-м,swim,plùva/-m,VERB,B2 VOCAB,none
+bg_03162,по̀сти/-я,fast,pòsti/-ya,VERB,B2 VOCAB,none
+bg_03163,подд̀ържа/-м,maintain,podd̀ŭrzha/-m,VERB,B2 VOCAB,none
+bg_03164,прѐчи/-а x 2,"be in the way, impede",prèchi/-a kh 2,VERB,B2 VOCAB,none
+bg_03165,прилѝча/-м на x 2,"look like, resemble",prilìcha/-m na kh 2,VERB,B2 VOCAB,none
+bg_03166,редактѝра/-м,edit,redaktsiya/-m,VERB,B2 VOCAB,none
+bg_03167,ръмжѝ/-а̀,growl,rŭmzhì/-à,VERB,B2 VOCAB,none
+bg_03168,свѐти/-я,emit light; (of a light) be on – Лампата в стаята ти свети.,svèti/-ya,VERB,B2 VOCAB,none
+bg_03169,скимтѝ/-я̀,(of a dog) whimper,skimtì/-yà,VERB,B2 VOCAB,none
+bg_03170,сраму̀ва/-м се x 3,"be shy, be ashamed, feel shame",sramùva/-m se x 3,VERB,B2 VOCAB,none
+bg_03171,стара̀е/-я се,"do one's best, exert oneself, take pains",staràe/-ya se,VERB,B2 VOCAB,none
+bg_03172,стоѝ/-я̀,"be, stand (in a particular position); stay (not go)",stoì/-yà,VERB,B2 VOCAB,none
+bg_03173,стърчѝ/-а̀ x 2,"stick out, jut out",stŭrchì/-à kh 2,VERB,B2 VOCAB,none
+bg_03174,съмня̀ва/-м се,to doubt,sŭmnyàva/-m se,VERB,B2 VOCAB,none
+bg_03175,състоѝ/-я̀ се от,consist of,sŭstoì/-yà se ot,VERB,B2 VOCAB,none
+bg_03176,трепѐри/-я,tremble,trepèri/-ya,VERB,B2 VOCAB,none
+bg_03177,шептѝ/-я̀,whisper,sheptì/-yà,VERB,B2 VOCAB,none
+bg_03178,шумѝ/-я̀,make noise; rustle,shumì/-yà,VERB,B2 VOCAB,none
+bg_03179,завинаги,forever,zavinagi,OTHER,B2 VOCAB,none
+bg_03180,макар че,although,makar che,OTHER,B2 VOCAB,none
+bg_03181,на глас,out loud,na glas,OTHER,B2 VOCAB,none
+bg_03182,наско̀ро,recently,naskòro,OTHER,B2 VOCAB,none
+bg_03183,предимно x 2,"mainly, chiefly, mostly ",predimno x 2,OTHER,B2 VOCAB,none
+bg_03184,честно казано x 2,"to be honest, honestly speaking",7,OTHER,B2 VOCAB,none
+bg_03185,бутва/-м (нещо/някого) x 2 / бутне/-a / бутна/–х," push (forward or away, once or suddenly)",butva/-m (neshto/nyakogo) x 2,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03186,виква/-м / викне/-а  / викна/-х,Shout out (once or shortly) ,vikva/-m,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03187,виква/-м (някого) x 2 / викне/-а / викна/-х,call (ask someone to come by shouting or speaking loudly),vikva/-m (nyakogo) x 2,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03188,влюбва/-м се (в нещо/някого) / влюби/-я се / влюби/-х се, fall in love,vlyubva/-m se (v neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03189,внася/-м (нещо) x 4 / Bнecè/-à / Bнecè/-ох," bring in, carry inside, import, deposit",vnasya/-m (neshto) x 4,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03190,впечатлява/-м (някого) / впечатли/-я / впечатли/-х, impress,vpechatlyava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03191,впечатлява/-м се от (някого) / впечатли/-я се / впечатли/-х се, be impressed by,vpechatlyava/-m se ot (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03192,връзва/-м (нещо/някого) x 2 / върже/-а / върза/-х," tie, bind",vrŭzva/-m (neshto/nyakogo) x 2,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03193,въвежда/-м (нещо) / въведе/-а / въведе-/ох,introduced,vŭvezhda/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03194,възпалява/-м се   / възпали/-я се  / се възпали-/х,got inflamed,vŭzpalyava/-m se  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03195,възпитава/-м (нещо/някого) / възпита/-м / възпита/-х,instilled,vŭzpitava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03196,възстановява/-м (нещо) / възстанови/-я / възстанови-/х,restored,vŭzstanovyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03197,възстановява/-м се   / възстанови/-я се  / се възстанови-/х,recovered,vŭzstanovyava/-m se  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03198,върти/-я  x 2 / завърти/-я / завъртя/-х,"turned, rotated",vŭrti/-ya x 2,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03199,глобява/-м (някого) / глоби/-я / глоби-/х,fined,globyava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03200,грабва/-м (нещо) x 2 / грабне/-а / грабна-/х,"grabbed, snatched",grabva/-m (neshto) kh 2,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03201,дарява/-м (нещо на някого) / дари/-я / дари-/х,donated,daryava/-m (neshto na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03202,доверява/-м се (на някого) / довери/-я се / се довери-/х,trusted,doveryava/-m se (na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03203,довършва/-м (нещо) x 2 / довърши/-а / завърши-/х,"completed, finished",dovŭrshva/-m (neshto) x 2,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03204,доказва/-м (нещо на някого) / докаже/-а / доказа/-х,proved,dokazva/-m (neshto na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03205,докарва/-м (нещо/някого) / докара/-м / докара/-х,brought in a vehicle,dokarva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03206,докосва/-м (нещо/някого) / докосне/-а / докосна-/х,touched (std),dokosva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03207,дремва/-м   / дремне/-а  / подремна-/х,took a nap,dremva/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03208,дръпва/-м (нещо/някого) / дръпне/-а / дръпна-/х,pulled (once or shortly),drŭpva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03209,забавя/-м (нещо/някого) / забави/-я / забави-/х,slowed down,kompensira/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03210,забавя/-м ce  x 2 / забави/-я ce  / забави-/х се ,"was late, took more time to do something",plashta/-m ce x 2,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03211,забогатява/-м   / забогатее/-я  / забогатя-/х,got rich,zabogatyava/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03212,забременява/-м   / забременее/-я  / забременя-/х,she got pregnant,zabremenyava/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03213,завежда/-м (някого) / заведе/-a / заведе-/ох,took someone somewhere,zavezhda/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03214,завива/-м  / завие/-я  / зави-/х,turned (change direction),zaviva/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03215,завива/-м (нещо/някого) / завие/-я / зави-/х,covered (with a blanket),zaviva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03216,върти/завърта/-м (нещо) / завърти/-я / завъртя/-х,"turned, rotated (make something turn) (o/g)made something turn around a central fixed point",vŭrti/zavŭrta/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03217,загасява/-м (нещо) / загаси/-я / загаси/-х,"put out (cigarette, fire), turned off (light) (o/g) light",zagasyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03218,"задава/-м (+ въпрос на някого) / зададе, задам / зададе-/ох",asked a question,zadava/-m (+ vŭpros na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03219,задължава/-м (някого да) / задължи/-а / задължи/-х,obliged,zadŭlzhava/-m (nyakogo da),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03220,заема/-M   / 3aèмe/-a  / 3ae/-х ,took up (space or position),zaema/-M  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03221,заема/-M  (нещо) / 3aèмe/-a  / 3ae/-х ,"borrow, lend",zaema/-M (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03222,"закача/-м, закачва/-м (нещо) / закачи/-а / закачи/-х",hung (attach at the top)  (x2 pres),"zakacha/-m, zakachva/-m (neshto)",VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03223,закопчава/-м (нещо) / закопча/-х / закопча/-х,"buttoned, zipped, buckled",zakopchava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03224,"залепя/-м, залепва/-м (нещо) / залепи/-я / залепи/-х",stuck (fix/join using glue)  (x2 pres),"zalepya/-m, zalepva/-m (neshto)",VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03225,"залепя/-м се, залепва/-м се   / залепи/-я се  / -/х",stuck to (become fixed to something)  (x2 pres),"zalepya/-m se, zalepva/-m se  ",VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03226,залязва/-т  x 3 / залезе/залязат  / -/х,"set (sun, moon, stars, etc.)  x2 p",zalyazva/-t x 3,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03227,замества/-M (нещо/някого) / замести/-я / -/х,replaced; substituted,zamestva/-M (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03228,замразява/-м (нещо) / замрази/-я / замръзна (накара нещо да стане твърдо/превърна се в лед в резултат на силен студ)-/х,froze (made something become hard/turned into ice as a result of extreme cold),zamrazyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03229,"замръзва/-м  / замръзне/-а  / замръзна замръзнала течност, беше блокиран от замръзване, беше много студен, замръзна до смърт той замърси, зарази той взе нещо някъде (НЕ от…)-/х","froze (solid), became blocked with frozen liquid, was blocked by freezing, was very cold, froze to death",zamrŭzva/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03230,замърсява/-м (нещо) / замърси/-я / замърси-/х,"polluted, contaminated",zamŭrsyavane/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03231,занася/-м (нещо някъде/ на някого) / 3aнece/-a / -/х,took something somewhere (NOT от…),zanasya/-m (neshto nyakŭde/ na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03232,запазва/-м (нещо) / запази/-я / -/х,saved (keep for future),zapazva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03233,запазва/-м  / запази/-я  / зи-/х,"booked, reserved",zapazva/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03234,запалва/-м (нещо) / запали/-я / запали (накара нещо да започне да гори)-/х, he lit (made something start to burn),zapalva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03235,запалва/-м ce   / запапи/-я се ce  / се запали-/х,he caught fire,zapalva/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03236,заплашва/-м (нещо/някого) / заплаши/-а / заплаши-/х, threaten,zaplashva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03237,запомня/-м (нещо/някого) / запомни/-я / си спомни запомнено-/х," remember (retain in one's memory), memorise",zapomnya/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03238,"запушва/-м (нещо) / запуши/-а / блокира (проход), запуши-/х"," block (a passage), clog",zapushva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03239,заразява/-м (някого) / зарази/-я / зарази-/х," infect (make a disease or an illness spread to a person, an animal or a plant)",zarazyava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03240,заразява/-м ce   / зарази/-я ce  / се зарази (с болест)-/х,get infected (with an illness),zarazyava/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03241,заслужава/-м (нещо/някого) / заслужи/-а / заслужаваше-/х, deserve,zasluzhava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03242,"застрашава/-м (нещо/някого) / застраши/-а / застраши, заплаши-/х"," endanger, threaten (be a danger)",zastrashava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03243,застрелва/-м (нещо/някого) / застреля/-м / стреля-/х, shoot (kill with a bullet),zastrelva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03244,затруднява/-м (нещо) / затрудни/-я / направи нещо трудно-/х, make something difficult,zatrudnyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03245,защитава/-м (нещо/някого) / защити/-я / защити (НЕ предварително…)-/х, protect (NOT пре…),zashtitava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03246,избухва/-м   / избухне/-а  / експлодира-/х,explode,izbukhva/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03247,"избърсва/-м (нещо) / избърше/-а / избърса, почисти (напълно)-/х"," wipe, mop (completely)",izbŭrsva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03248,избягва/-м (нещо/някого) / избегне/-а / избягваше-/х, avoid,izbyagva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03249,"избягва/-м (от нещо/някого) / избяга/-м / избяга, избяга-/х"," escape, run away",izbyagva/-m (ot neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03250,изважда/-м (нещо) / извади/-я / извади; извади-/х, take out; subtract,izvazhda/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03251,изгаря/-м    / изгори/-я  / згори (Беше унищожено от пожар)-/х,burn (to be destroyed by fire) ,izgaryane/-m   ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03252,изгаря/-м    / изгори/-я  / изгори нещо (да унищожи нещо от пожар)-/х,burn (to destroy something by fire),izgaryane/-m   ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03253,изгонва/-м (нещо/някого) / изгони/-я / прогони-/х, chase away,izgonva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03254,изгрява/-т  / изгрее/-ят  / е издигна-/х,"(of the sun, moon, stars, etc.) rise",izgryava/-t ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03255,издържа/-м (на нещо) / издържи/-а / роди-/х," bear, stand",izdŭrzha/-m (na neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03256,издържа/-м  / N/A / поддържаше с пари-/х, maintain (support with money)  {only imperfective} ,izdŭrzha/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03257,изкачва/-м (нещо) / изкачи/-а / се изкачи-/х, climb,izkachva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03258,изкачва/-м ce (някъде) / изкачи/-а ce / се изкачи по стълбите-/х, climb (eg stairs),izkachva/-m ce (nyakŭde),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03259,излага/-м (някого) / изложи/-а / беше разкрит; смутен-/х, expose; embarrass,izlaga/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03260,"излага/-м ce  / изложи/-а ce  / се изложи, смути се-/х","expose oneself, embarrass oneself",izlaga/-m ce ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03261,измерва/-м (нещо) / измери/-я / измери-/х, measure,izmerva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03262,изминава/-м  / измине/-а  / измина разстояние-/х,"(with distance) cover, travel, (of time) elapse, pass",izminava/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03263,измисля/-м (нещо) / измисли/-я / измисли-/х," come up with, invent, think up, devise",izmislya/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03264,изнася/-м (нещо) / изнесе/-a / изнесе от стая-/х," take out (of a room, building, etc.)",iznasya/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03265,изнася/-м     / изнесе/-a / изнесе-/х,export,iznasya/-m    ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03266,изнася/-м ce   / изнесе/-a ce  / се изнесе-/х,move out,iznasya/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03267,изнервя/-м (някого) / изнерви/-я / се раздразни-/х," get on someone's nerves, irritate",iznervya/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03268,изнервя/-м ce  / изнерви/-я ce  / се раздразни-/х,become nervous/ irritated,iznervya/-m ce ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03269,"изоставя/-м (някого) / изостави/-я / изостави, напусна-/х"," abandon, leave",izostavya/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03270,изпитва/-м (нещо) / изпита/-м / усети форма-/х, feel (+ a noun),izpitvam/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03271,изпитва/-м (някого) / изпита/-м / разгледа-/х," examine, test",izpitvam/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03272,изправя/-м (нещо) / изправи/-я / се изправи-/х, straighten,izpravya/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03273,изправя/-м ce   / изправи/-я ce  / се изправи-/х,stand up,izpravya/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03274,изправя/-м срещу ce   / изправи/-я срещу ce  / се изправи-/х,face,izpravya/-m sreshtu ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03275,изпуска/-м (нещо/някого) / изпусне/-а / се изправи-/х," drop (by accident), miss (arrive late for)",izpuska/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03276,изразява/-м (нещо) / изрази/-я / изпусна случайно-/х, express,izrazyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03277,изсушава/-м (нещо) / изсушИ/-а / изрази-/х, make something dry,izsushava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03278,изсъхва/-м  / изсъхне/-а  / направи нещо сухо-/х,become dry; wither,izsŭkhva/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03279,изтегля/-м (нещо) / изтегли/-я / тана сухо; изсъхна-/х, draw out; withdraw (money),izteglya/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03280,изтегля/-м     / изтегли/-я  / изтегли пари-/х,take out (loan),izteglya/-m    ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03281,изчислява/-м (нещо) / изчисли/-я / взе заем-/х, calculate,izchislyavam/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03282,кимва/-м   / кимне/-а  / пресметна-/х,nod (once),kimva/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03283,Maxвa/-м (нещо) / махне/-a / кимна веднъж-/х," remove, put away (once)",Maxva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03284,Maxвa/-м (на някого) / махне/-a / го махна веднъж-/х, wave (once),Maxva/-m (na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03285,Maxвa/-м ce  / махне/-a ce  / си тръгна веднъж-/х,"go away, get out of somewhere (once)",Maxva/-m ce ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03286,0  / N/A / xxxxx-/х,"go away, get out of somewhere (ongoing)",0,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03287,млъква/-м  / млъкне/-а  / спря да говори-/х,"stop talking, shut up",mlŭkva/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03288,мръдва/-м eg x2  / мръдне/-а  / се премести на мястото си веднъж-/х,"move (in one's place, once or shortly) (o/g) not sit/stand still",mrŭdva/-m pr. x2 ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03289,наближава/-м (нещо/някого) / наближи/-а / се приближи-/х, approach,nablizhava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03290,навежда/-м се  / наведе/-а се  / се наведе-/х,bend down/forward,navezhda/-m se ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03291,надценява/-м (нещо/някого) / надцени/-я / надцени-/х, overestimate,nadtsenyava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03292,наказва/-м (някого) / накаже/-а / наказа-/х," punish, ground",nakazva/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03293,налага се   / наложи се  / беше необходимо-/х,it is necessary,nalaga se  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03294,Haмeсвa/-м ce  / намеси/-я се  / се намеси-/х,"interfere, intervene",Hamesva/-m ce ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03295,намества/-м (нещо) / намести/-я / постави на място-/х,"put into place, adjust",namestva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03296,намества/-м ce   / намести/-я ce  / се настани удобно-/х,get comfortable,namestva/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03297,напада/-м (нещо/някого) / нападне/-а / атакува-/х,attack,napada/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03298,напива/-м се  / напие/-я се  / утоли жаждата си-/х,"quench one's thirst, get drunk",napiva/-m se ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03299,напомня/-м (на някого за нещо) / напомни/-я / напомни-/х, remind,napomnyam/-m (na nyakogo za neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03300,напредва/-м  / напредне/-а  / постигна напредък-/х,"make progress, advance",napredva/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03301,напуска/-м (нещо/някого) / напусне/-а / напусна място-/х, leave (a place or a person),napuska/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03302,напуска/-м (работа) / напусне/-а / напусна-/х, quit,napuska/-m (rabota),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03303,напълнява/-м   / напълнее/-я  / качи килограми-/х,gain weight,napŭlnyava/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03304,наранява/-м (нещо/някого) / нарани/-я / нарани-/х, hurt,naranyava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03305,"нарича/-м (нещо/някого) / нарече, нарека / я нарече-/х", call (by a name) he/I Perf,naricha/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03306,нарушава/-м (нещо) / наруши/-а / наруши правило-/х," break, transgress",narushava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03307,нарушава/-м     / наруши/-а  / наруши нещо-/х,disturb something,narushava/-m    ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03308,нарязва/-м (нещо) / нарѐже/-а / наряза-/х," cut into pieces; chop, slice",naryazvam/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03309,наслаждава/-м се (на нещо) / наслади/-я се / се наслади-/х, enjoy,naslazhdava/-m se (na neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03310,настанява/-м (някого) / настани/-я / се съобрази-/х, accommodate,nastanyava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03311,настоява/-м (зa+noun; да+verb) / настои/-я / настоя-/х, insist,nastoyava/-m (za+sŭsht.; da+glagol),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03312,насърчава/-м (нещо/някого) / насърчи/-а / насърчи-/х, encourage (NOT ок…),konkretno/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03313,научава/- (нещо) / научи/-а / научи-/х, learn,nauchava/- (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03314,научава/-м  / научи/-а  / разбра от него-/х,find out (become aware of something by hearing about it from somebody else),nauchava/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03315,научава/- (някого на нещо) / научи/-а / преподава-/х, teach,nauchava/- (nyakogo na neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03316,научава/-м се (да) / научи/-а се / научи как да-/х, learn how to,nauchava/-m se (da),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03317,обвинява/-м (някого) / обвини/-я / обвини-/х," accuse, blame",obvinyava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03318,обзавежда/-м (нещо) / обзаведе/-a / обзаведе-/х, furnish,obzavezhda/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03319,обижда/-м (някого) / обиди/-я / обиди-/х," insult, offend",obizhda/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03320,обръща/-м (нещо) / обърне/-а / обърна-/х," turn, flip",obrŭshtam/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03321,обръща/-м внимание (на нещо/някого) / обрърне/-м внимание  / обърна внимание на-/х,рay attention to,obrŭshta/-m vnimanie (na neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03322,обръща/-м ce   / обърне/-а ce  / се обърна-/х,turn around,obrŭshta/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03323,обслужва/-м (клиенти) / обслужи/-а / се погрижи за-/х," serve, attend to",obsluzhva/-m (klienti),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03324,обсъжда/-м (нещо/някого) / обсъди/-я / обсъди-/х, discuss,obsŭzhda/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03325,обърква/-м (някого) / обърка/-м / обърка-/х, confuse,obŭrkva/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03326,обърква/-м (нещо) / обърка/-м / направи грешка с-/х," make a mistake with, mix up",obŭrkva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03327,обърква/-м ce  / обърка/-м ce  / направи грешка-/х,make a mistake; go wrong,obŭrkva/-m ce ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03328,обявява/-м (нещо/някого) / обяви/-я / обяви-/х, announce,obyavyava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03329,одобрява/-м (нещо) / одобри/-я / одобри-/х, approve,odobryava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03330,окуражава/-м (някого) / окуражи/-а / насърчи-/х, encourage (NOT на…),okurazhava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03331,описва/-м (нещо/някого) / опише/-а / описа-/х, describe,opisva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03332,опознава/-м (някого) / опознае/-я / опозна-/х, get to know,opoznava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03333,оправя/-м (нещо) / оправи/-я / поправи-/х, fix,opravya/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03334,оправя/-м     / оправи/-я  / оправи леглото си-/х,make (one's bed),opravya/-m    ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03335,оправя/-м ce  / оправи/-я ce  / оздравя-/х,"recover, get well",opravya/-m ce ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03336,определя/-м (нещо) / определи/-я / реши-/х, determine,opredelya/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03337,освобождава/-м (нещо/някого) / освободи/-я / освободи-/х," free, liberate",osvobozhdava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03338,осигурява/-м (нещо) / осигури/-я / осигури-/х," ensure, secure, provide",osiguryavam/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03339,осигурява/-м     / осигури/-я  / застрахова-/х,insure,osiguryavam/-m    ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03340,отдалечава/-м се   / отдалечи/-а се  / се отдалечи-/х,move away,otdalechava/-m se  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03341,отделя/-м (нещо) / отдели/-я / го отдели от-/х," separate (a part from a whole); put aside,  release/emit (heat, gas, etc.)",otdelya/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03342,отегчава/-м (някого) / отегчи/-а / отегчи-/х, bore (make someone feel bored),otegchava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03343,отегчава/-м ce   / отегчи/-а ce  / се отегчи-/х,get bored,otegchava/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03344,отлага/-м (нещо) / отложи/-а / отложи-/х," postpone, delay",otlaga/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03345,отнася/-м (нещо някъде) / OTHecè/-à / взе нещо някъде-/х, take something somewhere – NOT - за…),otnasyasht/-m (neshto nyakŭde),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03346,отнася/-м се добре/зле   / OTHecè/-à се добре/зле  / лекува-/х,treat,otnasya/-m se dobre/zle  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03347,отнема/-M (нещо на някого) / OTHèMe/-a / лиши от-/х," take away, deprive of",otnema/-M (neshto na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03348,"отнема/-M ми/ти/му, etc. + време (време) / OTHèMe/-a ми/ти/му, etc. + време /  на някого час-/х",It takes someone + time,otnema/-M mi/ti/mu i dr. + vreme (vreme),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03349,отпуска/-м (нещо) / отпусне/-а / се отпусна-/х, relax,otpuska/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03350,отрязва/-м (нещо) / отреже/-а / отряза-/х, cut off,otryazva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03351,отслабва/-м  / отслабне/-а  / отслабна-/х,"become weak, lose weight",ot·slabva/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03352,отсяда/-м   / отседне/-а  / остана-/х,stay (spend the night somewhere),ot·syada/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03353,оформя/-м (нещо) / оформи/-я / оформи-/х," shape, form",oformya/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03354,охлажда/-м (нещо/някого) / охлади/-я / охлади-/х, cool down,okhlazhda/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03355,оцелява/-м   / оцелее/-я  / оцеля-/х,survive,otselyava/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03356,оценява/-м ) (нещо) / оцени/-я / оцени-/х, appreciate,otsenyava/-m ) (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03357,оценява/-м  / оцени/-я  / прецени-/х,"evaluate, mark/ grade",otsenyava/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03358,пада/-м   / падне/-а  / падна-/х,fall,pada/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03359,пипва/-м (нещо/някого) / пипне/-а / докосна веднъж-/х, touch (once),pipva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03360,побеждава/-м (в нещо/някого) / победи/-я / победи-/х," defeat, win, beat",pobezhdava/-m (v neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03361,повишава/-м (нещо) / повиши/-a / повдигна-/х, raise,visoka/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03362,повишава/-м ce   / повиши/-a ce  / се издигна-/х,rise,visoka/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03363,повлиява/-м (на нещо/някого) / повлияе/-я / повлия-/х," influence, affect",povliyava/-m (na neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03364,подкрепя/-м (някого) / подкрепи/-я / подкрепи-/х, support,podkrepya/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03365,подува/-м се   / подуе/-я се  / набъбна-/х,swell,poduva/-m se  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03366,подценява/-м (нещо/някого) / подцени/-я / подцени-/х, underestimate,podtsenyava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03367,поема/-м (нещо) / поеме/-a / пое отговорност-/х," take, assume (risk or responsibility)",poema/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03368,пожелава/-м (нещо на някого) / пожелае/-я / пожела-/х, wish,pozhelava/-m (neshto na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03369,пожелава/-м си (нещо) / пожелае/-я си / си пожела нещо-/х,make a wish,pozhelava/-m si (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03370,познава/-м (нещо/някого) / познае/-я / разпозна-/х,recognize,poznava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03371,познава/-м     / познае/-я  / предположи отговора-/х,guess (find the right answer to a question or the truth without knowing all the facts),poznava/-m    ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03372,покрива/-м (нещо/някого) / покрие/-я / покри-/х, cover,pokriva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03373,понижава/-м (нещо) / понижи/-а / снижи-/х, lower,ponizhava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03374,понижава/-м ce   / понижи/-а ce  / намали-/х,decrease,ponizhava/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03375,попълва/-м (нещо) / попълни/-я / запълни-/х, fill in,popŭlva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03376,пораства/-м   / порасне/-a  / порасна-/х,grow up (complete action),porastva/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03377,порязва/-м (нещо) / пореже/-а / го отряза-/х, cut (make a wound),poryazvam/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03378,поставя/-м (нещо/някого) / постави/-я / постави-/х," put, place",postavya/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03379,построява/-м (нещо) / построй/-я / го построи-/х, build (complete action),postroena/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03380,потвърждава/-м (нещо) / потвърди/-я / потвърди-/х, confirm,potvŭrzhdavam/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03381,похарчва/-м (нещо) / похарчи/-а / го похарчи-/х, spend (complete action),pokharchva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03382,появява/-м се  / появи/-я се  / се появи-/х,"appear, emerge",poyavyava/-m se ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03383,превозва/-м (нещо/някого) / превози/-я / транспортира-/х, transport,prevozva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03384,превръща/-м (в нещо/някого) / превърне/-а / се превърна в-/х, turn into,prevrŭshta/-m (v neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03385,преглежда/-м (нещо/някого) / прегледа/-м / премина през него-/х, go through (look at or examine in order to find something),preglezhda/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03386,преглежда/-м (някого) / прегледа/-м / разгледа-/х, examine,preglezhda/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03387,предпазва/-м (нещо/някого) / предпази/-я / защити-/х, protect (NOT за…),predpazva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03388,предписва/-м (нещо на някого) / предпише/-а / предписа-/х, prescribe,predpisva/-m (neshto na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03389,предполага/-м  / предположи/-а  / предположи-/х,"suppose, guess",predpolagam/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03390,предупреждава/-м (някого) / предупреди/-я / предупреди-/х, warn,preduprezhdava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03391,преживява/-м (нещо) / преживее/-я / преживя-/х," experience, go through",prezhivyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03392,прекъсва/-м (нещо/някого) / прекъсне/-а / прекъсна-/х, interrupt,zavŭrshi/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03393,"преподава/-м (нещо) / преподаде, преподам / преподаде-/х", teach (at a school/ university),prepodavam/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03394,приближава/-м (нещо) / приближи/-а / се приближи-/х, move closer,priblizhava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03395,приближава/-м ce   / приближи/-а ce  / се приближи-/х,get closer,priblizhava/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03396,произнася/-м (нещо) / произнесе/-а / произнесе-/х, pronounce,proiznasya/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03397,проучва/-м (нещо/някого) / проучи/-а / го изучи внимателно-/х, study (examine carefully in order to find out or understand something),prouchva/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03398,прочита/-м (нещо) / прочете/-а / прочете от началото до края-/х, read (from beginning to end) (o/g) read,prochita/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03399,разбърква/-м (нещо) / разбърка/-м / раздвижи-/х," stir, mix",razbŭrkva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03400,разглежда/-м (нещо/някого) / разгледа/-м / прегледа-/х," see (in detail), look through",razglezhdam/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03401,разделя/-м (нещо/някого) / раздели/-я / раздели-/х," divide, separate, split",razdelya/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03402,разказва/-м (нещо на някого) / разкаже/-а / разказа-/х," tell (a story), narrate",razkazva/-m (neshto na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03403,различава/-м (нещо/някого от) / различи/-а / отличи-/х," distinguish, differentiate",razlichni/-m (neshto/nyakogo ot),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03404,различава/-м ce   / различи/-а ce  / беше различен-/х,be different,razlichni/-m ce  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03405,разпространява/-м (нещо) / разпространи/-я / е разпространи широко-/х, spread (extend over a large area or among a large number of people),razprostranyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03406,разработва/-м (нещо) / разработи/-я / го разви-/х, develop (produce something and make it successful),prilaga/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03407,разрушава/-м (нещо) / разруши/-а / унищожи-/х, destroy,razrushava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03408,разширява/-м (нещо) / разшири/-я / разшири-/х," widen, expand",razshiryavam/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03409,ранява/-м (нещо/някого) / рани/-я / нарани-/х," injure, hurt, wound",ranyava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03410,свързва/-м (нещо/някого) / свърже/-а / свърза-/х," connect, link",svŭrzvam/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03411,свързва/-м се (с някого) / свърже/-а се / се свърза-/х,contact,svŭrzvam/-m se (s nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03412,сгъва/-M (нещо) / сгъне/-а / сгъна-/х, fold; bend,sgŭvane/-M (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03413,сѐща/-м се (за/да/че) / сети/-я се / си спомни-/х, remember,sèshta/-m se (za/da/che),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03414,скъсва/-м (нещо) / скъса/-м / разкъса-/х, tear (into pieces or a hole into something) (o/g) tear ,skŭsva/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03415,скъсва/-м (с някого) / скъса/-м / скъса с-/х, break up with ,skŭsva/-m (s nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03416,скъсява/-м (нещо) / скъси/-я / съкрати-/х, shorten,skŭsyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03417,"спазва/-м (закон,  правило) / спази/-я / се съобрази-/х"," observe, abide by, comply with (law, rules)","spazva/-m (zakon, pravilo)",VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03418,спазва/-м  / спази/-я  / спази краен срок-/х,meet (a deadline),spasyava/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03419,спасява/-м (нещо/някого) / спаси/-я / спаси-/х," rescue, save",spasyava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03420,споменава/-м (нещо/някого) / спомене/-а / спомена-/х, mention,spomenava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03421,стиска/-м (нещо) / стисне/-а / държеше здраво-/х, hold tight,stiska/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03422,стиска/-м  / стисне/-а  / стисна зъби-/х,"clench (fists, teeth)",stiska/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03423,стяга/-м (нещо) / стегне/-a / стегна-/х, tighten,styaga/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03424,CTbMBа се   / стъмни се  / а тъмно-/х, it gets dark (only 3rd person sg.),CTbMBa se  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03425,стъпва/-м   / стъпи/-я  / стъпи-/х,step,stŭpva/-m  ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03426,съжалява/-м (някого) / съжали/-я / съжали-/х, pity,sŭzhalyava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03427,съжалява/-м  / съжали/-я  / съжали-/х,"regret, be sorry",sŭzhalyava/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03428,съобщава/-м (нещо на някого) / съобщи/-я / обяви-/х," announce, inform",sŭobshtavam/-m (neshto na nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03429,уважава/-м (нещо/някого) / уважи/-а / уважи-/х, respect,uvazhava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03430,уврежда/-м (нещо) / увреди/-я / повреди-/х, damage (an organism/ organ/surface),uvrezhda/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03431,удължава/-м (нещо) / удължи/-а / удължаваше-/х," prolong, lengthen",udŭlzhava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03432,ужасява/-м (някого) / ужаси/-я / ужасяваше-/х," terrify, horrify",uzhasyava/-m (nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03433,украсява/-м (нещо) / украси/-я / украсяваше-/х, decorate,ukrasyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03434,улеснява/-м (нещо/някого) / улесни/-я / улесняваше-/х, facilitate,ulesnyava/-m (neshto/nyakogo),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03435,улеснява/-м     / улесни/-я  / улесняваше някого-/х,make it easy for someone,ulesnyava/-m    ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03436,упражнява/-м (нещо) / упражни/-я / обучаваше-/х, train,uprazhnyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03437,упражнява/-м  / упражни/-я  / упражняваше влияние-/х,"practice, exert (influence, a right)",uprazhnyava/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03438,усилва/-м  / усили/-я  / увеличаваше звука-/х,"turn up (sound, heat, etc. of equipment)",usilva/-m ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03439,усилва/-м ce  / усили/-я ce  / засилваше-/х,"increase, intensify",usilva/-m ce ,VERB,"B2 VERBS Imp, Perf, Past P NEW",none
+bg_03440,усложнява/-м (нещо) / усложни/-я / усложняваше-/х, complicate,uslozhnyava/-m (neshto),VERB,"B2 VERBS Imp, Perf, Past P NEW",none

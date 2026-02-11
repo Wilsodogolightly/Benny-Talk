@@ -889,11 +889,14 @@ button{
 
 
   <!-- HEADER CONTROLS: DIRECTION / MODE CHIP (BG→EN etc.) -->
+  
+
+  
   <button
     type="button"
     class="stat-chip mode-chip"
     id="toggleModeBtn"
-    title="Swap BG → EN (M)"
+    title="Swap direction (BG↔EN)"
   >
     <span class="treat-dot"></span>
     <span id="modeLabel">BG → EN phrases</span>
@@ -1068,19 +1071,14 @@ button{
 
     <!-- PROGRESS PANEL (overlay inside .app) -->
     <div class="progress-panel" id="progressPanel">
-      <div class="progress-header">PROGRESS (CURRENT FILTERS)</div>
+      
       <div id="practiceReport">
-
+      <div class="progress-header">PRACTICE PROGRESS REPORT</div>
 
       <div class="progress-summary">
   <div>
-    <div>Total in selection:</div>
+    <div>Total eligible (in selection):</div>
     <strong id="totalInFilterValue">0</strong>
-  </div>
-
-  <div>
-    <div>Untested (ever):</div>
-    <strong id="untestedEverValue">0</strong>
   </div>
 
   <div>
@@ -1099,15 +1097,11 @@ button{
   </div>
 
   <div>
-    <div>Unlearned:</div>
-    <strong id="unlearnedValue">0</strong>
-  </div>
-
-  <div>
-    <div>Learned:</div>
-    <strong id="learnedValue">0</strong>
+    <div>Easy:</div>
+    <strong id="easyValue">0</strong>
   </div>
 </div>
+
 
 
       <button type="button" class="progress-toggle" id="progressListsToggle">
@@ -1131,7 +1125,7 @@ button{
         </div>
 
         <div class="progress-column">
-          <h4>Learned</h4>
+          <h4>Easy</h4>
           <ul class="progress-list" id="learnedList"></ul>
         </div>
       </div>
@@ -1140,7 +1134,7 @@ button{
 <!--------- LEARNING PANEL ------------>
 
 <div id="learningReport" hidden>
-  <div class="progress-header">LEARNING REPORT (CURRENT FILTERS)</div>
+  <div class="progress-header">LEARNING REPORT</div>
 
   <div style="margin-top:10px; font-size:0.95rem; opacity:0.9;">
     <div>Total in learning batch:</div>
@@ -1156,7 +1150,6 @@ button{
           <th style="text-align:right; padding:6px 4px;">1</th>
           <th style="text-align:right; padding:6px 4px;">2+</th>
           <th style="text-align:right; padding:6px 4px;">Learned</th>
-          <th style="text-align:right; padding:6px 4px;">Easy</th>
         </tr>
       </thead>
       <tbody>
@@ -1166,7 +1159,6 @@ button{
           <td style="text-align:right; padding:6px 4px;" id="learnA1">0</td>
           <td style="text-align:right; padding:6px 4px;" id="learnA2p">0</td>
           <td style="text-align:right; padding:6px 4px;" id="learnALearned">0</td>
-          <td style="text-align:right; padding:6px 4px;" id="learnAEasy">0</td>
         </tr>
         <tr>
           <td style="padding:6px 4px;"><span id="learnDirB">B</span></td>
@@ -1174,11 +1166,31 @@ button{
           <td style="text-align:right; padding:6px 4px;" id="learnB1">0</td>
           <td style="text-align:right; padding:6px 4px;" id="learnB2p">0</td>
           <td style="text-align:right; padding:6px 4px;" id="learnBLearned">0</td>
-          <td style="text-align:right; padding:6px 4px;" id="learnBEasy">0</td>
         </tr>
       </tbody>
     </table>
   </div>
+  <!-- Learning lists toggle -->
+  <button type="button" class="progress-toggle" id="learningListsToggle">
+    📋 Show learning lists
+  </button>
+
+  <!-- Learning lists -->
+  <div class="progress-lists" id="learningListsContainer" hidden>
+    <div class="progress-column" style="grid-column: 1 / -1;">
+      <h4>Outstanding (not learned / not easy) — <span id="learnListLabelA">bgToEn</span></h4>
+      <ul class="progress-list" id="learnOutstandingListA"></ul>
+    </div>
+
+    <div class="progress-column" style="grid-column: 1 / -1;">
+      <h4>Outstanding (not learned / not easy) — <span id="learnListLabelB">enToBg</span></h4>
+      <ul class="progress-list" id="learnOutstandingListB"></ul>
+    </div>
+  </div>
+
+
+
+
 </div>
 
       <button type="button" class="progress-close" id="progressCloseBtn">
@@ -1190,6 +1202,7 @@ button{
 
 // ========== APP: STATE ==========
 let phrases = [];
+let currentIndex = -1; 
 
 // ========== APP: SESSION ==========
 const SESSION_KEY = "benny_session_v1";
@@ -1207,7 +1220,6 @@ function applyBuildTag() {
   document.title = `English with Benny (${BUILD_TAG})`;
 }
 
-
 function setupDevResetButton() {
   const btn = document.getElementById("devResetBtn");
   if (!btn) return;
@@ -1223,7 +1235,6 @@ function setupDevResetButton() {
   });
 }
 
-
 // ========== APP: GLOBAL FLAGS ==========
 let sessionInfo = null;
 let appStarted = false;
@@ -1235,6 +1246,14 @@ const bennyFooterEl = document.querySelector(".benny-footer");
 function setFooterVisible(isVisible) {
   if (!bennyFooterEl) return;
   bennyFooterEl.style.display = isVisible ? "" : "none";
+}
+let direction = "A"; // "A" = target→EN, "B" = EN→target
+
+// In-memory session tracker (prevents repeats even if SRS write timing glitches)
+let seenThisSession = new Set();
+
+function resetSeenThisSession() {
+  seenThisSession = new Set();
 }
 
 // ========== DOM: REFS ==========
@@ -1264,11 +1283,12 @@ const moodTextEl = document.getElementById("moodText");
 const bennyIntroEl = document.getElementById("bennyIntro");
 const modeLabelEl = document.getElementById("modeLabel");
 
+
 const typeFilterEl = document.getElementById("typeFilter");
 const filtersPanel = document.getElementById("filtersPanel");
 const toggleFiltersBtn = document.getElementById("toggleFiltersBtn");
-const levelFilterEl = document.getElementById("levelFilter");       // CSV Level
-const difficultyFilterEl = document.getElementById("difficultyFilter"); // SRS Difficulty
+const levelFilterEl = document.getElementById("levelFilter");             // CSV Level
+const difficultyFilterEl = document.getElementById("difficultyFilter");   // SRS Difficulty
 
 const topicFilterEl = document.getElementById("topicFilter");
 const languageSelectEl = document.getElementById("languageSelect");
@@ -1302,7 +1322,6 @@ if (difficultyFilterEl) {
 }
 
 // ========== UTIL ==========
-
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -1314,33 +1333,27 @@ function getLanguageLabel() {
   if (currentLanguage === "ge") return "GE";
   return "BG";
 }
-function getDirectionKey() {
-  return (mode === "bgToEn") ? "bgToEn" : "enToBg";
-}
-
 function getSrsIdForPhrase(phrase, dirKey) {
   if (!phrase) return null;
 
-  const baseId =
-    phrase.id ||
-    phrase.ID ||
-    phrase.Id ||
-    phrase.sid ||
-    null;
+  // base id should be stable (no direction suffix)
+  const base = phrase.id || phrase.sid || phrase.key || null;
+  if (!base) return null;
 
-  if (!baseId) return null;
+  // If it already has a direction, don’t append another one
+  if (base.includes("__")) return base;
 
-  const dk = dirKey || getCurrentDirectionKey(); // fallback
-  return `${baseId}__${dk}`;
+  // If caller asked for a direction, add it
+  if (dirKey) return `${base}__${dirKey}`;
+
+  return base;
 }
-
 
 function getSrsInfo(langMap, phrase, dirKey) {
   const sid = getSrsIdForPhrase(phrase, dirKey);
   if (!sid) return null;
   return langMap[sid] || null;
 }
-
 
 function resetLatinControls() {
   const langLabel = getLanguageLabel();
@@ -1357,9 +1370,8 @@ function resetLatinControls() {
     toggleLatinBtn.setAttribute("aria-pressed", "false");
   }
 }
+
 // ========== UI: SESSION MODAL ==========
-
-
 function showSessionChoiceModal({ title, text }) {
   return new Promise((resolve) => {
     const backdrop = document.createElement("div");
@@ -1415,7 +1427,6 @@ function loadPhrasesFromFile() {
         resetLatinControls();
         setFooterVisible(true);
         return;
-        
       }
 
       function parseCSVLine(line) {
@@ -1445,44 +1456,60 @@ function loadPhrasesFromFile() {
         return result;
       }
 
-        const header = parseCSVLine(lines[0]);
+      const header = parseCSVLine(lines[0]).map(h => (h || "").trim().toLowerCase());
 
-        const parsed = lines.slice(1)
-  .map(line => {
-    const cols = parseCSVLine(line);
+const parsed = lines.slice(1).map(line => {
+  const cols = parseCSVLine(line);
 
-    const id = (cols[0] || "").trim();
-    if (!id) return null;
+  const rec = {};
+  for (let i = 0; i < header.length; i++) {
+    const key = header[i];
+    if (!key) continue;
+    rec[key] = (cols[i] || "").trim();
+  }
 
-    const bg = (cols[1] || "").trim();
-    const en = (cols[2] || "").trim();
-    const lat = (cols[3] || "").trim();
-    const type = ((cols[4] || "").trim()) || "NONE";
-    const level = ((cols[5] || "").trim()) || "NONE";
-    const topic = ((cols[6] || "").trim()) || "NONE";
+  const id = (rec.id || "").trim();
+  if (!id) return null;
 
-    return { id, bg, en, lat, type, level, topic };
-  });
+  const type  = (rec.type  || "NONE").trim() || "NONE";
+  const level = (rec.level || "NONE").trim() || "NONE";
+  const topic = (rec.topic || "NONE").trim() || "NONE";
+
+  const target = (rec[currentLanguage] || "").trim();
+
+  return {
+    id,
+    [currentLanguage]: target,
+    en: (rec.en || "").trim(),
+    lat: (rec.lat || "").trim(),
+    type,
+    level,
+    topic
+  };
+});
 
 const dropped = parsed.filter(p => !p).length;
 phrases = parsed.filter(Boolean);
 
-if (dropped > 0) {
-  alert(`Warning: ${dropped} CSV row(s) were ignored because they are missing an id.`);
-}
-if (phrases.length === 0) {
-  bgPhraseEl.textContent = "No phrases available.";
-  if (bgHintEl) bgHintEl.textContent = "All rows were ignored (missing id).";
-  translationPanelEl.classList.remove("visible");
-  resetLatinControls();
-  setFooterVisible(true);
-  return;
-}
-     
+
+      if (dropped > 0) {
+        alert(`Warning: ${dropped} CSV row(s) were ignored because they are missing an id.`);
+      }
+      if (phrases.length === 0) {
+        bgPhraseEl.textContent = "No phrases available.";
+        if (bgHintEl) bgHintEl.textContent = "All rows were ignored (missing id).";
+        translationPanelEl.classList.remove("visible");
+        resetLatinControls();
+        setFooterVisible(true);
+        return;
+      }
+
       populateFilterOptions();
       loadSRSForCurrentLanguage();
       recomputeProgressReport();
+      recomputeLearningReport();
       handleNewPhrase();
+
     })
     .catch(err => {
       console.error("Could not load CSV for language", currentLanguage, "using fallback.", err);
@@ -1543,6 +1570,7 @@ function populateFilterOptions() {
   currentLevelFilter = "any";
   currentTopicFilter = "any";
 }
+
 // ========== UI: LARGE TEXT + PROGRESS PANEL ==========
 function applyLargeText(isOn) {
   if (!contentCardEl) return;
@@ -1551,6 +1579,7 @@ function applyLargeText(isOn) {
   localStorage.setItem(LARGE_TEXT_KEY, isOn ? "1" : "0");
 }
 
+// set initial large-text state
 applyLargeText(localStorage.getItem(LARGE_TEXT_KEY) === "1");
 
 if (toggleLargeTextBtn) {
@@ -1560,25 +1589,18 @@ if (toggleLargeTextBtn) {
   });
 }
 
-if (progressListsToggle && progressListsContainer) {
-  progressListsToggle.addEventListener("click", () => {
-    const isHidden = progressListsContainer.hasAttribute("hidden");
-
-    if (isHidden) {
-      progressListsContainer.removeAttribute("hidden");
-      progressListsToggle.textContent = "📋 Hide lists";
-    } else {
-      progressListsContainer.setAttribute("hidden", "true");
-      progressListsToggle.textContent = "📋 Show lists";
-    }
-  });
-}
-
+// Progress panel open/close
 function setProgressOpen(isOpen) {
   if (!progressPanelEl) return;
 
   if (isOpen) progressPanelEl.classList.add("open");
   else progressPanelEl.classList.remove("open");
+
+  // recompute whenever opening
+  if (isOpen) {
+    if (typeof recomputeProgressReport === "function") recomputeProgressReport();
+    if (typeof recomputeLearningReport === "function") recomputeLearningReport();
+  }
 
   if (controlsEl) controlsEl.classList.toggle("hidden", isOpen);
 
@@ -1603,10 +1625,42 @@ if (progressCloseBtn) {
   progressCloseBtn.addEventListener("click", () => setProgressOpen(false));
 }
 
-let currentIndex = -1;
+// Lists show/hide INSIDE progress panel
+if (progressListsToggle && progressListsContainer) {
+  progressListsToggle.addEventListener("click", () => {
+    const isHidden = progressListsContainer.hasAttribute("hidden");
+
+    if (isHidden) {
+      progressListsContainer.removeAttribute("hidden");
+      progressListsToggle.textContent = "📋 Hide lists";
+    } else {
+      progressListsContainer.setAttribute("hidden", "true");
+      progressListsToggle.textContent = "📋 Show lists";
+    }
+  });
+}
+// Learning lists show/hide INSIDE learning report
+const learningListsToggle = document.getElementById("learningListsToggle");
+const learningListsContainer = document.getElementById("learningListsContainer");
+
+if (learningListsToggle && learningListsContainer) {
+  learningListsToggle.addEventListener("click", () => {
+    const isHidden = learningListsContainer.hasAttribute("hidden");
+    if (isHidden) {
+      learningListsContainer.removeAttribute("hidden");
+      learningListsToggle.textContent = "📋 Hide learning lists";
+      if (typeof recomputeLearningReport === "function") {
+        recomputeLearningReport();
+      }
+    } else {
+      learningListsContainer.setAttribute("hidden", "true");
+      learningListsToggle.textContent = "📋 Show learning lists";
+    }
+  });
+}
 let treatCount = 0;
 let streak = 0;
-let mode = "bgToEn";
+// Practice direction control (Practice mode only)
 
 let currentTypeFilter = "any";
 let currentLevelFilter = "any";
@@ -1616,7 +1670,7 @@ let focusLock = false;
 
 let srsProgress = { bg: {}, ge: {} };
 let currentLanguage = "bg";
-
+0
 // ========== ANSWER: PENDING CONFIRM BAR ==========
 // ---------- Answer confirmation state ----------
 let pendingAnswer = null;   // true | false | null
@@ -1649,8 +1703,6 @@ function updateConfirmText() {
 }
 
 // ========== SESSION: LIFETIME ==========
-
-
 async function loadOrCreateSession() {
   const raw = localStorage.getItem(SESSION_KEY);
   const now = Date.now();
@@ -1674,11 +1726,16 @@ async function loadOrCreateSession() {
               : "Reload detected — continue the previous session or start a new one?"
           });
 
-          if (choice === "continue") return prev;
+          if (choice === "continue") {
+            resetSeenThisSession();
+            return prev;
+          }
+
           return startNewSession(expired ? "Expired — user chose new" : "Reload — user chose new");
         }
 
         // Still valid and not a reload → reuse silently
+        resetSeenThisSession();
         return prev;
       }
     } catch {}
@@ -1693,7 +1750,9 @@ async function loadOrCreateSession() {
   // If there is no previous session, "continue" just means "start new"
   return startNewSession(choice === "continue" ? "Continue requested (no prior session)" : "First run");
 }
+
 function startNewSession(reason) {
+  resetSeenThisSession();
   const now = Date.now();
   const s = { id: "sess_" + now, startedAt: now };
   localStorage.setItem(SESSION_KEY, JSON.stringify(s));
@@ -1707,7 +1766,6 @@ const languageFiles = {
 };
 
 // ========== SRS: PERSISTENCE + MIGRATION ==========
-
 function getSRSKeyForCurrentLanguage() {
   return "bennySRS_v1_" + currentLanguage;
 }
@@ -1747,7 +1805,6 @@ function migrateLegacySrsToBgToEnOnlyForCurrentLanguage() {
   srsProgress[currentLanguage] = langMap;
   saveSRSForCurrentLanguage();
 
-
   localStorage.setItem(MIGRATION_FLAG, "1");
   console.log(`[SRS] Migrated legacy -> bgToEn only (${currentLanguage}). moved=${moved}`);
 }
@@ -1780,6 +1837,7 @@ function saveSRSForCurrentLanguage() {
   }
 }
 
+// ========== SRS: STATS + CLASSIFICATION ==========
 function getStatsForIndex(idx, dirKey) {
   dirKey = dirKey || getCurrentDirectionKey();
 
@@ -1796,18 +1854,18 @@ function getStatsForIndex(idx, dirKey) {
   const accuracy = total > 0 ? correct / total : 0;
 
   const neverTested = total === 0;
-  const learned = (total >= 3 && !!info?.learnedStreak2);
-
+  const learned = (total >= 3 && !!info?.learnedStreak2) || (info?.manualDifficulty === "easy");
   const notLearned = !learned;
 
   const difficult = !!info?.everDifficult;
   const tricky = (total >= 3 && accuracy < 0.5);
 
+  const sid = phrase ? getSrsIdForPhrase(phrase, dirKey) : null;
+
   const testedThisSession =
-  !!info?.lastSessionId && !!sessionInfo?.id && info.lastSessionId === sessionInfo.id;
+    !!sid && seenThisSession && seenThisSession.has(sid);
 
   const untestedThisSession = !testedThisSession;
-
   const lastWrong = !!info?.lastWasWrong;
 
   return {
@@ -1826,21 +1884,11 @@ function getStatsForIndex(idx, dirKey) {
     lastWrong
   };
 }
-function markSeenThisSession(index) {
-  if (index == null || index < 0) return;
 
-  const phrase = phrases[index];
-  const key = getSrsIdForPhrase(phrase);
-  if (!key) return;
+// ✅ (4) DELETE obsolete markSeenThisSession(index)
+// (Removed entirely per your instruction 4)
 
-  const langMap = srsProgress[currentLanguage] || (srsProgress[currentLanguage] = {});
-  const info = langMap[key] || { total: 0, learnedStreak2: false };
-
-  info.lastSessionId = sessionInfo.id;
-  langMap[key] = info;
-}
-
-
+// ========== FILTERS: PASSES ==========
 function passesStatusFilter(idx) {
   const stats = getStatsForIndex(idx);
 
@@ -1855,12 +1903,13 @@ function passesStatusFilter(idx) {
     default:                return true;
   }
 }
+
 function passesFocusFilter(idx) {
   const stats = getStatsForIndex(idx);
 
   const phrase = phrases?.[idx];
   const langMap = srsProgress?.[currentLanguage] || {};
-  const info = phrase ? getSrsInfo(langMap, phrase) : null;
+  const info = phrase ? getSrsInfo(langMap, phrase, getCurrentDirectionKey()) : null;
 
   const manualDifficulty = info?.manualDifficulty ?? null;
   const isEasy = manualDifficulty === "easy";
@@ -1887,13 +1936,12 @@ function passesFocusFilter(idx) {
   }
 }
 
-
 function passesDifficultyFilter(idx) {
   const stats = getStatsForIndex(idx);
 
   const phrase = phrases?.[idx];
   const langMap = srsProgress?.[currentLanguage] || {};
-  const info = phrase ? getSrsInfo(langMap, phrase) : null;
+  const info = phrase ? getSrsInfo(langMap, phrase, getCurrentDirectionKey()) : null;
 
   const manualDifficulty = info?.manualDifficulty ?? null; // "easy" | "difficult" | null
 
@@ -1916,69 +1964,64 @@ function passesDifficultyFilter(idx) {
   }
 }
 
+// ========== SRS: DIRECTION HELPERS ==========
+
 function getDirectionKeyA(lang) {
   if (lang === "bg") return "bgToEn";
   if (lang === "ge") return "geToEn";
-  return `${lang}ToEn`;
+  // fallback (rarely used)
+  return `${String(lang).toLowerCase()}ToEn`;
 }
+
 
 function getDirectionKeyB(lang) {
   if (lang === "bg") return "enToBg";
   if (lang === "ge") return "enToGe";
   // fallback (rarely used)
-  return `enTo${String(lang).toUpperCase()}`;
+  return `enTo${String(lang).toLowerCase()}`;
 }
 
 // Your current direction must be one of the above keys.
-// If your app stores direction differently, we’ll align it after you paste your direction variable.
 function getCurrentDirectionKey() {
-  return mode; // mode is "bgToEn" or "enToBg"
+  return (direction === "A")
+    ? getDirectionKeyA(currentLanguage)
+    : getDirectionKeyB(currentLanguage);
 }
-
 
 function getDirectionalKeyForIndex(idx, directionKey) {
   const phrase = phrases?.[idx];
   if (!phrase) return null;
 
-  // IMPORTANT: this must return the same phrase ID you use everywhere else.
-  // You are already using getSrsIdForPhrase(phrase). We'll use it.
   const pid = getSrsIdForPhrase(phrase);
   if (!pid) return null;
 
   return `${pid}__${directionKey}`;
 }
 
-function isEasyOrLearnedForIndex(idx, directionKey) {
-  const langMap = srsProgress?.[currentLanguage] || {};
-  const k = getDirectionalKeyForIndex(idx, directionKey);
-  const rec = k ? (langMap[k] || null) : null;
-  if (!rec) return false;
-
-  if (rec.manualDifficulty === "easy") return true;
-  if (rec.learnedStreak2 === true) return true;
-
-  return false;
-}
-
-
-
 function isEasyOrLearnedForIndex(idx, dirKey) {
   const stats = getStatsForIndex(idx, dirKey); // directional stats
   if (!stats) return false;
 
-  // Easy is stored in SRS info (manualDifficulty)
   const phrase = phrases?.[idx];
   const langMap = srsProgress?.[currentLanguage] || {};
   const info = phrase ? getSrsInfo(langMap, phrase, dirKey) : null;
 
-  const manualDifficulty = info?.manualDifficulty ?? null;
-  const isEasy = manualDifficulty === "easy";
-
-  // learned is your existing rule per direction
+  const isEasy = info?.manualDifficulty === "easy";
   const isLearned = !!stats.learned;
 
   return isEasy || isLearned;
 }
+
+function isEasyForIndex(idx, dirKey) {
+  const phrase = phrases?.[idx];
+  if (!phrase) return false;
+
+  const langMap = srsProgress?.[currentLanguage] || {};
+  const info = getSrsInfo(langMap, phrase, dirKey);
+  return info?.manualDifficulty === "easy";
+}
+
+// ========== SELECTION: PICK NEXT PHRASE ==========
 function isPracticeEligibleIndex(idx) {
   const dirA = getDirectionKeyA(currentLanguage);
   const dirB = getDirectionKeyB(currentLanguage);
@@ -2001,52 +2044,49 @@ function pickRandomIndex() {
     if (typeOk && levelOk && topicOk) baseCandidates.push(i);
   }
   if (baseCandidates.length === 0) return -1;
-  console.log("STAGE1 baseCandidates", baseCandidates.length);
-
-
-// 2) MODE GATE first (Learning vs Practice)
-let filteredCandidates = baseCandidates;
-
-if (appMode === "learning") {
-  const dirKey = getCurrentDirectionKey();
-  filteredCandidates = filteredCandidates.filter(idx => !isEasyOrLearnedForIndex(idx, dirKey));
-} else {
-  filteredCandidates = filteredCandidates.filter(idx => isPracticeEligibleIndex(idx));
-}
-
-// If nothing left after mode gate, stop early
-if (filteredCandidates.length === 0) return -1;
-
-// 3) NOW apply your normal filters (Status + Focus + Difficulty)
-filteredCandidates = filteredCandidates
-  .filter(idx => passesStatusFilter(idx))
-  .filter(idx => passesFocusFilter(idx))
-  .filter(idx => passesDifficultyFilter(idx));
-
-if (filteredCandidates.length === 0) return -1;
-
-console.log("STAGE2 after filters", filteredCandidates.length, {
-  status: currentStatusFilter,
+console.log("[pick] baseCandidates:", baseCandidates.length, {
+  type: currentTypeFilter,
+  level: currentLevelFilter,
+  topic: currentTopicFilter,
+  appMode,
+  lang: currentLanguage,
+  dirKey: getCurrentDirectionKey(),
   focus: currentFocusFilter,
-  difficulty: currentDifficultyFilter,
-  appMode
+  diff: currentDifficultyFilter
 });
 
+  // 2) MODE GATE first (Learning vs Practice)
+  let filteredCandidates = baseCandidates;
 
-
-  // EXTRA SAFETY: if Focus is "Untested — this run", enforce it here too
-// (prevents repeats even if something else mis-tags a phrase)
-if (currentFocusFilter === "untestedSession") {
-  filteredCandidates = filteredCandidates.filter(idx => {
-    const stats = getStatsForIndex(idx);
-    return stats.untestedThisSession;
-  });
+  if (appMode === "learning") {
+    const dirKey = getCurrentDirectionKey();
+    filteredCandidates = filteredCandidates.filter(idx => !isEasyOrLearnedForIndex(idx, dirKey));
+  } else {
+    filteredCandidates = filteredCandidates.filter(idx => isPracticeEligibleIndex(idx));
+  }
 
   if (filteredCandidates.length === 0) return -1;
-}
 
+  // 3) NOW apply your normal filters (Status + Focus + Difficulty)
+  filteredCandidates = filteredCandidates
+    .filter(idx => passesStatusFilter(idx))
+    .filter(idx => passesFocusFilter(idx))
+    .filter(idx => passesDifficultyFilter(idx));
 
-    // 3) Practice mode only: SRS due-date preference (prefer due, but never block)
+  if (filteredCandidates.length === 0) return -1;
+console.log("[pick] after filters:", filteredCandidates.length);
+
+  // EXTRA SAFETY: if Focus is "Untested — this run", enforce it here too
+  if (currentFocusFilter === "untestedSession") {
+    filteredCandidates = filteredCandidates.filter(idx => {
+      const stats = getStatsForIndex(idx);
+      return stats.untestedThisSession;
+    });
+
+    if (filteredCandidates.length === 0) return -1;
+  }
+
+  // 3) Practice mode only: SRS due-date preference (prefer due, but never block)
   if (appMode === "practice") {
     const langMap = srsProgress[currentLanguage] || {};
     const todayStr = new Date().toISOString().slice(0, 10);
@@ -2056,7 +2096,7 @@ if (currentFocusFilter === "untestedSession") {
 
     for (const idx of filteredCandidates) {
       const phrase = phrases?.[idx];
-      const sid = getSrsIdForPhrase(phrase);
+      const sid = getSrsIdForPhrase(phrase, getCurrentDirectionKey());
       const info = sid ? (langMap[sid] || null) : null;
 
       if (!info || !info.due || info.due <= todayStr) {
@@ -2066,27 +2106,33 @@ if (currentFocusFilter === "untestedSession") {
       }
     }
 
-    console.log("STAGE3 due split", { dueNow: dueNow.length, notDue: notDue.length });
-
     filteredCandidates = (dueNow.length > 0 ? dueNow : filteredCandidates);
+    console.log("[pick] dueNow:", dueNow.length, "pool:", filteredCandidates.length);
+
     if (filteredCandidates.length === 0) return -1;
   }
 
   const pool = filteredCandidates;
 
-  if (pool.length === 0) return -1;
-  if (pool.length === 1) return pool[0];
+  if (pool.length === 0) {
+  console.log("[pick] pool EMPTY at end", { appMode, lang: currentLanguage, dir: getCurrentDirectionKey() });
+  return -1;
+}
 
-  // Weighting: lower boxes appear more often
-function getBox(idx) {
-  const langMapLocal = srsProgress[currentLanguage] || {};
-  const phrase = phrases?.[idx];
-  const sid = getSrsIdForPhrase(phrase);
-  const info = sid ? langMapLocal[sid] : null;
-  return info?.box ?? 1;
+if (pool.length === 1) {
+  console.log("[pick] pool SINGLE at end:", pool[0], { appMode, lang: currentLanguage, dir: getCurrentDirectionKey() });
+  return pool[0];
 }
 
 
+  // Weighting: lower boxes appear more often
+  function getBox(idx) {
+    const langMapLocal = srsProgress[currentLanguage] || {};
+    const phrase = phrases?.[idx];
+    const sid = getSrsIdForPhrase(phrase, getCurrentDirectionKey());
+    const info = sid ? langMapLocal[sid] : null;
+    return info?.box ?? 1;
+  }
 
   function getWeight(idx) {
     const box = getBox(idx);
@@ -2099,13 +2145,33 @@ function getBox(idx) {
   let r = Math.random() * totalWeight;
   for (const idx of pool) {
     const w = getWeight(idx);
-    if (r < w) return idx;
+    if (r < w) {
+  console.log("[pick] weighted-return idx:", idx, {
+    w,
+    r,
+    poolLen: pool.length,
+    appMode,
+    lang: currentLanguage,
+    dir: getCurrentDirectionKey()
+  });
+  return idx;
+}
     r -= w;
   }
 
-  return pool[Math.floor(Math.random() * pool.length)];
+  // ... your weighting code above ...
+
+ const chosen = pool[Math.floor(Math.random() * pool.length)];
+console.log("[pick] chosen idx:", chosen, "poolLen:", pool.length, "appMode:", appMode, "lang:", currentLanguage, "dir:", getCurrentDirectionKey());
+return chosen;
 }
 
+
+// ============================================================
+// (2) REPLACED REGION: UI: MOOD / VISIBILITY + UI: MODE CONTROLS
+// ============================================================
+
+// ========== UI: MOOD / VISIBILITY ==========
 
 function updateMood() {
   if (!moodDotEl || !moodTextEl || !bennyIntroEl || !streakValueEl) {
@@ -2140,10 +2206,21 @@ function updateMoodVisibility() {
   setFooterVisible(shouldShowMood);
 }
 
+// ========== UI: MODE CONTROLS ==========
+
 function updateModeUI() {
-  modeLabelEl.textContent = (mode === "bgToEn") ? "BG → EN phrases" : "EN → BG phrases";
+  const dirKey = getCurrentDirectionKey();
+
+  // Display labels (keep simple for now)
+  const targetLabel = (currentLanguage === "ge") ? "GE" : "BG"; // later: language pack
+  const labelA = `${targetLabel} → EN phrases`;
+  const labelB = `EN → ${targetLabel} phrases`;
+
+  modeLabelEl.textContent = (dirKey === getDirectionKeyA(currentLanguage)) ? labelA : labelB;
 }
 
+
+// ========== UI: PHRASE DISPLAY / CONTROLS ==========
 function showPhrase(index) {
   if (index < 0 || index >= phrases.length) {
     bgPhraseEl.textContent = "Няма фрази. Добави още в кода.";
@@ -2157,16 +2234,23 @@ function showPhrase(index) {
 
   const phrase = phrases[index];
   currentIndex = index;
-  
 
-  if (mode === "bgToEn") {
-    bgPhraseEl.textContent = phrase.bg;
-    translationTextEl.textContent = phrase.en;
-    translationLabelEl.textContent = "English";
+  const dirA = getDirectionKeyA(currentLanguage); // bgToEn / geToEn etc
+  const dirKey = getCurrentDirectionKey();
+
+  const targetText =
+    currentLanguage === "bg" ? (phrase.bg || "") :
+    currentLanguage === "ge" ? (phrase.ge || "") :
+    "";
+
+  const englishText = phrase.en || "";
+
+  if (dirKey === dirA) {
+    bgPhraseEl.textContent = targetText;          // target -> English
+    translationTextEl.textContent = englishText;
   } else {
-    bgPhraseEl.textContent = phrase.en;
-    translationTextEl.textContent = phrase.bg;
-    translationLabelEl.textContent = "Bulgarian";
+    bgPhraseEl.textContent = englishText;         // English -> target
+    translationTextEl.textContent = targetText;
   }
 
   latinTextEl.textContent = phrase.lat || "";
@@ -2184,7 +2268,7 @@ function setFiltersOpen(isOpen) {
   updateMoodVisibility();
 }
 
-function handleNewPhrase() {
+function handleNewPhrase() { 
   clearPendingAnswer();
   translationPanelEl.classList.remove("visible");
   resetLatinControls();
@@ -2194,30 +2278,35 @@ function handleNewPhrase() {
 
   const index = pickRandomIndex();
 
+  console.log("[NEW] pickRandomIndex returned:", index, {
+    appMode,
+    currentLanguage,
+    dir: getCurrentDirectionKey(),
+    currentIndex
+  });
+
   if (index === -1) {
-  if (appMode === "practice") {
-  bgPhraseEl.textContent = "No eligible practice phrases yet.";
-  bgPhraseEl.textContent = "No eligible practice phrases yet. Learn phrases in BOTH directions to unlock Practice.";
-if (bgHintEl) bgHintEl.textContent = "";
-  if (bgHintEl) bgHintEl.textContent = "Try relaxing Type / Level / Topic.";
-}
+    console.log("[NEW] index === -1 branch taken");
 
+    if (appMode === "practice") {
+      bgPhraseEl.textContent =
+        "No eligible practice phrases yet. Learn phrases in BOTH directions to unlock Practice.";
+      console.log("FILTERS", { currentTypeFilter, currentLevelFilter, currentTopicFilter, currentFocusFilter, currentDifficultyFilter, dir: getCurrentDirectionKey() });
 
-  translationTextEl.textContent = "";
-  translationPanelEl.classList.remove("visible");
-  resetLatinControls();
-  updateMoodVisibility();
-  return;
-}
+      if (bgHintEl) bgHintEl.textContent = "Try relaxing Type / Level / Topic.";
+    } else {
+      bgPhraseEl.textContent = "No phrases match your current filters.";
+      if (bgHintEl) bgHintEl.textContent = "Try relaxing Type / Level / Topic.";
+    }
 
-  console.log("PICK", {
-  index,
-  id: getSrsIdForPhrase(phrases[index]),
-  mode,
-  focus: currentFocusFilter,
-  session: sessionInfo?.id
-});
+    translationTextEl.textContent = "";
+    translationPanelEl.classList.remove("visible");
+    resetLatinControls();
+    updateMoodVisibility();
+    return;
+  }
 
+  console.log("[NEW] calling showPhrase with:", index);
   showPhrase(index);
 }
 
@@ -2244,11 +2333,13 @@ function toggleLatin() {
   updateMoodVisibility();
 }
 
+// ========== SRS: UPDATE + MANUAL DIFFICULTY ==========
 function updateSRS(index, isCorrect) {
   if (index == null || index < 0) return;
 
   const phrase = phrases?.[index];
-  const key = getSrsIdForPhrase(phrase);
+  const dirKey = getCurrentDirectionKey();
+  const key = getSrsIdForPhrase(phrase, dirKey);
 
   if (!key) return;
 
@@ -2257,39 +2348,37 @@ function updateSRS(index, isCorrect) {
   const now = new Date();
 
   let info = langMap[key] || {
-  box: 1,
-  correctStreak: 0,
-  wrongStreak: 0,
-  learnedStreak2: false,
-  total: 0,
-  correct: 0,
-  wrong: 0,
-  everDifficult: false,
-  manualDifficulty: null,
-  lastSessionId: null,
-  lastWasWrong: false
-};
-
-
+    box: 1,
+    correctStreak: 0,
+    wrongStreak: 0,
+    learnedStreak2: false,
+    total: 0,
+    correct: 0,
+    wrong: 0,
+    everDifficult: false,
+    manualDifficulty: null,
+    lastSessionId: null,
+    lastWasWrong: false
+  };
 
   info.total += 1;
 
   if (isCorrect) {
-  info.correct += 1;
-  info.correctStreak += 1;
-  info.wrongStreak = 0;
+    info.correct += 1;
+    info.correctStreak += 1;
+    info.wrongStreak = 0;
 
-  // ✅ learned signal: achieved 2 correct in a row at least once since last wrong
-  if (info.correctStreak >= 2) info.learnedStreak2 = true;
+    // ✅ learned signal: achieved 2 correct in a row at least once since last wrong
+    if (info.correctStreak >= 2) info.learnedStreak2 = true;
 
-} else {
-  info.wrong += 1;
-  info.wrongStreak += 1;
-  info.correctStreak = 0;
+  } else {
+    info.wrong += 1;
+    info.wrongStreak += 1;
+    info.correctStreak = 0;
 
-  // ❌ any wrong wipes the "last 2 correct" status
-  info.learnedStreak2 = false;
-}
+    // ❌ any wrong wipes the "last 2 correct" status
+    info.learnedStreak2 = false;
+  }
 
   info.lastSessionId = sessionInfo.id;
   info.lastWasWrong = !isCorrect;
@@ -2315,11 +2404,13 @@ function updateSRS(index, isCorrect) {
   langMap[key] = info;
   saveSRSForCurrentLanguage();
 }
+
 function setManualDifficultyForCurrent(index, value) {
   if (index == null || index < 0) return;
 
   const phrase = phrases?.[index];
-  const key = getSrsIdForPhrase(phrase);
+  const dirKey = getCurrentDirectionKey();
+  const key = getSrsIdForPhrase(phrase, dirKey);
 
   if (!key) return;
 
@@ -2347,7 +2438,7 @@ function setManualDifficultyForCurrent(index, value) {
     info.manualDifficulty = value; // mutually exclusive by design
   }
 
-  // WRITE BACK (this is the critical part)
+  // WRITE BACK
   langMap[key] = info;
 
   saveSRSForCurrentLanguage();
@@ -2355,6 +2446,8 @@ function setManualDifficultyForCurrent(index, value) {
 
 // ========== PROGRESS: RECOMPUTE ==========
 function recomputeLearningReport() {
+  if (!phrases || phrases.length === 0) return;
+
   const totalEl = document.getElementById("learnBatchTotal");
   if (!totalEl) return;
 
@@ -2367,9 +2460,8 @@ function recomputeLearningReport() {
   if (dirALabel) dirALabel.textContent = dirA;
   if (dirBLabel) dirBLabel.textContent = dirB;
 
-  // Build the learning batch = CSV filters + (Learning exclusions should already apply via pickRandomIndex gate)
-  // For reporting we follow spec: after Type/Level/Topic + exclusions.
-  const baseIdx = [];
+  // 1) Base selection = CSV filters only
+  const baseCandidates = [];
   for (let i = 0; i < phrases.length; i++) {
     const p = phrases[i];
     if (!p) continue;
@@ -2378,78 +2470,134 @@ function recomputeLearningReport() {
     const levelOk = currentLevelFilter === "any" || (p.level && p.level === currentLevelFilter);
     const topicOk = currentTopicFilter === "any" || (p.topic && p.topic === currentTopicFilter);
 
-    if (typeOk && levelOk && topicOk) baseIdx.push(i);
+    if (typeOk && levelOk && topicOk) baseCandidates.push(i);
   }
 
-  // Apply the same status/focus/difficulty filters you already use
-  let batch = baseIdx
-    .filter(idx => passesStatusFilter(idx))
-    .filter(idx => passesFocusFilter(idx))
-    .filter(idx => passesDifficultyFilter(idx));
+  // ✅ Total should be the full "learning selection"
+  totalEl.textContent = String(baseCandidates.length);
 
-  // Learning-mode hard exclusion: Learned OR Easy in the CURRENT learning direction
-  // (this matches your spec; current direction is 'mode')
-  const learningDir = getCurrentDirectionKey(); // returns 'mode'
-  batch = batch.filter(idx => !isEasyOrLearnedForIndex(idx, learningDir));
-
-  totalEl.textContent = String(batch.length);
-
-  // Count per direction: 0 / 1 / 2+ / Learned / Easy
+  // 2) Counts per direction, exclusive buckets:
   function countForDirection(directionKey) {
-    let c0 = 0, c1 = 0, c2p = 0, cLearned = 0, cEasy = 0;
+    let c0 = 0, c1 = 0, c2p = 0, cLearned = 0;
 
-    for (const idx of batch) {
-      const langMap = srsProgress?.[currentLanguage] || {};
-      const k = getDirectionalKeyForIndex(idx, directionKey);
-      const rec = k ? (langMap[k] || null) : null;
+    const langMap = srsProgress?.[currentLanguage] || {};
 
-      const total = rec?.total ?? 0;
-      const easy = (rec?.manualDifficulty === "easy");
-      const learned = (rec?.learnedStreak2 === true);
+    for (const idx of baseCandidates) {
+      const phrase = phrases?.[idx];
+      const info = phrase ? getSrsInfo(langMap, phrase, directionKey) : null;
 
-      if (easy) cEasy++;
-      if (learned || easy) cLearned++; // Easy counts as learned in your spec
+      const total = info?.total ?? 0;
+      const learnedOrEasy = isEasyOrLearnedForIndex(idx, directionKey); // ✅ union, no double counting
 
-      if (total <= 0) c0++;
-      else if (total === 1) c1++;
-      else c2p++;
+      // Exclusive buckets
+      if (learnedOrEasy) {
+        cLearned++;
+      } else if (total <= 0) {
+        c0++;
+      } else if (total === 1) {
+        c1++;
+      } else {
+        c2p++;
+      }
     }
 
-    return { c0, c1, c2p, cLearned, cEasy };
+    return { c0, c1, c2p, cLearned };
+  }
+  function buildOutstandingList(directionKey) {
+    const lang = currentLanguage;
+    const items = [];
+    const langMap = srsProgress?.[currentLanguage] || {};
+
+    for (const idx of baseCandidates) {
+      // outstanding = not learned AND not easy
+      if (isEasyOrLearnedForIndex(idx, directionKey)) continue;
+
+      const phrase = phrases?.[idx];
+      const info = phrase ? getSrsInfo(langMap, phrase, directionKey) : null;
+      const total = info?.total ?? 0;
+
+      // score bucket: 0, 1, 2 (where 2 means 2+)
+      const bucket = (total <= 0) ? 0 : (total === 1 ? 1 : 2);
+
+      // display text depends on direction
+      const dirA = getDirectionKeyA(lang);     // bgToEn / geToEn / etc
+      const target = phrase?.[lang] || "";
+      const en = phrase?.en || "";
+
+      const text = (directionKey === dirA) ? target : en;
+
+
+      items.push({ bucket, text, idx });
+    }
+
+    // Sort: bucket asc (0,1,2+), then text alpha (stable)
+    items.sort((a, b) => {
+      if (a.bucket !== b.bucket) return a.bucket - b.bucket;
+      return String(a.text).localeCompare(String(b.text), "bg", { sensitivity: "base" });
+    });
+
+    return items;
   }
 
   const A = countForDirection(dirA);
   const B = countForDirection(dirB);
 
-  const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = String(v); };
+  const setText = (id, v) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = String(v);
+  };
 
   setText("learnA0", A.c0);
   setText("learnA1", A.c1);
   setText("learnA2p", A.c2p);
   setText("learnALearned", A.cLearned);
-  setText("learnAEasy", A.cEasy);
 
   setText("learnB0", B.c0);
   setText("learnB1", B.c1);
   setText("learnB2p", B.c2p);
   setText("learnBLearned", B.cLearned);
-  setText("learnBEasy", B.cEasy);
+
+    // Populate learning lists if container exists
+  const listA = document.getElementById("learnOutstandingListA");
+  const listB = document.getElementById("learnOutstandingListB");
+  const labelA = document.getElementById("learnListLabelA");
+  const labelB = document.getElementById("learnListLabelB");
+
+  if (labelA) labelA.textContent = dirA;
+  if (labelB) labelB.textContent = dirB;
+
+  const addLi = (ul, bucket, text) => {
+    if (!ul) return;
+    const li = document.createElement("li");
+    const tag = bucket === 0 ? "[0]" : (bucket === 1 ? "[1]" : "[2+]");
+    li.textContent = `${tag} ${text}`;
+    ul.appendChild(li);
+  };
+
+  if (listA) listA.innerHTML = "";
+  if (listB) listB.innerHTML = "";
+
+  const outstandingA = buildOutstandingList(dirA);
+  const outstandingB = buildOutstandingList(dirB);
+
+  for (const it of outstandingA) addLi(listA, it.bucket, it.text);
+  for (const it of outstandingB) addLi(listB, it.bucket, it.text);
+
 }
 
 function recomputeProgressReport() {
-  const idx = (typeof currentIndex === "number") ? currentIndex : 0;
   if (!phrases || phrases.length === 0) return;
 
-  // Existing list elements (DO NOT rename HTML)
-  const listUntestedRunEl = document.getElementById("neverTestedList");  // heading: Untested this run
-  const listLastWrongEl   = document.getElementById("unlearnedList");    // heading: Last wrong
-  const listDifficultEl   = document.getElementById("difficultList");    // heading: Difficult
-  const listLearnedEl     = document.getElementById("learnedList");      // heading: Learned
+  // Lists (keep existing element IDs)
+  const listUntestedRunEl = document.getElementById("neverTestedList");  // Untested this run
+  const listLastWrongEl   = document.getElementById("unlearnedList");    // Last wrong
+  const listDifficultEl   = document.getElementById("difficultList");    // Difficult
+  const listEasyEl        = document.getElementById("learnedList");      // Easy (repurposed)
 
   if (listUntestedRunEl) listUntestedRunEl.innerHTML = "";
   if (listLastWrongEl)   listLastWrongEl.innerHTML = "";
   if (listDifficultEl)   listDifficultEl.innerHTML = "";
-  if (listLearnedEl)     listLearnedEl.innerHTML = "";
+  if (listEasyEl)        listEasyEl.innerHTML = "";
 
   const addToList = (ul, phrase) => {
     if (!ul) return;
@@ -2458,60 +2606,52 @@ function recomputeProgressReport() {
     ul.appendChild(li);
   };
 
-  // Counts
-  let totalInCombined = 0;
-  let countUntestedEver = 0;
+  // PRACTICE REPORT RULE:
+  // Total = phrases that match CSV filters AND are practice-eligible (learned/easy in BOTH directions).
+  // All other stats are SUBSETS of that eligible pool.
+  let totalEligible = 0;
   let countUntestedRun = 0;
   let countLastWrong = 0;
-  let countDifficult = 0;   // Override OR SRS difficult (STRICT)
-  let countUnlearned = 0;   // NOT learned AND NOT easy
-  let countLearned = 0;     // learned OR easy
+  let countDifficult = 0;
+  let countEasy = 0;
 
   const langMap = srsProgress?.[currentLanguage] || {};
+  const dirKey = getCurrentDirectionKey(); // stats shown for CURRENT test direction
 
   for (let i = 0; i < phrases.length; i++) {
     const p = phrases[i];
     if (!p) continue;
 
-    // 1) CSV-level filters (Type / Level / Topic)
+    // 1) CSV-level filters only (Type / Level / Topic)
     const typeOk  = currentTypeFilter === "any" || (p.type && p.type === currentTypeFilter);
     const levelOk = currentLevelFilter === "any" || (p.level && p.level === currentLevelFilter);
     const topicOk = currentTopicFilter === "any" || (p.topic && p.topic === currentTopicFilter);
     if (!typeOk || !levelOk || !topicOk) continue;
 
-    // 2) Combined “what the user is working on now” filters
-    if (!passesStatusFilter(i)) continue;
-    if (!passesFocusFilter(i)) continue;
-    if (!passesDifficultyFilter(i)) continue;
+    // 2) Practice eligibility gate (learned/easy in BOTH directions)
+    if (!isPracticeEligibleIndex(i)) continue;
 
-    totalInCombined++;
+    totalEligible++;
 
-    const stats = getStatsForIndex(i);
+    // 3) Subset stats (directional, for the current direction you are practising)
+    const stats = getStatsForIndex(i, dirKey);
+    const info = getSrsInfo(langMap, p, dirKey);
 
-    // IMPORTANT: info must be for *this phrase p*, not phrases[idx]
-    const info = getSrsInfo(langMap, p);
-
-    const manualDifficulty = info?.manualDifficulty ?? null; // "easy" | "difficult" | null
-    const isEasy = manualDifficulty === "easy";
-    const isOverrideDifficult = manualDifficulty === "difficult";
+    const manualDifficulty = info?.manualDifficulty ?? null;
+    const isEasy = (manualDifficulty === "easy");
+    const isOverrideDifficult = (manualDifficulty === "difficult");
     const isSrsDifficult = !!info?.everDifficult;
-
-    // STRICT difficult (does NOT include tricky)
     const isDifficult = isOverrideDifficult || isSrsDifficult;
 
-    // Counts
-    if (stats.neverTested) countUntestedEver++;
     if (stats.untestedThisSession) countUntestedRun++;
     if (stats.lastWrong) countLastWrong++;
     if (isDifficult) countDifficult++;
-    if ((!stats.learned) && (!isEasy)) countUnlearned++;
-    if (stats.learned || isEasy) countLearned++;
+    if (isEasy) countEasy++;
 
-    // Lists
     if (stats.untestedThisSession) addToList(listUntestedRunEl, p);
     if (stats.lastWrong) addToList(listLastWrongEl, p);
-    if (isDifficult) addToList(listDifficultEl, p);       // ✅ STRICT difficult only
-    if (stats.learned || isEasy) addToList(listLearnedEl, p);
+    if (isDifficult) addToList(listDifficultEl, p);
+    if (isEasy) addToList(listEasyEl, p);
   }
 
   const setText = (id, value) => {
@@ -2519,48 +2659,39 @@ function recomputeProgressReport() {
     if (el) el.textContent = String(value);
   };
 
-  setText("totalInFilterValue", totalInCombined);
-  setText("untestedEverValue", countUntestedEver);
+  setText("totalInFilterValue", totalEligible);
   setText("untestedThisSessionValue", countUntestedRun);
   setText("lastWrongValue", countLastWrong);
   setText("difficultValue", countDifficult);
-  setText("unlearnedValue", countUnlearned);
-  setText("learnedValue", countLearned);
+  setText("easyValue", countEasy);
 }
 
+
+// ========== ANSWERS: APPLY / CONFIRM ==========
 function applyAnswer(isCorrect) {
-  if (isCorrect) {
-    streak++;
-    treatCount++;
-    if (treatCountEl) treatCountEl.textContent = String(treatCount);
-  } else {
-    streak = 0;
+  // Guard: only apply if we have a valid phrase selected
+  if (currentIndex == null || currentIndex < 0) {
+    clearPendingAnswer();
+    return;
   }
 
-  if (translationPanelEl) translationPanelEl.classList.add("visible");
-
-  updateMood();
-
-  // Ensure sessionInfo exists (recover from localStorage first; only then create)
-  if (!sessionInfo || !sessionInfo.id) {
-    try {
-      const raw = localStorage.getItem(SESSION_KEY);
-      if (raw) sessionInfo = JSON.parse(raw);
-    } catch (e) {}
-  }
-
-  // ✅ MARK AS TESTED AFTER CONFIRM
-  markSeenThisSession(currentIndex);
-
+  // 1) Score/update SRS
   updateSRS(currentIndex, isCorrect);
-  saveSRSForCurrentLanguage();
 
-  recomputeProgressReport();
+  const phrase = phrases?.[currentIndex];
+  const sid = getSrsIdForPhrase(phrase, getCurrentDirectionKey());
+  if (sid) seenThisSession.add(sid);
 
+  // 2) Clear pending UI/state
   clearPendingAnswer();
+
+  // 3) Refresh reports
+  if (typeof recomputeProgressReport === "function") recomputeProgressReport();
+  if (typeof recomputeLearningReport === "function") recomputeLearningReport();
+
+  // 4) Move on
   handleNewPhrase();
 }
-
 
 function handleAnswer(isCorrect) {
   // Same phrase, already pending
@@ -2585,29 +2716,22 @@ function handleAnswer(isCorrect) {
   setConfirmBarOpen(true);
 }
 
-
-
 function markCorrect() { handleAnswer(true); }
 function markWrong() { handleAnswer(false); }
 
 function toggleMode() {
-  mode = mode === "bgToEn" ? "enToBg" : "bgToEn";
+  direction = (direction === "A") ? "B" : "A";
   updateModeUI();
 
-  clearPendingAnswer();          // avoid carrying a pending ✓/✕ across direction
-  recomputeProgressReport();     // ✅ refresh progress for the new direction
+  clearPendingAnswer();
+  recomputeProgressReport();
   recomputeLearningReport();
 
-
-  // Option A: keep the same phrase, just swap prompt/answer
   if (currentIndex !== -1) showPhrase(currentIndex);
-
-  // Option B (often better): uncomment this to immediately draw a new phrase in the new direction
-  // handleNewPhrase();
 }
 
-// ========== EVENTS: CLICK + CHANGE + KEYS ==========
 
+// ========== EVENTS: CLICK + CHANGE + KEYS ==========
 newPhraseBtn.addEventListener("click", handleNewPhrase);
 toggleModeBtn.addEventListener("click", toggleMode);
 showTranslationBtn.addEventListener("click", showTranslation);
@@ -2641,7 +2765,6 @@ document.getElementById("markDifficultBtn")
 
 
 
-
 if (typeFilterEl) {
   typeFilterEl.addEventListener("change", () => {
     currentTypeFilter = typeFilterEl.value;
@@ -2658,8 +2781,6 @@ if (levelFilterEl) {
   });
 }
 
-
-
 if (topicFilterEl) {
   topicFilterEl.addEventListener("change", () => {
     currentTopicFilter = topicFilterEl.value;
@@ -2675,6 +2796,7 @@ if (statusFilterEl) {
     recomputeProgressReport();
   });
 }
+
 if (focusFilterEl) {
   focusFilterEl.addEventListener("change", () => {
     currentFocusFilter = focusFilterEl.value;
@@ -2720,6 +2842,7 @@ document.addEventListener("keydown", (event) => {
   else if (key === "t") showTranslation();
   else if (key === "l") toggleLatin();
 });
+
 let sessionExpiryTimerId = null;
 
 function startSessionExpiryTimer() {
@@ -2749,13 +2872,20 @@ function applyAppModeUI() {
   btn.textContent = (appMode === "learning") ? "Learning" : "Practice";
   btn.classList.toggle("active", appMode === "practice");
   updateProgressPanelForAppMode();
-}
+ }
 
 function toggleAppMode() {
   appMode = (appMode === "learning") ? "practice" : "learning";
-  localStorage.setItem(APP_MODE_KEY, appMode);
+  localStorage.setItem("benny_app_mode_v1", appMode);
+
   applyAppModeUI();
+  updateProgressPanelForAppMode();
+
+  clearPendingAnswer();
+  handleNewPhrase();   // always refresh phrase area
 }
+
+
 
 function wireAppModeToggle() {
   const btn = document.getElementById("appModeToggleBtn");
@@ -2763,45 +2893,11 @@ function wireAppModeToggle() {
   btn.addEventListener("click", toggleAppMode);
 }
 
-
-// ========== MODE GATES (Learning vs Practice) ==========
-
-// returns ["bgToEn","enToBg"] etc.
-function getDirectionsForLanguage(lang) {
-  // adjust if your Georgian direction keys differ
-  if (lang === "bg") return ["bgToEn", "enToBg"];
-  if (lang === "ge") return ["geToEn", "enToGe"];
-  // fallback: treat as target<->en
-  return [`${lang}ToEn`, `enTo${lang.toUpperCase()}`];
-}
-
-function getProgressRec(phraseId, direction) {
-  const langMap = (srsProgress && srsProgress[currentLanguage]) ? srsProgress[currentLanguage] : {};
-  return langMap[`${phraseId}__${direction}`] || null;
-}
-
-function isEasyOrLearned(phraseId, direction) {
-  const rec = getProgressRec(phraseId, direction);
-  if (!rec) return false;
-
-  // Easy is manual-only and counts as learned immediately
-  if (rec.manualDifficulty === "easy") return true;
-
-  // learnedStreak2 is your learned rule output (preferred)
-  if (rec.learnedStreak2 === true) return true;
-
-  return false;
-}
-
-function isPracticeEligible(phraseId) {
-  const [dirA, dirB] = getDirectionsForLanguage(currentLanguage);
-  return isEasyOrLearned(phraseId, dirA) && isEasyOrLearned(phraseId, dirB);
-}
+// ========== MODE GATES (Learning vs Practice) ========== Deleted
 
 
 
 // ========== INIT ==========
-
 function updateProgressPanelForAppMode() {
   const practice = document.getElementById("practiceReport");
   const learning = document.getElementById("learningReport");
@@ -2825,15 +2921,14 @@ async function initApp() {
 
   sessionInfo = await loadOrCreateSession();
   console.log("SESSION", sessionInfo);
-  console.log("FILTERS", { currentTypeFilter, currentLevelFilter, currentTopicFilter, currentFocusFilter, currentDifficultyFilter, mode });
+  console.log("FILTERS", { currentTypeFilter, currentLevelFilter, currentTopicFilter, currentFocusFilter, currentDifficultyFilter, dir: getCurrentDirectionKey()
+});
 
   startSessionExpiryTimer();
   updateModeUI();
   loadPhrasesFromFile();
   updateMood();
 }
-
-
 
 function initAppOnce() {
   if (appStarted) return;
@@ -2870,7 +2965,6 @@ function maybePromptSessionExpiry() {
   });
 }
 
-
 // When you come back to the tab/window
 window.addEventListener("focus", maybePromptSessionExpiry);
 document.addEventListener("visibilitychange", () => {
@@ -2878,9 +2972,5 @@ document.addEventListener("visibilitychange", () => {
 });
 
 window.addEventListener("DOMContentLoaded", initAppOnce, { once: true });
-    </script>
 
-
-  </div>
-</body>
-</html>
+</script>
